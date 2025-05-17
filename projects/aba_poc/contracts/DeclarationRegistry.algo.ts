@@ -22,64 +22,88 @@ export class DeclarationRegistry extends Contract {
 
   /** Declare the given ARC11550 asset for the given address. If an approval app has been defined for the address, that app is called to ensure the
    * declaration is allowed. If an approval app has not be defined, the transaction sender must match the declaration address */
-  declare(addrAsset: AddressAsset): void {
+  declare(addrAsset: AddressAsset): boolean {
     if (this.declarations(addrAsset).exists) {
-      return;
+      return true;
     }
 
+    let approved: boolean;
     if (this.approvalApps(addrAsset).exists) {
-      sendMethodCall<typeof ApprovalApp.prototype.approveDeclaration>({
+      approved = sendMethodCall<typeof ApprovalApp.prototype.approveDeclaration>({
         applicationID: this.approvalApps(addrAsset).value,
         methodArgs: [this.txn.sender, addrAsset],
       });
     } else {
-      assert(this.txn.sender == addrAsset.addr);
+      approved = this.txn.sender == addrAsset.addr;
     }
 
+    if (!approved) return false;
+
     this.declarations(addrAsset).value = '' as bytes<0>;
+
+    return true;
   }
 
   /** Declare the given ARC11550 asset for the given address. If an approval app has been added for the user, that app is called to ensure the
    * declaration is allowed */
-  request(addrAsset: AddressAsset): void {
+  request(addrAsset: AddressAsset): boolean {
     if (this.requests(addrAsset).exists) {
-      return;
+      return true;
     }
 
     if (this.approvalApps(addrAsset).exists) {
-      sendMethodCall<typeof ApprovalApp.prototype.approveRequest>({
+      const approved = sendMethodCall<typeof ApprovalApp.prototype.approveRequest>({
         applicationID: this.approvalApps(addrAsset).value,
         methodArgs: [this.txn.sender, addrAsset],
       });
+
+      if (!approved) return false;
     }
 
     this.requests(addrAsset).value = '' as bytes<0>;
+
+    return true;
   }
 
-  removeDeclaration(addrAsset: AddressAsset): void {
+  removeDeclaration(addrAsset: AddressAsset): boolean {
+    if (!this.declarations(addrAsset).exists) {
+      return true;
+    }
+
+    let approved: boolean;
+
     if (this.approvalApps(addrAsset).exists) {
-      sendMethodCall<typeof ApprovalApp.prototype.approveDeclarationRemoval>({
+      approved = sendMethodCall<typeof ApprovalApp.prototype.approveDeclarationRemoval>({
         applicationID: this.approvalApps(addrAsset).value,
         methodArgs: [this.txn.sender, addrAsset],
       });
     } else {
-      assert(this.txn.sender == addrAsset.addr);
+      approved = this.txn.sender == addrAsset.addr;
     }
 
+    if (!approved) return false;
     this.declarations(addrAsset).delete();
+    return true;
   }
 
-  removeRequest(addrAsset: AddressAsset): void {
+  removeRequest(addrAsset: AddressAsset): boolean {
+    if (!this.requests(addrAsset).exists) {
+      return true;
+    }
+    let approved: boolean;
+
     if (this.approvalApps(addrAsset).exists) {
-      sendMethodCall<typeof ApprovalApp.prototype.approveRequestRemoval>({
+      approved = sendMethodCall<typeof ApprovalApp.prototype.approveRequestRemoval>({
         applicationID: this.approvalApps(addrAsset).value,
         methodArgs: [this.txn.sender, addrAsset],
       });
     } else {
-      assert(this.txn.sender == addrAsset.addr);
+      approved = this.txn.sender == addrAsset.addr;
     }
 
+    if (!approved) return false;
     this.requests(addrAsset).delete();
+    return true;
   }
 
   isRequested(addrAsset: AddressAsset): boolean {

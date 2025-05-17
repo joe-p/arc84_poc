@@ -64,7 +64,7 @@ switch *call_NoOp *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEM
 approveRequest:
 	proto 2 1
 
-	// contracts/DeclarationRegistry.algo.ts:96
+	// contracts/DeclarationRegistry.algo.ts:120
 	// return true;
 	intc 0 // 1
 	retsub
@@ -109,7 +109,7 @@ approveRequest:
 approveRequestRemoval:
 	proto 2 1
 
-	// contracts/DeclarationRegistry.algo.ts:100
+	// contracts/DeclarationRegistry.algo.ts:124
 	// return true;
 	intc 0 // 1
 	retsub
@@ -154,7 +154,7 @@ approveRequestRemoval:
 approveDeclaration:
 	proto 2 1
 
-	// contracts/DeclarationRegistry.algo.ts:104
+	// contracts/DeclarationRegistry.algo.ts:128
 	// return sender === addrAsset.addr;
 	frame_dig -1 // sender: Address
 	frame_dig -2 // addrAsset: AddressAsset
@@ -202,7 +202,7 @@ approveDeclaration:
 approveDeclarationRemoval:
 	proto 2 1
 
-	// contracts/DeclarationRegistry.algo.ts:108
+	// contracts/DeclarationRegistry.algo.ts:132
 	// return sender === addrAsset.addr;
 	frame_dig -1 // sender: Address
 	frame_dig -2 // addrAsset: AddressAsset
