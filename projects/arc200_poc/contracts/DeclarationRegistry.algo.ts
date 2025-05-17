@@ -1,57 +1,79 @@
 import { Contract } from '@algorandfoundation/tealscript';
 
+export type AddressApp = {
+  addr: Address;
+  app: AppID;
+};
+
+// ABA = App-Based Asset
+
 export class DeclarationRegistry extends Contract {
-  /**
-   * Calculates the sum of two numbers
-   *
-   * @param a
-   * @param b
-   * @returns The sum of a and b
-   */
-  private getSum(a: uint64, b: uint64): uint64 {
-    return a + b;
+  /** ABA declaration for a given user. Wallets & apps SHOULD show these assets to users */
+  declarations = BoxMap<AddressApp, bytes>();
+
+  /** Requests for ABA declarations for a given users. Wallets & apps MAY show these assets to users, but should be separated from
+   * declarations */
+  requests = BoxMap<AddressApp, bytes>({ prefix: 'r' });
+
+  /** Approval apps determine if a declaration/request addition or removal is allowed. This allows various use cases such as declaration delegation or only
+   * allowing requests from trusted accounts */
+  approvalApps = BoxMap<AddressApp, AppID>({ prefix: 'a' });
+
+  /** Declare the given ABA asset for the given address. If an approval app has been defined for the address, that app is called to ensure the
+   * declaration is allowed. If an approval app has not be defined, the transaction sender must match the declaration address */
+  declare(addrApp: AddressApp): void {
+    if (this.declarations(addrApp).exists) {
+      return;
+    }
+
+    if (this.approvalApps(addrApp).exists) {
+      // TODO: send method call to approval app
+    } else {
+      assert(this.txn.sender == addrApp.addr);
+    }
+
+    this.declarations(addrApp).value = '';
   }
 
-  /**
-   * Calculates the difference between two numbers
-   *
-   * @param a
-   * @param b
-   * @returns The difference between a and b.
-   */
-  private getDifference(a: uint64, b: uint64): uint64 {
-    return a >= b ? a - b : b - a;
+  /** Declare the given ABA for the given address. If an approval app has been added for the user, that app is called to ensure the
+   * declaration is allowed */
+  request(addrApp: AddressApp): void {
+    if (this.requests(addrApp).exists) {
+      return;
+    }
+
+    if (this.approvalApps(addrApp).exists) {
+      // TODO: send method call to approval app
+    }
+
+    this.requests(addrApp).value = '';
   }
 
-  /**
-   * A method that takes two numbers and does either addition or subtraction
-   *
-   * @param a The first uint64
-   * @param b The second uint64
-   * @param operation The operation to perform. Can be either 'sum' or 'difference'
-   *
-   * @returns The result of the operation
-   */
-  doMath(a: uint64, b: uint64, operation: string): uint64 {
-    let result: uint64;
+  removeDeclaration(addrApp: AddressApp): void {
+    if (this.approvalApps(addrApp).exists) {
+      // TODO: send method call to approval app
+    } else {
+      assert(this.txn.sender == addrApp.addr);
+    }
 
-    if (operation === 'sum') {
-      result = this.getSum(a, b);
-    } else if (operation === 'difference') {
-      result = this.getDifference(a, b);
-    } else throw Error('Invalid operation');
-
-    return result;
+    this.declarations(addrApp).delete();
   }
 
-  /**
-   * A demonstration method used in the AlgoKit fullstack template.
-   * Greets the user by name.
-   *
-   * @param name The name of the user to greet.
-   * @returns A greeting message to the user.
-   */
-  hello(name: string): string {
-    return 'Hello, ' + name;
+  removeRequest(addrApp: AddressApp): void {
+    if (this.approvalApps(addrApp).exists) {
+      // TODO: send method call to approval app
+    } else {
+      assert(this.txn.sender == addrApp.addr);
+    }
+
+    this.requests(addrApp).delete();
+  }
+
+  isRequested(addrApp: AddressApp): boolean {
+    return this.requests(addrApp).exists;
+  }
+
+  isDeclared(addrApp: AddressApp): boolean {
+    return this.requests(addrApp).exists;
   }
 }

@@ -1,0 +1,87 @@
+{
+  "name": "DeclarationRegistry",
+  "desc": "",
+  "methods": [
+    {
+      "name": "declare",
+      "desc": "Declare the given ABA asset for the given address. If an approval app has been defined for the address, that app is called to ensure the\ndeclaration is allowed. If an approval app has not be defined, the transaction sender must match the declaration address",
+      "args": [
+        {
+          "name": "addrApp",
+          "type": "(address,uint64)"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "request",
+      "desc": "Declare the given ABA for the given address. If an approval app has been added for the user, that app is called to ensure the\ndeclaration is allowed",
+      "args": [
+        {
+          "name": "addrApp",
+          "type": "(address,uint64)"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "removeDeclaration",
+      "args": [
+        {
+          "name": "addrApp",
+          "type": "(address,uint64)"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "removeRequest",
+      "args": [
+        {
+          "name": "addrApp",
+          "type": "(address,uint64)"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "isRequested",
+      "args": [
+        {
+          "name": "addrApp",
+          "type": "(address,uint64)"
+        }
+      ],
+      "returns": {
+        "type": "bool"
+      }
+    },
+    {
+      "name": "isDeclared",
+      "args": [
+        {
+          "name": "addrApp",
+          "type": "(address,uint64)"
+        }
+      ],
+      "returns": {
+        "type": "bool"
+      }
+    },
+    {
+      "name": "createApplication",
+      "args": [],
+      "returns": {
+        "type": "void"
+      }
+    }
+  ]
+}
