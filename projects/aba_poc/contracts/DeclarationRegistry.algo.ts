@@ -22,59 +22,59 @@ export class DeclarationRegistry extends Contract {
 
   /** Declare the given ARC11550 asset for the given address. If an approval app has been defined for the address, that app is called to ensure the
    * declaration is allowed. If an approval app has not be defined, the transaction sender must match the declaration address */
-  declare(addrApp: AddressAsset): void {
-    if (this.declarations(addrApp).exists) {
+  declare(addrAsset: AddressAsset): void {
+    if (this.declarations(addrAsset).exists) {
       return;
     }
 
-    if (this.approvalApps(addrApp).exists) {
+    if (this.approvalApps(addrAsset).exists) {
       // TODO: send method call to approval app
     } else {
-      assert(this.txn.sender == addrApp.addr);
+      assert(this.txn.sender == addrAsset.addr);
     }
 
-    this.declarations(addrApp).value = '' as bytes<0>;
+    this.declarations(addrAsset).value = '' as bytes<0>;
   }
 
   /** Declare the given ARC11550 asset for the given address. If an approval app has been added for the user, that app is called to ensure the
    * declaration is allowed */
-  request(addrApp: AddressAsset): void {
-    if (this.requests(addrApp).exists) {
+  request(addrAsset: AddressAsset): void {
+    if (this.requests(addrAsset).exists) {
       return;
     }
 
-    if (this.approvalApps(addrApp).exists) {
+    if (this.approvalApps(addrAsset).exists) {
       // TODO: send method call to approval app
     }
 
-    this.requests(addrApp).value = '' as bytes<0>;
+    this.requests(addrAsset).value = '' as bytes<0>;
   }
 
-  removeDeclaration(addrApp: AddressAsset): void {
-    if (this.approvalApps(addrApp).exists) {
-      // TODO: send method call to approval app
-    } else {
-      assert(this.txn.sender == addrApp.addr);
-    }
-
-    this.declarations(addrApp).delete();
-  }
-
-  removeRequest(addrApp: AddressAsset): void {
-    if (this.approvalApps(addrApp).exists) {
+  removeDeclaration(addrAsset: AddressAsset): void {
+    if (this.approvalApps(addrAsset).exists) {
       // TODO: send method call to approval app
     } else {
-      assert(this.txn.sender == addrApp.addr);
+      assert(this.txn.sender == addrAsset.addr);
     }
 
-    this.requests(addrApp).delete();
+    this.declarations(addrAsset).delete();
   }
 
-  isRequested(addrApp: AddressAsset): boolean {
-    return this.requests(addrApp).exists;
+  removeRequest(addrAsset: AddressAsset): void {
+    if (this.approvalApps(addrAsset).exists) {
+      // TODO: send method call to approval app
+    } else {
+      assert(this.txn.sender == addrAsset.addr);
+    }
+
+    this.requests(addrAsset).delete();
   }
 
-  isDeclared(addrApp: AddressAsset): boolean {
-    return this.requests(addrApp).exists;
+  isRequested(addrAsset: AddressAsset): boolean {
+    return this.requests(addrAsset).exists;
+  }
+
+  isDeclared(addrAsset: AddressAsset): boolean {
+    return this.requests(addrAsset).exists;
   }
 }
