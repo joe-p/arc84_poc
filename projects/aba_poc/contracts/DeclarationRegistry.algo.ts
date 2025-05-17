@@ -1,27 +1,28 @@
 import { Contract } from '@algorandfoundation/tealscript';
 
-export type AddressApp = {
+export type ARC11550Id = uint64;
+
+export type AddressAsset = {
   addr: Address;
   app: AppID;
+  id: ARC11550Id;
 };
 
-// ABA = App-Based Asset
-
 export class DeclarationRegistry extends Contract {
-  /** ABA declaration for a given user. Wallets & apps SHOULD show these assets to users */
-  declarations = BoxMap<AddressApp, bytes<0>>();
+  /** ARC11550 declaration for a given user. Wallets & apps SHOULD show these assets to users */
+  declarations = BoxMap<AddressAsset, bytes<0>>();
 
-  /** Requests for ABA declarations for a given users. Wallets & apps MAY show these assets to users, but should be separated from
+  /** Requests for ARC11550 declarations for a given users. Wallets & apps MAY show these assets to users, but should be separated from
    * declarations */
-  requests = BoxMap<AddressApp, bytes<0>>({ prefix: 'r' });
+  requests = BoxMap<AddressAsset, bytes<0>>({ prefix: 'r' });
 
   /** Approval apps determine if a declaration/request addition or removal is allowed. This allows various use cases such as declaration delegation or only
    * allowing requests from trusted accounts */
-  approvalApps = BoxMap<AddressApp, AppID>({ prefix: 'a' });
+  approvalApps = BoxMap<AddressAsset, AppID>({ prefix: 'a' });
 
-  /** Declare the given ABA asset for the given address. If an approval app has been defined for the address, that app is called to ensure the
+  /** Declare the given ARC11550 asset for the given address. If an approval app has been defined for the address, that app is called to ensure the
    * declaration is allowed. If an approval app has not be defined, the transaction sender must match the declaration address */
-  declare(addrApp: AddressApp): void {
+  declare(addrApp: AddressAsset): void {
     if (this.declarations(addrApp).exists) {
       return;
     }
@@ -35,9 +36,9 @@ export class DeclarationRegistry extends Contract {
     this.declarations(addrApp).value = '' as bytes<0>;
   }
 
-  /** Declare the given ABA for the given address. If an approval app has been added for the user, that app is called to ensure the
+  /** Declare the given ARC11550 asset for the given address. If an approval app has been added for the user, that app is called to ensure the
    * declaration is allowed */
-  request(addrApp: AddressApp): void {
+  request(addrApp: AddressAsset): void {
     if (this.requests(addrApp).exists) {
       return;
     }
@@ -49,7 +50,7 @@ export class DeclarationRegistry extends Contract {
     this.requests(addrApp).value = '' as bytes<0>;
   }
 
-  removeDeclaration(addrApp: AddressApp): void {
+  removeDeclaration(addrApp: AddressAsset): void {
     if (this.approvalApps(addrApp).exists) {
       // TODO: send method call to approval app
     } else {
@@ -59,7 +60,7 @@ export class DeclarationRegistry extends Contract {
     this.declarations(addrApp).delete();
   }
 
-  removeRequest(addrApp: AddressApp): void {
+  removeRequest(addrApp: AddressAsset): void {
     if (this.approvalApps(addrApp).exists) {
       // TODO: send method call to approval app
     } else {
@@ -69,11 +70,11 @@ export class DeclarationRegistry extends Contract {
     this.requests(addrApp).delete();
   }
 
-  isRequested(addrApp: AddressApp): boolean {
+  isRequested(addrApp: AddressAsset): boolean {
     return this.requests(addrApp).exists;
   }
 
-  isDeclared(addrApp: AddressApp): boolean {
+  isDeclared(addrApp: AddressAsset): boolean {
     return this.requests(addrApp).exists;
   }
 }

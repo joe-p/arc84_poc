@@ -24,7 +24,7 @@ import { SendParams, SendSingleTransactionResult, SendAtomicTransactionComposerR
 import { Address, encodeAddress, modelsv2, OnApplicationComplete, Transaction, TransactionSigner } from 'algosdk'
 import SimulateResponse = modelsv2.SimulateResponse
 
-export const APP_SPEC: Arc56Contract = {"name":"DeclarationRegistry","desc":"","methods":[{"name":"declare","desc":"Declare the given ABA asset for the given address. If an approval app has been defined for the address, that app is called to ensure the\ndeclaration is allowed. If an approval app has not be defined, the transaction sender must match the declaration address","args":[{"name":"addrApp","type":"(address,uint64)","struct":"AddressApp"}],"returns":{"type":"void"},"actions":{"create":[],"call":["NoOp"]}},{"name":"request","desc":"Declare the given ABA for the given address. If an approval app has been added for the user, that app is called to ensure the\ndeclaration is allowed","args":[{"name":"addrApp","type":"(address,uint64)","struct":"AddressApp"}],"returns":{"type":"void"},"actions":{"create":[],"call":["NoOp"]}},{"name":"removeDeclaration","args":[{"name":"addrApp","type":"(address,uint64)","struct":"AddressApp"}],"returns":{"type":"void"},"actions":{"create":[],"call":["NoOp"]}},{"name":"removeRequest","args":[{"name":"addrApp","type":"(address,uint64)","struct":"AddressApp"}],"returns":{"type":"void"},"actions":{"create":[],"call":["NoOp"]}},{"name":"isRequested","args":[{"name":"addrApp","type":"(address,uint64)","struct":"AddressApp"}],"returns":{"type":"bool"},"actions":{"create":[],"call":["NoOp"]}},{"name":"isDeclared","args":[{"name":"addrApp","type":"(address,uint64)","struct":"AddressApp"}],"returns":{"type":"bool"},"actions":{"create":[],"call":["NoOp"]}},{"name":"createApplication","args":[],"returns":{"type":"void"},"actions":{"create":["NoOp"],"call":[]}}],"arcs":[4,56],"structs":{"AddressApp":[{"name":"addr","type":"address"},{"name":"app","type":"uint64"}]},"state":{"schema":{"global":{"bytes":0,"ints":0},"local":{"bytes":0,"ints":0}},"keys":{"global":{},"local":{},"box":{}},"maps":{"global":{},"local":{},"box":{"declarations":{"keyType":"AddressApp","valueType":"byte[0]"},"requests":{"keyType":"AddressApp","valueType":"byte[0]","prefix":"cg=="},"approvalApps":{"keyType":"AddressApp","valueType":"uint64","prefix":"YQ=="}}}},"bareActions":{"create":[],"call":[]},"sourceInfo":{"approval":{"sourceInfo":[{"teal":1,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[0]},{"teal":2,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[1,2,3,4,5]},{"teal":3,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[6,7,8,9,10,11,12,13,14,15,16,17,18,19]},{"teal":15,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[20,21]},{"teal":16,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[22]},{"teal":17,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[23,24]},{"teal":18,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[25]},{"teal":19,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[26,27]},{"teal":20,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[28]},{"teal":21,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54]},{"teal":25,"source":"contracts/DeclarationRegistry.algo.ts:10","errorMessage":"The requested action is not implemented in this contract. Are you using the correct OnComplete? Did you set your app ID?","pc":[55]},{"teal":30,"source":"contracts/DeclarationRegistry.algo.ts:24","pc":[56,57,58]},{"teal":31,"source":"contracts/DeclarationRegistry.algo.ts:24","pc":[59]},{"teal":32,"source":"contracts/DeclarationRegistry.algo.ts:24","pc":[60]},{"teal":33,"source":"contracts/DeclarationRegistry.algo.ts:24","pc":[61]},{"teal":34,"source":"contracts/DeclarationRegistry.algo.ts:24","pc":[62]},{"teal":37,"source":"contracts/DeclarationRegistry.algo.ts:24","errorMessage":"argument 0 (addrApp) for declare must be a (address,uint64)","pc":[63]},{"teal":40,"source":"contracts/DeclarationRegistry.algo.ts:24","pc":[64,65,66]},{"teal":41,"source":"contracts/DeclarationRegistry.algo.ts:24","pc":[67]},{"teal":42,"source":"contracts/DeclarationRegistry.algo.ts:24","pc":[68]},{"teal":49,"source":"contracts/DeclarationRegistry.algo.ts:24","pc":[69,70,71]},{"teal":54,"source":"contracts/DeclarationRegistry.algo.ts:25","pc":[72,73]},{"teal":55,"source":"contracts/DeclarationRegistry.algo.ts:25","pc":[74]},{"teal":56,"source":"contracts/DeclarationRegistry.algo.ts:25","pc":[75]},{"teal":57,"source":"contracts/DeclarationRegistry.algo.ts:25","pc":[76]},{"teal":58,"source":"contracts/DeclarationRegistry.algo.ts:25","pc":[77,78,79]},{"teal":63,"source":"contracts/DeclarationRegistry.algo.ts:26","pc":[80]},{"teal":69,"source":"contracts/DeclarationRegistry.algo.ts:29","pc":[81]},{"teal":70,"source":"contracts/DeclarationRegistry.algo.ts:29","pc":[82,83]},{"teal":71,"source":"contracts/DeclarationRegistry.algo.ts:29","pc":[84]},{"teal":72,"source":"contracts/DeclarationRegistry.algo.ts:29","pc":[85]},{"teal":73,"source":"contracts/DeclarationRegistry.algo.ts:29","pc":[86]},{"teal":74,"source":"contracts/DeclarationRegistry.algo.ts:29","pc":[87]},{"teal":75,"source":"contracts/DeclarationRegistry.algo.ts:29","pc":[88,89,90]},{"teal":78,"source":"contracts/DeclarationRegistry.algo.ts:29","pc":[91,92,93]},{"teal":83,"source":"contracts/DeclarationRegistry.algo.ts:32","pc":[94,95]},{"teal":84,"source":"contracts/DeclarationRegistry.algo.ts:32","pc":[96,97]},{"teal":85,"source":"contracts/DeclarationRegistry.algo.ts:32","pc":[98,99,100]},{"teal":86,"source":"contracts/DeclarationRegistry.algo.ts:32","pc":[101]},{"teal":87,"source":"contracts/DeclarationRegistry.algo.ts:32","pc":[102]},{"teal":92,"source":"contracts/DeclarationRegistry.algo.ts:35","pc":[103,104]},{"teal":93,"source":"contracts/DeclarationRegistry.algo.ts:35","pc":[105,106]},{"teal":94,"source":"contracts/DeclarationRegistry.algo.ts:35","pc":[107]},{"teal":95,"source":"contracts/DeclarationRegistry.algo.ts:24","pc":[108]},{"teal":100,"source":"contracts/DeclarationRegistry.algo.ts:40","pc":[109,110,111]},{"teal":101,"source":"contracts/DeclarationRegistry.algo.ts:40","pc":[112]},{"teal":102,"source":"contracts/DeclarationRegistry.algo.ts:40","pc":[113]},{"teal":103,"source":"contracts/DeclarationRegistry.algo.ts:40","pc":[114]},{"teal":104,"source":"contracts/DeclarationRegistry.algo.ts:40","pc":[115]},{"teal":107,"source":"contracts/DeclarationRegistry.algo.ts:40","errorMessage":"argument 0 (addrApp) for request must be a (address,uint64)","pc":[116]},{"teal":110,"source":"contracts/DeclarationRegistry.algo.ts:40","pc":[117,118,119]},{"teal":111,"source":"contracts/DeclarationRegistry.algo.ts:40","pc":[120]},{"teal":112,"source":"contracts/DeclarationRegistry.algo.ts:40","pc":[121]},{"teal":119,"source":"contracts/DeclarationRegistry.algo.ts:40","pc":[122,123,124]},{"teal":124,"source":"contracts/DeclarationRegistry.algo.ts:41","pc":[125]},{"teal":125,"source":"contracts/DeclarationRegistry.algo.ts:41","pc":[126,127]},{"teal":126,"source":"contracts/DeclarationRegistry.algo.ts:41","pc":[128]},{"teal":127,"source":"contracts/DeclarationRegistry.algo.ts:41","pc":[129]},{"teal":128,"source":"contracts/DeclarationRegistry.algo.ts:41","pc":[130]},{"teal":129,"source":"contracts/DeclarationRegistry.algo.ts:41","pc":[131]},{"teal":130,"source":"contracts/DeclarationRegistry.algo.ts:41","pc":[132,133,134]},{"teal":135,"source":"contracts/DeclarationRegistry.algo.ts:42","pc":[135]},{"teal":141,"source":"contracts/DeclarationRegistry.algo.ts:45","pc":[136]},{"teal":142,"source":"contracts/DeclarationRegistry.algo.ts:45","pc":[137,138]},{"teal":143,"source":"contracts/DeclarationRegistry.algo.ts:45","pc":[139]},{"teal":144,"source":"contracts/DeclarationRegistry.algo.ts:45","pc":[140]},{"teal":145,"source":"contracts/DeclarationRegistry.algo.ts:45","pc":[141]},{"teal":146,"source":"contracts/DeclarationRegistry.algo.ts:45","pc":[142]},{"teal":147,"source":"contracts/DeclarationRegistry.algo.ts:45","pc":[143,144,145]},{"teal":153,"source":"contracts/DeclarationRegistry.algo.ts:49","pc":[146]},{"teal":154,"source":"contracts/DeclarationRegistry.algo.ts:49","pc":[147,148]},{"teal":155,"source":"contracts/DeclarationRegistry.algo.ts:49","pc":[149]},{"teal":156,"source":"contracts/DeclarationRegistry.algo.ts:49","pc":[150,151]},{"teal":157,"source":"contracts/DeclarationRegistry.algo.ts:49","pc":[152]},{"teal":158,"source":"contracts/DeclarationRegistry.algo.ts:40","pc":[153]},{"teal":163,"source":"contracts/DeclarationRegistry.algo.ts:52","pc":[154,155,156]},{"teal":164,"source":"contracts/DeclarationRegistry.algo.ts:52","pc":[157]},{"teal":165,"source":"contracts/DeclarationRegistry.algo.ts:52","pc":[158]},{"teal":166,"source":"contracts/DeclarationRegistry.algo.ts:52","pc":[159]},{"teal":167,"source":"contracts/DeclarationRegistry.algo.ts:52","pc":[160]},{"teal":170,"source":"contracts/DeclarationRegistry.algo.ts:52","errorMessage":"argument 0 (addrApp) for removeDeclaration must be a (address,uint64)","pc":[161]},{"teal":173,"source":"contracts/DeclarationRegistry.algo.ts:52","pc":[162,163,164]},{"teal":174,"source":"contracts/DeclarationRegistry.algo.ts:52","pc":[165]},{"teal":175,"source":"contracts/DeclarationRegistry.algo.ts:52","pc":[166]},{"teal":179,"source":"contracts/DeclarationRegistry.algo.ts:52","pc":[167,168,169]},{"teal":184,"source":"contracts/DeclarationRegistry.algo.ts:53","pc":[170]},{"teal":185,"source":"contracts/DeclarationRegistry.algo.ts:53","pc":[171,172]},{"teal":186,"source":"contracts/DeclarationRegistry.algo.ts:53","pc":[173]},{"teal":187,"source":"contracts/DeclarationRegistry.algo.ts:53","pc":[174]},{"teal":188,"source":"contracts/DeclarationRegistry.algo.ts:53","pc":[175]},{"teal":189,"source":"contracts/DeclarationRegistry.algo.ts:53","pc":[176]},{"teal":190,"source":"contracts/DeclarationRegistry.algo.ts:53","pc":[177,178,179]},{"teal":193,"source":"contracts/DeclarationRegistry.algo.ts:53","pc":[180,181,182]},{"teal":198,"source":"contracts/DeclarationRegistry.algo.ts:56","pc":[183,184]},{"teal":199,"source":"contracts/DeclarationRegistry.algo.ts:56","pc":[185,186]},{"teal":200,"source":"contracts/DeclarationRegistry.algo.ts:56","pc":[187,188,189]},{"teal":201,"source":"contracts/DeclarationRegistry.algo.ts:56","pc":[190]},{"teal":202,"source":"contracts/DeclarationRegistry.algo.ts:56","pc":[191]},{"teal":207,"source":"contracts/DeclarationRegistry.algo.ts:59","pc":[192,193]},{"teal":208,"source":"contracts/DeclarationRegistry.algo.ts:59","pc":[194]},{"teal":209,"source":"contracts/DeclarationRegistry.algo.ts:52","pc":[195]},{"teal":214,"source":"contracts/DeclarationRegistry.algo.ts:62","pc":[196,197,198]},{"teal":215,"source":"contracts/DeclarationRegistry.algo.ts:62","pc":[199]},{"teal":216,"source":"contracts/DeclarationRegistry.algo.ts:62","pc":[200]},{"teal":217,"source":"contracts/DeclarationRegistry.algo.ts:62","pc":[201]},{"teal":218,"source":"contracts/DeclarationRegistry.algo.ts:62","pc":[202]},{"teal":221,"source":"contracts/DeclarationRegistry.algo.ts:62","errorMessage":"argument 0 (addrApp) for removeRequest must be a (address,uint64)","pc":[203]},{"teal":224,"source":"contracts/DeclarationRegistry.algo.ts:62","pc":[204,205,206]},{"teal":225,"source":"contracts/DeclarationRegistry.algo.ts:62","pc":[207]},{"teal":226,"source":"contracts/DeclarationRegistry.algo.ts:62","pc":[208]},{"teal":230,"source":"contracts/DeclarationRegistry.algo.ts:62","pc":[209,210,211]},{"teal":235,"source":"contracts/DeclarationRegistry.algo.ts:63","pc":[212]},{"teal":236,"source":"contracts/DeclarationRegistry.algo.ts:63","pc":[213,214]},{"teal":237,"source":"contracts/DeclarationRegistry.algo.ts:63","pc":[215]},{"teal":238,"source":"contracts/DeclarationRegistry.algo.ts:63","pc":[216]},{"teal":239,"source":"contracts/DeclarationRegistry.algo.ts:63","pc":[217]},{"teal":240,"source":"contracts/DeclarationRegistry.algo.ts:63","pc":[218]},{"teal":241,"source":"contracts/DeclarationRegistry.algo.ts:63","pc":[219,220,221]},{"teal":244,"source":"contracts/DeclarationRegistry.algo.ts:63","pc":[222,223,224]},{"teal":249,"source":"contracts/DeclarationRegistry.algo.ts:66","pc":[225,226]},{"teal":250,"source":"contracts/DeclarationRegistry.algo.ts:66","pc":[227,228]},{"teal":251,"source":"contracts/DeclarationRegistry.algo.ts:66","pc":[229,230,231]},{"teal":252,"source":"contracts/DeclarationRegistry.algo.ts:66","pc":[232]},{"teal":253,"source":"contracts/DeclarationRegistry.algo.ts:66","pc":[233]},{"teal":258,"source":"contracts/DeclarationRegistry.algo.ts:69","pc":[234]},{"teal":259,"source":"contracts/DeclarationRegistry.algo.ts:69","pc":[235,236]},{"teal":260,"source":"contracts/DeclarationRegistry.algo.ts:69","pc":[237]},{"teal":261,"source":"contracts/DeclarationRegistry.algo.ts:69","pc":[238]},{"teal":262,"source":"contracts/DeclarationRegistry.algo.ts:62","pc":[239]},{"teal":267,"source":"contracts/DeclarationRegistry.algo.ts:72","pc":[240]},{"teal":270,"source":"contracts/DeclarationRegistry.algo.ts:72","pc":[241,242,243]},{"teal":271,"source":"contracts/DeclarationRegistry.algo.ts:72","pc":[244]},{"teal":272,"source":"contracts/DeclarationRegistry.algo.ts:72","pc":[245]},{"teal":273,"source":"contracts/DeclarationRegistry.algo.ts:72","pc":[246]},{"teal":274,"source":"contracts/DeclarationRegistry.algo.ts:72","pc":[247]},{"teal":277,"source":"contracts/DeclarationRegistry.algo.ts:72","errorMessage":"argument 0 (addrApp) for isRequested must be a (address,uint64)","pc":[248]},{"teal":280,"source":"contracts/DeclarationRegistry.algo.ts:72","pc":[249,250,251]},{"teal":281,"source":"contracts/DeclarationRegistry.algo.ts:72","pc":[252]},{"teal":282,"source":"contracts/DeclarationRegistry.algo.ts:72","pc":[253]},{"teal":283,"source":"contracts/DeclarationRegistry.algo.ts:72","pc":[254,255]},{"teal":284,"source":"contracts/DeclarationRegistry.algo.ts:72","pc":[256]},{"teal":285,"source":"contracts/DeclarationRegistry.algo.ts:72","pc":[257]},{"teal":286,"source":"contracts/DeclarationRegistry.algo.ts:72","pc":[258]},{"teal":287,"source":"contracts/DeclarationRegistry.algo.ts:72","pc":[259]},{"teal":288,"source":"contracts/DeclarationRegistry.algo.ts:72","pc":[260]},{"teal":292,"source":"contracts/DeclarationRegistry.algo.ts:72","pc":[261,262,263]},{"teal":296,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[264]},{"teal":297,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[265,266]},{"teal":298,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[267]},{"teal":299,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[268]},{"teal":300,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[269]},{"teal":301,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[270]},{"teal":302,"source":"contracts/DeclarationRegistry.algo.ts:72","pc":[271]},{"teal":307,"source":"contracts/DeclarationRegistry.algo.ts:76","pc":[272]},{"teal":310,"source":"contracts/DeclarationRegistry.algo.ts:76","pc":[273,274,275]},{"teal":311,"source":"contracts/DeclarationRegistry.algo.ts:76","pc":[276]},{"teal":312,"source":"contracts/DeclarationRegistry.algo.ts:76","pc":[277]},{"teal":313,"source":"contracts/DeclarationRegistry.algo.ts:76","pc":[278]},{"teal":314,"source":"contracts/DeclarationRegistry.algo.ts:76","pc":[279]},{"teal":317,"source":"contracts/DeclarationRegistry.algo.ts:76","errorMessage":"argument 0 (addrApp) for isDeclared must be a (address,uint64)","pc":[280]},{"teal":320,"source":"contracts/DeclarationRegistry.algo.ts:76","pc":[281,282,283]},{"teal":321,"source":"contracts/DeclarationRegistry.algo.ts:76","pc":[284]},{"teal":322,"source":"contracts/DeclarationRegistry.algo.ts:76","pc":[285]},{"teal":323,"source":"contracts/DeclarationRegistry.algo.ts:76","pc":[286,287]},{"teal":324,"source":"contracts/DeclarationRegistry.algo.ts:76","pc":[288]},{"teal":325,"source":"contracts/DeclarationRegistry.algo.ts:76","pc":[289]},{"teal":326,"source":"contracts/DeclarationRegistry.algo.ts:76","pc":[290]},{"teal":327,"source":"contracts/DeclarationRegistry.algo.ts:76","pc":[291]},{"teal":328,"source":"contracts/DeclarationRegistry.algo.ts:76","pc":[292]},{"teal":332,"source":"contracts/DeclarationRegistry.algo.ts:76","pc":[293,294,295]},{"teal":336,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[296]},{"teal":337,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[297,298]},{"teal":338,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[299]},{"teal":339,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[300]},{"teal":340,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[301]},{"teal":341,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[302]},{"teal":342,"source":"contracts/DeclarationRegistry.algo.ts:76","pc":[303]},{"teal":345,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[304]},{"teal":346,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[305]},{"teal":349,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[306,307,308,309,310,311]},{"teal":350,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[312,313,314]},{"teal":351,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[315,316,317,318]},{"teal":354,"source":"contracts/DeclarationRegistry.algo.ts:10","errorMessage":"this contract does not implement the given ABI method for create NoOp","pc":[319]},{"teal":357,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[320,321,322,323,324,325]},{"teal":358,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[326,327,328,329,330,331]},{"teal":359,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[332,333,334,335,336,337]},{"teal":360,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[338,339,340,341,342,343]},{"teal":361,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[344,345,346,347,348,349]},{"teal":362,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[350,351,352,353,354,355]},{"teal":363,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[356,357,358]},{"teal":364,"source":"contracts/DeclarationRegistry.algo.ts:10","pc":[359,360,361,362,363,364,365,366,367,368,369,370,371,372]},{"teal":367,"source":"contracts/DeclarationRegistry.algo.ts:10","errorMessage":"this contract does not implement the given ABI method for call NoOp","pc":[373]}],"pcOffsetMethod":"none"},"clear":{"sourceInfo":[],"pcOffsetMethod":"none"}},"source":{"approval":"I3ByYWdtYSB2ZXJzaW9uIDEwCmludGNibG9jayAxIDQwIDAKYnl0ZWNibG9jayAweDcyIDB4NjEgMHgxNTFmN2M3NSAweDAwIDB4CgovLyBUaGlzIFRFQUwgd2FzIGdlbmVyYXRlZCBieSBURUFMU2NyaXB0IHYwLjEwNi4zCi8vIGh0dHBzOi8vZ2l0aHViLmNvbS9hbGdvcmFuZGZvdW5kYXRpb24vVEVBTFNjcmlwdAoKLy8gVGhpcyBjb250cmFjdCBpcyBjb21wbGlhbnQgd2l0aCBhbmQvb3IgaW1wbGVtZW50cyB0aGUgZm9sbG93aW5nIEFSQ3M6IFsgQVJDNCBdCgovLyBUaGUgZm9sbG93aW5nIHRlbiBsaW5lcyBvZiBURUFMIGhhbmRsZSBpbml0aWFsIHByb2dyYW0gZmxvdwovLyBUaGlzIHBhdHRlcm4gaXMgdXNlZCB0byBtYWtlIGl0IGVhc3kgZm9yIGFueW9uZSB0byBwYXJzZSB0aGUgc3RhcnQgb2YgdGhlIHByb2dyYW0gYW5kIGRldGVybWluZSBpZiBhIHNwZWNpZmljIGFjdGlvbiBpcyBhbGxvd2VkCi8vIEhlcmUsIGFjdGlvbiByZWZlcnMgdG8gdGhlIE9uQ29tcGxldGUgaW4gY29tYmluYXRpb24gd2l0aCB3aGV0aGVyIHRoZSBhcHAgaXMgYmVpbmcgY3JlYXRlZCBvciBjYWxsZWQKLy8gRXZlcnkgcG9zc2libGUgYWN0aW9uIGZvciB0aGlzIGNvbnRyYWN0IGlzIHJlcHJlc2VudGVkIGluIHRoZSBzd2l0Y2ggc3RhdGVtZW50Ci8vIElmIHRoZSBhY3Rpb24gaXMgbm90IGltcGxlbWVudGVkIGluIHRoZSBjb250cmFjdCwgaXRzIHJlc3BlY3RpdmUgYnJhbmNoIHdpbGwgYmUgIipOT1RfSU1QTEVNRU5URUQiIHdoaWNoIGp1c3QgY29udGFpbnMgImVyciIKdHhuIEFwcGxpY2F0aW9uSUQKIQpwdXNoaW50IDYKKgp0eG4gT25Db21wbGV0aW9uCisKc3dpdGNoICpjYWxsX05vT3AgKk5PVF9JTVBMRU1FTlRFRCAqTk9UX0lNUExFTUVOVEVEICpOT1RfSU1QTEVNRU5URUQgKk5PVF9JTVBMRU1FTlRFRCAqTk9UX0lNUExFTUVOVEVEICpjcmVhdGVfTm9PcCAqTk9UX0lNUExFTUVOVEVEICpOT1RfSU1QTEVNRU5URUQgKk5PVF9JTVBMRU1FTlRFRCAqTk9UX0lNUExFTUVOVEVEICpOT1RfSU1QTEVNRU5URUQKCipOT1RfSU1QTEVNRU5URUQ6CgkvLyBUaGUgcmVxdWVzdGVkIGFjdGlvbiBpcyBub3QgaW1wbGVtZW50ZWQgaW4gdGhpcyBjb250cmFjdC4gQXJlIHlvdSB1c2luZyB0aGUgY29ycmVjdCBPbkNvbXBsZXRlPyBEaWQgeW91IHNldCB5b3VyIGFwcCBJRD8KCWVycgoKLy8gZGVjbGFyZSgoYWRkcmVzcyx1aW50NjQpKXZvaWQKKmFiaV9yb3V0ZV9kZWNsYXJlOgoJLy8gYWRkckFwcDogKGFkZHJlc3MsdWludDY0KQoJdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMQoJZHVwCglsZW4KCWludGMgMSAvLyA0MAoJPT0KCgkvLyBhcmd1bWVudCAwIChhZGRyQXBwKSBmb3IgZGVjbGFyZSBtdXN0IGJlIGEgKGFkZHJlc3MsdWludDY0KQoJYXNzZXJ0CgoJLy8gZXhlY3V0ZSBkZWNsYXJlKChhZGRyZXNzLHVpbnQ2NCkpdm9pZAoJY2FsbHN1YiBkZWNsYXJlCglpbnRjIDAgLy8gMQoJcmV0dXJuCgovLyBkZWNsYXJlKGFkZHJBcHA6IEFkZHJlc3NBcHApOiB2b2lkCi8vCi8vIERlY2xhcmUgdGhlIGdpdmVuIEFCQSBhc3NldCBmb3IgdGhlIGdpdmVuIGFkZHJlc3MuIElmIGFuIGFwcHJvdmFsIGFwcCBoYXMgYmVlbiBkZWZpbmVkIGZvciB0aGUgYWRkcmVzcywgdGhhdCBhcHAgaXMgY2FsbGVkIHRvIGVuc3VyZSB0aGUKLy8gZGVjbGFyYXRpb24gaXMgYWxsb3dlZC4gSWYgYW4gYXBwcm92YWwgYXBwIGhhcyBub3QgYmUgZGVmaW5lZCwgdGhlIHRyYW5zYWN0aW9uIHNlbmRlciBtdXN0IG1hdGNoIHRoZSBkZWNsYXJhdGlvbiBhZGRyZXNzCmRlY2xhcmU6Cglwcm90byAxIDAKCgkvLyAqaWYwX2NvbmRpdGlvbgoJLy8gY29udHJhY3RzL0RlY2xhcmF0aW9uUmVnaXN0cnkuYWxnby50czoyNQoJLy8gdGhpcy5kZWNsYXJhdGlvbnMoYWRkckFwcCkuZXhpc3RzCglmcmFtZV9kaWcgLTEgLy8gYWRkckFwcDogQWRkcmVzc0FwcAoJYm94X2xlbgoJc3dhcAoJcG9wCglieiAqaWYwX2VuZAoKCS8vICppZjBfY29uc2VxdWVudAoJLy8gY29udHJhY3RzL0RlY2xhcmF0aW9uUmVnaXN0cnkuYWxnby50czoyNgoJLy8gcmV0dXJuOwoJcmV0c3ViCgoqaWYwX2VuZDoKCS8vICppZjFfY29uZGl0aW9uCgkvLyBjb250cmFjdHMvRGVjbGFyYXRpb25SZWdpc3RyeS5hbGdvLnRzOjI5CgkvLyB0aGlzLmFwcHJvdmFsQXBwcyhhZGRyQXBwKS5leGlzdHMKCWJ5dGVjIDEgLy8gICJhIgoJZnJhbWVfZGlnIC0xIC8vIGFkZHJBcHA6IEFkZHJlc3NBcHAKCWNvbmNhdAoJYm94X2xlbgoJc3dhcAoJcG9wCglieiAqaWYxX2Vsc2UKCgkvLyAqaWYxX2NvbnNlcXVlbnQKCWIgKmlmMV9lbmQKCippZjFfZWxzZToKCS8vIGNvbnRyYWN0cy9EZWNsYXJhdGlvblJlZ2lzdHJ5LmFsZ28udHM6MzIKCS8vIGFzc2VydCh0aGlzLnR4bi5zZW5kZXIgPT0gYWRkckFwcC5hZGRyKQoJdHhuIFNlbmRlcgoJZnJhbWVfZGlnIC0xIC8vIGFkZHJBcHA6IEFkZHJlc3NBcHAKCWV4dHJhY3QgMCAzMgoJPT0KCWFzc2VydAoKKmlmMV9lbmQ6CgkvLyBjb250cmFjdHMvRGVjbGFyYXRpb25SZWdpc3RyeS5hbGdvLnRzOjM1CgkvLyB0aGlzLmRlY2xhcmF0aW9ucyhhZGRyQXBwKS52YWx1ZSA9ICcnIGFzIGJ5dGVzPDA+CglmcmFtZV9kaWcgLTEgLy8gYWRkckFwcDogQWRkcmVzc0FwcAoJYnl0ZWMgNCAvLyAgIiIKCWJveF9wdXQKCXJldHN1YgoKLy8gcmVxdWVzdCgoYWRkcmVzcyx1aW50NjQpKXZvaWQKKmFiaV9yb3V0ZV9yZXF1ZXN0OgoJLy8gYWRkckFwcDogKGFkZHJlc3MsdWludDY0KQoJdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMQoJZHVwCglsZW4KCWludGMgMSAvLyA0MAoJPT0KCgkvLyBhcmd1bWVudCAwIChhZGRyQXBwKSBmb3IgcmVxdWVzdCBtdXN0IGJlIGEgKGFkZHJlc3MsdWludDY0KQoJYXNzZXJ0CgoJLy8gZXhlY3V0ZSByZXF1ZXN0KChhZGRyZXNzLHVpbnQ2NCkpdm9pZAoJY2FsbHN1YiByZXF1ZXN0CglpbnRjIDAgLy8gMQoJcmV0dXJuCgovLyByZXF1ZXN0KGFkZHJBcHA6IEFkZHJlc3NBcHApOiB2b2lkCi8vCi8vIERlY2xhcmUgdGhlIGdpdmVuIEFCQSBmb3IgdGhlIGdpdmVuIGFkZHJlc3MuIElmIGFuIGFwcHJvdmFsIGFwcCBoYXMgYmVlbiBhZGRlZCBmb3IgdGhlIHVzZXIsIHRoYXQgYXBwIGlzIGNhbGxlZCB0byBlbnN1cmUgdGhlCi8vIGRlY2xhcmF0aW9uIGlzIGFsbG93ZWQKcmVxdWVzdDoKCXByb3RvIDEgMAoKCS8vICppZjJfY29uZGl0aW9uCgkvLyBjb250cmFjdHMvRGVjbGFyYXRpb25SZWdpc3RyeS5hbGdvLnRzOjQxCgkvLyB0aGlzLnJlcXVlc3RzKGFkZHJBcHApLmV4aXN0cwoJYnl0ZWMgMCAvLyAgInIiCglmcmFtZV9kaWcgLTEgLy8gYWRkckFwcDogQWRkcmVzc0FwcAoJY29uY2F0Cglib3hfbGVuCglzd2FwCglwb3AKCWJ6ICppZjJfZW5kCgoJLy8gKmlmMl9jb25zZXF1ZW50CgkvLyBjb250cmFjdHMvRGVjbGFyYXRpb25SZWdpc3RyeS5hbGdvLnRzOjQyCgkvLyByZXR1cm47CglyZXRzdWIKCippZjJfZW5kOgoJLy8gKmlmM19jb25kaXRpb24KCS8vIGNvbnRyYWN0cy9EZWNsYXJhdGlvblJlZ2lzdHJ5LmFsZ28udHM6NDUKCS8vIHRoaXMuYXBwcm92YWxBcHBzKGFkZHJBcHApLmV4aXN0cwoJYnl0ZWMgMSAvLyAgImEiCglmcmFtZV9kaWcgLTEgLy8gYWRkckFwcDogQWRkcmVzc0FwcAoJY29uY2F0Cglib3hfbGVuCglzd2FwCglwb3AKCWJ6ICppZjNfZW5kCgovLyAqaWYzX2NvbnNlcXVlbnQKKmlmM19lbmQ6CgkvLyBjb250cmFjdHMvRGVjbGFyYXRpb25SZWdpc3RyeS5hbGdvLnRzOjQ5CgkvLyB0aGlzLnJlcXVlc3RzKGFkZHJBcHApLnZhbHVlID0gJycgYXMgYnl0ZXM8MD4KCWJ5dGVjIDAgLy8gICJyIgoJZnJhbWVfZGlnIC0xIC8vIGFkZHJBcHA6IEFkZHJlc3NBcHAKCWNvbmNhdAoJYnl0ZWMgNCAvLyAgIiIKCWJveF9wdXQKCXJldHN1YgoKLy8gcmVtb3ZlRGVjbGFyYXRpb24oKGFkZHJlc3MsdWludDY0KSl2b2lkCiphYmlfcm91dGVfcmVtb3ZlRGVjbGFyYXRpb246CgkvLyBhZGRyQXBwOiAoYWRkcmVzcyx1aW50NjQpCgl0eG5hIEFwcGxpY2F0aW9uQXJncyAxCglkdXAKCWxlbgoJaW50YyAxIC8vIDQwCgk9PQoKCS8vIGFyZ3VtZW50IDAgKGFkZHJBcHApIGZvciByZW1vdmVEZWNsYXJhdGlvbiBtdXN0IGJlIGEgKGFkZHJlc3MsdWludDY0KQoJYXNzZXJ0CgoJLy8gZXhlY3V0ZSByZW1vdmVEZWNsYXJhdGlvbigoYWRkcmVzcyx1aW50NjQpKXZvaWQKCWNhbGxzdWIgcmVtb3ZlRGVjbGFyYXRpb24KCWludGMgMCAvLyAxCglyZXR1cm4KCi8vIHJlbW92ZURlY2xhcmF0aW9uKGFkZHJBcHA6IEFkZHJlc3NBcHApOiB2b2lkCnJlbW92ZURlY2xhcmF0aW9uOgoJcHJvdG8gMSAwCgoJLy8gKmlmNF9jb25kaXRpb24KCS8vIGNvbnRyYWN0cy9EZWNsYXJhdGlvblJlZ2lzdHJ5LmFsZ28udHM6NTMKCS8vIHRoaXMuYXBwcm92YWxBcHBzKGFkZHJBcHApLmV4aXN0cwoJYnl0ZWMgMSAvLyAgImEiCglmcmFtZV9kaWcgLTEgLy8gYWRkckFwcDogQWRkcmVzc0FwcAoJY29uY2F0Cglib3hfbGVuCglzd2FwCglwb3AKCWJ6ICppZjRfZWxzZQoKCS8vICppZjRfY29uc2VxdWVudAoJYiAqaWY0X2VuZAoKKmlmNF9lbHNlOgoJLy8gY29udHJhY3RzL0RlY2xhcmF0aW9uUmVnaXN0cnkuYWxnby50czo1NgoJLy8gYXNzZXJ0KHRoaXMudHhuLnNlbmRlciA9PSBhZGRyQXBwLmFkZHIpCgl0eG4gU2VuZGVyCglmcmFtZV9kaWcgLTEgLy8gYWRkckFwcDogQWRkcmVzc0FwcAoJZXh0cmFjdCAwIDMyCgk9PQoJYXNzZXJ0CgoqaWY0X2VuZDoKCS8vIGNvbnRyYWN0cy9EZWNsYXJhdGlvblJlZ2lzdHJ5LmFsZ28udHM6NTkKCS8vIHRoaXMuZGVjbGFyYXRpb25zKGFkZHJBcHApLmRlbGV0ZSgpCglmcmFtZV9kaWcgLTEgLy8gYWRkckFwcDogQWRkcmVzc0FwcAoJYm94X2RlbAoJcmV0c3ViCgovLyByZW1vdmVSZXF1ZXN0KChhZGRyZXNzLHVpbnQ2NCkpdm9pZAoqYWJpX3JvdXRlX3JlbW92ZVJlcXVlc3Q6CgkvLyBhZGRyQXBwOiAoYWRkcmVzcyx1aW50NjQpCgl0eG5hIEFwcGxpY2F0aW9uQXJncyAxCglkdXAKCWxlbgoJaW50YyAxIC8vIDQwCgk9PQoKCS8vIGFyZ3VtZW50IDAgKGFkZHJBcHApIGZvciByZW1vdmVSZXF1ZXN0IG11c3QgYmUgYSAoYWRkcmVzcyx1aW50NjQpCglhc3NlcnQKCgkvLyBleGVjdXRlIHJlbW92ZVJlcXVlc3QoKGFkZHJlc3MsdWludDY0KSl2b2lkCgljYWxsc3ViIHJlbW92ZVJlcXVlc3QKCWludGMgMCAvLyAxCglyZXR1cm4KCi8vIHJlbW92ZVJlcXVlc3QoYWRkckFwcDogQWRkcmVzc0FwcCk6IHZvaWQKcmVtb3ZlUmVxdWVzdDoKCXByb3RvIDEgMAoKCS8vICppZjVfY29uZGl0aW9uCgkvLyBjb250cmFjdHMvRGVjbGFyYXRpb25SZWdpc3RyeS5hbGdvLnRzOjYzCgkvLyB0aGlzLmFwcHJvdmFsQXBwcyhhZGRyQXBwKS5leGlzdHMKCWJ5dGVjIDEgLy8gICJhIgoJZnJhbWVfZGlnIC0xIC8vIGFkZHJBcHA6IEFkZHJlc3NBcHAKCWNvbmNhdAoJYm94X2xlbgoJc3dhcAoJcG9wCglieiAqaWY1X2Vsc2UKCgkvLyAqaWY1X2NvbnNlcXVlbnQKCWIgKmlmNV9lbmQKCippZjVfZWxzZToKCS8vIGNvbnRyYWN0cy9EZWNsYXJhdGlvblJlZ2lzdHJ5LmFsZ28udHM6NjYKCS8vIGFzc2VydCh0aGlzLnR4bi5zZW5kZXIgPT0gYWRkckFwcC5hZGRyKQoJdHhuIFNlbmRlcgoJZnJhbWVfZGlnIC0xIC8vIGFkZHJBcHA6IEFkZHJlc3NBcHAKCWV4dHJhY3QgMCAzMgoJPT0KCWFzc2VydAoKKmlmNV9lbmQ6CgkvLyBjb250cmFjdHMvRGVjbGFyYXRpb25SZWdpc3RyeS5hbGdvLnRzOjY5CgkvLyB0aGlzLnJlcXVlc3RzKGFkZHJBcHApLmRlbGV0ZSgpCglieXRlYyAwIC8vICAiciIKCWZyYW1lX2RpZyAtMSAvLyBhZGRyQXBwOiBBZGRyZXNzQXBwCgljb25jYXQKCWJveF9kZWwKCXJldHN1YgoKLy8gaXNSZXF1ZXN0ZWQoKGFkZHJlc3MsdWludDY0KSlib29sCiphYmlfcm91dGVfaXNSZXF1ZXN0ZWQ6CgkvLyBUaGUgQUJJIHJldHVybiBwcmVmaXgKCWJ5dGVjIDIgLy8gMHgxNTFmN2M3NQoKCS8vIGFkZHJBcHA6IChhZGRyZXNzLHVpbnQ2NCkKCXR4bmEgQXBwbGljYXRpb25BcmdzIDEKCWR1cAoJbGVuCglpbnRjIDEgLy8gNDAKCT09CgoJLy8gYXJndW1lbnQgMCAoYWRkckFwcCkgZm9yIGlzUmVxdWVzdGVkIG11c3QgYmUgYSAoYWRkcmVzcyx1aW50NjQpCglhc3NlcnQKCgkvLyBleGVjdXRlIGlzUmVxdWVzdGVkKChhZGRyZXNzLHVpbnQ2NCkpYm9vbAoJY2FsbHN1YiBpc1JlcXVlc3RlZAoJYnl0ZWMgMyAvLyAweDAwCglpbnRjIDIgLy8gMAoJdW5jb3ZlciAyCglzZXRiaXQKCWNvbmNhdAoJbG9nCglpbnRjIDAgLy8gMQoJcmV0dXJuCgovLyBpc1JlcXVlc3RlZChhZGRyQXBwOiBBZGRyZXNzQXBwKTogYm9vbGVhbgppc1JlcXVlc3RlZDoKCXByb3RvIDEgMQoKCS8vIGNvbnRyYWN0cy9EZWNsYXJhdGlvblJlZ2lzdHJ5LmFsZ28udHM6NzMKCS8vIHJldHVybiB0aGlzLnJlcXVlc3RzKGFkZHJBcHApLmV4aXN0czsKCWJ5dGVjIDAgLy8gICJyIgoJZnJhbWVfZGlnIC0xIC8vIGFkZHJBcHA6IEFkZHJlc3NBcHAKCWNvbmNhdAoJYm94X2xlbgoJc3dhcAoJcG9wCglyZXRzdWIKCi8vIGlzRGVjbGFyZWQoKGFkZHJlc3MsdWludDY0KSlib29sCiphYmlfcm91dGVfaXNEZWNsYXJlZDoKCS8vIFRoZSBBQkkgcmV0dXJuIHByZWZpeAoJYnl0ZWMgMiAvLyAweDE1MWY3Yzc1CgoJLy8gYWRkckFwcDogKGFkZHJlc3MsdWludDY0KQoJdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMQoJZHVwCglsZW4KCWludGMgMSAvLyA0MAoJPT0KCgkvLyBhcmd1bWVudCAwIChhZGRyQXBwKSBmb3IgaXNEZWNsYXJlZCBtdXN0IGJlIGEgKGFkZHJlc3MsdWludDY0KQoJYXNzZXJ0CgoJLy8gZXhlY3V0ZSBpc0RlY2xhcmVkKChhZGRyZXNzLHVpbnQ2NCkpYm9vbAoJY2FsbHN1YiBpc0RlY2xhcmVkCglieXRlYyAzIC8vIDB4MDAKCWludGMgMiAvLyAwCgl1bmNvdmVyIDIKCXNldGJpdAoJY29uY2F0Cglsb2cKCWludGMgMCAvLyAxCglyZXR1cm4KCi8vIGlzRGVjbGFyZWQoYWRkckFwcDogQWRkcmVzc0FwcCk6IGJvb2xlYW4KaXNEZWNsYXJlZDoKCXByb3RvIDEgMQoKCS8vIGNvbnRyYWN0cy9EZWNsYXJhdGlvblJlZ2lzdHJ5LmFsZ28udHM6NzcKCS8vIHJldHVybiB0aGlzLnJlcXVlc3RzKGFkZHJBcHApLmV4aXN0czsKCWJ5dGVjIDAgLy8gICJyIgoJZnJhbWVfZGlnIC0xIC8vIGFkZHJBcHA6IEFkZHJlc3NBcHAKCWNvbmNhdAoJYm94X2xlbgoJc3dhcAoJcG9wCglyZXRzdWIKCiphYmlfcm91dGVfY3JlYXRlQXBwbGljYXRpb246CglpbnRjIDAgLy8gMQoJcmV0dXJuCgoqY3JlYXRlX05vT3A6CglwdXNoYnl0ZXMgMHhiODQ0N2IzNiAvLyBtZXRob2QgImNyZWF0ZUFwcGxpY2F0aW9uKCl2b2lkIgoJdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMAoJbWF0Y2ggKmFiaV9yb3V0ZV9jcmVhdGVBcHBsaWNhdGlvbgoKCS8vIHRoaXMgY29udHJhY3QgZG9lcyBub3QgaW1wbGVtZW50IHRoZSBnaXZlbiBBQkkgbWV0aG9kIGZvciBjcmVhdGUgTm9PcAoJZXJyCgoqY2FsbF9Ob09wOgoJcHVzaGJ5dGVzIDB4N2RhZTg3ZWIgLy8gbWV0aG9kICJkZWNsYXJlKChhZGRyZXNzLHVpbnQ2NCkpdm9pZCIKCXB1c2hieXRlcyAweDA5NWRkYmEzIC8vIG1ldGhvZCAicmVxdWVzdCgoYWRkcmVzcyx1aW50NjQpKXZvaWQiCglwdXNoYnl0ZXMgMHg3YTIwODVhMyAvLyBtZXRob2QgInJlbW92ZURlY2xhcmF0aW9uKChhZGRyZXNzLHVpbnQ2NCkpdm9pZCIKCXB1c2hieXRlcyAweGY1NWFjNDE5IC8vIG1ldGhvZCAicmVtb3ZlUmVxdWVzdCgoYWRkcmVzcyx1aW50NjQpKXZvaWQiCglwdXNoYnl0ZXMgMHgyMzYwODFmMCAvLyBtZXRob2QgImlzUmVxdWVzdGVkKChhZGRyZXNzLHVpbnQ2NCkpYm9vbCIKCXB1c2hieXRlcyAweGY0YWI2MTYzIC8vIG1ldGhvZCAiaXNEZWNsYXJlZCgoYWRkcmVzcyx1aW50NjQpKWJvb2wiCgl0eG5hIEFwcGxpY2F0aW9uQXJncyAwCgltYXRjaCAqYWJpX3JvdXRlX2RlY2xhcmUgKmFiaV9yb3V0ZV9yZXF1ZXN0ICphYmlfcm91dGVfcmVtb3ZlRGVjbGFyYXRpb24gKmFiaV9yb3V0ZV9yZW1vdmVSZXF1ZXN0ICphYmlfcm91dGVfaXNSZXF1ZXN0ZWQgKmFiaV9yb3V0ZV9pc0RlY2xhcmVkCgoJLy8gdGhpcyBjb250cmFjdCBkb2VzIG5vdCBpbXBsZW1lbnQgdGhlIGdpdmVuIEFCSSBtZXRob2QgZm9yIGNhbGwgTm9PcAoJZXJy","clear":"I3ByYWdtYSB2ZXJzaW9uIDEw"},"byteCode":{"approval":"CiADASgAJgUBcgFhBBUffHUBAAAxGBSBBgsxGQiNDAEJAAAAAAAAAAAAAAD7AAAAAAAAAAAAAAA2GgFJFSMSRIgAAiJDigEAi/+9TEhBAAGJKYv/UL1MSEEAA0IACTEAi/9XACASRIv/JwS/iTYaAUkVIxJEiAACIkOKAQAoi/9QvUxIQQABiSmL/1C9TEhBAAAoi/9QJwS/iTYaAUkVIxJEiAACIkOKAQApi/9QvUxIQQADQgAJMQCL/1cAIBJEi/+8iTYaAUkVIxJEiAACIkOKAQApi/9QvUxIQQADQgAJMQCL/1cAIBJEKIv/ULyJKjYaAUkVIxJEiAAJKyRPAlRQsCJDigEBKIv/UL1MSIkqNhoBSRUjEkSIAAkrJE8CVFCwIkOKAQEoi/9QvUxIiSJDgAS4RHs2NhoAjgH/8QCABH2uh+uABAld26OABHoghaOABPVaxBmABCNggfCABPSrYWM2GgCOBv7D/vj/Jf9P/3v/mwA=","clear":"Cg=="},"compilerInfo":{"compiler":"algod","compilerVersion":{"major":4,"minor":0,"patch":2,"commitHash":"6b940281"}}} as unknown as Arc56Contract
+export const APP_SPEC: Arc56Contract = {"name":"DeclarationRegistry","desc":"","methods":[{"name":"declare","desc":"Declare the given ARC11550 asset for the given address. If an approval app has been defined for the address, that app is called to ensure the\ndeclaration is allowed. If an approval app has not be defined, the transaction sender must match the declaration address","args":[{"name":"addrApp","type":"(address,uint64,uint64)","struct":"AddressAsset"}],"returns":{"type":"void"},"actions":{"create":[],"call":["NoOp"]}},{"name":"request","desc":"Declare the given ARC11550 asset for the given address. If an approval app has been added for the user, that app is called to ensure the\ndeclaration is allowed","args":[{"name":"addrApp","type":"(address,uint64,uint64)","struct":"AddressAsset"}],"returns":{"type":"void"},"actions":{"create":[],"call":["NoOp"]}},{"name":"removeDeclaration","args":[{"name":"addrApp","type":"(address,uint64,uint64)","struct":"AddressAsset"}],"returns":{"type":"void"},"actions":{"create":[],"call":["NoOp"]}},{"name":"removeRequest","args":[{"name":"addrApp","type":"(address,uint64,uint64)","struct":"AddressAsset"}],"returns":{"type":"void"},"actions":{"create":[],"call":["NoOp"]}},{"name":"isRequested","args":[{"name":"addrApp","type":"(address,uint64,uint64)","struct":"AddressAsset"}],"returns":{"type":"bool"},"actions":{"create":[],"call":["NoOp"]}},{"name":"isDeclared","args":[{"name":"addrApp","type":"(address,uint64,uint64)","struct":"AddressAsset"}],"returns":{"type":"bool"},"actions":{"create":[],"call":["NoOp"]}},{"name":"createApplication","args":[],"returns":{"type":"void"},"actions":{"create":["NoOp"],"call":[]}}],"arcs":[4,56],"structs":{"AddressAsset":[{"name":"addr","type":"address"},{"name":"app","type":"uint64"},{"name":"id","type":"uint64"}]},"state":{"schema":{"global":{"bytes":0,"ints":0},"local":{"bytes":0,"ints":0}},"keys":{"global":{},"local":{},"box":{}},"maps":{"global":{},"local":{},"box":{"declarations":{"keyType":"AddressAsset","valueType":"byte[0]"},"requests":{"keyType":"AddressAsset","valueType":"byte[0]","prefix":"cg=="},"approvalApps":{"keyType":"AddressAsset","valueType":"uint64","prefix":"YQ=="}}}},"bareActions":{"create":[],"call":[]},"sourceInfo":{"approval":{"sourceInfo":[{"teal":1,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[0]},{"teal":2,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[1,2,3,4,5]},{"teal":3,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[6,7,8,9,10,11,12,13,14,15,16,17,18,19]},{"teal":15,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[20,21]},{"teal":16,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[22]},{"teal":17,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[23,24]},{"teal":18,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[25]},{"teal":19,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[26,27]},{"teal":20,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[28]},{"teal":21,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54]},{"teal":25,"source":"contracts/DeclarationRegistry.algo.ts:11","errorMessage":"The requested action is not implemented in this contract. Are you using the correct OnComplete? Did you set your app ID?","pc":[55]},{"teal":30,"source":"contracts/DeclarationRegistry.algo.ts:25","pc":[56,57,58]},{"teal":31,"source":"contracts/DeclarationRegistry.algo.ts:25","pc":[59]},{"teal":32,"source":"contracts/DeclarationRegistry.algo.ts:25","pc":[60]},{"teal":33,"source":"contracts/DeclarationRegistry.algo.ts:25","pc":[61]},{"teal":34,"source":"contracts/DeclarationRegistry.algo.ts:25","pc":[62]},{"teal":37,"source":"contracts/DeclarationRegistry.algo.ts:25","errorMessage":"argument 0 (addrApp) for declare must be a (address,uint64,uint64)","pc":[63]},{"teal":40,"source":"contracts/DeclarationRegistry.algo.ts:25","pc":[64,65,66]},{"teal":41,"source":"contracts/DeclarationRegistry.algo.ts:25","pc":[67]},{"teal":42,"source":"contracts/DeclarationRegistry.algo.ts:25","pc":[68]},{"teal":49,"source":"contracts/DeclarationRegistry.algo.ts:25","pc":[69,70,71]},{"teal":54,"source":"contracts/DeclarationRegistry.algo.ts:26","pc":[72,73]},{"teal":55,"source":"contracts/DeclarationRegistry.algo.ts:26","pc":[74]},{"teal":56,"source":"contracts/DeclarationRegistry.algo.ts:26","pc":[75]},{"teal":57,"source":"contracts/DeclarationRegistry.algo.ts:26","pc":[76]},{"teal":58,"source":"contracts/DeclarationRegistry.algo.ts:26","pc":[77,78,79]},{"teal":63,"source":"contracts/DeclarationRegistry.algo.ts:27","pc":[80]},{"teal":69,"source":"contracts/DeclarationRegistry.algo.ts:30","pc":[81]},{"teal":70,"source":"contracts/DeclarationRegistry.algo.ts:30","pc":[82,83]},{"teal":71,"source":"contracts/DeclarationRegistry.algo.ts:30","pc":[84]},{"teal":72,"source":"contracts/DeclarationRegistry.algo.ts:30","pc":[85]},{"teal":73,"source":"contracts/DeclarationRegistry.algo.ts:30","pc":[86]},{"teal":74,"source":"contracts/DeclarationRegistry.algo.ts:30","pc":[87]},{"teal":75,"source":"contracts/DeclarationRegistry.algo.ts:30","pc":[88,89,90]},{"teal":78,"source":"contracts/DeclarationRegistry.algo.ts:30","pc":[91,92,93]},{"teal":83,"source":"contracts/DeclarationRegistry.algo.ts:33","pc":[94,95]},{"teal":84,"source":"contracts/DeclarationRegistry.algo.ts:33","pc":[96,97]},{"teal":85,"source":"contracts/DeclarationRegistry.algo.ts:33","pc":[98,99,100]},{"teal":86,"source":"contracts/DeclarationRegistry.algo.ts:33","pc":[101]},{"teal":87,"source":"contracts/DeclarationRegistry.algo.ts:33","pc":[102]},{"teal":92,"source":"contracts/DeclarationRegistry.algo.ts:36","pc":[103,104]},{"teal":93,"source":"contracts/DeclarationRegistry.algo.ts:36","pc":[105,106]},{"teal":94,"source":"contracts/DeclarationRegistry.algo.ts:36","pc":[107]},{"teal":95,"source":"contracts/DeclarationRegistry.algo.ts:25","pc":[108]},{"teal":100,"source":"contracts/DeclarationRegistry.algo.ts:41","pc":[109,110,111]},{"teal":101,"source":"contracts/DeclarationRegistry.algo.ts:41","pc":[112]},{"teal":102,"source":"contracts/DeclarationRegistry.algo.ts:41","pc":[113]},{"teal":103,"source":"contracts/DeclarationRegistry.algo.ts:41","pc":[114]},{"teal":104,"source":"contracts/DeclarationRegistry.algo.ts:41","pc":[115]},{"teal":107,"source":"contracts/DeclarationRegistry.algo.ts:41","errorMessage":"argument 0 (addrApp) for request must be a (address,uint64,uint64)","pc":[116]},{"teal":110,"source":"contracts/DeclarationRegistry.algo.ts:41","pc":[117,118,119]},{"teal":111,"source":"contracts/DeclarationRegistry.algo.ts:41","pc":[120]},{"teal":112,"source":"contracts/DeclarationRegistry.algo.ts:41","pc":[121]},{"teal":119,"source":"contracts/DeclarationRegistry.algo.ts:41","pc":[122,123,124]},{"teal":124,"source":"contracts/DeclarationRegistry.algo.ts:42","pc":[125]},{"teal":125,"source":"contracts/DeclarationRegistry.algo.ts:42","pc":[126,127]},{"teal":126,"source":"contracts/DeclarationRegistry.algo.ts:42","pc":[128]},{"teal":127,"source":"contracts/DeclarationRegistry.algo.ts:42","pc":[129]},{"teal":128,"source":"contracts/DeclarationRegistry.algo.ts:42","pc":[130]},{"teal":129,"source":"contracts/DeclarationRegistry.algo.ts:42","pc":[131]},{"teal":130,"source":"contracts/DeclarationRegistry.algo.ts:42","pc":[132,133,134]},{"teal":135,"source":"contracts/DeclarationRegistry.algo.ts:43","pc":[135]},{"teal":141,"source":"contracts/DeclarationRegistry.algo.ts:46","pc":[136]},{"teal":142,"source":"contracts/DeclarationRegistry.algo.ts:46","pc":[137,138]},{"teal":143,"source":"contracts/DeclarationRegistry.algo.ts:46","pc":[139]},{"teal":144,"source":"contracts/DeclarationRegistry.algo.ts:46","pc":[140]},{"teal":145,"source":"contracts/DeclarationRegistry.algo.ts:46","pc":[141]},{"teal":146,"source":"contracts/DeclarationRegistry.algo.ts:46","pc":[142]},{"teal":147,"source":"contracts/DeclarationRegistry.algo.ts:46","pc":[143,144,145]},{"teal":153,"source":"contracts/DeclarationRegistry.algo.ts:50","pc":[146]},{"teal":154,"source":"contracts/DeclarationRegistry.algo.ts:50","pc":[147,148]},{"teal":155,"source":"contracts/DeclarationRegistry.algo.ts:50","pc":[149]},{"teal":156,"source":"contracts/DeclarationRegistry.algo.ts:50","pc":[150,151]},{"teal":157,"source":"contracts/DeclarationRegistry.algo.ts:50","pc":[152]},{"teal":158,"source":"contracts/DeclarationRegistry.algo.ts:41","pc":[153]},{"teal":163,"source":"contracts/DeclarationRegistry.algo.ts:53","pc":[154,155,156]},{"teal":164,"source":"contracts/DeclarationRegistry.algo.ts:53","pc":[157]},{"teal":165,"source":"contracts/DeclarationRegistry.algo.ts:53","pc":[158]},{"teal":166,"source":"contracts/DeclarationRegistry.algo.ts:53","pc":[159]},{"teal":167,"source":"contracts/DeclarationRegistry.algo.ts:53","pc":[160]},{"teal":170,"source":"contracts/DeclarationRegistry.algo.ts:53","errorMessage":"argument 0 (addrApp) for removeDeclaration must be a (address,uint64,uint64)","pc":[161]},{"teal":173,"source":"contracts/DeclarationRegistry.algo.ts:53","pc":[162,163,164]},{"teal":174,"source":"contracts/DeclarationRegistry.algo.ts:53","pc":[165]},{"teal":175,"source":"contracts/DeclarationRegistry.algo.ts:53","pc":[166]},{"teal":179,"source":"contracts/DeclarationRegistry.algo.ts:53","pc":[167,168,169]},{"teal":184,"source":"contracts/DeclarationRegistry.algo.ts:54","pc":[170]},{"teal":185,"source":"contracts/DeclarationRegistry.algo.ts:54","pc":[171,172]},{"teal":186,"source":"contracts/DeclarationRegistry.algo.ts:54","pc":[173]},{"teal":187,"source":"contracts/DeclarationRegistry.algo.ts:54","pc":[174]},{"teal":188,"source":"contracts/DeclarationRegistry.algo.ts:54","pc":[175]},{"teal":189,"source":"contracts/DeclarationRegistry.algo.ts:54","pc":[176]},{"teal":190,"source":"contracts/DeclarationRegistry.algo.ts:54","pc":[177,178,179]},{"teal":193,"source":"contracts/DeclarationRegistry.algo.ts:54","pc":[180,181,182]},{"teal":198,"source":"contracts/DeclarationRegistry.algo.ts:57","pc":[183,184]},{"teal":199,"source":"contracts/DeclarationRegistry.algo.ts:57","pc":[185,186]},{"teal":200,"source":"contracts/DeclarationRegistry.algo.ts:57","pc":[187,188,189]},{"teal":201,"source":"contracts/DeclarationRegistry.algo.ts:57","pc":[190]},{"teal":202,"source":"contracts/DeclarationRegistry.algo.ts:57","pc":[191]},{"teal":207,"source":"contracts/DeclarationRegistry.algo.ts:60","pc":[192,193]},{"teal":208,"source":"contracts/DeclarationRegistry.algo.ts:60","pc":[194]},{"teal":209,"source":"contracts/DeclarationRegistry.algo.ts:53","pc":[195]},{"teal":214,"source":"contracts/DeclarationRegistry.algo.ts:63","pc":[196,197,198]},{"teal":215,"source":"contracts/DeclarationRegistry.algo.ts:63","pc":[199]},{"teal":216,"source":"contracts/DeclarationRegistry.algo.ts:63","pc":[200]},{"teal":217,"source":"contracts/DeclarationRegistry.algo.ts:63","pc":[201]},{"teal":218,"source":"contracts/DeclarationRegistry.algo.ts:63","pc":[202]},{"teal":221,"source":"contracts/DeclarationRegistry.algo.ts:63","errorMessage":"argument 0 (addrApp) for removeRequest must be a (address,uint64,uint64)","pc":[203]},{"teal":224,"source":"contracts/DeclarationRegistry.algo.ts:63","pc":[204,205,206]},{"teal":225,"source":"contracts/DeclarationRegistry.algo.ts:63","pc":[207]},{"teal":226,"source":"contracts/DeclarationRegistry.algo.ts:63","pc":[208]},{"teal":230,"source":"contracts/DeclarationRegistry.algo.ts:63","pc":[209,210,211]},{"teal":235,"source":"contracts/DeclarationRegistry.algo.ts:64","pc":[212]},{"teal":236,"source":"contracts/DeclarationRegistry.algo.ts:64","pc":[213,214]},{"teal":237,"source":"contracts/DeclarationRegistry.algo.ts:64","pc":[215]},{"teal":238,"source":"contracts/DeclarationRegistry.algo.ts:64","pc":[216]},{"teal":239,"source":"contracts/DeclarationRegistry.algo.ts:64","pc":[217]},{"teal":240,"source":"contracts/DeclarationRegistry.algo.ts:64","pc":[218]},{"teal":241,"source":"contracts/DeclarationRegistry.algo.ts:64","pc":[219,220,221]},{"teal":244,"source":"contracts/DeclarationRegistry.algo.ts:64","pc":[222,223,224]},{"teal":249,"source":"contracts/DeclarationRegistry.algo.ts:67","pc":[225,226]},{"teal":250,"source":"contracts/DeclarationRegistry.algo.ts:67","pc":[227,228]},{"teal":251,"source":"contracts/DeclarationRegistry.algo.ts:67","pc":[229,230,231]},{"teal":252,"source":"contracts/DeclarationRegistry.algo.ts:67","pc":[232]},{"teal":253,"source":"contracts/DeclarationRegistry.algo.ts:67","pc":[233]},{"teal":258,"source":"contracts/DeclarationRegistry.algo.ts:70","pc":[234]},{"teal":259,"source":"contracts/DeclarationRegistry.algo.ts:70","pc":[235,236]},{"teal":260,"source":"contracts/DeclarationRegistry.algo.ts:70","pc":[237]},{"teal":261,"source":"contracts/DeclarationRegistry.algo.ts:70","pc":[238]},{"teal":262,"source":"contracts/DeclarationRegistry.algo.ts:63","pc":[239]},{"teal":267,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[240]},{"teal":270,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[241,242,243]},{"teal":271,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[244]},{"teal":272,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[245]},{"teal":273,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[246]},{"teal":274,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[247]},{"teal":277,"source":"contracts/DeclarationRegistry.algo.ts:73","errorMessage":"argument 0 (addrApp) for isRequested must be a (address,uint64,uint64)","pc":[248]},{"teal":280,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[249,250,251]},{"teal":281,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[252]},{"teal":282,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[253]},{"teal":283,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[254,255]},{"teal":284,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[256]},{"teal":285,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[257]},{"teal":286,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[258]},{"teal":287,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[259]},{"teal":288,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[260]},{"teal":292,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[261,262,263]},{"teal":296,"source":"contracts/DeclarationRegistry.algo.ts:74","pc":[264]},{"teal":297,"source":"contracts/DeclarationRegistry.algo.ts:74","pc":[265,266]},{"teal":298,"source":"contracts/DeclarationRegistry.algo.ts:74","pc":[267]},{"teal":299,"source":"contracts/DeclarationRegistry.algo.ts:74","pc":[268]},{"teal":300,"source":"contracts/DeclarationRegistry.algo.ts:74","pc":[269]},{"teal":301,"source":"contracts/DeclarationRegistry.algo.ts:74","pc":[270]},{"teal":302,"source":"contracts/DeclarationRegistry.algo.ts:73","pc":[271]},{"teal":307,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[272]},{"teal":310,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[273,274,275]},{"teal":311,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[276]},{"teal":312,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[277]},{"teal":313,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[278]},{"teal":314,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[279]},{"teal":317,"source":"contracts/DeclarationRegistry.algo.ts:77","errorMessage":"argument 0 (addrApp) for isDeclared must be a (address,uint64,uint64)","pc":[280]},{"teal":320,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[281,282,283]},{"teal":321,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[284]},{"teal":322,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[285]},{"teal":323,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[286,287]},{"teal":324,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[288]},{"teal":325,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[289]},{"teal":326,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[290]},{"teal":327,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[291]},{"teal":328,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[292]},{"teal":332,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[293,294,295]},{"teal":336,"source":"contracts/DeclarationRegistry.algo.ts:78","pc":[296]},{"teal":337,"source":"contracts/DeclarationRegistry.algo.ts:78","pc":[297,298]},{"teal":338,"source":"contracts/DeclarationRegistry.algo.ts:78","pc":[299]},{"teal":339,"source":"contracts/DeclarationRegistry.algo.ts:78","pc":[300]},{"teal":340,"source":"contracts/DeclarationRegistry.algo.ts:78","pc":[301]},{"teal":341,"source":"contracts/DeclarationRegistry.algo.ts:78","pc":[302]},{"teal":342,"source":"contracts/DeclarationRegistry.algo.ts:77","pc":[303]},{"teal":345,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[304]},{"teal":346,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[305]},{"teal":349,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[306,307,308,309,310,311]},{"teal":350,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[312,313,314]},{"teal":351,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[315,316,317,318]},{"teal":354,"source":"contracts/DeclarationRegistry.algo.ts:11","errorMessage":"this contract does not implement the given ABI method for create NoOp","pc":[319]},{"teal":357,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[320,321,322,323,324,325]},{"teal":358,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[326,327,328,329,330,331]},{"teal":359,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[332,333,334,335,336,337]},{"teal":360,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[338,339,340,341,342,343]},{"teal":361,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[344,345,346,347,348,349]},{"teal":362,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[350,351,352,353,354,355]},{"teal":363,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[356,357,358]},{"teal":364,"source":"contracts/DeclarationRegistry.algo.ts:11","pc":[359,360,361,362,363,364,365,366,367,368,369,370,371,372]},{"teal":367,"source":"contracts/DeclarationRegistry.algo.ts:11","errorMessage":"this contract does not implement the given ABI method for call NoOp","pc":[373]}],"pcOffsetMethod":"none"},"clear":{"sourceInfo":[],"pcOffsetMethod":"none"}},"source":{"approval":"I3ByYWdtYSB2ZXJzaW9uIDEwCmludGNibG9jayAxIDQ4IDAKYnl0ZWNibG9jayAweDcyIDB4NjEgMHgxNTFmN2M3NSAweDAwIDB4CgovLyBUaGlzIFRFQUwgd2FzIGdlbmVyYXRlZCBieSBURUFMU2NyaXB0IHYwLjEwNi4zCi8vIGh0dHBzOi8vZ2l0aHViLmNvbS9hbGdvcmFuZGZvdW5kYXRpb24vVEVBTFNjcmlwdAoKLy8gVGhpcyBjb250cmFjdCBpcyBjb21wbGlhbnQgd2l0aCBhbmQvb3IgaW1wbGVtZW50cyB0aGUgZm9sbG93aW5nIEFSQ3M6IFsgQVJDNCBdCgovLyBUaGUgZm9sbG93aW5nIHRlbiBsaW5lcyBvZiBURUFMIGhhbmRsZSBpbml0aWFsIHByb2dyYW0gZmxvdwovLyBUaGlzIHBhdHRlcm4gaXMgdXNlZCB0byBtYWtlIGl0IGVhc3kgZm9yIGFueW9uZSB0byBwYXJzZSB0aGUgc3RhcnQgb2YgdGhlIHByb2dyYW0gYW5kIGRldGVybWluZSBpZiBhIHNwZWNpZmljIGFjdGlvbiBpcyBhbGxvd2VkCi8vIEhlcmUsIGFjdGlvbiByZWZlcnMgdG8gdGhlIE9uQ29tcGxldGUgaW4gY29tYmluYXRpb24gd2l0aCB3aGV0aGVyIHRoZSBhcHAgaXMgYmVpbmcgY3JlYXRlZCBvciBjYWxsZWQKLy8gRXZlcnkgcG9zc2libGUgYWN0aW9uIGZvciB0aGlzIGNvbnRyYWN0IGlzIHJlcHJlc2VudGVkIGluIHRoZSBzd2l0Y2ggc3RhdGVtZW50Ci8vIElmIHRoZSBhY3Rpb24gaXMgbm90IGltcGxlbWVudGVkIGluIHRoZSBjb250cmFjdCwgaXRzIHJlc3BlY3RpdmUgYnJhbmNoIHdpbGwgYmUgIipOT1RfSU1QTEVNRU5URUQiIHdoaWNoIGp1c3QgY29udGFpbnMgImVyciIKdHhuIEFwcGxpY2F0aW9uSUQKIQpwdXNoaW50IDYKKgp0eG4gT25Db21wbGV0aW9uCisKc3dpdGNoICpjYWxsX05vT3AgKk5PVF9JTVBMRU1FTlRFRCAqTk9UX0lNUExFTUVOVEVEICpOT1RfSU1QTEVNRU5URUQgKk5PVF9JTVBMRU1FTlRFRCAqTk9UX0lNUExFTUVOVEVEICpjcmVhdGVfTm9PcCAqTk9UX0lNUExFTUVOVEVEICpOT1RfSU1QTEVNRU5URUQgKk5PVF9JTVBMRU1FTlRFRCAqTk9UX0lNUExFTUVOVEVEICpOT1RfSU1QTEVNRU5URUQKCipOT1RfSU1QTEVNRU5URUQ6CgkvLyBUaGUgcmVxdWVzdGVkIGFjdGlvbiBpcyBub3QgaW1wbGVtZW50ZWQgaW4gdGhpcyBjb250cmFjdC4gQXJlIHlvdSB1c2luZyB0aGUgY29ycmVjdCBPbkNvbXBsZXRlPyBEaWQgeW91IHNldCB5b3VyIGFwcCBJRD8KCWVycgoKLy8gZGVjbGFyZSgoYWRkcmVzcyx1aW50NjQsdWludDY0KSl2b2lkCiphYmlfcm91dGVfZGVjbGFyZToKCS8vIGFkZHJBcHA6IChhZGRyZXNzLHVpbnQ2NCx1aW50NjQpCgl0eG5hIEFwcGxpY2F0aW9uQXJncyAxCglkdXAKCWxlbgoJaW50YyAxIC8vIDQ4Cgk9PQoKCS8vIGFyZ3VtZW50IDAgKGFkZHJBcHApIGZvciBkZWNsYXJlIG11c3QgYmUgYSAoYWRkcmVzcyx1aW50NjQsdWludDY0KQoJYXNzZXJ0CgoJLy8gZXhlY3V0ZSBkZWNsYXJlKChhZGRyZXNzLHVpbnQ2NCx1aW50NjQpKXZvaWQKCWNhbGxzdWIgZGVjbGFyZQoJaW50YyAwIC8vIDEKCXJldHVybgoKLy8gZGVjbGFyZShhZGRyQXBwOiBBZGRyZXNzQXNzZXQpOiB2b2lkCi8vCi8vIERlY2xhcmUgdGhlIGdpdmVuIEFSQzExNTUwIGFzc2V0IGZvciB0aGUgZ2l2ZW4gYWRkcmVzcy4gSWYgYW4gYXBwcm92YWwgYXBwIGhhcyBiZWVuIGRlZmluZWQgZm9yIHRoZSBhZGRyZXNzLCB0aGF0IGFwcCBpcyBjYWxsZWQgdG8gZW5zdXJlIHRoZQovLyBkZWNsYXJhdGlvbiBpcyBhbGxvd2VkLiBJZiBhbiBhcHByb3ZhbCBhcHAgaGFzIG5vdCBiZSBkZWZpbmVkLCB0aGUgdHJhbnNhY3Rpb24gc2VuZGVyIG11c3QgbWF0Y2ggdGhlIGRlY2xhcmF0aW9uIGFkZHJlc3MKZGVjbGFyZToKCXByb3RvIDEgMAoKCS8vICppZjBfY29uZGl0aW9uCgkvLyBjb250cmFjdHMvRGVjbGFyYXRpb25SZWdpc3RyeS5hbGdvLnRzOjI2CgkvLyB0aGlzLmRlY2xhcmF0aW9ucyhhZGRyQXBwKS5leGlzdHMKCWZyYW1lX2RpZyAtMSAvLyBhZGRyQXBwOiBBZGRyZXNzQXNzZXQKCWJveF9sZW4KCXN3YXAKCXBvcAoJYnogKmlmMF9lbmQKCgkvLyAqaWYwX2NvbnNlcXVlbnQKCS8vIGNvbnRyYWN0cy9EZWNsYXJhdGlvblJlZ2lzdHJ5LmFsZ28udHM6MjcKCS8vIHJldHVybjsKCXJldHN1YgoKKmlmMF9lbmQ6CgkvLyAqaWYxX2NvbmRpdGlvbgoJLy8gY29udHJhY3RzL0RlY2xhcmF0aW9uUmVnaXN0cnkuYWxnby50czozMAoJLy8gdGhpcy5hcHByb3ZhbEFwcHMoYWRkckFwcCkuZXhpc3RzCglieXRlYyAxIC8vICAiYSIKCWZyYW1lX2RpZyAtMSAvLyBhZGRyQXBwOiBBZGRyZXNzQXNzZXQKCWNvbmNhdAoJYm94X2xlbgoJc3dhcAoJcG9wCglieiAqaWYxX2Vsc2UKCgkvLyAqaWYxX2NvbnNlcXVlbnQKCWIgKmlmMV9lbmQKCippZjFfZWxzZToKCS8vIGNvbnRyYWN0cy9EZWNsYXJhdGlvblJlZ2lzdHJ5LmFsZ28udHM6MzMKCS8vIGFzc2VydCh0aGlzLnR4bi5zZW5kZXIgPT0gYWRkckFwcC5hZGRyKQoJdHhuIFNlbmRlcgoJZnJhbWVfZGlnIC0xIC8vIGFkZHJBcHA6IEFkZHJlc3NBc3NldAoJZXh0cmFjdCAwIDMyCgk9PQoJYXNzZXJ0CgoqaWYxX2VuZDoKCS8vIGNvbnRyYWN0cy9EZWNsYXJhdGlvblJlZ2lzdHJ5LmFsZ28udHM6MzYKCS8vIHRoaXMuZGVjbGFyYXRpb25zKGFkZHJBcHApLnZhbHVlID0gJycgYXMgYnl0ZXM8MD4KCWZyYW1lX2RpZyAtMSAvLyBhZGRyQXBwOiBBZGRyZXNzQXNzZXQKCWJ5dGVjIDQgLy8gICIiCglib3hfcHV0CglyZXRzdWIKCi8vIHJlcXVlc3QoKGFkZHJlc3MsdWludDY0LHVpbnQ2NCkpdm9pZAoqYWJpX3JvdXRlX3JlcXVlc3Q6CgkvLyBhZGRyQXBwOiAoYWRkcmVzcyx1aW50NjQsdWludDY0KQoJdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMQoJZHVwCglsZW4KCWludGMgMSAvLyA0OAoJPT0KCgkvLyBhcmd1bWVudCAwIChhZGRyQXBwKSBmb3IgcmVxdWVzdCBtdXN0IGJlIGEgKGFkZHJlc3MsdWludDY0LHVpbnQ2NCkKCWFzc2VydAoKCS8vIGV4ZWN1dGUgcmVxdWVzdCgoYWRkcmVzcyx1aW50NjQsdWludDY0KSl2b2lkCgljYWxsc3ViIHJlcXVlc3QKCWludGMgMCAvLyAxCglyZXR1cm4KCi8vIHJlcXVlc3QoYWRkckFwcDogQWRkcmVzc0Fzc2V0KTogdm9pZAovLwovLyBEZWNsYXJlIHRoZSBnaXZlbiBBUkMxMTU1MCBhc3NldCBmb3IgdGhlIGdpdmVuIGFkZHJlc3MuIElmIGFuIGFwcHJvdmFsIGFwcCBoYXMgYmVlbiBhZGRlZCBmb3IgdGhlIHVzZXIsIHRoYXQgYXBwIGlzIGNhbGxlZCB0byBlbnN1cmUgdGhlCi8vIGRlY2xhcmF0aW9uIGlzIGFsbG93ZWQKcmVxdWVzdDoKCXByb3RvIDEgMAoKCS8vICppZjJfY29uZGl0aW9uCgkvLyBjb250cmFjdHMvRGVjbGFyYXRpb25SZWdpc3RyeS5hbGdvLnRzOjQyCgkvLyB0aGlzLnJlcXVlc3RzKGFkZHJBcHApLmV4aXN0cwoJYnl0ZWMgMCAvLyAgInIiCglmcmFtZV9kaWcgLTEgLy8gYWRkckFwcDogQWRkcmVzc0Fzc2V0Cgljb25jYXQKCWJveF9sZW4KCXN3YXAKCXBvcAoJYnogKmlmMl9lbmQKCgkvLyAqaWYyX2NvbnNlcXVlbnQKCS8vIGNvbnRyYWN0cy9EZWNsYXJhdGlvblJlZ2lzdHJ5LmFsZ28udHM6NDMKCS8vIHJldHVybjsKCXJldHN1YgoKKmlmMl9lbmQ6CgkvLyAqaWYzX2NvbmRpdGlvbgoJLy8gY29udHJhY3RzL0RlY2xhcmF0aW9uUmVnaXN0cnkuYWxnby50czo0NgoJLy8gdGhpcy5hcHByb3ZhbEFwcHMoYWRkckFwcCkuZXhpc3RzCglieXRlYyAxIC8vICAiYSIKCWZyYW1lX2RpZyAtMSAvLyBhZGRyQXBwOiBBZGRyZXNzQXNzZXQKCWNvbmNhdAoJYm94X2xlbgoJc3dhcAoJcG9wCglieiAqaWYzX2VuZAoKLy8gKmlmM19jb25zZXF1ZW50CippZjNfZW5kOgoJLy8gY29udHJhY3RzL0RlY2xhcmF0aW9uUmVnaXN0cnkuYWxnby50czo1MAoJLy8gdGhpcy5yZXF1ZXN0cyhhZGRyQXBwKS52YWx1ZSA9ICcnIGFzIGJ5dGVzPDA+CglieXRlYyAwIC8vICAiciIKCWZyYW1lX2RpZyAtMSAvLyBhZGRyQXBwOiBBZGRyZXNzQXNzZXQKCWNvbmNhdAoJYnl0ZWMgNCAvLyAgIiIKCWJveF9wdXQKCXJldHN1YgoKLy8gcmVtb3ZlRGVjbGFyYXRpb24oKGFkZHJlc3MsdWludDY0LHVpbnQ2NCkpdm9pZAoqYWJpX3JvdXRlX3JlbW92ZURlY2xhcmF0aW9uOgoJLy8gYWRkckFwcDogKGFkZHJlc3MsdWludDY0LHVpbnQ2NCkKCXR4bmEgQXBwbGljYXRpb25BcmdzIDEKCWR1cAoJbGVuCglpbnRjIDEgLy8gNDgKCT09CgoJLy8gYXJndW1lbnQgMCAoYWRkckFwcCkgZm9yIHJlbW92ZURlY2xhcmF0aW9uIG11c3QgYmUgYSAoYWRkcmVzcyx1aW50NjQsdWludDY0KQoJYXNzZXJ0CgoJLy8gZXhlY3V0ZSByZW1vdmVEZWNsYXJhdGlvbigoYWRkcmVzcyx1aW50NjQsdWludDY0KSl2b2lkCgljYWxsc3ViIHJlbW92ZURlY2xhcmF0aW9uCglpbnRjIDAgLy8gMQoJcmV0dXJuCgovLyByZW1vdmVEZWNsYXJhdGlvbihhZGRyQXBwOiBBZGRyZXNzQXNzZXQpOiB2b2lkCnJlbW92ZURlY2xhcmF0aW9uOgoJcHJvdG8gMSAwCgoJLy8gKmlmNF9jb25kaXRpb24KCS8vIGNvbnRyYWN0cy9EZWNsYXJhdGlvblJlZ2lzdHJ5LmFsZ28udHM6NTQKCS8vIHRoaXMuYXBwcm92YWxBcHBzKGFkZHJBcHApLmV4aXN0cwoJYnl0ZWMgMSAvLyAgImEiCglmcmFtZV9kaWcgLTEgLy8gYWRkckFwcDogQWRkcmVzc0Fzc2V0Cgljb25jYXQKCWJveF9sZW4KCXN3YXAKCXBvcAoJYnogKmlmNF9lbHNlCgoJLy8gKmlmNF9jb25zZXF1ZW50CgliICppZjRfZW5kCgoqaWY0X2Vsc2U6CgkvLyBjb250cmFjdHMvRGVjbGFyYXRpb25SZWdpc3RyeS5hbGdvLnRzOjU3CgkvLyBhc3NlcnQodGhpcy50eG4uc2VuZGVyID09IGFkZHJBcHAuYWRkcikKCXR4biBTZW5kZXIKCWZyYW1lX2RpZyAtMSAvLyBhZGRyQXBwOiBBZGRyZXNzQXNzZXQKCWV4dHJhY3QgMCAzMgoJPT0KCWFzc2VydAoKKmlmNF9lbmQ6CgkvLyBjb250cmFjdHMvRGVjbGFyYXRpb25SZWdpc3RyeS5hbGdvLnRzOjYwCgkvLyB0aGlzLmRlY2xhcmF0aW9ucyhhZGRyQXBwKS5kZWxldGUoKQoJZnJhbWVfZGlnIC0xIC8vIGFkZHJBcHA6IEFkZHJlc3NBc3NldAoJYm94X2RlbAoJcmV0c3ViCgovLyByZW1vdmVSZXF1ZXN0KChhZGRyZXNzLHVpbnQ2NCx1aW50NjQpKXZvaWQKKmFiaV9yb3V0ZV9yZW1vdmVSZXF1ZXN0OgoJLy8gYWRkckFwcDogKGFkZHJlc3MsdWludDY0LHVpbnQ2NCkKCXR4bmEgQXBwbGljYXRpb25BcmdzIDEKCWR1cAoJbGVuCglpbnRjIDEgLy8gNDgKCT09CgoJLy8gYXJndW1lbnQgMCAoYWRkckFwcCkgZm9yIHJlbW92ZVJlcXVlc3QgbXVzdCBiZSBhIChhZGRyZXNzLHVpbnQ2NCx1aW50NjQpCglhc3NlcnQKCgkvLyBleGVjdXRlIHJlbW92ZVJlcXVlc3QoKGFkZHJlc3MsdWludDY0LHVpbnQ2NCkpdm9pZAoJY2FsbHN1YiByZW1vdmVSZXF1ZXN0CglpbnRjIDAgLy8gMQoJcmV0dXJuCgovLyByZW1vdmVSZXF1ZXN0KGFkZHJBcHA6IEFkZHJlc3NBc3NldCk6IHZvaWQKcmVtb3ZlUmVxdWVzdDoKCXByb3RvIDEgMAoKCS8vICppZjVfY29uZGl0aW9uCgkvLyBjb250cmFjdHMvRGVjbGFyYXRpb25SZWdpc3RyeS5hbGdvLnRzOjY0CgkvLyB0aGlzLmFwcHJvdmFsQXBwcyhhZGRyQXBwKS5leGlzdHMKCWJ5dGVjIDEgLy8gICJhIgoJZnJhbWVfZGlnIC0xIC8vIGFkZHJBcHA6IEFkZHJlc3NBc3NldAoJY29uY2F0Cglib3hfbGVuCglzd2FwCglwb3AKCWJ6ICppZjVfZWxzZQoKCS8vICppZjVfY29uc2VxdWVudAoJYiAqaWY1X2VuZAoKKmlmNV9lbHNlOgoJLy8gY29udHJhY3RzL0RlY2xhcmF0aW9uUmVnaXN0cnkuYWxnby50czo2NwoJLy8gYXNzZXJ0KHRoaXMudHhuLnNlbmRlciA9PSBhZGRyQXBwLmFkZHIpCgl0eG4gU2VuZGVyCglmcmFtZV9kaWcgLTEgLy8gYWRkckFwcDogQWRkcmVzc0Fzc2V0CglleHRyYWN0IDAgMzIKCT09Cglhc3NlcnQKCippZjVfZW5kOgoJLy8gY29udHJhY3RzL0RlY2xhcmF0aW9uUmVnaXN0cnkuYWxnby50czo3MAoJLy8gdGhpcy5yZXF1ZXN0cyhhZGRyQXBwKS5kZWxldGUoKQoJYnl0ZWMgMCAvLyAgInIiCglmcmFtZV9kaWcgLTEgLy8gYWRkckFwcDogQWRkcmVzc0Fzc2V0Cgljb25jYXQKCWJveF9kZWwKCXJldHN1YgoKLy8gaXNSZXF1ZXN0ZWQoKGFkZHJlc3MsdWludDY0LHVpbnQ2NCkpYm9vbAoqYWJpX3JvdXRlX2lzUmVxdWVzdGVkOgoJLy8gVGhlIEFCSSByZXR1cm4gcHJlZml4CglieXRlYyAyIC8vIDB4MTUxZjdjNzUKCgkvLyBhZGRyQXBwOiAoYWRkcmVzcyx1aW50NjQsdWludDY0KQoJdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMQoJZHVwCglsZW4KCWludGMgMSAvLyA0OAoJPT0KCgkvLyBhcmd1bWVudCAwIChhZGRyQXBwKSBmb3IgaXNSZXF1ZXN0ZWQgbXVzdCBiZSBhIChhZGRyZXNzLHVpbnQ2NCx1aW50NjQpCglhc3NlcnQKCgkvLyBleGVjdXRlIGlzUmVxdWVzdGVkKChhZGRyZXNzLHVpbnQ2NCx1aW50NjQpKWJvb2wKCWNhbGxzdWIgaXNSZXF1ZXN0ZWQKCWJ5dGVjIDMgLy8gMHgwMAoJaW50YyAyIC8vIDAKCXVuY292ZXIgMgoJc2V0Yml0Cgljb25jYXQKCWxvZwoJaW50YyAwIC8vIDEKCXJldHVybgoKLy8gaXNSZXF1ZXN0ZWQoYWRkckFwcDogQWRkcmVzc0Fzc2V0KTogYm9vbGVhbgppc1JlcXVlc3RlZDoKCXByb3RvIDEgMQoKCS8vIGNvbnRyYWN0cy9EZWNsYXJhdGlvblJlZ2lzdHJ5LmFsZ28udHM6NzQKCS8vIHJldHVybiB0aGlzLnJlcXVlc3RzKGFkZHJBcHApLmV4aXN0czsKCWJ5dGVjIDAgLy8gICJyIgoJZnJhbWVfZGlnIC0xIC8vIGFkZHJBcHA6IEFkZHJlc3NBc3NldAoJY29uY2F0Cglib3hfbGVuCglzd2FwCglwb3AKCXJldHN1YgoKLy8gaXNEZWNsYXJlZCgoYWRkcmVzcyx1aW50NjQsdWludDY0KSlib29sCiphYmlfcm91dGVfaXNEZWNsYXJlZDoKCS8vIFRoZSBBQkkgcmV0dXJuIHByZWZpeAoJYnl0ZWMgMiAvLyAweDE1MWY3Yzc1CgoJLy8gYWRkckFwcDogKGFkZHJlc3MsdWludDY0LHVpbnQ2NCkKCXR4bmEgQXBwbGljYXRpb25BcmdzIDEKCWR1cAoJbGVuCglpbnRjIDEgLy8gNDgKCT09CgoJLy8gYXJndW1lbnQgMCAoYWRkckFwcCkgZm9yIGlzRGVjbGFyZWQgbXVzdCBiZSBhIChhZGRyZXNzLHVpbnQ2NCx1aW50NjQpCglhc3NlcnQKCgkvLyBleGVjdXRlIGlzRGVjbGFyZWQoKGFkZHJlc3MsdWludDY0LHVpbnQ2NCkpYm9vbAoJY2FsbHN1YiBpc0RlY2xhcmVkCglieXRlYyAzIC8vIDB4MDAKCWludGMgMiAvLyAwCgl1bmNvdmVyIDIKCXNldGJpdAoJY29uY2F0Cglsb2cKCWludGMgMCAvLyAxCglyZXR1cm4KCi8vIGlzRGVjbGFyZWQoYWRkckFwcDogQWRkcmVzc0Fzc2V0KTogYm9vbGVhbgppc0RlY2xhcmVkOgoJcHJvdG8gMSAxCgoJLy8gY29udHJhY3RzL0RlY2xhcmF0aW9uUmVnaXN0cnkuYWxnby50czo3OAoJLy8gcmV0dXJuIHRoaXMucmVxdWVzdHMoYWRkckFwcCkuZXhpc3RzOwoJYnl0ZWMgMCAvLyAgInIiCglmcmFtZV9kaWcgLTEgLy8gYWRkckFwcDogQWRkcmVzc0Fzc2V0Cgljb25jYXQKCWJveF9sZW4KCXN3YXAKCXBvcAoJcmV0c3ViCgoqYWJpX3JvdXRlX2NyZWF0ZUFwcGxpY2F0aW9uOgoJaW50YyAwIC8vIDEKCXJldHVybgoKKmNyZWF0ZV9Ob09wOgoJcHVzaGJ5dGVzIDB4Yjg0NDdiMzYgLy8gbWV0aG9kICJjcmVhdGVBcHBsaWNhdGlvbigpdm9pZCIKCXR4bmEgQXBwbGljYXRpb25BcmdzIDAKCW1hdGNoICphYmlfcm91dGVfY3JlYXRlQXBwbGljYXRpb24KCgkvLyB0aGlzIGNvbnRyYWN0IGRvZXMgbm90IGltcGxlbWVudCB0aGUgZ2l2ZW4gQUJJIG1ldGhvZCBmb3IgY3JlYXRlIE5vT3AKCWVycgoKKmNhbGxfTm9PcDoKCXB1c2hieXRlcyAweDRjMDFiZGMxIC8vIG1ldGhvZCAiZGVjbGFyZSgoYWRkcmVzcyx1aW50NjQsdWludDY0KSl2b2lkIgoJcHVzaGJ5dGVzIDB4Yjk4ZjllMGUgLy8gbWV0aG9kICJyZXF1ZXN0KChhZGRyZXNzLHVpbnQ2NCx1aW50NjQpKXZvaWQiCglwdXNoYnl0ZXMgMHg0MzZkN2IwZSAvLyBtZXRob2QgInJlbW92ZURlY2xhcmF0aW9uKChhZGRyZXNzLHVpbnQ2NCx1aW50NjQpKXZvaWQiCglwdXNoYnl0ZXMgMHg5YTNjMGVmYiAvLyBtZXRob2QgInJlbW92ZVJlcXVlc3QoKGFkZHJlc3MsdWludDY0LHVpbnQ2NCkpdm9pZCIKCXB1c2hieXRlcyAweDY1ODI4MTE2IC8vIG1ldGhvZCAiaXNSZXF1ZXN0ZWQoKGFkZHJlc3MsdWludDY0LHVpbnQ2NCkpYm9vbCIKCXB1c2hieXRlcyAweDE5MjQyZGZlIC8vIG1ldGhvZCAiaXNEZWNsYXJlZCgoYWRkcmVzcyx1aW50NjQsdWludDY0KSlib29sIgoJdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMAoJbWF0Y2ggKmFiaV9yb3V0ZV9kZWNsYXJlICphYmlfcm91dGVfcmVxdWVzdCAqYWJpX3JvdXRlX3JlbW92ZURlY2xhcmF0aW9uICphYmlfcm91dGVfcmVtb3ZlUmVxdWVzdCAqYWJpX3JvdXRlX2lzUmVxdWVzdGVkICphYmlfcm91dGVfaXNEZWNsYXJlZAoKCS8vIHRoaXMgY29udHJhY3QgZG9lcyBub3QgaW1wbGVtZW50IHRoZSBnaXZlbiBBQkkgbWV0aG9kIGZvciBjYWxsIE5vT3AKCWVycg==","clear":"I3ByYWdtYSB2ZXJzaW9uIDEw"},"byteCode":{"approval":"CiADATAAJgUBcgFhBBUffHUBAAAxGBSBBgsxGQiNDAEJAAAAAAAAAAAAAAD7AAAAAAAAAAAAAAA2GgFJFSMSRIgAAiJDigEAi/+9TEhBAAGJKYv/UL1MSEEAA0IACTEAi/9XACASRIv/JwS/iTYaAUkVIxJEiAACIkOKAQAoi/9QvUxIQQABiSmL/1C9TEhBAAAoi/9QJwS/iTYaAUkVIxJEiAACIkOKAQApi/9QvUxIQQADQgAJMQCL/1cAIBJEi/+8iTYaAUkVIxJEiAACIkOKAQApi/9QvUxIQQADQgAJMQCL/1cAIBJEKIv/ULyJKjYaAUkVIxJEiAAJKyRPAlRQsCJDigEBKIv/UL1MSIkqNhoBSRUjEkSIAAkrJE8CVFCwIkOKAQEoi/9QvUxIiSJDgAS4RHs2NhoAjgH/8QCABEwBvcGABLmPng6ABENtew6ABJo8DvuABGWCgRaABBkkLf42GgCOBv7D/vj/Jf9P/3v/mwA=","clear":"Cg=="},"compilerInfo":{"compiler":"algod","compilerVersion":{"major":4,"minor":0,"patch":2,"commitHash":"6b940281"}}} as unknown as Arc56Contract
 
 /**
  * A state record containing binary data
@@ -65,17 +65,18 @@ export type Expand<T> = T extends (...args: infer A) => infer R
 
 // Type definitions for ARC-56 structs
 
-export type AddressApp = {
+export type AddressAsset = {
   addr: string,
-  app: bigint
+  app: bigint,
+  id: bigint
 }
 
 
 /**
- * Converts the ABI tuple representation of a AddressApp to the struct representation
+ * Converts the ABI tuple representation of a AddressAsset to the struct representation
  */
-export function AddressAppFromTuple(abiTuple: [string, bigint]) {
-  return getABIStructFromABITuple(abiTuple, APP_SPEC.structs.AddressApp, APP_SPEC.structs) as AddressApp
+export function AddressAssetFromTuple(abiTuple: [string, bigint, bigint]) {
+  return getABIStructFromABITuple(abiTuple, APP_SPEC.structs.AddressAsset, APP_SPEC.structs) as AddressAsset
 }
 
 /**
@@ -86,23 +87,23 @@ export type DeclarationRegistryArgs = {
    * The object representation of the arguments for each method
    */
   obj: {
-    'declare((address,uint64))void': {
-      addrApp: AddressApp
+    'declare((address,uint64,uint64))void': {
+      addrApp: AddressAsset
     }
-    'request((address,uint64))void': {
-      addrApp: AddressApp
+    'request((address,uint64,uint64))void': {
+      addrApp: AddressAsset
     }
-    'removeDeclaration((address,uint64))void': {
-      addrApp: AddressApp
+    'removeDeclaration((address,uint64,uint64))void': {
+      addrApp: AddressAsset
     }
-    'removeRequest((address,uint64))void': {
-      addrApp: AddressApp
+    'removeRequest((address,uint64,uint64))void': {
+      addrApp: AddressAsset
     }
-    'isRequested((address,uint64))bool': {
-      addrApp: AddressApp
+    'isRequested((address,uint64,uint64))bool': {
+      addrApp: AddressAsset
     }
-    'isDeclared((address,uint64))bool': {
-      addrApp: AddressApp
+    'isDeclared((address,uint64,uint64))bool': {
+      addrApp: AddressAsset
     }
     'createApplication()void': Record<string, never>
   }
@@ -110,12 +111,12 @@ export type DeclarationRegistryArgs = {
    * The tuple representation of the arguments for each method
    */
   tuple: {
-    'declare((address,uint64))void': [addrApp: AddressApp]
-    'request((address,uint64))void': [addrApp: AddressApp]
-    'removeDeclaration((address,uint64))void': [addrApp: AddressApp]
-    'removeRequest((address,uint64))void': [addrApp: AddressApp]
-    'isRequested((address,uint64))bool': [addrApp: AddressApp]
-    'isDeclared((address,uint64))bool': [addrApp: AddressApp]
+    'declare((address,uint64,uint64))void': [addrApp: AddressAsset]
+    'request((address,uint64,uint64))void': [addrApp: AddressAsset]
+    'removeDeclaration((address,uint64,uint64))void': [addrApp: AddressAsset]
+    'removeRequest((address,uint64,uint64))void': [addrApp: AddressAsset]
+    'isRequested((address,uint64,uint64))bool': [addrApp: AddressAsset]
+    'isDeclared((address,uint64,uint64))bool': [addrApp: AddressAsset]
     'createApplication()void': []
   }
 }
@@ -124,12 +125,12 @@ export type DeclarationRegistryArgs = {
  * The return type for each method
  */
 export type DeclarationRegistryReturns = {
-  'declare((address,uint64))void': void
-  'request((address,uint64))void': void
-  'removeDeclaration((address,uint64))void': void
-  'removeRequest((address,uint64))void': void
-  'isRequested((address,uint64))bool': boolean
-  'isDeclared((address,uint64))bool': boolean
+  'declare((address,uint64,uint64))void': void
+  'request((address,uint64,uint64))void': void
+  'removeDeclaration((address,uint64,uint64))void': void
+  'removeRequest((address,uint64,uint64))void': void
+  'isRequested((address,uint64,uint64))bool': boolean
+  'isDeclared((address,uint64,uint64))bool': boolean
   'createApplication()void': void
 }
 
@@ -141,35 +142,35 @@ export type DeclarationRegistryTypes = {
    * Maps method signatures / names to their argument and return types.
    */
   methods:
-    & Record<'declare((address,uint64))void' | 'declare', {
-      argsObj: DeclarationRegistryArgs['obj']['declare((address,uint64))void']
-      argsTuple: DeclarationRegistryArgs['tuple']['declare((address,uint64))void']
-      returns: DeclarationRegistryReturns['declare((address,uint64))void']
+    & Record<'declare((address,uint64,uint64))void' | 'declare', {
+      argsObj: DeclarationRegistryArgs['obj']['declare((address,uint64,uint64))void']
+      argsTuple: DeclarationRegistryArgs['tuple']['declare((address,uint64,uint64))void']
+      returns: DeclarationRegistryReturns['declare((address,uint64,uint64))void']
     }>
-    & Record<'request((address,uint64))void' | 'request', {
-      argsObj: DeclarationRegistryArgs['obj']['request((address,uint64))void']
-      argsTuple: DeclarationRegistryArgs['tuple']['request((address,uint64))void']
-      returns: DeclarationRegistryReturns['request((address,uint64))void']
+    & Record<'request((address,uint64,uint64))void' | 'request', {
+      argsObj: DeclarationRegistryArgs['obj']['request((address,uint64,uint64))void']
+      argsTuple: DeclarationRegistryArgs['tuple']['request((address,uint64,uint64))void']
+      returns: DeclarationRegistryReturns['request((address,uint64,uint64))void']
     }>
-    & Record<'removeDeclaration((address,uint64))void' | 'removeDeclaration', {
-      argsObj: DeclarationRegistryArgs['obj']['removeDeclaration((address,uint64))void']
-      argsTuple: DeclarationRegistryArgs['tuple']['removeDeclaration((address,uint64))void']
-      returns: DeclarationRegistryReturns['removeDeclaration((address,uint64))void']
+    & Record<'removeDeclaration((address,uint64,uint64))void' | 'removeDeclaration', {
+      argsObj: DeclarationRegistryArgs['obj']['removeDeclaration((address,uint64,uint64))void']
+      argsTuple: DeclarationRegistryArgs['tuple']['removeDeclaration((address,uint64,uint64))void']
+      returns: DeclarationRegistryReturns['removeDeclaration((address,uint64,uint64))void']
     }>
-    & Record<'removeRequest((address,uint64))void' | 'removeRequest', {
-      argsObj: DeclarationRegistryArgs['obj']['removeRequest((address,uint64))void']
-      argsTuple: DeclarationRegistryArgs['tuple']['removeRequest((address,uint64))void']
-      returns: DeclarationRegistryReturns['removeRequest((address,uint64))void']
+    & Record<'removeRequest((address,uint64,uint64))void' | 'removeRequest', {
+      argsObj: DeclarationRegistryArgs['obj']['removeRequest((address,uint64,uint64))void']
+      argsTuple: DeclarationRegistryArgs['tuple']['removeRequest((address,uint64,uint64))void']
+      returns: DeclarationRegistryReturns['removeRequest((address,uint64,uint64))void']
     }>
-    & Record<'isRequested((address,uint64))bool' | 'isRequested', {
-      argsObj: DeclarationRegistryArgs['obj']['isRequested((address,uint64))bool']
-      argsTuple: DeclarationRegistryArgs['tuple']['isRequested((address,uint64))bool']
-      returns: DeclarationRegistryReturns['isRequested((address,uint64))bool']
+    & Record<'isRequested((address,uint64,uint64))bool' | 'isRequested', {
+      argsObj: DeclarationRegistryArgs['obj']['isRequested((address,uint64,uint64))bool']
+      argsTuple: DeclarationRegistryArgs['tuple']['isRequested((address,uint64,uint64))bool']
+      returns: DeclarationRegistryReturns['isRequested((address,uint64,uint64))bool']
     }>
-    & Record<'isDeclared((address,uint64))bool' | 'isDeclared', {
-      argsObj: DeclarationRegistryArgs['obj']['isDeclared((address,uint64))bool']
-      argsTuple: DeclarationRegistryArgs['tuple']['isDeclared((address,uint64))bool']
-      returns: DeclarationRegistryReturns['isDeclared((address,uint64))bool']
+    & Record<'isDeclared((address,uint64,uint64))bool' | 'isDeclared', {
+      argsObj: DeclarationRegistryArgs['obj']['isDeclared((address,uint64,uint64))bool']
+      argsTuple: DeclarationRegistryArgs['tuple']['isDeclared((address,uint64,uint64))bool']
+      returns: DeclarationRegistryReturns['isDeclared((address,uint64,uint64))bool']
     }>
     & Record<'createApplication()void' | 'createApplication', {
       argsObj: DeclarationRegistryArgs['obj']['createApplication()void']
@@ -183,9 +184,9 @@ export type DeclarationRegistryTypes = {
     box: {
       keys: {}
       maps: {
-        declarations: Map<AddressApp, Uint8Array>
-        requests: Map<AddressApp, Uint8Array>
-        approvalApps: Map<AddressApp, bigint>
+        declarations: Map<AddressAsset, Uint8Array>
+        requests: Map<AddressAsset, Uint8Array>
+        approvalApps: Map<AddressAsset, bigint>
       }
     }
   }
@@ -276,88 +277,88 @@ export abstract class DeclarationRegistryParamsFactory {
   }
 
   /**
-   * Constructs a no op call for the declare((address,uint64))void ABI method
+   * Constructs a no op call for the declare((address,uint64,uint64))void ABI method
    *
-  * Declare the given ABA asset for the given address. If an approval app has been defined for the address, that app is called to ensure the
+  * Declare the given ARC11550 asset for the given address. If an approval app has been defined for the address, that app is called to ensure the
   declaration is allowed. If an approval app has not be defined, the transaction sender must match the declaration address
 
    *
    * @param params Parameters for the call
    * @returns An `AppClientMethodCallParams` object for the call
    */
-  static declare(params: CallParams<DeclarationRegistryArgs['obj']['declare((address,uint64))void'] | DeclarationRegistryArgs['tuple']['declare((address,uint64))void']> & CallOnComplete): AppClientMethodCallParams & CallOnComplete {
+  static declare(params: CallParams<DeclarationRegistryArgs['obj']['declare((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['declare((address,uint64,uint64))void']> & CallOnComplete): AppClientMethodCallParams & CallOnComplete {
     return {
       ...params,
-      method: 'declare((address,uint64))void' as const,
+      method: 'declare((address,uint64,uint64))void' as const,
       args: Array.isArray(params.args) ? params.args : [params.args.addrApp],
     }
   }
   /**
-   * Constructs a no op call for the request((address,uint64))void ABI method
+   * Constructs a no op call for the request((address,uint64,uint64))void ABI method
    *
-  * Declare the given ABA for the given address. If an approval app has been added for the user, that app is called to ensure the
+  * Declare the given ARC11550 asset for the given address. If an approval app has been added for the user, that app is called to ensure the
   declaration is allowed
 
    *
    * @param params Parameters for the call
    * @returns An `AppClientMethodCallParams` object for the call
    */
-  static request(params: CallParams<DeclarationRegistryArgs['obj']['request((address,uint64))void'] | DeclarationRegistryArgs['tuple']['request((address,uint64))void']> & CallOnComplete): AppClientMethodCallParams & CallOnComplete {
+  static request(params: CallParams<DeclarationRegistryArgs['obj']['request((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['request((address,uint64,uint64))void']> & CallOnComplete): AppClientMethodCallParams & CallOnComplete {
     return {
       ...params,
-      method: 'request((address,uint64))void' as const,
+      method: 'request((address,uint64,uint64))void' as const,
       args: Array.isArray(params.args) ? params.args : [params.args.addrApp],
     }
   }
   /**
-   * Constructs a no op call for the removeDeclaration((address,uint64))void ABI method
+   * Constructs a no op call for the removeDeclaration((address,uint64,uint64))void ABI method
    *
    * @param params Parameters for the call
    * @returns An `AppClientMethodCallParams` object for the call
    */
-  static removeDeclaration(params: CallParams<DeclarationRegistryArgs['obj']['removeDeclaration((address,uint64))void'] | DeclarationRegistryArgs['tuple']['removeDeclaration((address,uint64))void']> & CallOnComplete): AppClientMethodCallParams & CallOnComplete {
+  static removeDeclaration(params: CallParams<DeclarationRegistryArgs['obj']['removeDeclaration((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['removeDeclaration((address,uint64,uint64))void']> & CallOnComplete): AppClientMethodCallParams & CallOnComplete {
     return {
       ...params,
-      method: 'removeDeclaration((address,uint64))void' as const,
+      method: 'removeDeclaration((address,uint64,uint64))void' as const,
       args: Array.isArray(params.args) ? params.args : [params.args.addrApp],
     }
   }
   /**
-   * Constructs a no op call for the removeRequest((address,uint64))void ABI method
+   * Constructs a no op call for the removeRequest((address,uint64,uint64))void ABI method
    *
    * @param params Parameters for the call
    * @returns An `AppClientMethodCallParams` object for the call
    */
-  static removeRequest(params: CallParams<DeclarationRegistryArgs['obj']['removeRequest((address,uint64))void'] | DeclarationRegistryArgs['tuple']['removeRequest((address,uint64))void']> & CallOnComplete): AppClientMethodCallParams & CallOnComplete {
+  static removeRequest(params: CallParams<DeclarationRegistryArgs['obj']['removeRequest((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['removeRequest((address,uint64,uint64))void']> & CallOnComplete): AppClientMethodCallParams & CallOnComplete {
     return {
       ...params,
-      method: 'removeRequest((address,uint64))void' as const,
+      method: 'removeRequest((address,uint64,uint64))void' as const,
       args: Array.isArray(params.args) ? params.args : [params.args.addrApp],
     }
   }
   /**
-   * Constructs a no op call for the isRequested((address,uint64))bool ABI method
+   * Constructs a no op call for the isRequested((address,uint64,uint64))bool ABI method
    *
    * @param params Parameters for the call
    * @returns An `AppClientMethodCallParams` object for the call
    */
-  static isRequested(params: CallParams<DeclarationRegistryArgs['obj']['isRequested((address,uint64))bool'] | DeclarationRegistryArgs['tuple']['isRequested((address,uint64))bool']> & CallOnComplete): AppClientMethodCallParams & CallOnComplete {
+  static isRequested(params: CallParams<DeclarationRegistryArgs['obj']['isRequested((address,uint64,uint64))bool'] | DeclarationRegistryArgs['tuple']['isRequested((address,uint64,uint64))bool']> & CallOnComplete): AppClientMethodCallParams & CallOnComplete {
     return {
       ...params,
-      method: 'isRequested((address,uint64))bool' as const,
+      method: 'isRequested((address,uint64,uint64))bool' as const,
       args: Array.isArray(params.args) ? params.args : [params.args.addrApp],
     }
   }
   /**
-   * Constructs a no op call for the isDeclared((address,uint64))bool ABI method
+   * Constructs a no op call for the isDeclared((address,uint64,uint64))bool ABI method
    *
    * @param params Parameters for the call
    * @returns An `AppClientMethodCallParams` object for the call
    */
-  static isDeclared(params: CallParams<DeclarationRegistryArgs['obj']['isDeclared((address,uint64))bool'] | DeclarationRegistryArgs['tuple']['isDeclared((address,uint64))bool']> & CallOnComplete): AppClientMethodCallParams & CallOnComplete {
+  static isDeclared(params: CallParams<DeclarationRegistryArgs['obj']['isDeclared((address,uint64,uint64))bool'] | DeclarationRegistryArgs['tuple']['isDeclared((address,uint64,uint64))bool']> & CallOnComplete): AppClientMethodCallParams & CallOnComplete {
     return {
       ...params,
-      method: 'isDeclared((address,uint64))bool' as const,
+      method: 'isDeclared((address,uint64,uint64))bool' as const,
       args: Array.isArray(params.args) ? params.args : [params.args.addrApp],
     }
   }
@@ -603,70 +604,70 @@ export class DeclarationRegistryClient {
     },
 
     /**
-     * Makes a call to the DeclarationRegistry smart contract using the `declare((address,uint64))void` ABI method.
+     * Makes a call to the DeclarationRegistry smart contract using the `declare((address,uint64,uint64))void` ABI method.
      *
-    * Declare the given ABA asset for the given address. If an approval app has been defined for the address, that app is called to ensure the
+    * Declare the given ARC11550 asset for the given address. If an approval app has been defined for the address, that app is called to ensure the
     declaration is allowed. If an approval app has not be defined, the transaction sender must match the declaration address
 
      *
      * @param params The params for the smart contract call
      * @returns The call params
      */
-    declare: (params: CallParams<DeclarationRegistryArgs['obj']['declare((address,uint64))void'] | DeclarationRegistryArgs['tuple']['declare((address,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+    declare: (params: CallParams<DeclarationRegistryArgs['obj']['declare((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['declare((address,uint64,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       return this.appClient.params.call(DeclarationRegistryParamsFactory.declare(params))
     },
 
     /**
-     * Makes a call to the DeclarationRegistry smart contract using the `request((address,uint64))void` ABI method.
+     * Makes a call to the DeclarationRegistry smart contract using the `request((address,uint64,uint64))void` ABI method.
      *
-    * Declare the given ABA for the given address. If an approval app has been added for the user, that app is called to ensure the
+    * Declare the given ARC11550 asset for the given address. If an approval app has been added for the user, that app is called to ensure the
     declaration is allowed
 
      *
      * @param params The params for the smart contract call
      * @returns The call params
      */
-    request: (params: CallParams<DeclarationRegistryArgs['obj']['request((address,uint64))void'] | DeclarationRegistryArgs['tuple']['request((address,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+    request: (params: CallParams<DeclarationRegistryArgs['obj']['request((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['request((address,uint64,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       return this.appClient.params.call(DeclarationRegistryParamsFactory.request(params))
     },
 
     /**
-     * Makes a call to the DeclarationRegistry smart contract using the `removeDeclaration((address,uint64))void` ABI method.
+     * Makes a call to the DeclarationRegistry smart contract using the `removeDeclaration((address,uint64,uint64))void` ABI method.
      *
      * @param params The params for the smart contract call
      * @returns The call params
      */
-    removeDeclaration: (params: CallParams<DeclarationRegistryArgs['obj']['removeDeclaration((address,uint64))void'] | DeclarationRegistryArgs['tuple']['removeDeclaration((address,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+    removeDeclaration: (params: CallParams<DeclarationRegistryArgs['obj']['removeDeclaration((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['removeDeclaration((address,uint64,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       return this.appClient.params.call(DeclarationRegistryParamsFactory.removeDeclaration(params))
     },
 
     /**
-     * Makes a call to the DeclarationRegistry smart contract using the `removeRequest((address,uint64))void` ABI method.
+     * Makes a call to the DeclarationRegistry smart contract using the `removeRequest((address,uint64,uint64))void` ABI method.
      *
      * @param params The params for the smart contract call
      * @returns The call params
      */
-    removeRequest: (params: CallParams<DeclarationRegistryArgs['obj']['removeRequest((address,uint64))void'] | DeclarationRegistryArgs['tuple']['removeRequest((address,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+    removeRequest: (params: CallParams<DeclarationRegistryArgs['obj']['removeRequest((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['removeRequest((address,uint64,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       return this.appClient.params.call(DeclarationRegistryParamsFactory.removeRequest(params))
     },
 
     /**
-     * Makes a call to the DeclarationRegistry smart contract using the `isRequested((address,uint64))bool` ABI method.
+     * Makes a call to the DeclarationRegistry smart contract using the `isRequested((address,uint64,uint64))bool` ABI method.
      *
      * @param params The params for the smart contract call
      * @returns The call params
      */
-    isRequested: (params: CallParams<DeclarationRegistryArgs['obj']['isRequested((address,uint64))bool'] | DeclarationRegistryArgs['tuple']['isRequested((address,uint64))bool']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+    isRequested: (params: CallParams<DeclarationRegistryArgs['obj']['isRequested((address,uint64,uint64))bool'] | DeclarationRegistryArgs['tuple']['isRequested((address,uint64,uint64))bool']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       return this.appClient.params.call(DeclarationRegistryParamsFactory.isRequested(params))
     },
 
     /**
-     * Makes a call to the DeclarationRegistry smart contract using the `isDeclared((address,uint64))bool` ABI method.
+     * Makes a call to the DeclarationRegistry smart contract using the `isDeclared((address,uint64,uint64))bool` ABI method.
      *
      * @param params The params for the smart contract call
      * @returns The call params
      */
-    isDeclared: (params: CallParams<DeclarationRegistryArgs['obj']['isDeclared((address,uint64))bool'] | DeclarationRegistryArgs['tuple']['isDeclared((address,uint64))bool']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+    isDeclared: (params: CallParams<DeclarationRegistryArgs['obj']['isDeclared((address,uint64,uint64))bool'] | DeclarationRegistryArgs['tuple']['isDeclared((address,uint64,uint64))bool']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       return this.appClient.params.call(DeclarationRegistryParamsFactory.isDeclared(params))
     },
 
@@ -687,70 +688,70 @@ export class DeclarationRegistryClient {
     },
 
     /**
-     * Makes a call to the DeclarationRegistry smart contract using the `declare((address,uint64))void` ABI method.
+     * Makes a call to the DeclarationRegistry smart contract using the `declare((address,uint64,uint64))void` ABI method.
      *
-    * Declare the given ABA asset for the given address. If an approval app has been defined for the address, that app is called to ensure the
+    * Declare the given ARC11550 asset for the given address. If an approval app has been defined for the address, that app is called to ensure the
     declaration is allowed. If an approval app has not be defined, the transaction sender must match the declaration address
 
      *
      * @param params The params for the smart contract call
      * @returns The call transaction
      */
-    declare: (params: CallParams<DeclarationRegistryArgs['obj']['declare((address,uint64))void'] | DeclarationRegistryArgs['tuple']['declare((address,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+    declare: (params: CallParams<DeclarationRegistryArgs['obj']['declare((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['declare((address,uint64,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       return this.appClient.createTransaction.call(DeclarationRegistryParamsFactory.declare(params))
     },
 
     /**
-     * Makes a call to the DeclarationRegistry smart contract using the `request((address,uint64))void` ABI method.
+     * Makes a call to the DeclarationRegistry smart contract using the `request((address,uint64,uint64))void` ABI method.
      *
-    * Declare the given ABA for the given address. If an approval app has been added for the user, that app is called to ensure the
+    * Declare the given ARC11550 asset for the given address. If an approval app has been added for the user, that app is called to ensure the
     declaration is allowed
 
      *
      * @param params The params for the smart contract call
      * @returns The call transaction
      */
-    request: (params: CallParams<DeclarationRegistryArgs['obj']['request((address,uint64))void'] | DeclarationRegistryArgs['tuple']['request((address,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+    request: (params: CallParams<DeclarationRegistryArgs['obj']['request((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['request((address,uint64,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       return this.appClient.createTransaction.call(DeclarationRegistryParamsFactory.request(params))
     },
 
     /**
-     * Makes a call to the DeclarationRegistry smart contract using the `removeDeclaration((address,uint64))void` ABI method.
+     * Makes a call to the DeclarationRegistry smart contract using the `removeDeclaration((address,uint64,uint64))void` ABI method.
      *
      * @param params The params for the smart contract call
      * @returns The call transaction
      */
-    removeDeclaration: (params: CallParams<DeclarationRegistryArgs['obj']['removeDeclaration((address,uint64))void'] | DeclarationRegistryArgs['tuple']['removeDeclaration((address,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+    removeDeclaration: (params: CallParams<DeclarationRegistryArgs['obj']['removeDeclaration((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['removeDeclaration((address,uint64,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       return this.appClient.createTransaction.call(DeclarationRegistryParamsFactory.removeDeclaration(params))
     },
 
     /**
-     * Makes a call to the DeclarationRegistry smart contract using the `removeRequest((address,uint64))void` ABI method.
+     * Makes a call to the DeclarationRegistry smart contract using the `removeRequest((address,uint64,uint64))void` ABI method.
      *
      * @param params The params for the smart contract call
      * @returns The call transaction
      */
-    removeRequest: (params: CallParams<DeclarationRegistryArgs['obj']['removeRequest((address,uint64))void'] | DeclarationRegistryArgs['tuple']['removeRequest((address,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+    removeRequest: (params: CallParams<DeclarationRegistryArgs['obj']['removeRequest((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['removeRequest((address,uint64,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       return this.appClient.createTransaction.call(DeclarationRegistryParamsFactory.removeRequest(params))
     },
 
     /**
-     * Makes a call to the DeclarationRegistry smart contract using the `isRequested((address,uint64))bool` ABI method.
+     * Makes a call to the DeclarationRegistry smart contract using the `isRequested((address,uint64,uint64))bool` ABI method.
      *
      * @param params The params for the smart contract call
      * @returns The call transaction
      */
-    isRequested: (params: CallParams<DeclarationRegistryArgs['obj']['isRequested((address,uint64))bool'] | DeclarationRegistryArgs['tuple']['isRequested((address,uint64))bool']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+    isRequested: (params: CallParams<DeclarationRegistryArgs['obj']['isRequested((address,uint64,uint64))bool'] | DeclarationRegistryArgs['tuple']['isRequested((address,uint64,uint64))bool']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       return this.appClient.createTransaction.call(DeclarationRegistryParamsFactory.isRequested(params))
     },
 
     /**
-     * Makes a call to the DeclarationRegistry smart contract using the `isDeclared((address,uint64))bool` ABI method.
+     * Makes a call to the DeclarationRegistry smart contract using the `isDeclared((address,uint64,uint64))bool` ABI method.
      *
      * @param params The params for the smart contract call
      * @returns The call transaction
      */
-    isDeclared: (params: CallParams<DeclarationRegistryArgs['obj']['isDeclared((address,uint64))bool'] | DeclarationRegistryArgs['tuple']['isDeclared((address,uint64))bool']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+    isDeclared: (params: CallParams<DeclarationRegistryArgs['obj']['isDeclared((address,uint64,uint64))bool'] | DeclarationRegistryArgs['tuple']['isDeclared((address,uint64,uint64))bool']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       return this.appClient.createTransaction.call(DeclarationRegistryParamsFactory.isDeclared(params))
     },
 
@@ -771,77 +772,77 @@ export class DeclarationRegistryClient {
     },
 
     /**
-     * Makes a call to the DeclarationRegistry smart contract using the `declare((address,uint64))void` ABI method.
+     * Makes a call to the DeclarationRegistry smart contract using the `declare((address,uint64,uint64))void` ABI method.
      *
-    * Declare the given ABA asset for the given address. If an approval app has been defined for the address, that app is called to ensure the
+    * Declare the given ARC11550 asset for the given address. If an approval app has been defined for the address, that app is called to ensure the
     declaration is allowed. If an approval app has not be defined, the transaction sender must match the declaration address
 
      *
      * @param params The params for the smart contract call
      * @returns The call result
      */
-    declare: async (params: CallParams<DeclarationRegistryArgs['obj']['declare((address,uint64))void'] | DeclarationRegistryArgs['tuple']['declare((address,uint64))void']> & SendParams & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+    declare: async (params: CallParams<DeclarationRegistryArgs['obj']['declare((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['declare((address,uint64,uint64))void']> & SendParams & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       const result = await this.appClient.send.call(DeclarationRegistryParamsFactory.declare(params))
-      return {...result, return: result.return as unknown as (undefined | DeclarationRegistryReturns['declare((address,uint64))void'])}
+      return {...result, return: result.return as unknown as (undefined | DeclarationRegistryReturns['declare((address,uint64,uint64))void'])}
     },
 
     /**
-     * Makes a call to the DeclarationRegistry smart contract using the `request((address,uint64))void` ABI method.
+     * Makes a call to the DeclarationRegistry smart contract using the `request((address,uint64,uint64))void` ABI method.
      *
-    * Declare the given ABA for the given address. If an approval app has been added for the user, that app is called to ensure the
+    * Declare the given ARC11550 asset for the given address. If an approval app has been added for the user, that app is called to ensure the
     declaration is allowed
 
      *
      * @param params The params for the smart contract call
      * @returns The call result
      */
-    request: async (params: CallParams<DeclarationRegistryArgs['obj']['request((address,uint64))void'] | DeclarationRegistryArgs['tuple']['request((address,uint64))void']> & SendParams & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+    request: async (params: CallParams<DeclarationRegistryArgs['obj']['request((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['request((address,uint64,uint64))void']> & SendParams & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       const result = await this.appClient.send.call(DeclarationRegistryParamsFactory.request(params))
-      return {...result, return: result.return as unknown as (undefined | DeclarationRegistryReturns['request((address,uint64))void'])}
+      return {...result, return: result.return as unknown as (undefined | DeclarationRegistryReturns['request((address,uint64,uint64))void'])}
     },
 
     /**
-     * Makes a call to the DeclarationRegistry smart contract using the `removeDeclaration((address,uint64))void` ABI method.
+     * Makes a call to the DeclarationRegistry smart contract using the `removeDeclaration((address,uint64,uint64))void` ABI method.
      *
      * @param params The params for the smart contract call
      * @returns The call result
      */
-    removeDeclaration: async (params: CallParams<DeclarationRegistryArgs['obj']['removeDeclaration((address,uint64))void'] | DeclarationRegistryArgs['tuple']['removeDeclaration((address,uint64))void']> & SendParams & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+    removeDeclaration: async (params: CallParams<DeclarationRegistryArgs['obj']['removeDeclaration((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['removeDeclaration((address,uint64,uint64))void']> & SendParams & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       const result = await this.appClient.send.call(DeclarationRegistryParamsFactory.removeDeclaration(params))
-      return {...result, return: result.return as unknown as (undefined | DeclarationRegistryReturns['removeDeclaration((address,uint64))void'])}
+      return {...result, return: result.return as unknown as (undefined | DeclarationRegistryReturns['removeDeclaration((address,uint64,uint64))void'])}
     },
 
     /**
-     * Makes a call to the DeclarationRegistry smart contract using the `removeRequest((address,uint64))void` ABI method.
+     * Makes a call to the DeclarationRegistry smart contract using the `removeRequest((address,uint64,uint64))void` ABI method.
      *
      * @param params The params for the smart contract call
      * @returns The call result
      */
-    removeRequest: async (params: CallParams<DeclarationRegistryArgs['obj']['removeRequest((address,uint64))void'] | DeclarationRegistryArgs['tuple']['removeRequest((address,uint64))void']> & SendParams & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+    removeRequest: async (params: CallParams<DeclarationRegistryArgs['obj']['removeRequest((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['removeRequest((address,uint64,uint64))void']> & SendParams & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       const result = await this.appClient.send.call(DeclarationRegistryParamsFactory.removeRequest(params))
-      return {...result, return: result.return as unknown as (undefined | DeclarationRegistryReturns['removeRequest((address,uint64))void'])}
+      return {...result, return: result.return as unknown as (undefined | DeclarationRegistryReturns['removeRequest((address,uint64,uint64))void'])}
     },
 
     /**
-     * Makes a call to the DeclarationRegistry smart contract using the `isRequested((address,uint64))bool` ABI method.
+     * Makes a call to the DeclarationRegistry smart contract using the `isRequested((address,uint64,uint64))bool` ABI method.
      *
      * @param params The params for the smart contract call
      * @returns The call result
      */
-    isRequested: async (params: CallParams<DeclarationRegistryArgs['obj']['isRequested((address,uint64))bool'] | DeclarationRegistryArgs['tuple']['isRequested((address,uint64))bool']> & SendParams & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+    isRequested: async (params: CallParams<DeclarationRegistryArgs['obj']['isRequested((address,uint64,uint64))bool'] | DeclarationRegistryArgs['tuple']['isRequested((address,uint64,uint64))bool']> & SendParams & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       const result = await this.appClient.send.call(DeclarationRegistryParamsFactory.isRequested(params))
-      return {...result, return: result.return as unknown as (undefined | DeclarationRegistryReturns['isRequested((address,uint64))bool'])}
+      return {...result, return: result.return as unknown as (undefined | DeclarationRegistryReturns['isRequested((address,uint64,uint64))bool'])}
     },
 
     /**
-     * Makes a call to the DeclarationRegistry smart contract using the `isDeclared((address,uint64))bool` ABI method.
+     * Makes a call to the DeclarationRegistry smart contract using the `isDeclared((address,uint64,uint64))bool` ABI method.
      *
      * @param params The params for the smart contract call
      * @returns The call result
      */
-    isDeclared: async (params: CallParams<DeclarationRegistryArgs['obj']['isDeclared((address,uint64))bool'] | DeclarationRegistryArgs['tuple']['isDeclared((address,uint64))bool']> & SendParams & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+    isDeclared: async (params: CallParams<DeclarationRegistryArgs['obj']['isDeclared((address,uint64,uint64))bool'] | DeclarationRegistryArgs['tuple']['isDeclared((address,uint64,uint64))bool']> & SendParams & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       const result = await this.appClient.send.call(DeclarationRegistryParamsFactory.isDeclared(params))
-      return {...result, return: result.return as unknown as (undefined | DeclarationRegistryReturns['isDeclared((address,uint64))bool'])}
+      return {...result, return: result.return as unknown as (undefined | DeclarationRegistryReturns['isDeclared((address,uint64,uint64))bool'])}
     },
 
   }
@@ -879,11 +880,11 @@ export class DeclarationRegistryClient {
         /**
          * Get all current values of the declarations map in box state
          */
-        getMap: async (): Promise<Map<AddressApp, Uint8Array>> => { return (await this.appClient.state.box.getMap("declarations")) as Map<AddressApp, Uint8Array> },
+        getMap: async (): Promise<Map<AddressAsset, Uint8Array>> => { return (await this.appClient.state.box.getMap("declarations")) as Map<AddressAsset, Uint8Array> },
         /**
          * Get a current value of the declarations map by key from box state
          */
-        value: async (key: AddressApp): Promise<Uint8Array | undefined> => { return await this.appClient.state.box.getMapValue("declarations", key) as Uint8Array | undefined },
+        value: async (key: AddressAsset): Promise<Uint8Array | undefined> => { return await this.appClient.state.box.getMapValue("declarations", key) as Uint8Array | undefined },
       },
       /**
        * Get values from the requests map in box state
@@ -892,11 +893,11 @@ export class DeclarationRegistryClient {
         /**
          * Get all current values of the requests map in box state
          */
-        getMap: async (): Promise<Map<AddressApp, Uint8Array>> => { return (await this.appClient.state.box.getMap("requests")) as Map<AddressApp, Uint8Array> },
+        getMap: async (): Promise<Map<AddressAsset, Uint8Array>> => { return (await this.appClient.state.box.getMap("requests")) as Map<AddressAsset, Uint8Array> },
         /**
          * Get a current value of the requests map by key from box state
          */
-        value: async (key: AddressApp): Promise<Uint8Array | undefined> => { return await this.appClient.state.box.getMapValue("requests", key) as Uint8Array | undefined },
+        value: async (key: AddressAsset): Promise<Uint8Array | undefined> => { return await this.appClient.state.box.getMapValue("requests", key) as Uint8Array | undefined },
       },
       /**
        * Get values from the approvalApps map in box state
@@ -905,11 +906,11 @@ export class DeclarationRegistryClient {
         /**
          * Get all current values of the approvalApps map in box state
          */
-        getMap: async (): Promise<Map<AddressApp, bigint>> => { return (await this.appClient.state.box.getMap("approvalApps")) as Map<AddressApp, bigint> },
+        getMap: async (): Promise<Map<AddressAsset, bigint>> => { return (await this.appClient.state.box.getMap("approvalApps")) as Map<AddressAsset, bigint> },
         /**
          * Get a current value of the approvalApps map by key from box state
          */
-        value: async (key: AddressApp): Promise<bigint | undefined> => { return await this.appClient.state.box.getMapValue("approvalApps", key) as bigint | undefined },
+        value: async (key: AddressAsset): Promise<bigint | undefined> => { return await this.appClient.state.box.getMapValue("approvalApps", key) as bigint | undefined },
       },
     },
   }
@@ -921,51 +922,51 @@ export class DeclarationRegistryClient {
     const resultMappers: Array<undefined | ((x: ABIReturn | undefined) => any)> = []
     return {
       /**
-       * Add a declare((address,uint64))void method call against the DeclarationRegistry contract
+       * Add a declare((address,uint64,uint64))void method call against the DeclarationRegistry contract
        */
-      declare(params: CallParams<DeclarationRegistryArgs['obj']['declare((address,uint64))void'] | DeclarationRegistryArgs['tuple']['declare((address,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) {
+      declare(params: CallParams<DeclarationRegistryArgs['obj']['declare((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['declare((address,uint64,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) {
         promiseChain = promiseChain.then(async () => composer.addAppCallMethodCall(await client.params.declare(params)))
         resultMappers.push(undefined)
         return this
       },
       /**
-       * Add a request((address,uint64))void method call against the DeclarationRegistry contract
+       * Add a request((address,uint64,uint64))void method call against the DeclarationRegistry contract
        */
-      request(params: CallParams<DeclarationRegistryArgs['obj']['request((address,uint64))void'] | DeclarationRegistryArgs['tuple']['request((address,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) {
+      request(params: CallParams<DeclarationRegistryArgs['obj']['request((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['request((address,uint64,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) {
         promiseChain = promiseChain.then(async () => composer.addAppCallMethodCall(await client.params.request(params)))
         resultMappers.push(undefined)
         return this
       },
       /**
-       * Add a removeDeclaration((address,uint64))void method call against the DeclarationRegistry contract
+       * Add a removeDeclaration((address,uint64,uint64))void method call against the DeclarationRegistry contract
        */
-      removeDeclaration(params: CallParams<DeclarationRegistryArgs['obj']['removeDeclaration((address,uint64))void'] | DeclarationRegistryArgs['tuple']['removeDeclaration((address,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) {
+      removeDeclaration(params: CallParams<DeclarationRegistryArgs['obj']['removeDeclaration((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['removeDeclaration((address,uint64,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) {
         promiseChain = promiseChain.then(async () => composer.addAppCallMethodCall(await client.params.removeDeclaration(params)))
         resultMappers.push(undefined)
         return this
       },
       /**
-       * Add a removeRequest((address,uint64))void method call against the DeclarationRegistry contract
+       * Add a removeRequest((address,uint64,uint64))void method call against the DeclarationRegistry contract
        */
-      removeRequest(params: CallParams<DeclarationRegistryArgs['obj']['removeRequest((address,uint64))void'] | DeclarationRegistryArgs['tuple']['removeRequest((address,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) {
+      removeRequest(params: CallParams<DeclarationRegistryArgs['obj']['removeRequest((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['removeRequest((address,uint64,uint64))void']> & {onComplete?: OnApplicationComplete.NoOpOC}) {
         promiseChain = promiseChain.then(async () => composer.addAppCallMethodCall(await client.params.removeRequest(params)))
         resultMappers.push(undefined)
         return this
       },
       /**
-       * Add a isRequested((address,uint64))bool method call against the DeclarationRegistry contract
+       * Add a isRequested((address,uint64,uint64))bool method call against the DeclarationRegistry contract
        */
-      isRequested(params: CallParams<DeclarationRegistryArgs['obj']['isRequested((address,uint64))bool'] | DeclarationRegistryArgs['tuple']['isRequested((address,uint64))bool']> & {onComplete?: OnApplicationComplete.NoOpOC}) {
+      isRequested(params: CallParams<DeclarationRegistryArgs['obj']['isRequested((address,uint64,uint64))bool'] | DeclarationRegistryArgs['tuple']['isRequested((address,uint64,uint64))bool']> & {onComplete?: OnApplicationComplete.NoOpOC}) {
         promiseChain = promiseChain.then(async () => composer.addAppCallMethodCall(await client.params.isRequested(params)))
-        resultMappers.push((v) => client.decodeReturnValue('isRequested((address,uint64))bool', v))
+        resultMappers.push((v) => client.decodeReturnValue('isRequested((address,uint64,uint64))bool', v))
         return this
       },
       /**
-       * Add a isDeclared((address,uint64))bool method call against the DeclarationRegistry contract
+       * Add a isDeclared((address,uint64,uint64))bool method call against the DeclarationRegistry contract
        */
-      isDeclared(params: CallParams<DeclarationRegistryArgs['obj']['isDeclared((address,uint64))bool'] | DeclarationRegistryArgs['tuple']['isDeclared((address,uint64))bool']> & {onComplete?: OnApplicationComplete.NoOpOC}) {
+      isDeclared(params: CallParams<DeclarationRegistryArgs['obj']['isDeclared((address,uint64,uint64))bool'] | DeclarationRegistryArgs['tuple']['isDeclared((address,uint64,uint64))bool']> & {onComplete?: OnApplicationComplete.NoOpOC}) {
         promiseChain = promiseChain.then(async () => composer.addAppCallMethodCall(await client.params.isDeclared(params)))
-        resultMappers.push((v) => client.decodeReturnValue('isDeclared((address,uint64))bool', v))
+        resultMappers.push((v) => client.decodeReturnValue('isDeclared((address,uint64,uint64))bool', v))
         return this
       },
       /**
@@ -1004,9 +1005,9 @@ export class DeclarationRegistryClient {
 }
 export type DeclarationRegistryComposer<TReturns extends [...any[]] = []> = {
   /**
-   * Calls the declare((address,uint64))void ABI method.
+   * Calls the declare((address,uint64,uint64))void ABI method.
    *
-  * Declare the given ABA asset for the given address. If an approval app has been defined for the address, that app is called to ensure the
+  * Declare the given ARC11550 asset for the given address. If an approval app has been defined for the address, that app is called to ensure the
   declaration is allowed. If an approval app has not be defined, the transaction sender must match the declaration address
 
    *
@@ -1014,12 +1015,12 @@ export type DeclarationRegistryComposer<TReturns extends [...any[]] = []> = {
    * @param params Any additional parameters for the call
    * @returns The typed transaction composer so you can fluently chain multiple calls or call execute to execute all queued up transactions
    */
-  declare(params?: CallParams<DeclarationRegistryArgs['obj']['declare((address,uint64))void'] | DeclarationRegistryArgs['tuple']['declare((address,uint64))void']>): DeclarationRegistryComposer<[...TReturns, DeclarationRegistryReturns['declare((address,uint64))void'] | undefined]>
+  declare(params?: CallParams<DeclarationRegistryArgs['obj']['declare((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['declare((address,uint64,uint64))void']>): DeclarationRegistryComposer<[...TReturns, DeclarationRegistryReturns['declare((address,uint64,uint64))void'] | undefined]>
 
   /**
-   * Calls the request((address,uint64))void ABI method.
+   * Calls the request((address,uint64,uint64))void ABI method.
    *
-  * Declare the given ABA for the given address. If an approval app has been added for the user, that app is called to ensure the
+  * Declare the given ARC11550 asset for the given address. If an approval app has been added for the user, that app is called to ensure the
   declaration is allowed
 
    *
@@ -1027,43 +1028,43 @@ export type DeclarationRegistryComposer<TReturns extends [...any[]] = []> = {
    * @param params Any additional parameters for the call
    * @returns The typed transaction composer so you can fluently chain multiple calls or call execute to execute all queued up transactions
    */
-  request(params?: CallParams<DeclarationRegistryArgs['obj']['request((address,uint64))void'] | DeclarationRegistryArgs['tuple']['request((address,uint64))void']>): DeclarationRegistryComposer<[...TReturns, DeclarationRegistryReturns['request((address,uint64))void'] | undefined]>
+  request(params?: CallParams<DeclarationRegistryArgs['obj']['request((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['request((address,uint64,uint64))void']>): DeclarationRegistryComposer<[...TReturns, DeclarationRegistryReturns['request((address,uint64,uint64))void'] | undefined]>
 
   /**
-   * Calls the removeDeclaration((address,uint64))void ABI method.
+   * Calls the removeDeclaration((address,uint64,uint64))void ABI method.
    *
    * @param args The arguments for the contract call
    * @param params Any additional parameters for the call
    * @returns The typed transaction composer so you can fluently chain multiple calls or call execute to execute all queued up transactions
    */
-  removeDeclaration(params?: CallParams<DeclarationRegistryArgs['obj']['removeDeclaration((address,uint64))void'] | DeclarationRegistryArgs['tuple']['removeDeclaration((address,uint64))void']>): DeclarationRegistryComposer<[...TReturns, DeclarationRegistryReturns['removeDeclaration((address,uint64))void'] | undefined]>
+  removeDeclaration(params?: CallParams<DeclarationRegistryArgs['obj']['removeDeclaration((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['removeDeclaration((address,uint64,uint64))void']>): DeclarationRegistryComposer<[...TReturns, DeclarationRegistryReturns['removeDeclaration((address,uint64,uint64))void'] | undefined]>
 
   /**
-   * Calls the removeRequest((address,uint64))void ABI method.
+   * Calls the removeRequest((address,uint64,uint64))void ABI method.
    *
    * @param args The arguments for the contract call
    * @param params Any additional parameters for the call
    * @returns The typed transaction composer so you can fluently chain multiple calls or call execute to execute all queued up transactions
    */
-  removeRequest(params?: CallParams<DeclarationRegistryArgs['obj']['removeRequest((address,uint64))void'] | DeclarationRegistryArgs['tuple']['removeRequest((address,uint64))void']>): DeclarationRegistryComposer<[...TReturns, DeclarationRegistryReturns['removeRequest((address,uint64))void'] | undefined]>
+  removeRequest(params?: CallParams<DeclarationRegistryArgs['obj']['removeRequest((address,uint64,uint64))void'] | DeclarationRegistryArgs['tuple']['removeRequest((address,uint64,uint64))void']>): DeclarationRegistryComposer<[...TReturns, DeclarationRegistryReturns['removeRequest((address,uint64,uint64))void'] | undefined]>
 
   /**
-   * Calls the isRequested((address,uint64))bool ABI method.
+   * Calls the isRequested((address,uint64,uint64))bool ABI method.
    *
    * @param args The arguments for the contract call
    * @param params Any additional parameters for the call
    * @returns The typed transaction composer so you can fluently chain multiple calls or call execute to execute all queued up transactions
    */
-  isRequested(params?: CallParams<DeclarationRegistryArgs['obj']['isRequested((address,uint64))bool'] | DeclarationRegistryArgs['tuple']['isRequested((address,uint64))bool']>): DeclarationRegistryComposer<[...TReturns, DeclarationRegistryReturns['isRequested((address,uint64))bool'] | undefined]>
+  isRequested(params?: CallParams<DeclarationRegistryArgs['obj']['isRequested((address,uint64,uint64))bool'] | DeclarationRegistryArgs['tuple']['isRequested((address,uint64,uint64))bool']>): DeclarationRegistryComposer<[...TReturns, DeclarationRegistryReturns['isRequested((address,uint64,uint64))bool'] | undefined]>
 
   /**
-   * Calls the isDeclared((address,uint64))bool ABI method.
+   * Calls the isDeclared((address,uint64,uint64))bool ABI method.
    *
    * @param args The arguments for the contract call
    * @param params Any additional parameters for the call
    * @returns The typed transaction composer so you can fluently chain multiple calls or call execute to execute all queued up transactions
    */
-  isDeclared(params?: CallParams<DeclarationRegistryArgs['obj']['isDeclared((address,uint64))bool'] | DeclarationRegistryArgs['tuple']['isDeclared((address,uint64))bool']>): DeclarationRegistryComposer<[...TReturns, DeclarationRegistryReturns['isDeclared((address,uint64))bool'] | undefined]>
+  isDeclared(params?: CallParams<DeclarationRegistryArgs['obj']['isDeclared((address,uint64,uint64))bool'] | DeclarationRegistryArgs['tuple']['isDeclared((address,uint64,uint64))bool']>): DeclarationRegistryComposer<[...TReturns, DeclarationRegistryReturns['isDeclared((address,uint64,uint64))bool'] | undefined]>
 
   /**
    * Makes a clear_state call to an existing instance of the DeclarationRegistry smart contract.

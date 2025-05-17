@@ -4,11 +4,11 @@
   "methods": [
     {
       "name": "declare",
-      "desc": "Declare the given ABA asset for the given address. If an approval app has been defined for the address, that app is called to ensure the\ndeclaration is allowed. If an approval app has not be defined, the transaction sender must match the declaration address",
+      "desc": "Declare the given ARC11550 asset for the given address. If an approval app has been defined for the address, that app is called to ensure the\ndeclaration is allowed. If an approval app has not be defined, the transaction sender must match the declaration address",
       "args": [
         {
           "name": "addrApp",
-          "type": "(address,uint64)"
+          "type": "(address,uint64,uint64)"
         }
       ],
       "returns": {
@@ -17,11 +17,11 @@
     },
     {
       "name": "request",
-      "desc": "Declare the given ABA for the given address. If an approval app has been added for the user, that app is called to ensure the\ndeclaration is allowed",
+      "desc": "Declare the given ARC11550 asset for the given address. If an approval app has been added for the user, that app is called to ensure the\ndeclaration is allowed",
       "args": [
         {
           "name": "addrApp",
-          "type": "(address,uint64)"
+          "type": "(address,uint64,uint64)"
         }
       ],
       "returns": {
@@ -33,7 +33,7 @@
       "args": [
         {
           "name": "addrApp",
-          "type": "(address,uint64)"
+          "type": "(address,uint64,uint64)"
         }
       ],
       "returns": {
@@ -45,7 +45,7 @@
       "args": [
         {
           "name": "addrApp",
-          "type": "(address,uint64)"
+          "type": "(address,uint64,uint64)"
         }
       ],
       "returns": {
@@ -57,7 +57,7 @@
       "args": [
         {
           "name": "addrApp",
-          "type": "(address,uint64)"
+          "type": "(address,uint64,uint64)"
         }
       ],
       "returns": {
@@ -69,7 +69,7 @@
       "args": [
         {
           "name": "addrApp",
-          "type": "(address,uint64)"
+          "type": "(address,uint64,uint64)"
         }
       ],
       "returns": {
