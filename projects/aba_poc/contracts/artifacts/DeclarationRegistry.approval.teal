@@ -88,11 +88,8 @@ declare:
 
 *if1_end:
 	// contracts/DeclarationRegistry.algo.ts:35
-	// this.declarations(addrApp).value = ''
+	// this.declarations(addrApp).value = '' as bytes<0>
 	frame_dig -1 // addrApp: AddressApp
-	dup
-	box_del
-	pop
 	bytec 4 //  ""
 	box_put
 	retsub
@@ -152,13 +149,10 @@ request:
 // *if3_consequent
 *if3_end:
 	// contracts/DeclarationRegistry.algo.ts:49
-	// this.requests(addrApp).value = ''
+	// this.requests(addrApp).value = '' as bytes<0>
 	bytec 0 //  "r"
 	frame_dig -1 // addrApp: AddressApp
 	concat
-	dup
-	box_del
-	pop
 	bytec 4 //  ""
 	box_put
 	retsub

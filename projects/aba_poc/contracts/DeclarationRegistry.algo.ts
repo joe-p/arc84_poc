@@ -9,11 +9,11 @@ export type AddressApp = {
 
 export class DeclarationRegistry extends Contract {
   /** ABA declaration for a given user. Wallets & apps SHOULD show these assets to users */
-  declarations = BoxMap<AddressApp, bytes>();
+  declarations = BoxMap<AddressApp, bytes<0>>();
 
   /** Requests for ABA declarations for a given users. Wallets & apps MAY show these assets to users, but should be separated from
    * declarations */
-  requests = BoxMap<AddressApp, bytes>({ prefix: 'r' });
+  requests = BoxMap<AddressApp, bytes<0>>({ prefix: 'r' });
 
   /** Approval apps determine if a declaration/request addition or removal is allowed. This allows various use cases such as declaration delegation or only
    * allowing requests from trusted accounts */
@@ -32,7 +32,7 @@ export class DeclarationRegistry extends Contract {
       assert(this.txn.sender == addrApp.addr);
     }
 
-    this.declarations(addrApp).value = '';
+    this.declarations(addrApp).value = '' as bytes<0>;
   }
 
   /** Declare the given ABA for the given address. If an approval app has been added for the user, that app is called to ensure the
@@ -46,7 +46,7 @@ export class DeclarationRegistry extends Contract {
       // TODO: send method call to approval app
     }
 
-    this.requests(addrApp).value = '';
+    this.requests(addrApp).value = '' as bytes<0>;
   }
 
   removeDeclaration(addrApp: AddressApp): void {
