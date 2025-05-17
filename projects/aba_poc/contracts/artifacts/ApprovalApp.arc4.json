@@ -1,0 +1,77 @@
+{
+  "name": "ApprovalApp",
+  "desc": "",
+  "methods": [
+    {
+      "name": "approveRequest",
+      "args": [
+        {
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "name": "addrAsset",
+          "type": "(address,uint64,uint64)"
+        }
+      ],
+      "returns": {
+        "type": "bool"
+      }
+    },
+    {
+      "name": "approveRequestRemoval",
+      "args": [
+        {
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "name": "addrAsset",
+          "type": "(address,uint64,uint64)"
+        }
+      ],
+      "returns": {
+        "type": "bool"
+      }
+    },
+    {
+      "name": "approveDeclaration",
+      "args": [
+        {
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "name": "addrAsset",
+          "type": "(address,uint64,uint64)"
+        }
+      ],
+      "returns": {
+        "type": "bool"
+      }
+    },
+    {
+      "name": "approveDeclarationRemoval",
+      "args": [
+        {
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "name": "addrAsset",
+          "type": "(address,uint64,uint64)"
+        }
+      ],
+      "returns": {
+        "type": "bool"
+      }
+    },
+    {
+      "name": "createApplication",
+      "args": [],
+      "returns": {
+        "type": "void"
+      }
+    }
+  ]
+}

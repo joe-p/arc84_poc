@@ -7,7 +7,7 @@
       "desc": "Declare the given ARC11550 asset for the given address. If an approval app has been defined for the address, that app is called to ensure the\ndeclaration is allowed. If an approval app has not be defined, the transaction sender must match the declaration address",
       "args": [
         {
-          "name": "addrApp",
+          "name": "addrAsset",
           "type": "(address,uint64,uint64)"
         }
       ],
@@ -20,7 +20,7 @@
       "desc": "Declare the given ARC11550 asset for the given address. If an approval app has been added for the user, that app is called to ensure the\ndeclaration is allowed",
       "args": [
         {
-          "name": "addrApp",
+          "name": "addrAsset",
           "type": "(address,uint64,uint64)"
         }
       ],
@@ -32,7 +32,7 @@
       "name": "removeDeclaration",
       "args": [
         {
-          "name": "addrApp",
+          "name": "addrAsset",
           "type": "(address,uint64,uint64)"
         }
       ],
@@ -44,7 +44,7 @@
       "name": "removeRequest",
       "args": [
         {
-          "name": "addrApp",
+          "name": "addrAsset",
           "type": "(address,uint64,uint64)"
         }
       ],
@@ -56,7 +56,7 @@
       "name": "isRequested",
       "args": [
         {
-          "name": "addrApp",
+          "name": "addrAsset",
           "type": "(address,uint64,uint64)"
         }
       ],
@@ -68,7 +68,7 @@
       "name": "isDeclared",
       "args": [
         {
-          "name": "addrApp",
+          "name": "addrAsset",
           "type": "(address,uint64,uint64)"
         }
       ],

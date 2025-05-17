@@ -28,7 +28,10 @@ export class DeclarationRegistry extends Contract {
     }
 
     if (this.approvalApps(addrAsset).exists) {
-      // TODO: send method call to approval app
+      sendMethodCall<typeof ApprovalApp.prototype.approveDeclaration>({
+        applicationID: this.approvalApps(addrAsset).value,
+        methodArgs: [this.txn.sender, addrAsset],
+      });
     } else {
       assert(this.txn.sender == addrAsset.addr);
     }
@@ -44,7 +47,10 @@ export class DeclarationRegistry extends Contract {
     }
 
     if (this.approvalApps(addrAsset).exists) {
-      // TODO: send method call to approval app
+      sendMethodCall<typeof ApprovalApp.prototype.approveRequest>({
+        applicationID: this.approvalApps(addrAsset).value,
+        methodArgs: [this.txn.sender, addrAsset],
+      });
     }
 
     this.requests(addrAsset).value = '' as bytes<0>;
@@ -52,7 +58,10 @@ export class DeclarationRegistry extends Contract {
 
   removeDeclaration(addrAsset: AddressAsset): void {
     if (this.approvalApps(addrAsset).exists) {
-      // TODO: send method call to approval app
+      sendMethodCall<typeof ApprovalApp.prototype.approveDeclarationRemoval>({
+        applicationID: this.approvalApps(addrAsset).value,
+        methodArgs: [this.txn.sender, addrAsset],
+      });
     } else {
       assert(this.txn.sender == addrAsset.addr);
     }
@@ -62,7 +71,10 @@ export class DeclarationRegistry extends Contract {
 
   removeRequest(addrAsset: AddressAsset): void {
     if (this.approvalApps(addrAsset).exists) {
-      // TODO: send method call to approval app
+      sendMethodCall<typeof ApprovalApp.prototype.approveRequestRemoval>({
+        applicationID: this.approvalApps(addrAsset).value,
+        methodArgs: [this.txn.sender, addrAsset],
+      });
     } else {
       assert(this.txn.sender == addrAsset.addr);
     }
@@ -76,5 +88,23 @@ export class DeclarationRegistry extends Contract {
 
   isDeclared(addrAsset: AddressAsset): boolean {
     return this.requests(addrAsset).exists;
+  }
+}
+
+class ApprovalApp extends Contract {
+  approveRequest(sender: Address, addrAsset: AddressAsset): boolean {
+    return true;
+  }
+
+  approveRequestRemoval(sender: Address, addrAsset: AddressAsset): boolean {
+    return true;
+  }
+
+  approveDeclaration(sender: Address, addrAsset: AddressAsset): boolean {
+    return sender === addrAsset.addr;
+  }
+
+  approveDeclarationRemoval(sender: Address, addrAsset: AddressAsset): boolean {
+    return sender === addrAsset.addr;
   }
 }
