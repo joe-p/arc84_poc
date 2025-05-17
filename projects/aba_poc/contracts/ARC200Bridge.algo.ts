@@ -32,13 +32,14 @@ export class ARC200Bridge extends Contract {
 
     const asa = axfer.xferAsset;
 
+    assert(asa.clawback === Address.zeroAddress);
+
     // If there isn't already an app for this ASA, create it
     if (!this.asaToArc200Map(axfer.xferAsset).exists) {
       sendMethodCall<typeof ARC200.prototype.createApplication>({
         methodArgs: [
-          ('Bridged ' + asa.unitName) as bytes<32>,
-          // FIXME: handle unit names > 6 bytes
-          ('B-' + asa.unitName) as bytes<8>,
+          asa.name as bytes<32>,
+          asa.unitName as bytes<8>,
           // FIXME: handle decimals > uint8
           asa.decimals as uint8,
           asa.total as uint256,
