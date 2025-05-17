@@ -1,0 +1,159 @@
+{
+  "name": "ARC200",
+  "desc": "",
+  "methods": [
+    {
+      "name": "arc200_name",
+      "args": [],
+      "returns": {
+        "type": "byte[32]"
+      }
+    },
+    {
+      "name": "arc200_symbol",
+      "args": [],
+      "returns": {
+        "type": "byte[8]"
+      }
+    },
+    {
+      "name": "arc200_decimals",
+      "args": [],
+      "returns": {
+        "type": "uint8"
+      }
+    },
+    {
+      "name": "arc200_totalSupply",
+      "args": [],
+      "returns": {
+        "type": "uint256"
+      }
+    },
+    {
+      "name": "arc200_balanceOf",
+      "args": [
+        {
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "returns": {
+        "type": "uint256"
+      }
+    },
+    {
+      "name": "arc200_transferFrom",
+      "args": [
+        {
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "returns": {
+        "type": "bool"
+      }
+    },
+    {
+      "name": "arc200_transfer",
+      "args": [
+        {
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "returns": {
+        "type": "bool"
+      }
+    },
+    {
+      "name": "arc200_approve",
+      "args": [
+        {
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "returns": {
+        "type": "bool"
+      }
+    },
+    {
+      "name": "arc200_allowance",
+      "args": [
+        {
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "returns": {
+        "type": "uint256"
+      }
+    },
+    {
+      "name": "createApplication",
+      "args": [],
+      "returns": {
+        "type": "void"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "arc200_Transfer",
+      "args": [
+        {
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "desc": ""
+    },
+    {
+      "name": "arc200_Approval",
+      "args": [
+        {
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "desc": ""
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "ARC200Bridge",
+  "desc": "",
+  "methods": [
+    {
+      "name": "createApplication",
+      "args": [],
+      "returns": {
+        "type": "void"
+      }
+    }
+  ]
+}
