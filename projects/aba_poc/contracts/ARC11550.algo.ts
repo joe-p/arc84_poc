@@ -37,7 +37,7 @@ export class ARC11550 extends Contract {
   nextId = GlobalStateKey<Id>();
 
   /** The parameters for a given asset */
-  params = BoxMap<uint64, Params>({ prefix: 'p' });
+  params = BoxMap<Id, Params>({ prefix: 'p' });
 
   /** The balance for a given user and asset */
   balances = BoxMap<IdAndAddress, uint64>({ prefix: 'b' });
