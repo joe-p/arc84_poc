@@ -7,6 +7,7 @@ export type AssetParams = {
   symbol: bytes<8>;
   total: uint64;
   decmimals: uint32;
+  manager: Address;
 };
 
 export type IdAndAddress = {
@@ -21,6 +22,16 @@ export type Transfer = {
   amount: uint64;
 };
 
+export type MetadataKey = {
+  id: ARC11550Id;
+  key: string;
+};
+
+export type Metadata = {
+  mutable: boolean;
+  data: bytes;
+};
+
 export class ARC11550 extends Contract {
   /** The ID to use for the next asset that is minted */
   nextId = GlobalStateKey<ARC11550Id>();
@@ -31,28 +42,38 @@ export class ARC11550 extends Contract {
   /** The balance for a given user and asset */
   balances = BoxMap<IdAndAddress, uint64>({ prefix: 'b' });
 
+  /** Arbitrary metadata for an asset that may be immutable or mutable */
+  metadata = BoxMap<MetadataKey, Metadata>({ prefix: 'm' });
+
   /** The app to be called when a transfer is initiated, potentially rejecting it */
   transferHookApp = GlobalStateKey<AppID>();
+
+  /** The minter can mint new tokens */
+  minter = GlobalStateKey<Address>();
 
   createApplication(app: AppID) {
     this.transferHookApp.value = app;
     this.nextId.value = 0;
   }
 
-  arc11550_name(id: ARC11550Id): bytes<32> {
-    return this.params(id).value.name;
+  arc1150_mint(params: AssetParams) {
+    assert(this.txn.sender === this.minter.value);
+    this.params(this.nextId.value).value = params;
+    this.nextId.value += 1;
   }
 
-  arc11550_symbol(id: ARC11550Id): bytes<8> {
-    return this.params(id).value.symbol;
+  arc11550_metadata(key: MetadataKey): Metadata {
+    return this.metadata(key).value;
   }
 
-  arc11550_decimals(id: ARC11550Id): uint32 {
-    return this.params(id).value.decmimals;
-  }
+  arc11550_setMetadata(key: MetadataKey, data: bytes) {
+    assert(this.txn.sender === this.params(key.id).value.manager);
 
-  arc11550_totalSupply(id: ARC11550Id): uint64 {
-    return this.params(id).value.total;
+    if (this.metadata(key).exists) {
+      assert(this.metadata(key).value.mutable);
+    }
+
+    this.metadata(key).value.data = data;
   }
 
   arc11550_balanceOf(id: ARC11550Id, account: Address): uint64 {
