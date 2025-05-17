@@ -12,7 +12,7 @@ export class DeclarationRegistry extends Contract {
   /** ARC11550 declaration for a given user. Wallets & apps SHOULD show these assets to users */
   declarations = BoxMap<AddressAsset, bytes<0>>();
 
-  /** Requests for ARC11550 declarations for a given users. Wallets & apps MAY show these assets to users, but should be separated from
+  /** Requests for ARC11550 declarations for a given users. Wallets & apps MAY show these assets to users, but SHOULD be separated from
    * declarations */
   requests = BoxMap<AddressAsset, bytes<0>>({ prefix: 'r' });
 
