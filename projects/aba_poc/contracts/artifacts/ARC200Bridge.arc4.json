@@ -3,6 +3,54 @@
   "desc": "",
   "methods": [
     {
+      "name": "optInToAsa",
+      "args": [
+        {
+          "name": "asa",
+          "type": "uint64"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "asaToArc200",
+      "args": [
+        {
+          "name": "axfer",
+          "type": "axfer"
+        },
+        {
+          "name": "receiver",
+          "type": "address"
+        }
+      ],
+      "returns": {
+        "type": "uint64"
+      }
+    },
+    {
+      "name": "arc200ToAsa",
+      "args": [
+        {
+          "name": "app",
+          "type": "uint64"
+        },
+        {
+          "name": "amount",
+          "type": "uint64"
+        },
+        {
+          "name": "receiver",
+          "type": "address"
+        }
+      ],
+      "returns": {
+        "type": "uint64"
+      }
+    },
+    {
       "name": "createApplication",
       "args": [],
       "returns": {

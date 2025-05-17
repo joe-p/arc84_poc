@@ -3,6 +3,30 @@
   "desc": "",
   "methods": [
     {
+      "name": "createApplication",
+      "args": [
+        {
+          "name": "name",
+          "type": "byte[32]"
+        },
+        {
+          "name": "symbol",
+          "type": "byte[8]"
+        },
+        {
+          "name": "decimals",
+          "type": "uint8"
+        },
+        {
+          "name": "total",
+          "type": "uint256"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
       "name": "arc200_name",
       "args": [],
       "returns": {
@@ -108,13 +132,6 @@
       ],
       "returns": {
         "type": "uint256"
-      }
-    },
-    {
-      "name": "createApplication",
-      "args": [],
-      "returns": {
-        "type": "void"
       }
     }
   ],

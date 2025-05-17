@@ -30,6 +30,14 @@ export class ARC200 extends Contract {
     value: uint256;
   }>();
 
+  createApplication(name: bytes<32>, symbol: bytes<8>, decimals: uint8, total: uint256): void {
+    this.name.value = name;
+    this.symbol.value = symbol;
+    this.decimals.value = decimals;
+    this.totalSupply.value = total;
+    this.balances(this.txn.sender).value = total;
+  }
+
   arc200_name(): bytes<32> {
     return this.name.value;
   }
