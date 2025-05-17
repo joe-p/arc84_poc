@@ -37,7 +37,7 @@ export class ARC200Bridge extends Contract {
       sendMethodCall<typeof ARC200.prototype.createApplication>({
         methodArgs: [
           ('Bridged ' + asa.unitName) as bytes<32>,
-          // FIXME: handle symbols > 8 bytes
+          // FIXME: handle unit names > 6 bytes
           ('B-' + asa.unitName) as bytes<8>,
           // FIXME: handle decimals > uint8
           asa.decimals as uint8,
