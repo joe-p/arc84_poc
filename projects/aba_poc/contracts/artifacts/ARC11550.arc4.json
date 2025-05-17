@@ -15,15 +15,15 @@
       }
     },
     {
-      "name": "arc1150_mint",
+      "name": "arc11550_mint",
       "args": [
         {
           "name": "params",
-          "type": "(byte[32],byte[8],uint64,uint32,address)"
+          "type": "(byte[32],byte[8],uint64,uint64,address)"
         }
       ],
       "returns": {
-        "type": "void"
+        "type": "uint64"
       }
     },
     {
@@ -79,7 +79,7 @@
         }
       ],
       "returns": {
-        "type": "(byte[32],byte[8],uint64,uint32,address)"
+        "type": "(byte[32],byte[8],uint64,uint64,address)"
       }
     },
     {

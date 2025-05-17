@@ -6,7 +6,7 @@ export type Params = {
   name: bytes<32>;
   symbol: bytes<8>;
   total: uint64;
-  decmimals: uint32;
+  decimals: uint64;
   manager: Address;
 };
 
@@ -56,10 +56,12 @@ export class ARC11550 extends Contract {
     this.nextId.value = 0;
   }
 
-  arc1150_mint(params: Params) {
+  arc11550_mint(params: Params): uint64 {
     assert(this.txn.sender === this.minter.value);
     this.params(this.nextId.value).value = params;
     this.nextId.value += 1;
+
+    return this.nextId.value - 1;
   }
 
   arc11550_metadata(key: MetadataKey): Metadata {
@@ -85,15 +87,27 @@ export class ARC11550 extends Contract {
   }
 
   arc11550_transfer(transfers: Transfer[]) {
-    assert(
-      sendMethodCall<typeof ARC11550TransferHook.prototype.approved>({
-        applicationID: this.transferHookApp.value,
-        methodArgs: [this.txn.sender, transfers],
-      })
-    );
+    // If there is a transfer hook app, ensure that is approves the transfers
+    if (this.transferHookApp.value.id != 0) {
+      assert(
+        sendMethodCall<typeof ARC11550TransferHook.prototype.approved>({
+          applicationID: this.transferHookApp.value,
+          methodArgs: [this.txn.sender, transfers],
+        })
+      );
 
+      for (let i = 0; i < transfers.length; i += 1) {
+        const t = transfers[i];
+        this.balances({ id: t.id, address: t.from }).value -= t.amount;
+        this.balances({ id: t.id, address: t.to }).value += t.amount;
+      }
+      return;
+    }
+
+    // If there is no transfer hook app, then only allow sending of the caller's own assets
     for (let i = 0; i < transfers.length; i += 1) {
       const t = transfers[i];
+      assert(t.from === this.txn.sender);
       this.balances({ id: t.id, address: t.from }).value -= t.amount;
       this.balances({ id: t.id, address: t.to }).value += t.amount;
     }
