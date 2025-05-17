@@ -15,51 +15,43 @@
       }
     },
     {
-      "name": "arc11550_name",
+      "name": "arc1150_mint",
       "args": [
         {
-          "name": "id",
-          "type": "uint64"
+          "name": "params",
+          "type": "(byte[32],byte[8],uint64,uint32,address)"
         }
       ],
       "returns": {
-        "type": "byte[32]"
+        "type": "void"
       }
     },
     {
-      "name": "arc11550_symbol",
+      "name": "arc11550_metadata",
       "args": [
         {
-          "name": "id",
-          "type": "uint64"
+          "name": "key",
+          "type": "(uint64,string)"
         }
       ],
       "returns": {
-        "type": "byte[8]"
+        "type": "(bool,byte[])"
       }
     },
     {
-      "name": "arc11550_decimals",
+      "name": "arc11550_setMetadata",
       "args": [
         {
-          "name": "id",
-          "type": "uint64"
+          "name": "key",
+          "type": "(uint64,string)"
+        },
+        {
+          "name": "data",
+          "type": "byte[]"
         }
       ],
       "returns": {
-        "type": "uint32"
-      }
-    },
-    {
-      "name": "arc11550_totalSupply",
-      "args": [
-        {
-          "name": "id",
-          "type": "uint64"
-        }
-      ],
-      "returns": {
-        "type": "uint64"
+        "type": "void"
       }
     },
     {
@@ -87,7 +79,7 @@
         }
       ],
       "returns": {
-        "type": "(byte[32],byte[8],uint64,uint32)"
+        "type": "(byte[32],byte[8],uint64,uint32,address)"
       }
     },
     {
