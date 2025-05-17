@@ -36,8 +36,7 @@ export class ARC200Bridge extends Contract {
     if (!this.asaToArc200Map(axfer.xferAsset).exists) {
       sendMethodCall<typeof ARC200.prototype.createApplication>({
         methodArgs: [
-          // FIXME: handle names > 32 bytes
-          ('Bridged ' + asa.name) as bytes<32>,
+          ('Bridged ' + asa.unitName) as bytes<32>,
           // FIXME: handle symbols > 8 bytes
           ('B-' + asa.unitName) as bytes<8>,
           // FIXME: handle decimals > uint8
