@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "arc200_poc",
+      "name": "aba_poc",
       "dependencies": {
         "@algorandfoundation/algokit-utils": "^7.0.0",
         "algosdk": ">=2.9.0 <3.0",
