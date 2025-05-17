@@ -1,0 +1,30 @@
+{
+  "name": "ARC11550TransferHook",
+  "desc": "",
+  "methods": [
+    {
+      "name": "approved",
+      "desc": "Determines whether a transfer is approved or not. This implementation just ensures the caller is sending from their own address, but\nthere are other possibilities such as ERC20-style approvals, whitelists, blacklists, enforced royalties, etc.",
+      "args": [
+        {
+          "name": "caller",
+          "type": "address"
+        },
+        {
+          "name": "transfers",
+          "type": "(uint64,address,address,uint64)[]"
+        }
+      ],
+      "returns": {
+        "type": "bool"
+      }
+    },
+    {
+      "name": "createApplication",
+      "args": [],
+      "returns": {
+        "type": "void"
+      }
+    }
+  ]
+}

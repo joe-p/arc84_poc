@@ -1,0 +1,106 @@
+{
+  "name": "ARC11550",
+  "desc": "",
+  "methods": [
+    {
+      "name": "createApplication",
+      "args": [
+        {
+          "name": "app",
+          "type": "uint64"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "arc11550_name",
+      "args": [
+        {
+          "name": "id",
+          "type": "uint64"
+        }
+      ],
+      "returns": {
+        "type": "byte[32]"
+      }
+    },
+    {
+      "name": "arc11550_symbol",
+      "args": [
+        {
+          "name": "id",
+          "type": "uint64"
+        }
+      ],
+      "returns": {
+        "type": "byte[8]"
+      }
+    },
+    {
+      "name": "arc11550_decimals",
+      "args": [
+        {
+          "name": "id",
+          "type": "uint64"
+        }
+      ],
+      "returns": {
+        "type": "uint32"
+      }
+    },
+    {
+      "name": "arc11550_totalSupply",
+      "args": [
+        {
+          "name": "id",
+          "type": "uint64"
+        }
+      ],
+      "returns": {
+        "type": "uint64"
+      }
+    },
+    {
+      "name": "arc11550_balanceOf",
+      "args": [
+        {
+          "name": "id",
+          "type": "uint64"
+        },
+        {
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "returns": {
+        "type": "uint64"
+      }
+    },
+    {
+      "name": "arc11550_params",
+      "args": [
+        {
+          "name": "id",
+          "type": "uint64"
+        }
+      ],
+      "returns": {
+        "type": "(byte[32],byte[8],uint64,uint32)"
+      }
+    },
+    {
+      "name": "arc11550_transfer",
+      "args": [
+        {
+          "name": "transfers",
+          "type": "(uint64,address,address,uint64)[]"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  ]
+}
