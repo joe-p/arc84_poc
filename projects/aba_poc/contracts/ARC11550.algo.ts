@@ -1,8 +1,8 @@
 import { Contract } from '@algorandfoundation/tealscript';
 
-export type ARC11550Id = uint64;
+export type Id = uint64;
 
-export type AssetParams = {
+export type Params = {
   name: bytes<32>;
   symbol: bytes<8>;
   total: uint64;
@@ -11,19 +11,19 @@ export type AssetParams = {
 };
 
 export type IdAndAddress = {
-  id: ARC11550Id;
+  id: Id;
   address: Address;
 };
 
 export type Transfer = {
-  id: ARC11550Id;
+  id: Id;
   from: Address;
   to: Address;
   amount: uint64;
 };
 
 export type MetadataKey = {
-  id: ARC11550Id;
+  id: Id;
   key: string;
 };
 
@@ -34,10 +34,10 @@ export type Metadata = {
 
 export class ARC11550 extends Contract {
   /** The ID to use for the next asset that is minted */
-  nextId = GlobalStateKey<ARC11550Id>();
+  nextId = GlobalStateKey<Id>();
 
   /** The parameters for a given asset */
-  params = BoxMap<uint64, AssetParams>({ prefix: 'p' });
+  params = BoxMap<uint64, Params>({ prefix: 'p' });
 
   /** The balance for a given user and asset */
   balances = BoxMap<IdAndAddress, uint64>({ prefix: 'b' });
@@ -56,7 +56,7 @@ export class ARC11550 extends Contract {
     this.nextId.value = 0;
   }
 
-  arc1150_mint(params: AssetParams) {
+  arc1150_mint(params: Params) {
     assert(this.txn.sender === this.minter.value);
     this.params(this.nextId.value).value = params;
     this.nextId.value += 1;
@@ -76,11 +76,11 @@ export class ARC11550 extends Contract {
     this.metadata(key).value.data = data;
   }
 
-  arc11550_balanceOf(id: ARC11550Id, account: Address): uint64 {
+  arc11550_balanceOf(id: Id, account: Address): uint64 {
     return this.balances({ id: id, address: account }).value;
   }
 
-  arc11550_params(id: ARC11550Id): AssetParams {
+  arc11550_params(id: Id): Params {
     return this.params(id).value;
   }
 
