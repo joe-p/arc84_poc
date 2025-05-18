@@ -47,13 +47,13 @@ export class ARC11550Data extends Contract {
   /** The total number of tokens minted. This is used to calculate the token IDs */
   minted = GlobalStateKey<Id>();
 
-  /** The parameters for a given asset */
+  /** The parameters for a given token */
   params = BoxMap<Id, Params>({ prefix: 'p' });
 
-  /** The balance for a given user and asset */
+  /** The balance for a given user and token */
   balances = BoxMap<IdAndAddress, uint64>({ prefix: 'b' });
 
-  /** Arbitrary metadata for an asset that may be immutable or mutable */
+  /** Arbitrary metadata for an token that may be immutable or mutable */
   metadata = BoxMap<MetadataKey, Metadata>({ prefix: 'm' });
 
   /** The app that implements arc11550_transfer and arc11550_mint */
@@ -68,7 +68,7 @@ export class ARC11550Data extends Contract {
   /** The minter can mint new tokens */
   minter = GlobalStateKey<Address>();
 
-  /** Allowances for a given sender, holder, and asset id */
+  /** Allowances for a given sender, holder, and token id */
   allowances = BoxMap<AllowanceKey, Allowance>({ prefix: 'a' });
 
   createApplication(transferApp: AppID, transferHookApp: AppID, mintCap: uint64) {

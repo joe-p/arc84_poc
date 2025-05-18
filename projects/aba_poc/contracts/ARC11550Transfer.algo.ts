@@ -2,7 +2,7 @@
 import { Contract } from '@algorandfoundation/tealscript';
 import { Id, Transfer, ARC11550Data, Params } from './ARC11550Data.algo';
 
-export type AccountAppAndAssetId = {
+export type AccountAppAndTokenId = {
   dataApp: AppID;
   id: Id;
 };
@@ -10,13 +10,13 @@ export type AccountAppAndAssetId = {
 export type UniversalId = uint64;
 
 export class ARC11550Transfer extends Contract {
-  /** The universalId uniquely identifies any ARC11550 asset minted through this application regardless of the data app. The universal ID is generally
+  /** The universalId uniquely identifies any ARC11550 token minted through this application regardless of the data app. The universal ID is generally
    * only used off-chain to smooth out the transition from ASAs (i.e wallets & explorers) and to help users easily identify individual
    * tokens */
   universalId = GlobalStateKey<UniversalId>();
 
   /** Maps a universal ID to an data app and an ID */
-  idMapping = BoxMap<UniversalId, AccountAppAndAssetId>({ prefix: 'id' });
+  idMapping = BoxMap<UniversalId, AccountAppAndTokenId>({ prefix: 'id' });
 
   createApplication() {
     this.universalId.value = 2 ** 64 - 1;
@@ -26,10 +26,10 @@ export class ARC11550Transfer extends Contract {
     let uid = this.universalId.value;
     this.universalId.value -= 1;
 
-    const assetId = sendMethodCall<typeof ARC11550Data.prototype.doMint>({ methodArgs: [params] });
+    const tokenId = sendMethodCall<typeof ARC11550Data.prototype.doMint>({ methodArgs: [params] });
 
-    this.idMapping(uid).value = { dataApp: dataApp, id: assetId };
-    return assetId;
+    this.idMapping(uid).value = { dataApp: dataApp, id: tokenId };
+    return tokenId;
   }
 
   arc11550_transfer(dataApp: AppID, transfers: Transfer[]) {

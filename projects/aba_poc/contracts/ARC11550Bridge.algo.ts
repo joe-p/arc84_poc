@@ -79,7 +79,7 @@ export class ARC11550Bridge extends Contract {
     const xfer = xfers[xferIndex];
     const dataApp = AppID.fromUint64(btoi(xferCall.applicationArgs[1]));
 
-    // Ensure the app used for the transfer is the actual transfer app for the asset
+    // Ensure the app used for the transfer is the actual transfer app for the token
     assert(xferCall.applicationID == sendMethodCall<typeof ARC11550Data.prototype.arc11550_transferApp>({}));
 
     const arc11550: Arc11550Id = { dataApp: dataApp, id: xfer.id };
