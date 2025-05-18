@@ -61,7 +61,7 @@ createApplication:
 	// argument 0 (params) for arc11550_mint must be a (byte[32],byte[8],uint64,uint64,address)
 	assert
 
-	// accountingApp: uint64
+	// dataApp: uint64
 	txna ApplicationArgs 1
 	btoi
 
@@ -73,7 +73,7 @@ createApplication:
 	intc 0 // 1
 	return
 
-// arc11550_mint(accountingApp: AppID, params: Params): Id
+// arc11550_mint(dataApp: AppID, params: Params): Id
 arc11550_mint:
 	proto 2 1
 
@@ -98,7 +98,7 @@ arc11550_mint:
 	app_global_put
 
 	// contracts/ARC11550Transfer.algo.ts:29
-	// assetId = sendMethodCall<typeof ARC11550Accounting.prototype.doMint>({ methodArgs: [params] })
+	// assetId = sendMethodCall<typeof ARC11550Data.prototype.doMint>({ methodArgs: [params] })
 	itxn_begin
 	intc 2 //  appl
 	itxn_field TypeEnum
@@ -125,12 +125,12 @@ arc11550_mint:
 	frame_bury 1 // assetId: uint64
 
 	// contracts/ARC11550Transfer.algo.ts:31
-	// this.idMapping(uid).value = { accountingApp: accountingApp, id: assetId }
+	// this.idMapping(uid).value = { dataApp: dataApp, id: assetId }
 	pushbytes 0x6964 // "id"
 	frame_dig 0 // uid: uint64
 	itob
 	concat
-	frame_dig -1 // accountingApp: AppID
+	frame_dig -1 // dataApp: AppID
 	itob
 	frame_dig 1 // assetId: uint64
 	itob
@@ -154,7 +154,7 @@ arc11550_mint:
 	txna ApplicationArgs 2
 	extract 2 0
 
-	// accountingApp: uint64
+	// dataApp: uint64
 	txna ApplicationArgs 1
 	btoi
 
@@ -163,7 +163,7 @@ arc11550_mint:
 	intc 0 // 1
 	return
 
-// arc11550_transfer(accountingApp: AppID, transfers: Transfer[]): void
+// arc11550_transfer(dataApp: AppID, transfers: Transfer[]): void
 arc11550_transfer:
 	proto 2 0
 
@@ -171,8 +171,8 @@ arc11550_transfer:
 	bytec 1 // 0x
 
 	// contracts/ARC11550Transfer.algo.ts:36
-	// transferHookApp = sendMethodCall<typeof ARC11550Accounting.prototype.arc11550_transferHookApp>({
-	//       applicationID: accountingApp,
+	// transferHookApp = sendMethodCall<typeof ARC11550Data.prototype.arc11550_transferHookApp>({
+	//       applicationID: dataApp,
 	//     })
 	itxn_begin
 	intc 2 //  appl
@@ -181,8 +181,8 @@ arc11550_transfer:
 	itxn_field ApplicationArgs
 
 	// contracts/ARC11550Transfer.algo.ts:37
-	// applicationID: accountingApp
-	frame_dig -1 // accountingApp: AppID
+	// applicationID: dataApp
+	frame_dig -1 // dataApp: AppID
 	itxn_field ApplicationID
 
 	// Fee field not set, defaulting to 0
@@ -256,8 +256,8 @@ arc11550_transfer:
 
 *if0_end:
 	// contracts/ARC11550Transfer.algo.ts:50
-	// sendMethodCall<typeof ARC11550Accounting.prototype.doTransfers>({
-	//       applicationID: accountingApp,
+	// sendMethodCall<typeof ARC11550Data.prototype.doTransfers>({
+	//       applicationID: dataApp,
 	//       methodArgs: [transfers],
 	//     })
 	itxn_begin
@@ -267,8 +267,8 @@ arc11550_transfer:
 	itxn_field ApplicationArgs
 
 	// contracts/ARC11550Transfer.algo.ts:51
-	// applicationID: accountingApp
-	frame_dig -1 // accountingApp: AppID
+	// applicationID: dataApp
+	frame_dig -1 // dataApp: AppID
 	itxn_field ApplicationID
 
 	// contracts/ARC11550Transfer.algo.ts:52

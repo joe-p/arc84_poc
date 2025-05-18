@@ -1,16 +1,16 @@
 //
 import { Contract } from '@algorandfoundation/tealscript';
-import { Id, Transfer, ARC11550Accounting, Params } from './ARC11550Accounting.algo';
+import { Id, Transfer, ARC11550Data, Params } from './ARC11550Data.algo';
 
 export type AccountAppAndAssetId = {
-  accountingApp: AppID;
+  dataApp: AppID;
   id: Id;
 };
 
 export type UniversalId = uint64;
 
 export class ARC11550Transfer extends Contract {
-  /** Maps a universal ID to an accounting app and an ID */
+  /** Maps a universal ID to an data app and an ID */
   idMapping = BoxMap<UniversalId, AccountAppAndAssetId>({ prefix: 'id' });
 
   /** Uniquely identify any ARC11550 asset minted through this application regardless of the account app. The universal ID is generally
@@ -22,19 +22,19 @@ export class ARC11550Transfer extends Contract {
     this.universalId.value = 2 ** 64 - 1;
   }
 
-  arc11550_mint(accountingApp: AppID, params: Params): Id {
+  arc11550_mint(dataApp: AppID, params: Params): Id {
     let uid = this.universalId.value;
     this.universalId.value -= 1;
 
-    const assetId = sendMethodCall<typeof ARC11550Accounting.prototype.doMint>({ methodArgs: [params] });
+    const assetId = sendMethodCall<typeof ARC11550Data.prototype.doMint>({ methodArgs: [params] });
 
-    this.idMapping(uid).value = { accountingApp: accountingApp, id: assetId };
+    this.idMapping(uid).value = { dataApp: dataApp, id: assetId };
     return assetId;
   }
 
-  arc11550_transfer(accountingApp: AppID, transfers: Transfer[]) {
-    const transferHookApp = sendMethodCall<typeof ARC11550Accounting.prototype.arc11550_transferHookApp>({
-      applicationID: accountingApp,
+  arc11550_transfer(dataApp: AppID, transfers: Transfer[]) {
+    const transferHookApp = sendMethodCall<typeof ARC11550Data.prototype.arc11550_transferHookApp>({
+      applicationID: dataApp,
     });
 
     // If there is a transfer hook app, ensure that is approves the transfers
@@ -47,8 +47,8 @@ export class ARC11550Transfer extends Contract {
       );
     }
 
-    sendMethodCall<typeof ARC11550Accounting.prototype.doTransfers>({
-      applicationID: accountingApp,
+    sendMethodCall<typeof ARC11550Data.prototype.doTransfers>({
+      applicationID: dataApp,
       methodArgs: [transfers],
     });
   }

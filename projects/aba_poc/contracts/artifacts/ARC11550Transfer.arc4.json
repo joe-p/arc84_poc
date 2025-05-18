@@ -13,7 +13,7 @@
       "name": "arc11550_mint",
       "args": [
         {
-          "name": "accountingApp",
+          "name": "dataApp",
           "type": "uint64"
         },
         {
@@ -29,7 +29,7 @@
       "name": "arc11550_transfer",
       "args": [
         {
-          "name": "accountingApp",
+          "name": "dataApp",
           "type": "uint64"
         },
         {

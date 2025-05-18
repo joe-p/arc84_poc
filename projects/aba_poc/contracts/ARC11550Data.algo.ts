@@ -43,7 +43,7 @@ export type Allowance = {
   untilTimestamp: uint64;
 };
 
-export class ARC11550Accounting extends Contract {
+export class ARC11550Data extends Contract {
   /** The total number of tokens minted. This is used to calculate the token IDs */
   minted = GlobalStateKey<Id>();
 
