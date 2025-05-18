@@ -24,6 +24,7 @@
     },
     {
       "name": "arc11550_minted",
+      "desc": "***************\nGetter Methods\n***************",
       "args": [],
       "returns": {
         "type": "uint64"
@@ -34,27 +35,11 @@
       "args": [
         {
           "name": "key",
-          "type": "(uint64,string)"
+          "type": "(uint64,byte[])"
         }
       ],
       "returns": {
         "type": "(bool,byte[])"
-      }
-    },
-    {
-      "name": "arc11550_setMetadata",
-      "args": [
-        {
-          "name": "key",
-          "type": "(uint64,string)"
-        },
-        {
-          "name": "data",
-          "type": "byte[]"
-        }
-      ],
-      "returns": {
-        "type": "void"
       }
     },
     {
@@ -74,18 +59,6 @@
       }
     },
     {
-      "name": "arc11550_balancesOf",
-      "args": [
-        {
-          "name": "idAndAddrs",
-          "type": "(uint64,address)[]"
-        }
-      ],
-      "returns": {
-        "type": "uint64[]"
-      }
-    },
-    {
       "name": "arc11550_params",
       "args": [
         {
@@ -95,6 +68,33 @@
       ],
       "returns": {
         "type": "(byte[32],byte[8],uint64,uint64,address)"
+      }
+    },
+    {
+      "name": "arc11550_transferApp",
+      "args": [],
+      "returns": {
+        "type": "uint64"
+      }
+    },
+    {
+      "name": "arc11550_transferHookApp",
+      "args": [],
+      "returns": {
+        "type": "uint64"
+      }
+    },
+    {
+      "name": "arc11550_balancesOf",
+      "desc": "********************\nMulti Getter Methods\n********************",
+      "args": [
+        {
+          "name": "idAndAddrs",
+          "type": "(uint64,address)[]"
+        }
+      ],
+      "returns": {
+        "type": "uint64[]"
       }
     },
     {
@@ -110,7 +110,25 @@
       }
     },
     {
+      "name": "arc11550_setMetadata",
+      "desc": "***************\nSetter methods\n***************",
+      "args": [
+        {
+          "name": "key",
+          "type": "(uint64,byte[])"
+        },
+        {
+          "name": "data",
+          "type": "byte[]"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
       "name": "arc11550_approve",
+      "desc": "********************\nMulti Setter Methods\n********************",
       "args": [
         {
           "name": "allowanceKey",
@@ -138,21 +156,8 @@
       }
     },
     {
-      "name": "arc11550_transferApp",
-      "args": [],
-      "returns": {
-        "type": "uint64"
-      }
-    },
-    {
-      "name": "arc11550_transferHookApp",
-      "args": [],
-      "returns": {
-        "type": "uint64"
-      }
-    },
-    {
       "name": "doTransfers",
+      "desc": "*********************\nTransfer/Mint Methods\n*********************",
       "args": [
         {
           "name": "transfers",

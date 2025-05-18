@@ -4,7 +4,7 @@
   "methods": [
     {
       "name": "approved",
-      "desc": "Determines whether a transfer is approved or not. This implementation just ensures the caller is sending from their own address, but\nthere are other possibilities such as ERC20-style approvals, whitelists, blacklists, enforced royalties, etc.",
+      "desc": "Determines whether a transfer is approved or not. This implementation always returns true, but\nthere are other possibilities such as ERC20-style approvals, whitelists, blacklists, enforced royalties, etc.",
       "args": [
         {
           "name": "caller",

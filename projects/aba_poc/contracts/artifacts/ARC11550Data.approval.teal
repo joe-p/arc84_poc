@@ -86,24 +86,28 @@ createApplication:
 	return
 
 // arc11550_minted(): uint64
+//
+// **************
+// Getter Methods
+// ***************
 arc11550_minted:
 	proto 0 1
 
-	// contracts/ARC11550Data.algo.ts:82
+	// contracts/ARC11550Data.algo.ts:86
 	// return this.minted.value;
 	bytec 3 //  "minted"
 	app_global_get
 	retsub
 
-// arc11550_metadata((uint64,string))(bool,byte[])
+// arc11550_metadata((uint64,byte[]))(bool,byte[])
 *abi_route_arc11550_metadata:
 	// The ABI return prefix
 	bytec 1 // 0x151f7c75
 
-	// key: (uint64,string)
+	// key: (uint64,byte[])
 	txna ApplicationArgs 1
 
-	// execute arc11550_metadata((uint64,string))(bool,byte[])
+	// execute arc11550_metadata((uint64,byte[]))(bool,byte[])
 	callsub arc11550_metadata
 	concat
 	log
@@ -114,7 +118,7 @@ arc11550_minted:
 arc11550_metadata:
 	proto 1 1
 
-	// contracts/ARC11550Data.algo.ts:86
+	// contracts/ARC11550Data.algo.ts:90
 	// return this.metadata(key).value;
 	bytec 4 //  "m"
 	frame_dig -1 // key: MetadataKey
@@ -125,26 +129,389 @@ arc11550_metadata:
 	assert
 	retsub
 
-// arc11550_setMetadata((uint64,string),byte[])void
+// arc11550_balanceOf(uint64,address)uint64
+*abi_route_arc11550_balanceOf:
+	// The ABI return prefix
+	bytec 1 // 0x151f7c75
+
+	// account: address
+	txna ApplicationArgs 2
+	dup
+	len
+	intc 4 // 32
+	==
+
+	// argument 0 (account) for arc11550_balanceOf must be a address
+	assert
+
+	// id: uint64
+	txna ApplicationArgs 1
+	btoi
+
+	// execute arc11550_balanceOf(uint64,address)uint64
+	callsub arc11550_balanceOf
+	itob
+	concat
+	log
+	intc 2 // 1
+	return
+
+// arc11550_balanceOf(id: TokenId, account: Address): uint64
+arc11550_balanceOf:
+	proto 2 1
+
+	// contracts/ARC11550Data.algo.ts:94
+	// return this.balances({ tokenId: id, address: account }).value;
+	bytec 2 //  "b"
+	frame_dig -1 // id: TokenId
+	itob
+	frame_dig -2 // account: Address
+	concat
+	concat
+	box_get
+
+	// box value does not exist: this.balances({ tokenId: id, address: account }).value
+	assert
+	btoi
+	retsub
+
+// arc11550_params(uint64)(byte[32],byte[8],uint64,uint64,address)
+*abi_route_arc11550_params:
+	// The ABI return prefix
+	bytec 1 // 0x151f7c75
+
+	// id: uint64
+	txna ApplicationArgs 1
+	btoi
+
+	// execute arc11550_params(uint64)(byte[32],byte[8],uint64,uint64,address)
+	callsub arc11550_params
+	concat
+	log
+	intc 2 // 1
+	return
+
+// arc11550_params(id: TokenId): Params
+arc11550_params:
+	proto 1 1
+
+	// contracts/ARC11550Data.algo.ts:98
+	// return this.params(id).value;
+	bytec 5 //  "p"
+	frame_dig -1 // id: TokenId
+	itob
+	concat
+	box_get
+
+	// box value does not exist: this.params(id).value
+	assert
+	retsub
+
+// arc11550_transferApp()uint64
+*abi_route_arc11550_transferApp:
+	// The ABI return prefix
+	bytec 1 // 0x151f7c75
+
+	// execute arc11550_transferApp()uint64
+	callsub arc11550_transferApp
+	itob
+	concat
+	log
+	intc 2 // 1
+	return
+
+// arc11550_transferApp(): AppID
+arc11550_transferApp:
+	proto 0 1
+
+	// contracts/ARC11550Data.algo.ts:102
+	// return this.transferApp.value;
+	bytec 6 //  "transferApp"
+	app_global_get
+	retsub
+
+// arc11550_transferHookApp()uint64
+*abi_route_arc11550_transferHookApp:
+	// The ABI return prefix
+	bytec 1 // 0x151f7c75
+
+	// execute arc11550_transferHookApp()uint64
+	callsub arc11550_transferHookApp
+	itob
+	concat
+	log
+	intc 2 // 1
+	return
+
+// arc11550_transferHookApp(): AppID
+arc11550_transferHookApp:
+	proto 0 1
+
+	// contracts/ARC11550Data.algo.ts:106
+	// return this.transferHookApp.value;
+	bytec 8 //  "transferHookApp"
+	app_global_get
+	retsub
+
+// arc11550_balancesOf((uint64,address)[])uint64[]
+*abi_route_arc11550_balancesOf:
+	// The ABI return prefix
+	bytec 1 // 0x151f7c75
+
+	// idAndAddrs: (uint64,address)[]
+	txna ApplicationArgs 1
+	extract 2 0
+
+	// execute arc11550_balancesOf((uint64,address)[])uint64[]
+	callsub arc11550_balancesOf
+	dup
+	len
+	intc 1 // 8
+	/
+	itob
+	extract 6 2
+	swap
+	concat
+	concat
+	log
+	intc 2 // 1
+	return
+
+// arc11550_balancesOf(idAndAddrs: IdAndAddress[]): uint64[]
+//
+// *******************
+// Multi Getter Methods
+// ********************
+arc11550_balancesOf:
+	proto 1 1
+
+	// Push empty bytes after the frame pointer to reserve space for local variables
+	bytec 0 // 0x
+	dupn 3
+
+	// contracts/ARC11550Data.algo.ts:114
+	// balances: uint64[] = []
+	bytec 0 // 0x
+	frame_bury 0 // balances: uint64[]
+
+	// contracts/ARC11550Data.algo.ts:115
+	// for (let i = 0; i < idAndAddrs.length; i += 1)
+	intc 0 // 0
+	frame_bury 1 // i: uint64
+
+*for_0:
+	// contracts/ARC11550Data.algo.ts:115
+	// i < idAndAddrs.length
+	frame_dig 1 // i: uint64
+	frame_dig -1 // idAndAddrs: IdAndAddress[]
+	len
+	intc 6 // 40
+	/
+	<
+	bz *for_0_end
+
+	// contracts/ARC11550Data.algo.ts:116
+	// id = idAndAddrs[i].tokenId
+	frame_dig -1 // idAndAddrs: IdAndAddress[]
+	store 255 // full array
+	intc 0 //  initial offset
+	frame_dig 1 // i: uint64
+	intc 6 // 40
+	* // acc * typeLength
+	+
+	intc 0 //  headOffset
+	+
+	load 255 // full array
+	swap
+	intc 1 // 8
+	extract3
+	btoi
+	frame_bury 2 // id: uint64
+
+	// contracts/ARC11550Data.algo.ts:117
+	// addr = idAndAddrs[i].address
+	frame_dig -1 // idAndAddrs: IdAndAddress[]
+	store 255 // full array
+	intc 0 //  initial offset
+	frame_dig 1 // i: uint64
+	intc 6 // 40
+	* // acc * typeLength
+	+
+	intc 1 //  headOffset
+	+
+	load 255 // full array
+	swap
+	intc 4 // 32
+	extract3
+	frame_bury 3 // addr: address
+
+	// contracts/ARC11550Data.algo.ts:118
+	// balances.push(this.balances({ tokenId: id, address: addr }).value)
+	frame_dig 0 // balances: uint64[]
+	bytec 2 //  "b"
+	frame_dig 2 // id: uint64
+	itob
+	frame_dig 3 // addr: address
+	concat
+	concat
+	box_get
+
+	// box value does not exist: this.balances({ tokenId: id, address: addr }).value
+	assert
+	btoi
+	itob
+	concat
+	frame_bury 0 // balances: uint64[]
+
+*for_0_continue:
+	// contracts/ARC11550Data.algo.ts:115
+	// i += 1
+	frame_dig 1 // i: uint64
+	intc 2 // 1
+	+
+	frame_bury 1 // i: uint64
+	b *for_0
+
+*for_0_end:
+	// contracts/ARC11550Data.algo.ts:121
+	// return balances;
+	frame_dig 0 // balances: uint64[]
+
+	// set the subroutine return value
+	frame_bury 0
+
+	// pop all local variables from the stack
+	popn 3
+	retsub
+
+// arc11550_mulitpleParams(uint64[])(byte[32],byte[8],uint64,uint64,address)[]
+*abi_route_arc11550_mulitpleParams:
+	// The ABI return prefix
+	bytec 1 // 0x151f7c75
+
+	// ids: uint64[]
+	txna ApplicationArgs 1
+	extract 2 0
+
+	// execute arc11550_mulitpleParams(uint64[])(byte[32],byte[8],uint64,uint64,address)[]
+	callsub arc11550_mulitpleParams
+	dup
+	len
+	intc 7 // 88
+	/
+	itob
+	extract 6 2
+	swap
+	concat
+	concat
+	log
+	intc 2 // 1
+	return
+
+// arc11550_mulitpleParams(ids: TokenId[]): Params[]
+arc11550_mulitpleParams:
+	proto 1 1
+
+	// Push empty bytes after the frame pointer to reserve space for local variables
+	bytec 0 // 0x
+	dupn 2
+
+	// contracts/ARC11550Data.algo.ts:125
+	// params: Params[] = []
+	bytec 0 // 0x
+	frame_bury 0 // params: Params[]
+
+	// contracts/ARC11550Data.algo.ts:126
+	// for (let i = 0; i < ids.length; i += 1)
+	intc 0 // 0
+	frame_bury 1 // i: uint64
+
+*for_1:
+	// contracts/ARC11550Data.algo.ts:126
+	// i < ids.length
+	frame_dig 1 // i: uint64
+	frame_dig -1 // ids: TokenId[]
+	len
+	intc 1 // 8
+	/
+	<
+	bz *for_1_end
+
+	// contracts/ARC11550Data.algo.ts:127
+	// id = ids[i]
+	frame_dig -1 // ids: TokenId[]
+	store 255 // full array
+	intc 0 //  initial offset
+	frame_dig 1 // i: uint64
+	intc 1 // 8
+	* // acc * typeLength
+	+
+	load 255 // full array
+	swap
+	intc 1 // 8
+	extract3
+	btoi
+	frame_bury 2 // id: uint64
+
+	// contracts/ARC11550Data.algo.ts:128
+	// params.push(this.params(id).value)
+	frame_dig 0 // params: Params[]
+	bytec 5 //  "p"
+	frame_dig 2 // id: uint64
+	itob
+	concat
+	box_get
+
+	// box value does not exist: this.params(id).value
+	assert
+	concat
+	frame_bury 0 // params: Params[]
+
+*for_1_continue:
+	// contracts/ARC11550Data.algo.ts:126
+	// i += 1
+	frame_dig 1 // i: uint64
+	intc 2 // 1
+	+
+	frame_bury 1 // i: uint64
+	b *for_1
+
+*for_1_end:
+	// contracts/ARC11550Data.algo.ts:131
+	// return params;
+	frame_dig 0 // params: Params[]
+
+	// set the subroutine return value
+	frame_bury 0
+
+	// pop all local variables from the stack
+	popn 2
+	retsub
+
+// arc11550_setMetadata((uint64,byte[]),byte[])void
 *abi_route_arc11550_setMetadata:
 	// data: byte[]
 	txna ApplicationArgs 2
 	extract 2 0
 
-	// key: (uint64,string)
+	// key: (uint64,byte[])
 	txna ApplicationArgs 1
 
-	// execute arc11550_setMetadata((uint64,string),byte[])void
+	// execute arc11550_setMetadata((uint64,byte[]),byte[])void
 	callsub arc11550_setMetadata
 	intc 2 // 1
 	return
 
 // arc11550_setMetadata(key: MetadataKey, data: bytes): void
+//
+// **************
+// Setter methods
+// ***************
 arc11550_setMetadata:
 	proto 2 0
 
-	// contracts/ARC11550Data.algo.ts:101
-	// assert(this.txn.sender === this.params(key.id).value.manager)
+	// contracts/ARC11550Data.algo.ts:141
+	// assert(this.txn.sender === this.params(key.tokenId).value.manager)
 	txn Sender
 	intc 9 //  headOffset
 	intc 4 // 32
@@ -162,7 +529,7 @@ arc11550_setMetadata:
 	assert
 
 	// *if0_condition
-	// contracts/ARC11550Data.algo.ts:103
+	// contracts/ARC11550Data.algo.ts:143
 	// this.metadata(key).exists
 	bytec 4 //  "m"
 	frame_dig -1 // key: MetadataKey
@@ -173,7 +540,7 @@ arc11550_setMetadata:
 	bz *if0_end
 
 	// *if0_consequent
-	// contracts/ARC11550Data.algo.ts:104
+	// contracts/ARC11550Data.algo.ts:144
 	// assert(this.metadata(key).value.mutable)
 	bytec 4 //  "m"
 	frame_dig -1 // key: MetadataKey
@@ -189,7 +556,7 @@ arc11550_setMetadata:
 	assert
 
 *if0_end:
-	// contracts/ARC11550Data.algo.ts:107
+	// contracts/ARC11550Data.algo.ts:147
 	// this.metadata(key).value.data = data
 	bytec 4 //  "m"
 	frame_dig -1 // key: MetadataKey
@@ -252,315 +619,6 @@ arc11550_setMetadata:
 	box_put
 	retsub
 
-// arc11550_balanceOf(uint64,address)uint64
-*abi_route_arc11550_balanceOf:
-	// The ABI return prefix
-	bytec 1 // 0x151f7c75
-
-	// account: address
-	txna ApplicationArgs 2
-	dup
-	len
-	intc 4 // 32
-	==
-
-	// argument 0 (account) for arc11550_balanceOf must be a address
-	assert
-
-	// id: uint64
-	txna ApplicationArgs 1
-	btoi
-
-	// execute arc11550_balanceOf(uint64,address)uint64
-	callsub arc11550_balanceOf
-	itob
-	concat
-	log
-	intc 2 // 1
-	return
-
-// arc11550_balanceOf(id: TokenId, account: Address): uint64
-arc11550_balanceOf:
-	proto 2 1
-
-	// contracts/ARC11550Data.algo.ts:118
-	// return this.balances({ id: id, address: account }).value;
-	bytec 2 //  "b"
-	frame_dig -1 // id: TokenId
-	itob
-	frame_dig -2 // account: Address
-	concat
-	concat
-	box_get
-
-	// box value does not exist: this.balances({ id: id, address: account }).value
-	assert
-	btoi
-	retsub
-
-// arc11550_balancesOf((uint64,address)[])uint64[]
-*abi_route_arc11550_balancesOf:
-	// The ABI return prefix
-	bytec 1 // 0x151f7c75
-
-	// idAndAddrs: (uint64,address)[]
-	txna ApplicationArgs 1
-	extract 2 0
-
-	// execute arc11550_balancesOf((uint64,address)[])uint64[]
-	callsub arc11550_balancesOf
-	dup
-	len
-	intc 1 // 8
-	/
-	itob
-	extract 6 2
-	swap
-	concat
-	concat
-	log
-	intc 2 // 1
-	return
-
-// arc11550_balancesOf(idAndAddrs: IdAndAddress[]): uint64[]
-arc11550_balancesOf:
-	proto 1 1
-
-	// Push empty bytes after the frame pointer to reserve space for local variables
-	bytec 0 // 0x
-	dupn 3
-
-	// contracts/ARC11550Data.algo.ts:122
-	// balances: uint64[] = []
-	bytec 0 // 0x
-	frame_bury 0 // balances: uint64[]
-
-	// contracts/ARC11550Data.algo.ts:123
-	// for (let i = 0; i < idAndAddrs.length; i += 1)
-	intc 0 // 0
-	frame_bury 1 // i: uint64
-
-*for_0:
-	// contracts/ARC11550Data.algo.ts:123
-	// i < idAndAddrs.length
-	frame_dig 1 // i: uint64
-	frame_dig -1 // idAndAddrs: IdAndAddress[]
-	len
-	intc 6 // 40
-	/
-	<
-	bz *for_0_end
-
-	// contracts/ARC11550Data.algo.ts:124
-	// id = idAndAddrs[i].id
-	frame_dig -1 // idAndAddrs: IdAndAddress[]
-	store 255 // full array
-	intc 0 //  initial offset
-	frame_dig 1 // i: uint64
-	intc 6 // 40
-	* // acc * typeLength
-	+
-	intc 0 //  headOffset
-	+
-	load 255 // full array
-	swap
-	intc 1 // 8
-	extract3
-	btoi
-	frame_bury 2 // id: uint64
-
-	// contracts/ARC11550Data.algo.ts:125
-	// addr = idAndAddrs[i].address
-	frame_dig -1 // idAndAddrs: IdAndAddress[]
-	store 255 // full array
-	intc 0 //  initial offset
-	frame_dig 1 // i: uint64
-	intc 6 // 40
-	* // acc * typeLength
-	+
-	intc 1 //  headOffset
-	+
-	load 255 // full array
-	swap
-	intc 4 // 32
-	extract3
-	frame_bury 3 // addr: address
-
-	// contracts/ARC11550Data.algo.ts:126
-	// balances.push(this.balances({ id: id, address: addr }).value)
-	frame_dig 0 // balances: uint64[]
-	bytec 2 //  "b"
-	frame_dig 2 // id: uint64
-	itob
-	frame_dig 3 // addr: address
-	concat
-	concat
-	box_get
-
-	// box value does not exist: this.balances({ id: id, address: addr }).value
-	assert
-	btoi
-	itob
-	concat
-	frame_bury 0 // balances: uint64[]
-
-*for_0_continue:
-	// contracts/ARC11550Data.algo.ts:123
-	// i += 1
-	frame_dig 1 // i: uint64
-	intc 2 // 1
-	+
-	frame_bury 1 // i: uint64
-	b *for_0
-
-*for_0_end:
-	// contracts/ARC11550Data.algo.ts:129
-	// return balances;
-	frame_dig 0 // balances: uint64[]
-
-	// set the subroutine return value
-	frame_bury 0
-
-	// pop all local variables from the stack
-	popn 3
-	retsub
-
-// arc11550_params(uint64)(byte[32],byte[8],uint64,uint64,address)
-*abi_route_arc11550_params:
-	// The ABI return prefix
-	bytec 1 // 0x151f7c75
-
-	// id: uint64
-	txna ApplicationArgs 1
-	btoi
-
-	// execute arc11550_params(uint64)(byte[32],byte[8],uint64,uint64,address)
-	callsub arc11550_params
-	concat
-	log
-	intc 2 // 1
-	return
-
-// arc11550_params(id: TokenId): Params
-arc11550_params:
-	proto 1 1
-
-	// contracts/ARC11550Data.algo.ts:133
-	// return this.params(id).value;
-	bytec 5 //  "p"
-	frame_dig -1 // id: TokenId
-	itob
-	concat
-	box_get
-
-	// box value does not exist: this.params(id).value
-	assert
-	retsub
-
-// arc11550_mulitpleParams(uint64[])(byte[32],byte[8],uint64,uint64,address)[]
-*abi_route_arc11550_mulitpleParams:
-	// The ABI return prefix
-	bytec 1 // 0x151f7c75
-
-	// ids: uint64[]
-	txna ApplicationArgs 1
-	extract 2 0
-
-	// execute arc11550_mulitpleParams(uint64[])(byte[32],byte[8],uint64,uint64,address)[]
-	callsub arc11550_mulitpleParams
-	dup
-	len
-	intc 7 // 88
-	/
-	itob
-	extract 6 2
-	swap
-	concat
-	concat
-	log
-	intc 2 // 1
-	return
-
-// arc11550_mulitpleParams(ids: TokenId[]): Params[]
-arc11550_mulitpleParams:
-	proto 1 1
-
-	// Push empty bytes after the frame pointer to reserve space for local variables
-	bytec 0 // 0x
-	dupn 2
-
-	// contracts/ARC11550Data.algo.ts:137
-	// params: Params[] = []
-	bytec 0 // 0x
-	frame_bury 0 // params: Params[]
-
-	// contracts/ARC11550Data.algo.ts:138
-	// for (let i = 0; i < ids.length; i += 1)
-	intc 0 // 0
-	frame_bury 1 // i: uint64
-
-*for_1:
-	// contracts/ARC11550Data.algo.ts:138
-	// i < ids.length
-	frame_dig 1 // i: uint64
-	frame_dig -1 // ids: TokenId[]
-	len
-	intc 1 // 8
-	/
-	<
-	bz *for_1_end
-
-	// contracts/ARC11550Data.algo.ts:139
-	// id = ids[i]
-	frame_dig -1 // ids: TokenId[]
-	store 255 // full array
-	intc 0 //  initial offset
-	frame_dig 1 // i: uint64
-	intc 1 // 8
-	* // acc * typeLength
-	+
-	load 255 // full array
-	swap
-	intc 1 // 8
-	extract3
-	btoi
-	frame_bury 2 // id: uint64
-
-	// contracts/ARC11550Data.algo.ts:140
-	// params.push(this.params(id).value)
-	frame_dig 0 // params: Params[]
-	bytec 5 //  "p"
-	frame_dig 2 // id: uint64
-	itob
-	concat
-	box_get
-
-	// box value does not exist: this.params(id).value
-	assert
-	concat
-	frame_bury 0 // params: Params[]
-
-*for_1_continue:
-	// contracts/ARC11550Data.algo.ts:138
-	// i += 1
-	frame_dig 1 // i: uint64
-	intc 2 // 1
-	+
-	frame_bury 1 // i: uint64
-	b *for_1
-
-*for_1_end:
-	// contracts/ARC11550Data.algo.ts:143
-	// return params;
-	frame_dig 0 // params: Params[]
-
-	// set the subroutine return value
-	frame_bury 0
-
-	// pop all local variables from the stack
-	popn 2
-	retsub
-
 // arc11550_approve((address,address,uint64),(uint64,uint64))void
 *abi_route_arc11550_approve:
 	// allowance: (uint64,uint64)
@@ -589,11 +647,15 @@ arc11550_mulitpleParams:
 	return
 
 // arc11550_approve(allowanceKey: AllowanceKey, allowance: Allowance): void
+//
+// *******************
+// Multi Setter Methods
+// ********************
 arc11550_approve:
 	proto 2 0
 
-	// contracts/ARC11550Data.algo.ts:147
-	// assert(this.txn.sender === this.params(allowanceKey.id).value.manager)
+	// contracts/ARC11550Data.algo.ts:155
+	// assert(this.txn.sender === this.params(allowanceKey.tokenId).value.manager)
 	txn Sender
 	intc 9 //  headOffset
 	intc 4 // 32
@@ -608,7 +670,7 @@ arc11550_approve:
 	==
 	assert
 
-	// contracts/ARC11550Data.algo.ts:148
+	// contracts/ARC11550Data.algo.ts:156
 	// this.allowances(allowanceKey).value = allowance
 	bytec 7 //  "a"
 	frame_dig -1 // allowanceKey: AllowanceKey
@@ -636,13 +698,13 @@ arc11550_setApprovals:
 	bytec 0 // 0x
 	dup
 
-	// contracts/ARC11550Data.algo.ts:152
+	// contracts/ARC11550Data.algo.ts:160
 	// for (let i = 0; i < allowances.length; i += 1)
 	intc 0 // 0
 	frame_bury 0 // i: uint64
 
 *for_2:
-	// contracts/ARC11550Data.algo.ts:152
+	// contracts/ARC11550Data.algo.ts:160
 	// i < allowances.length
 	frame_dig 0 // i: uint64
 	frame_dig -1 // allowances: { key: AllowanceKey; allowance: Allowance }[]
@@ -654,7 +716,7 @@ arc11550_setApprovals:
 	frame_dig 0 // i: uint64
 	frame_bury 1 // accessor: accessor//0//a
 
-	// contracts/ARC11550Data.algo.ts:154
+	// contracts/ARC11550Data.algo.ts:162
 	// this.arc11550_approve(a.key, a.allowance)
 	frame_dig -1 // allowances: { key: AllowanceKey; allowance: Allowance }[]
 	store 255 // full array
@@ -685,7 +747,7 @@ arc11550_setApprovals:
 	callsub arc11550_approve
 
 *for_2_continue:
-	// contracts/ARC11550Data.algo.ts:152
+	// contracts/ARC11550Data.algo.ts:160
 	// i += 1
 	frame_dig 0 // i: uint64
 	intc 2 // 1
@@ -694,52 +756,6 @@ arc11550_setApprovals:
 	b *for_2
 
 *for_2_end:
-	retsub
-
-// arc11550_transferApp()uint64
-*abi_route_arc11550_transferApp:
-	// The ABI return prefix
-	bytec 1 // 0x151f7c75
-
-	// execute arc11550_transferApp()uint64
-	callsub arc11550_transferApp
-	itob
-	concat
-	log
-	intc 2 // 1
-	return
-
-// arc11550_transferApp(): AppID
-arc11550_transferApp:
-	proto 0 1
-
-	// contracts/ARC11550Data.algo.ts:159
-	// return this.transferApp.value;
-	bytec 6 //  "transferApp"
-	app_global_get
-	retsub
-
-// arc11550_transferHookApp()uint64
-*abi_route_arc11550_transferHookApp:
-	// The ABI return prefix
-	bytec 1 // 0x151f7c75
-
-	// execute arc11550_transferHookApp()uint64
-	callsub arc11550_transferHookApp
-	itob
-	concat
-	log
-	intc 2 // 1
-	return
-
-// arc11550_transferHookApp(): AppID
-arc11550_transferHookApp:
-	proto 0 1
-
-	// contracts/ARC11550Data.algo.ts:163
-	// return this.transferHookApp.value;
-	bytec 8 //  "transferHookApp"
-	app_global_get
 	retsub
 
 // doTransfers((uint64,address,address,uint64)[])void
@@ -754,6 +770,10 @@ arc11550_transferHookApp:
 	return
 
 // doTransfers(transfers: Transfer[]): void
+//
+// ********************
+// Transfer/Mint Methods
+// *********************
 doTransfers:
 	proto 1 0
 
@@ -761,7 +781,7 @@ doTransfers:
 	bytec 0 // 0x
 	dupn 2
 
-	// contracts/ARC11550Data.algo.ts:167
+	// contracts/ARC11550Data.algo.ts:173
 	// assert(globals.callerApplicationID == this.transferApp.value)
 	global CallerApplicationID
 	bytec 6 //  "transferApp"
@@ -769,13 +789,13 @@ doTransfers:
 	==
 	assert
 
-	// contracts/ARC11550Data.algo.ts:169
+	// contracts/ARC11550Data.algo.ts:175
 	// for (let i = 0; i < transfers.length; i += 1)
 	intc 0 // 0
 	frame_bury 0 // i: uint64
 
 *for_3:
-	// contracts/ARC11550Data.algo.ts:169
+	// contracts/ARC11550Data.algo.ts:175
 	// i < transfers.length
 	frame_dig 0 // i: uint64
 	frame_dig -1 // transfers: Transfer[]
@@ -788,7 +808,7 @@ doTransfers:
 	frame_bury 1 // accessor: accessor//0//t
 
 	// *if1_condition
-	// contracts/ARC11550Data.algo.ts:172
+	// contracts/ARC11550Data.algo.ts:178
 	// t.from !== this.txn.sender
 	frame_dig -1 // transfers: Transfer[]
 	store 255 // full array
@@ -808,8 +828,12 @@ doTransfers:
 	bz *if1_end
 
 	// *if1_consequent
-	// contracts/ARC11550Data.algo.ts:173
-	// allowance = this.allowances({ holder: t.from, sender: this.txn.sender, id: t.id } as AllowanceKey).value
+	// contracts/ARC11550Data.algo.ts:179
+	// allowance = this.allowances({
+	//           holder: t.from,
+	//           sender: this.txn.sender,
+	//           tokenId: t.tokenId,
+	//         } as AllowanceKey).value
 	bytec 7 //  "a"
 	frame_dig -1 // transfers: Transfer[]
 	store 255 // full array
@@ -845,13 +869,13 @@ doTransfers:
 	concat
 	frame_bury 2 // storage key//allowance
 
-	// contracts/ARC11550Data.algo.ts:174
+	// contracts/ARC11550Data.algo.ts:184
 	// assert(allowance.untilTimestamp >= globals.latestTimestamp)
 	intc 1 //  headOffset
 	intc 1 // 8
 	bytec 7 //  "a"
 
-	// contracts/ARC11550Data.algo.ts:173
+	// contracts/ARC11550Data.algo.ts:180
 	// t.from
 	frame_dig -1 // transfers: Transfer[]
 	store 255 // full array
@@ -867,13 +891,13 @@ doTransfers:
 	intc 4 // 32
 	extract3
 
-	// contracts/ARC11550Data.algo.ts:173
+	// contracts/ARC11550Data.algo.ts:181
 	// this.txn.sender
 	txn Sender
 	concat
 
-	// contracts/ARC11550Data.algo.ts:173
-	// t.id
+	// contracts/ARC11550Data.algo.ts:182
+	// t.tokenId
 	frame_dig -1 // transfers: Transfer[]
 	store 255 // full array
 	intc 0 //  initial offset
@@ -895,20 +919,20 @@ doTransfers:
 	box_extract
 	btoi
 
-	// contracts/ARC11550Data.algo.ts:174
+	// contracts/ARC11550Data.algo.ts:184
 	// globals.latestTimestamp
 	global LatestTimestamp
 	>=
 	assert
 
-	// contracts/ARC11550Data.algo.ts:175
+	// contracts/ARC11550Data.algo.ts:185
 	// allowance.amount -= t.amount
 	intc 0 // 0
 	dup
 	intc 1 // 8
 	bytec 7 //  "a"
 
-	// contracts/ARC11550Data.algo.ts:173
+	// contracts/ARC11550Data.algo.ts:180
 	// t.from
 	frame_dig -1 // transfers: Transfer[]
 	store 255 // full array
@@ -924,13 +948,13 @@ doTransfers:
 	intc 4 // 32
 	extract3
 
-	// contracts/ARC11550Data.algo.ts:173
+	// contracts/ARC11550Data.algo.ts:181
 	// this.txn.sender
 	txn Sender
 	concat
 
-	// contracts/ARC11550Data.algo.ts:173
-	// t.id
+	// contracts/ARC11550Data.algo.ts:182
+	// t.tokenId
 	frame_dig -1 // transfers: Transfer[]
 	store 255 // full array
 	intc 0 //  initial offset
@@ -952,7 +976,7 @@ doTransfers:
 	box_extract
 	btoi
 
-	// contracts/ARC11550Data.algo.ts:175
+	// contracts/ARC11550Data.algo.ts:185
 	// t.amount
 	frame_dig -1 // transfers: Transfer[]
 	store 255 // full array
@@ -975,8 +999,8 @@ doTransfers:
 	box_replace
 
 *if1_end:
-	// contracts/ARC11550Data.algo.ts:177
-	// this.balances({ id: t.id, address: t.from }).value -= t.amount
+	// contracts/ARC11550Data.algo.ts:187
+	// this.balances({ tokenId: t.tokenId, address: t.from }).value -= t.amount
 	bytec 2 //  "b"
 	frame_dig -1 // transfers: Transfer[]
 	store 255 // full array
@@ -1010,7 +1034,7 @@ doTransfers:
 	concat
 	box_get
 
-	// box value does not exist: this.balances({ id: t.id, address: t.from }).value
+	// box value does not exist: this.balances({ tokenId: t.tokenId, address: t.from }).value
 	assert
 	btoi
 	frame_dig -1 // transfers: Transfer[]
@@ -1063,8 +1087,8 @@ doTransfers:
 	itob
 	box_put
 
-	// contracts/ARC11550Data.algo.ts:178
-	// this.balances({ id: t.id, address: t.to }).value += t.amount
+	// contracts/ARC11550Data.algo.ts:188
+	// this.balances({ tokenId: t.tokenId, address: t.to }).value += t.amount
 	bytec 2 //  "b"
 	frame_dig -1 // transfers: Transfer[]
 	store 255 // full array
@@ -1098,7 +1122,7 @@ doTransfers:
 	concat
 	box_get
 
-	// box value does not exist: this.balances({ id: t.id, address: t.to }).value
+	// box value does not exist: this.balances({ tokenId: t.tokenId, address: t.to }).value
 	assert
 	btoi
 	frame_dig -1 // transfers: Transfer[]
@@ -1152,7 +1176,7 @@ doTransfers:
 	box_put
 
 *for_3_continue:
-	// contracts/ARC11550Data.algo.ts:169
+	// contracts/ARC11550Data.algo.ts:175
 	// i += 1
 	frame_dig 0 // i: uint64
 	intc 2 // 1
@@ -1193,7 +1217,7 @@ doMint:
 	// Push empty bytes after the frame pointer to reserve space for local variables
 	bytec 0 // 0x
 
-	// contracts/ARC11550Data.algo.ts:183
+	// contracts/ARC11550Data.algo.ts:193
 	// assert(globals.callerApplicationID == this.transferApp.value)
 	global CallerApplicationID
 	bytec 6 //  "transferApp"
@@ -1201,13 +1225,13 @@ doMint:
 	==
 	assert
 
-	// contracts/ARC11550Data.algo.ts:185
+	// contracts/ARC11550Data.algo.ts:195
 	// id = this.minted.value
 	bytec 3 //  "minted"
 	app_global_get
 	frame_bury 0 // id: uint64
 
-	// contracts/ARC11550Data.algo.ts:186
+	// contracts/ARC11550Data.algo.ts:196
 	// assert(id <= this.mintCap.value)
 	frame_dig 0 // id: uint64
 	bytec 9 //  "mintCap"
@@ -1215,7 +1239,7 @@ doMint:
 	<=
 	assert
 
-	// contracts/ARC11550Data.algo.ts:187
+	// contracts/ARC11550Data.algo.ts:197
 	// assert(this.txn.sender === this.minter.value)
 	txn Sender
 	pushbytes 0x6d696e746572 // "minter"
@@ -1223,7 +1247,7 @@ doMint:
 	==
 	assert
 
-	// contracts/ARC11550Data.algo.ts:189
+	// contracts/ARC11550Data.algo.ts:199
 	// this.params(id).value = params
 	bytec 5 //  "p"
 	frame_dig 0 // id: uint64
@@ -1232,7 +1256,7 @@ doMint:
 	frame_dig -1 // params: Params
 	box_put
 
-	// contracts/ARC11550Data.algo.ts:190
+	// contracts/ARC11550Data.algo.ts:200
 	// this.minted.value += 1
 	bytec 3 //  "minted"
 	app_global_get
@@ -1242,7 +1266,7 @@ doMint:
 	swap
 	app_global_put
 
-	// contracts/ARC11550Data.algo.ts:192
+	// contracts/ARC11550Data.algo.ts:202
 	// return id;
 	frame_dig 0 // id: uint64
 
@@ -1260,20 +1284,20 @@ doMint:
 
 *call_NoOp:
 	pushbytes 0xdd42f5a0 // method "arc11550_minted()uint64"
-	pushbytes 0x3ac23254 // method "arc11550_metadata((uint64,string))(bool,byte[])"
-	pushbytes 0xbbb9de67 // method "arc11550_setMetadata((uint64,string),byte[])void"
+	pushbytes 0x9a89dafe // method "arc11550_metadata((uint64,byte[]))(bool,byte[])"
 	pushbytes 0xd04acbc2 // method "arc11550_balanceOf(uint64,address)uint64"
-	pushbytes 0x65dd8717 // method "arc11550_balancesOf((uint64,address)[])uint64[]"
 	pushbytes 0x51f504be // method "arc11550_params(uint64)(byte[32],byte[8],uint64,uint64,address)"
-	pushbytes 0x2ad2eb55 // method "arc11550_mulitpleParams(uint64[])(byte[32],byte[8],uint64,uint64,address)[]"
-	pushbytes 0xd579175d // method "arc11550_approve((address,address,uint64),(uint64,uint64))void"
-	pushbytes 0x0f0fa173 // method "arc11550_setApprovals(((address,address,uint64),(uint64,uint64))[])void"
 	pushbytes 0xc14e68d9 // method "arc11550_transferApp()uint64"
 	pushbytes 0x091ca2b7 // method "arc11550_transferHookApp()uint64"
+	pushbytes 0x65dd8717 // method "arc11550_balancesOf((uint64,address)[])uint64[]"
+	pushbytes 0x2ad2eb55 // method "arc11550_mulitpleParams(uint64[])(byte[32],byte[8],uint64,uint64,address)[]"
+	pushbytes 0xf8efd1f3 // method "arc11550_setMetadata((uint64,byte[]),byte[])void"
+	pushbytes 0xd579175d // method "arc11550_approve((address,address,uint64),(uint64,uint64))void"
+	pushbytes 0x0f0fa173 // method "arc11550_setApprovals(((address,address,uint64),(uint64,uint64))[])void"
 	pushbytes 0x62b5078b // method "doTransfers((uint64,address,address,uint64)[])void"
 	pushbytes 0x41057855 // method "doMint((byte[32],byte[8],uint64,uint64,address))uint64"
 	txna ApplicationArgs 0
-	match *abi_route_arc11550_minted *abi_route_arc11550_metadata *abi_route_arc11550_setMetadata *abi_route_arc11550_balanceOf *abi_route_arc11550_balancesOf *abi_route_arc11550_params *abi_route_arc11550_mulitpleParams *abi_route_arc11550_approve *abi_route_arc11550_setApprovals *abi_route_arc11550_transferApp *abi_route_arc11550_transferHookApp *abi_route_doTransfers *abi_route_doMint
+	match *abi_route_arc11550_minted *abi_route_arc11550_metadata *abi_route_arc11550_balanceOf *abi_route_arc11550_params *abi_route_arc11550_transferApp *abi_route_arc11550_transferHookApp *abi_route_arc11550_balancesOf *abi_route_arc11550_mulitpleParams *abi_route_arc11550_setMetadata *abi_route_arc11550_approve *abi_route_arc11550_setApprovals *abi_route_doTransfers *abi_route_doMint
 
 	// this contract does not implement the given ABI method for call NoOp
 	err

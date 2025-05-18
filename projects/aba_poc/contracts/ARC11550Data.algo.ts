@@ -78,6 +78,10 @@ export class ARC11550Data extends Contract {
     this.transferHookApp.value = transferHookApp;
   }
 
+  /*****************
+   * Getter Methods
+   *****************/
+
   arc11550_minted(): uint64 {
     return this.minted.value;
   }
@@ -86,37 +90,25 @@ export class ARC11550Data extends Contract {
     return this.metadata(key).value;
   }
 
-  // TODO: Nested dynamic types not supported by TEALScript
-  // arc11550_multipleMetadata(keys: MetadataKey[]): Metadata[] {
-  //   const metadata: Metadata[] = [];
-  //   for (let i = 0; i < keys.length; i += 1) {
-  //     const key = keys[i];
-  //     metadata[i] = this.metadata(key).value;
-  //   }
-  //
-  //   return metadata;
-  // }
-
-  arc11550_setMetadata(key: MetadataKey, data: bytes) {
-    assert(this.txn.sender === this.params(key.tokenId).value.manager);
-
-    if (this.metadata(key).exists) {
-      assert(this.metadata(key).value.mutable);
-    }
-
-    this.metadata(key).value.data = data;
-  }
-
-  // TODO: Nested dynamic types not supported by TEALScript
-  // arc11550_setMultipleMetadata(keysAndData: { key: MetadataKey; data: bytes }[]) {
-  //   for (let i = 0; i < keysAndData.length; i += 1) {
-  //     this.arc11550_setMetadata(keysAndData[i].key, keysAndData[i].data);
-  //   }
-  // }
-
   arc11550_balanceOf(id: TokenId, account: Address): uint64 {
     return this.balances({ tokenId: id, address: account }).value;
   }
+
+  arc11550_params(id: TokenId): Params {
+    return this.params(id).value;
+  }
+
+  arc11550_transferApp(): AppID {
+    return this.transferApp.value;
+  }
+
+  arc11550_transferHookApp(): AppID {
+    return this.transferHookApp.value;
+  }
+
+  /**********************
+   * Multi Getter Methods
+   **********************/
 
   arc11550_balancesOf(idAndAddrs: IdAndAddress[]): uint64[] {
     const balances: uint64[] = [];
@@ -129,10 +121,6 @@ export class ARC11550Data extends Contract {
     return balances;
   }
 
-  arc11550_params(id: TokenId): Params {
-    return this.params(id).value;
-  }
-
   arc11550_mulitpleParams(ids: TokenId[]): Params[] {
     const params: Params[] = [];
     for (let i = 0; i < ids.length; i += 1) {
@@ -142,6 +130,26 @@ export class ARC11550Data extends Contract {
 
     return params;
   }
+
+  // TODO: Multi-getter for metadata
+
+  /*****************
+   * Setter methods
+   *****************/
+
+  arc11550_setMetadata(key: MetadataKey, data: bytes) {
+    assert(this.txn.sender === this.params(key.tokenId).value.manager);
+
+    if (this.metadata(key).exists) {
+      assert(this.metadata(key).value.mutable);
+    }
+
+    this.metadata(key).value.data = data;
+  }
+
+  /**********************
+   * Multi Setter Methods
+   **********************/
 
   arc11550_approve(allowanceKey: AllowanceKey, allowance: Allowance) {
     assert(this.txn.sender === this.params(allowanceKey.tokenId).value.manager);
@@ -155,13 +163,11 @@ export class ARC11550Data extends Contract {
     }
   }
 
-  arc11550_transferApp(): AppID {
-    return this.transferApp.value;
-  }
+  // TODO: Multi-setter for metadata
 
-  arc11550_transferHookApp(): AppID {
-    return this.transferHookApp.value;
-  }
+  /***********************
+   * Transfer/Mint Methods
+   ***********************/
 
   doTransfers(transfers: Transfer[]) {
     assert(globals.callerApplicationID == this.transferApp.value);
@@ -198,14 +204,9 @@ export class ARC11550Data extends Contract {
 }
 
 export class ARC11550TransferHook extends Contract {
-  /** Determines whether a transfer is approved or not. This implementation just ensures the caller is sending from their own address, but
-   * there are other possibilities such as ERC20-style approvals, whitelists, blacklists, enforced royalties, etc. */
+  /** Determines whether a transfer is approved or not. This implementation just returns true (which is the same as not setting a
+   * transferHookApp), but there are many possibilities such as dynamic whitelists, blacklists, enforced royalties, token-gating, etc. */
   approved(caller: Address, transfers: Transfer[]): boolean {
-    for (let i = 0; i < transfers.length; i += 1) {
-      const t = transfers[i];
-      if (t.from !== caller) return false;
-    }
-
     return true;
   }
 }
