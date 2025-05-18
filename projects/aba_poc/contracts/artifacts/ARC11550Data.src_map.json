@@ -2829,7 +2829,7 @@
   },
   {
     "teal": 625,
-    "source": "contracts/ARC11550Data.algo.ts:154",
+    "source": "contracts/ARC11550Data.algo.ts:150",
     "pc": [
       647,
       648,
@@ -2838,21 +2838,21 @@
   },
   {
     "teal": 626,
-    "source": "contracts/ARC11550Data.algo.ts:154",
+    "source": "contracts/ARC11550Data.algo.ts:150",
     "pc": [
       650
     ]
   },
   {
     "teal": 627,
-    "source": "contracts/ARC11550Data.algo.ts:154",
+    "source": "contracts/ARC11550Data.algo.ts:150",
     "pc": [
       651
     ]
   },
   {
     "teal": 628,
-    "source": "contracts/ARC11550Data.algo.ts:154",
+    "source": "contracts/ARC11550Data.algo.ts:150",
     "pc": [
       652,
       653
@@ -2860,22 +2860,22 @@
   },
   {
     "teal": 629,
-    "source": "contracts/ARC11550Data.algo.ts:154",
+    "source": "contracts/ARC11550Data.algo.ts:150",
     "pc": [
       654
     ]
   },
   {
     "teal": 632,
-    "source": "contracts/ARC11550Data.algo.ts:154",
-    "errorMessage": "argument 0 (allowance) for arc11550_approve must be a (uint64,uint64)",
+    "source": "contracts/ARC11550Data.algo.ts:150",
+    "errorMessage": "argument 0 (allowance) for arc11550_setAllowance must be a (uint64,uint64)",
     "pc": [
       655
     ]
   },
   {
     "teal": 635,
-    "source": "contracts/ARC11550Data.algo.ts:154",
+    "source": "contracts/ARC11550Data.algo.ts:150",
     "pc": [
       656,
       657,
@@ -2884,21 +2884,21 @@
   },
   {
     "teal": 636,
-    "source": "contracts/ARC11550Data.algo.ts:154",
+    "source": "contracts/ARC11550Data.algo.ts:150",
     "pc": [
       659
     ]
   },
   {
     "teal": 637,
-    "source": "contracts/ARC11550Data.algo.ts:154",
+    "source": "contracts/ARC11550Data.algo.ts:150",
     "pc": [
       660
     ]
   },
   {
     "teal": 638,
-    "source": "contracts/ARC11550Data.algo.ts:154",
+    "source": "contracts/ARC11550Data.algo.ts:150",
     "pc": [
       661,
       662
@@ -2906,22 +2906,22 @@
   },
   {
     "teal": 639,
-    "source": "contracts/ARC11550Data.algo.ts:154",
+    "source": "contracts/ARC11550Data.algo.ts:150",
     "pc": [
       663
     ]
   },
   {
     "teal": 642,
-    "source": "contracts/ARC11550Data.algo.ts:154",
-    "errorMessage": "argument 1 (allowanceKey) for arc11550_approve must be a (address,address,uint64)",
+    "source": "contracts/ARC11550Data.algo.ts:150",
+    "errorMessage": "argument 1 (allowanceKey) for arc11550_setAllowance must be a (address,address,uint64)",
     "pc": [
       664
     ]
   },
   {
     "teal": 645,
-    "source": "contracts/ARC11550Data.algo.ts:154",
+    "source": "contracts/ARC11550Data.algo.ts:150",
     "pc": [
       665,
       666,
@@ -2930,21 +2930,21 @@
   },
   {
     "teal": 646,
-    "source": "contracts/ARC11550Data.algo.ts:154",
+    "source": "contracts/ARC11550Data.algo.ts:150",
     "pc": [
       668
     ]
   },
   {
     "teal": 647,
-    "source": "contracts/ARC11550Data.algo.ts:154",
+    "source": "contracts/ARC11550Data.algo.ts:150",
     "pc": [
       669
     ]
   },
   {
-    "teal": 655,
-    "source": "contracts/ARC11550Data.algo.ts:154",
+    "teal": 651,
+    "source": "contracts/ARC11550Data.algo.ts:150",
     "pc": [
       670,
       671,
@@ -2952,48 +2952,48 @@
     ]
   },
   {
-    "teal": 659,
-    "source": "contracts/ARC11550Data.algo.ts:155",
+    "teal": 655,
+    "source": "contracts/ARC11550Data.algo.ts:151",
     "pc": [
       673,
       674
     ]
   },
   {
-    "teal": 660,
-    "source": "contracts/ARC11550Data.algo.ts:155",
+    "teal": 656,
+    "source": "contracts/ARC11550Data.algo.ts:151",
     "pc": [
       675,
       676
     ]
   },
   {
-    "teal": 661,
-    "source": "contracts/ARC11550Data.algo.ts:155",
+    "teal": 657,
+    "source": "contracts/ARC11550Data.algo.ts:151",
     "pc": [
       677,
       678
     ]
   },
   {
-    "teal": 662,
-    "source": "contracts/ARC11550Data.algo.ts:155",
+    "teal": 658,
+    "source": "contracts/ARC11550Data.algo.ts:151",
     "pc": [
       679,
       680
     ]
   },
   {
-    "teal": 663,
-    "source": "contracts/ARC11550Data.algo.ts:155",
+    "teal": 659,
+    "source": "contracts/ARC11550Data.algo.ts:151",
     "pc": [
       681,
       682
     ]
   },
   {
-    "teal": 664,
-    "source": "contracts/ARC11550Data.algo.ts:155",
+    "teal": 660,
+    "source": "contracts/ARC11550Data.algo.ts:151",
     "pc": [
       683,
       684,
@@ -3001,102 +3001,102 @@
     ]
   },
   {
-    "teal": 665,
-    "source": "contracts/ARC11550Data.algo.ts:155",
+    "teal": 661,
+    "source": "contracts/ARC11550Data.algo.ts:151",
     "pc": [
       686
     ]
   },
   {
-    "teal": 666,
-    "source": "contracts/ARC11550Data.algo.ts:155",
+    "teal": 662,
+    "source": "contracts/ARC11550Data.algo.ts:151",
     "pc": [
       687
     ]
   },
   {
-    "teal": 667,
-    "source": "contracts/ARC11550Data.algo.ts:155",
+    "teal": 663,
+    "source": "contracts/ARC11550Data.algo.ts:151",
     "pc": [
       688
     ]
   },
   {
-    "teal": 668,
-    "source": "contracts/ARC11550Data.algo.ts:155",
+    "teal": 664,
+    "source": "contracts/ARC11550Data.algo.ts:151",
     "pc": [
       689,
       690
     ]
   },
   {
-    "teal": 669,
-    "source": "contracts/ARC11550Data.algo.ts:155",
+    "teal": 665,
+    "source": "contracts/ARC11550Data.algo.ts:151",
     "pc": [
       691
     ]
   },
   {
-    "teal": 670,
-    "source": "contracts/ARC11550Data.algo.ts:155",
+    "teal": 666,
+    "source": "contracts/ARC11550Data.algo.ts:151",
     "pc": [
       692
     ]
   },
   {
-    "teal": 671,
-    "source": "contracts/ARC11550Data.algo.ts:155",
+    "teal": 667,
+    "source": "contracts/ARC11550Data.algo.ts:151",
     "pc": [
       693
     ]
   },
   {
-    "teal": 675,
-    "source": "contracts/ARC11550Data.algo.ts:156",
+    "teal": 671,
+    "source": "contracts/ARC11550Data.algo.ts:152",
     "pc": [
       694,
       695
     ]
   },
   {
-    "teal": 676,
-    "source": "contracts/ARC11550Data.algo.ts:156",
+    "teal": 672,
+    "source": "contracts/ARC11550Data.algo.ts:152",
     "pc": [
       696,
       697
     ]
   },
   {
-    "teal": 677,
-    "source": "contracts/ARC11550Data.algo.ts:156",
+    "teal": 673,
+    "source": "contracts/ARC11550Data.algo.ts:152",
     "pc": [
       698
     ]
   },
   {
-    "teal": 678,
-    "source": "contracts/ARC11550Data.algo.ts:156",
+    "teal": 674,
+    "source": "contracts/ARC11550Data.algo.ts:152",
     "pc": [
       699,
       700
     ]
   },
   {
-    "teal": 679,
-    "source": "contracts/ARC11550Data.algo.ts:156",
+    "teal": 675,
+    "source": "contracts/ARC11550Data.algo.ts:152",
     "pc": [
       701
     ]
   },
   {
-    "teal": 680,
-    "source": "contracts/ARC11550Data.algo.ts:154",
+    "teal": 676,
+    "source": "contracts/ARC11550Data.algo.ts:150",
     "pc": [
       702
     ]
   },
   {
-    "teal": 685,
+    "teal": 681,
     "source": "contracts/ARC11550Data.algo.ts:159",
     "pc": [
       703,
@@ -3105,7 +3105,7 @@
     ]
   },
   {
-    "teal": 686,
+    "teal": 682,
     "source": "contracts/ARC11550Data.algo.ts:159",
     "pc": [
       706,
@@ -3114,7 +3114,7 @@
     ]
   },
   {
-    "teal": 689,
+    "teal": 685,
     "source": "contracts/ARC11550Data.algo.ts:159",
     "pc": [
       709,
@@ -3123,14 +3123,14 @@
     ]
   },
   {
-    "teal": 690,
+    "teal": 686,
     "source": "contracts/ARC11550Data.algo.ts:159",
     "pc": [
       712
     ]
   },
   {
-    "teal": 691,
+    "teal": 687,
     "source": "contracts/ARC11550Data.algo.ts:159",
     "pc": [
       713

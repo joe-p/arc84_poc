@@ -619,8 +619,8 @@ arc11550_setMetadata:
 	box_put
 	retsub
 
-// arc11550_approve((address,address,uint64),(uint64,uint64))void
-*abi_route_arc11550_approve:
+// arc11550_setAllowance((address,address,uint64),(uint64,uint64))void
+*abi_route_arc11550_setAllowance:
 	// allowance: (uint64,uint64)
 	txna ApplicationArgs 2
 	dup
@@ -628,7 +628,7 @@ arc11550_setMetadata:
 	intc 8 // 16
 	==
 
-	// argument 0 (allowance) for arc11550_approve must be a (uint64,uint64)
+	// argument 0 (allowance) for arc11550_setAllowance must be a (uint64,uint64)
 	assert
 
 	// allowanceKey: (address,address,uint64)
@@ -638,23 +638,19 @@ arc11550_setMetadata:
 	intc 5 // 72
 	==
 
-	// argument 1 (allowanceKey) for arc11550_approve must be a (address,address,uint64)
+	// argument 1 (allowanceKey) for arc11550_setAllowance must be a (address,address,uint64)
 	assert
 
-	// execute arc11550_approve((address,address,uint64),(uint64,uint64))void
-	callsub arc11550_approve
+	// execute arc11550_setAllowance((address,address,uint64),(uint64,uint64))void
+	callsub arc11550_setAllowance
 	intc 2 // 1
 	return
 
-// arc11550_approve(allowanceKey: AllowanceKey, allowance: Allowance): void
-//
-// *******************
-// Multi Setter Methods
-// ********************
-arc11550_approve:
+// arc11550_setAllowance(allowanceKey: AllowanceKey, allowance: Allowance): void
+arc11550_setAllowance:
 	proto 2 0
 
-	// contracts/ARC11550Data.algo.ts:155
+	// contracts/ARC11550Data.algo.ts:151
 	// assert(this.txn.sender === this.params(allowanceKey.tokenId).value.manager)
 	txn Sender
 	intc 9 //  headOffset
@@ -670,7 +666,7 @@ arc11550_approve:
 	==
 	assert
 
-	// contracts/ARC11550Data.algo.ts:156
+	// contracts/ARC11550Data.algo.ts:152
 	// this.allowances(allowanceKey).value = allowance
 	bytec 7 //  "a"
 	frame_dig -1 // allowanceKey: AllowanceKey
@@ -679,19 +675,23 @@ arc11550_approve:
 	box_put
 	retsub
 
-// arc11550_setApprovals(((address,address,uint64),(uint64,uint64))[])void
-*abi_route_arc11550_setApprovals:
+// arc11550_setAllowances(((address,address,uint64),(uint64,uint64))[])void
+*abi_route_arc11550_setAllowances:
 	// allowances: ((address,address,uint64),(uint64,uint64))[]
 	txna ApplicationArgs 1
 	extract 2 0
 
-	// execute arc11550_setApprovals(((address,address,uint64),(uint64,uint64))[])void
-	callsub arc11550_setApprovals
+	// execute arc11550_setAllowances(((address,address,uint64),(uint64,uint64))[])void
+	callsub arc11550_setAllowances
 	intc 2 // 1
 	return
 
-// arc11550_setApprovals(allowances: { key: AllowanceKey; allowance: Allowance }[]): void
-arc11550_setApprovals:
+// arc11550_setAllowances(allowances: { key: AllowanceKey; allowance: Allowance }[]): void
+//
+// *******************
+// Multi Setter Methods
+// ********************
+arc11550_setAllowances:
 	proto 1 0
 
 	// Push empty bytes after the frame pointer to reserve space for local variables
@@ -717,7 +717,7 @@ arc11550_setApprovals:
 	frame_bury 1 // accessor: accessor//0//a
 
 	// contracts/ARC11550Data.algo.ts:162
-	// this.arc11550_approve(a.key, a.allowance)
+	// this.arc11550_setAllowance(a.key, a.allowance)
 	frame_dig -1 // allowances: { key: AllowanceKey; allowance: Allowance }[]
 	store 255 // full array
 	intc 0 //  initial offset
@@ -744,7 +744,7 @@ arc11550_setApprovals:
 	swap
 	intc 5 // 72
 	extract3
-	callsub arc11550_approve
+	callsub arc11550_setAllowance
 
 *for_2_continue:
 	// contracts/ARC11550Data.algo.ts:160
@@ -1292,12 +1292,12 @@ doMint:
 	pushbytes 0x65dd8717 // method "arc11550_balancesOf((uint64,address)[])uint64[]"
 	pushbytes 0x2ad2eb55 // method "arc11550_mulitpleParams(uint64[])(byte[32],byte[8],uint64,uint64,address)[]"
 	pushbytes 0xf8efd1f3 // method "arc11550_setMetadata((uint64,byte[]),byte[])void"
-	pushbytes 0xd579175d // method "arc11550_approve((address,address,uint64),(uint64,uint64))void"
-	pushbytes 0x0f0fa173 // method "arc11550_setApprovals(((address,address,uint64),(uint64,uint64))[])void"
+	pushbytes 0x29bba630 // method "arc11550_setAllowance((address,address,uint64),(uint64,uint64))void"
+	pushbytes 0x35db9581 // method "arc11550_setAllowances(((address,address,uint64),(uint64,uint64))[])void"
 	pushbytes 0x62b5078b // method "doTransfers((uint64,address,address,uint64)[])void"
 	pushbytes 0x41057855 // method "doMint((byte[32],byte[8],uint64,uint64,address))uint64"
 	txna ApplicationArgs 0
-	match *abi_route_arc11550_minted *abi_route_arc11550_metadata *abi_route_arc11550_balanceOf *abi_route_arc11550_params *abi_route_arc11550_transferApp *abi_route_arc11550_transferHookApp *abi_route_arc11550_balancesOf *abi_route_arc11550_mulitpleParams *abi_route_arc11550_setMetadata *abi_route_arc11550_approve *abi_route_arc11550_setApprovals *abi_route_doTransfers *abi_route_doMint
+	match *abi_route_arc11550_minted *abi_route_arc11550_metadata *abi_route_arc11550_balanceOf *abi_route_arc11550_params *abi_route_arc11550_transferApp *abi_route_arc11550_transferHookApp *abi_route_arc11550_balancesOf *abi_route_arc11550_mulitpleParams *abi_route_arc11550_setMetadata *abi_route_arc11550_setAllowance *abi_route_arc11550_setAllowances *abi_route_doTransfers *abi_route_doMint
 
 	// this contract does not implement the given ABI method for call NoOp
 	err

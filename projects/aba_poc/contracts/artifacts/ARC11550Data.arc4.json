@@ -127,8 +127,7 @@
       }
     },
     {
-      "name": "arc11550_approve",
-      "desc": "********************\nMulti Setter Methods\n********************",
+      "name": "arc11550_setAllowance",
       "args": [
         {
           "name": "allowanceKey",
@@ -144,7 +143,8 @@
       }
     },
     {
-      "name": "arc11550_setApprovals",
+      "name": "arc11550_setAllowances",
+      "desc": "********************\nMulti Setter Methods\n********************",
       "args": [
         {
           "name": "allowances",
