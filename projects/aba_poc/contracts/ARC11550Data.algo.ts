@@ -1,6 +1,7 @@
 import { Contract } from '@algorandfoundation/tealscript';
 
 export type TokenId = uint64;
+export type CollectionId = uint64;
 
 export type Transfer = {
   tokenId: TokenId;
@@ -15,6 +16,7 @@ export type Params = {
   total: uint64;
   decimals: uint64;
   manager: Address;
+  transferHookApp: AppID;
 };
 
 export type IdAndAddress = {
@@ -23,7 +25,8 @@ export type IdAndAddress = {
 };
 
 export type MetadataKey = {
-  tokenId: TokenId;
+  /** id for collection or token depending on context */
+  id: uint64;
   key: bytes;
 };
 
@@ -43,51 +46,71 @@ export type Allowance = {
   untilTimestamp: uint64;
 };
 
-export class ARC11550Data extends Contract {
-  /** The total number of tokens minted. This is used to calculate the token IDs */
-  minted = GlobalStateKey<TokenId>();
+export type Collection = {
+  /** The total number of tokens minted in this collection */
+  minted: uint64;
 
+  /** The cap to total tokens that can be minted */
+  mintCap: uint64;
+
+  /** The address that can modify collection metadata and mint new tokens */
+  manager: Address;
+};
+
+export class ARC11550Data extends Contract {
   /** The parameters for a given token */
   params = BoxMap<TokenId, Params>({ prefix: 'p' });
 
   /** The balance for a given user and token */
   balances = BoxMap<IdAndAddress, uint64>({ prefix: 'b' });
 
-  /** Arbitrary metadata for an token that may be immutable or mutable */
-  metadata = BoxMap<MetadataKey, Metadata>({ prefix: 'm' });
+  /** Arbitrary metadata for a token that may be immutable or mutable */
+  tokenMetadata = BoxMap<MetadataKey, Metadata>({ prefix: 'm' });
 
-  /** The cap to total tokens that can be minted */
-  mintCap = GlobalStateKey<uint64>();
-
-  /** The minter can mint new tokens */
-  minter = GlobalStateKey<Address>();
+  /** Arbitrary metadata for a collection that may be immutable or mutable */
+  collectionMetadata = BoxMap<MetadataKey, Metadata>({ prefix: 'M' });
 
   /** Allowances for a given sender, holder, and token id */
   allowances = BoxMap<AllowanceKey, Allowance>({ prefix: 'a' });
 
-  /** The app that is called upon every transfer to approve or deny it (or any other action based on the transfer(s)) */
-  transferHookApp = GlobalStateKey<AppID>();
-
-  /** The app that implements arc11550_transfer and arc11550_mint */
+  /** The app that implements arc11550_transfer */
   transferApp = GlobalStateKey<AppID>();
 
-  createApplication(transferApp: AppID, transferHookApp: AppID, mintCap: uint64) {
+  tokenId = GlobalStateKey<TokenId>();
+
+  collectionId = GlobalStateKey<CollectionId>();
+
+  collections = BoxMap<CollectionId, Collection>({ prefix: 'c' });
+
+  createApplication(transferApp: AppID) {
     this.transferApp.value = transferApp;
-    this.minted.value = 0;
-    this.mintCap.value = mintCap;
-    this.transferHookApp.value = transferHookApp;
+  }
+
+  arc11550_newCollection(manager: Address, mintCap: uint64): CollectionId {
+    const collectionId = this.collectionId.value;
+    this.collectionId.value += 1;
+
+    const collection: Collection = {
+      manager: manager,
+      mintCap: mintCap,
+      minted: 0,
+    };
+
+    this.collections(collectionId).value = collection;
+
+    return collectionId;
   }
 
   /*****************
    * Getter Methods
    *****************/
 
-  arc11550_minted(): uint64 {
-    return this.minted.value;
+  arc11550_collection_minted(id: CollectionId): uint64 {
+    return this.collections(id).value.minted;
   }
 
   arc11550_metadata(key: MetadataKey): Metadata {
-    return this.metadata(key).value;
+    return this.tokenMetadata(key).value;
   }
 
   arc11550_balanceOf(id: TokenId, account: Address): uint64 {
@@ -102,8 +125,8 @@ export class ARC11550Data extends Contract {
     return this.transferApp.value;
   }
 
-  arc11550_transferHookApp(): AppID {
-    return this.transferHookApp.value;
+  arc11550_transferHookApp(id: TokenId): AppID {
+    return this.params(id).value.transferHookApp;
   }
 
   /**********************
@@ -138,13 +161,13 @@ export class ARC11550Data extends Contract {
    *****************/
 
   arc11550_setMetadata(key: MetadataKey, data: bytes) {
-    assert(this.txn.sender === this.params(key.tokenId).value.manager);
+    assert(this.txn.sender === this.params(key.id).value.manager);
 
-    if (this.metadata(key).exists) {
-      assert(this.metadata(key).value.mutable);
+    if (this.tokenMetadata(key).exists) {
+      assert(this.tokenMetadata(key).value.mutable);
     }
 
-    this.metadata(key).value.data = data;
+    this.tokenMetadata(key).value.data = data;
   }
 
   arc11550_setAllowance(allowanceKey: AllowanceKey, allowance: Allowance) {
@@ -189,15 +212,17 @@ export class ARC11550Data extends Contract {
     }
   }
 
-  doMint(params: Params): uint64 {
-    assert(globals.callerApplicationID == this.transferApp.value);
+  arc11550_mint(collectionId: CollectionId, params: Params): uint64 {
+    const collection = this.collections(collectionId).value;
 
-    const id = this.minted.value;
-    assert(id <= this.mintCap.value);
-    assert(this.txn.sender === this.minter.value);
+    assert(this.txn.sender === collection.manager);
+    assert(collection.mintCap >= collection.minted);
+
+    const id = this.tokenId.value;
+    this.tokenId.value += 1;
+    collection.minted += 1;
 
     this.params(id).value = params;
-    this.minted.value += 1;
 
     return id;
   }

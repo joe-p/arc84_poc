@@ -55,12 +55,12 @@ switch *call_NoOp *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEM
 
 // approved(caller: Address, transfers: Transfer[]): boolean
 //
-// Determines whether a transfer is approved or not. This implementation always returns true, but
-// there are other possibilities such as ERC20-style approvals, whitelists, blacklists, enforced royalties, etc.
+// Determines whether a transfer is approved or not. This implementation just returns true (which is the same as not setting a
+// transferHookApp), but there are many possibilities such as dynamic whitelists, blacklists, enforced royalties, token-gating, etc.
 approved:
 	proto 2 1
 
-	// contracts/ARC11550Transfer.algo.ts:61
+	// contracts/ARC11550Data.algo.ts:235
 	// return true;
 	intc 0 // 1
 	retsub

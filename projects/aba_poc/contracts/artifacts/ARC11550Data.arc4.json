@@ -8,14 +8,6 @@
         {
           "name": "transferApp",
           "type": "uint64"
-        },
-        {
-          "name": "transferHookApp",
-          "type": "uint64"
-        },
-        {
-          "name": "mintCap",
-          "type": "uint64"
         }
       ],
       "returns": {
@@ -23,9 +15,30 @@
       }
     },
     {
-      "name": "arc11550_minted",
+      "name": "arc11550_newCollection",
+      "args": [
+        {
+          "name": "manager",
+          "type": "address"
+        },
+        {
+          "name": "mintCap",
+          "type": "uint64"
+        }
+      ],
+      "returns": {
+        "type": "uint64"
+      }
+    },
+    {
+      "name": "arc11550_collection_minted",
       "desc": "***************\nGetter Methods\n***************",
-      "args": [],
+      "args": [
+        {
+          "name": "id",
+          "type": "uint64"
+        }
+      ],
       "returns": {
         "type": "uint64"
       }
@@ -67,7 +80,7 @@
         }
       ],
       "returns": {
-        "type": "(byte[32],byte[8],uint64,uint64,address)"
+        "type": "(byte[32],byte[8],uint64,uint64,address,uint64)"
       }
     },
     {
@@ -79,7 +92,12 @@
     },
     {
       "name": "arc11550_transferHookApp",
-      "args": [],
+      "args": [
+        {
+          "name": "id",
+          "type": "uint64"
+        }
+      ],
       "returns": {
         "type": "uint64"
       }
@@ -106,7 +124,7 @@
         }
       ],
       "returns": {
-        "type": "(byte[32],byte[8],uint64,uint64,address)[]"
+        "type": "(byte[32],byte[8],uint64,uint64,address,uint64)[]"
       }
     },
     {
@@ -169,11 +187,15 @@
       }
     },
     {
-      "name": "doMint",
+      "name": "arc11550_mint",
       "args": [
         {
+          "name": "collectionId",
+          "type": "uint64"
+        },
+        {
           "name": "params",
-          "type": "(byte[32],byte[8],uint64,uint64,address)"
+          "type": "(byte[32],byte[8],uint64,uint64,address,uint64)"
         }
       ],
       "returns": {

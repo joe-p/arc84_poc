@@ -6,7 +6,7 @@
       "name": "createApplication",
       "args": [
         {
-          "name": "transferApp",
+          "name": "dataApp",
           "type": "uint64"
         }
       ],

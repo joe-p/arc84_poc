@@ -3,29 +3,6 @@
   "desc": "",
   "methods": [
     {
-      "name": "createApplication",
-      "args": [],
-      "returns": {
-        "type": "void"
-      }
-    },
-    {
-      "name": "arc11550_mint",
-      "args": [
-        {
-          "name": "dataApp",
-          "type": "uint64"
-        },
-        {
-          "name": "params",
-          "type": "(byte[32],byte[8],uint64,uint64,address)"
-        }
-      ],
-      "returns": {
-        "type": "uint64"
-      }
-    },
-    {
       "name": "arc11550_transfer",
       "args": [
         {
@@ -37,6 +14,13 @@
           "type": "(uint64,address,address,uint64)[]"
         }
       ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "createApplication",
+      "args": [],
       "returns": {
         "type": "void"
       }

@@ -1,5 +1,5 @@
 import { Contract } from '@algorandfoundation/tealscript';
-import { Transfer, ARC11550Data } from './ARC11550Data.algo';
+import { Transfer, ARC11550Data, CollectionId } from './ARC11550Data.algo';
 import { ARC11550Transfer } from './ARC11550Transfer.algo';
 export type Arc11550Id = {
   id: uint64;
@@ -9,10 +9,15 @@ export type Arc11550Id = {
 export class ARC11550Bridge extends Contract {
   asaToArc11550Map = BoxMap<AssetID, Arc11550Id>({ prefix: 'asa' });
   arc11550ToAsaMap = BoxMap<Arc11550Id, AssetID>({ prefix: 'app' });
-  transferApp = GlobalStateKey<AppID>();
 
-  createApplication(transferApp: AppID) {
-    this.transferApp.value = transferApp;
+  /** The data app to use when creating new tokens */
+  dataApp = GlobalStateKey<AppID>();
+
+  /** The collection to mint to when using a new token */
+  collection = GlobalStateKey<CollectionId>();
+
+  createApplication(dataApp: AppID) {
+    this.dataApp.value = dataApp;
   }
 
   optInToAsa(asa: AssetID) {
@@ -34,29 +39,22 @@ export class ARC11550Bridge extends Contract {
 
     // If there isn't already an app for this ASA, create it
     if (!this.asaToArc11550Map(axfer.xferAsset).exists) {
-      sendMethodCall<typeof ARC11550Data.prototype.createApplication>({
-        methodArgs: [this.transferApp.value, AppID.zeroIndex, 1],
-        approvalProgram: ARC11550Data.approvalProgram(),
-        clearStateProgram: ARC11550Data.clearProgram(),
-      });
-
-      const dataApp = this.itxn.createdApplicationID;
-
-      const id = sendMethodCall<typeof ARC11550Transfer.prototype.arc11550_mint>({
-        applicationID: dataApp,
+      const id = sendMethodCall<typeof ARC11550Data.prototype.arc11550_mint>({
+        applicationID: this.dataApp.value,
         methodArgs: [
-          dataApp,
+          this.collection.value,
           {
             total: asa.total,
             decimals: asa.decimals,
             manager: this.app.address,
             name: asa.name as bytes<32>,
             symbol: asa.unitName as bytes<8>,
+            transferHookApp: AppID.zeroIndex,
           },
         ],
       });
 
-      const appAndId: Arc11550Id = { dataApp: dataApp, id: id };
+      const appAndId: Arc11550Id = { dataApp: this.dataApp.value, id: id };
       this.asaToArc11550Map(asa).value = appAndId;
       this.arc11550ToAsaMap(appAndId).value = asa;
     }
