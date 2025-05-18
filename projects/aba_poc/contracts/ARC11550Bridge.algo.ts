@@ -1,15 +1,19 @@
 import { Contract } from '@algorandfoundation/tealscript';
-import { ARC11550, Transfer } from './ARC11550.algo';
-import { Approval } from './ARC200.algo';
-
+import { Transfer, ARC11550Accounting } from './ARC11550Accounting.algo';
+import { ARC11550Transfer } from './ARC11550Transfer.algo';
 export type Arc11550Id = {
   id: uint64;
-  app: AppID;
+  accountingApp: AppID;
 };
 
 export class ARC11550Bridge extends Contract {
   asaToArc11550Map = BoxMap<AssetID, Arc11550Id>({ prefix: 'asa' });
   arc11550ToAsaMap = BoxMap<Arc11550Id, AssetID>({ prefix: 'app' });
+  transferApp = GlobalStateKey<AppID>();
+
+  createApplication(transferApp: AppID) {
+    this.transferApp.value = transferApp;
+  }
 
   optInToAsa(asa: AssetID) {
     sendAssetTransfer({
@@ -30,15 +34,16 @@ export class ARC11550Bridge extends Contract {
 
     // If there isn't already an app for this ASA, create it
     if (!this.asaToArc11550Map(axfer.xferAsset).exists) {
-      sendMethodCall<typeof ARC11550.prototype.createApplication>({
-        methodArgs: [AppID.fromUint64(0), 1],
+      sendMethodCall<typeof ARC11550Accounting.prototype.createApplication>({
+        methodArgs: [this.transferApp.value, 1],
       });
 
-      const app = this.itxn.createdApplicationID;
+      const accountingApp = this.itxn.createdApplicationID;
 
-      const id = sendMethodCall<typeof ARC11550.prototype.arc11550_mint>({
-        applicationID: app,
+      const id = sendMethodCall<typeof ARC11550Transfer.prototype.arc11550_mint>({
+        applicationID: accountingApp,
         methodArgs: [
+          accountingApp,
           {
             total: asa.total,
             decimals: asa.decimals,
@@ -49,16 +54,19 @@ export class ARC11550Bridge extends Contract {
         ],
       });
 
-      const appAndId: Arc11550Id = { app: app, id: id };
+      const appAndId: Arc11550Id = { accountingApp: accountingApp, id: id };
       this.asaToArc11550Map(asa).value = appAndId;
       this.arc11550ToAsaMap(appAndId).value = asa;
     }
 
     const arc11550 = this.asaToArc11550Map(asa).value;
 
-    sendMethodCall<typeof ARC11550.prototype.arc11550_transfer>({
-      applicationID: arc11550.app,
-      methodArgs: [[{ id: arc11550.id, amount: axfer.assetAmount, from: this.app.address, to: receiver }]],
+    sendMethodCall<typeof ARC11550Transfer.prototype.arc11550_transfer>({
+      applicationID: arc11550.accountingApp,
+      methodArgs: [
+        arc11550.accountingApp,
+        [{ id: arc11550.id, amount: axfer.assetAmount, from: this.app.address, to: receiver }],
+      ],
     });
 
     return arc11550;
@@ -68,11 +76,11 @@ export class ARC11550Bridge extends Contract {
     const xfers: Transfer[] = castBytes<Transfer[]>(xferCall.applicationArgs[1]);
     const xfer = xfers[xferIndex];
 
-    const arc11550: Arc11550Id = { app: xferCall.applicationID, id: xfer.id };
+    const arc11550: Arc11550Id = { accountingApp: xferCall.applicationID, id: xfer.id };
 
     if (!this.arc11550ToAsaMap(arc11550).exists) {
-      const params = sendMethodCall<typeof ARC11550.prototype.arc11550_params>({
-        applicationID: arc11550.app,
+      const params = sendMethodCall<typeof ARC11550Accounting.prototype.arc11550_params>({
+        applicationID: arc11550.accountingApp,
         methodArgs: [xfer.id],
       });
 
