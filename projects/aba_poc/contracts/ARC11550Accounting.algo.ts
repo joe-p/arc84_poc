@@ -163,6 +163,8 @@ export class ARC11550Accounting extends Contract {
   }
 
   doTransfers(transfers: Transfer[]) {
+    assert(globals.callerApplicationID == this.transferApp.value);
+
     for (let i = 0; i < transfers.length; i += 1) {
       const t = transfers[i];
 
