@@ -77,6 +77,8 @@ export class ARC11550Bridge extends Contract {
   arc11550ToAsa(xferCall: AppCallTxn, xferIndex: uint64, receiver: Address): AssetID {
     const xfers: Transfer[] = castBytes<Transfer[]>(xferCall.applicationArgs[2]);
     const xfer = xfers[xferIndex];
+    assert(xfer.to === this.app.address);
+
     const dataApp = AppID.fromUint64(btoi(xferCall.applicationArgs[1]));
 
     // Ensure the app used for the transfer is the actual transfer app for the token
