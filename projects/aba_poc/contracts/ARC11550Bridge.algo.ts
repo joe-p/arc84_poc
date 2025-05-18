@@ -35,7 +35,7 @@ export class ARC11550Bridge extends Contract {
     // If there isn't already an app for this ASA, create it
     if (!this.asaToArc11550Map(axfer.xferAsset).exists) {
       sendMethodCall<typeof ARC11550Accounting.prototype.createApplication>({
-        methodArgs: [this.transferApp.value, 1],
+        methodArgs: [this.transferApp.value, AppID.zeroIndex, 1],
         approvalProgram: ARC11550Accounting.approvalProgram(),
         clearStateProgram: ARC11550Accounting.clearProgram(),
       });

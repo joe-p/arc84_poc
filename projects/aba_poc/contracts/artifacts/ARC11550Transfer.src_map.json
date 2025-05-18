@@ -36,15 +36,57 @@
       18,
       19,
       20,
-      21,
+      21
+    ]
+  },
+  {
+    "teal": 15,
+    "source": "contracts/ARC11550Transfer.algo.ts:12",
+    "pc": [
       22,
-      23,
-      24,
-      25,
-      26,
+      23
+    ]
+  },
+  {
+    "teal": 16,
+    "source": "contracts/ARC11550Transfer.algo.ts:12",
+    "pc": [
+      24
+    ]
+  },
+  {
+    "teal": 17,
+    "source": "contracts/ARC11550Transfer.algo.ts:12",
+    "pc": [
+      25
+    ]
+  },
+  {
+    "teal": 18,
+    "source": "contracts/ARC11550Transfer.algo.ts:12",
+    "pc": [
+      26
+    ]
+  },
+  {
+    "teal": 19,
+    "source": "contracts/ARC11550Transfer.algo.ts:12",
+    "pc": [
       27,
-      28,
-      29,
+      28
+    ]
+  },
+  {
+    "teal": 20,
+    "source": "contracts/ARC11550Transfer.algo.ts:12",
+    "pc": [
+      29
+    ]
+  },
+  {
+    "teal": 21,
+    "source": "contracts/ARC11550Transfer.algo.ts:12",
+    "pc": [
       30,
       31,
       32,
@@ -52,57 +94,15 @@
       34,
       35,
       36,
-      37
-    ]
-  },
-  {
-    "teal": 15,
-    "source": "contracts/ARC11550Transfer.algo.ts:12",
-    "pc": [
+      37,
       38,
-      39
-    ]
-  },
-  {
-    "teal": 16,
-    "source": "contracts/ARC11550Transfer.algo.ts:12",
-    "pc": [
-      40
-    ]
-  },
-  {
-    "teal": 17,
-    "source": "contracts/ARC11550Transfer.algo.ts:12",
-    "pc": [
-      41
-    ]
-  },
-  {
-    "teal": 18,
-    "source": "contracts/ARC11550Transfer.algo.ts:12",
-    "pc": [
-      42
-    ]
-  },
-  {
-    "teal": 19,
-    "source": "contracts/ARC11550Transfer.algo.ts:12",
-    "pc": [
+      39,
+      40,
+      41,
+      42,
       43,
-      44
-    ]
-  },
-  {
-    "teal": 20,
-    "source": "contracts/ARC11550Transfer.algo.ts:12",
-    "pc": [
-      45
-    ]
-  },
-  {
-    "teal": 21,
-    "source": "contracts/ARC11550Transfer.algo.ts:12",
-    "pc": [
+      44,
+      45,
       46,
       47,
       48,
@@ -112,23 +112,7 @@
       52,
       53,
       54,
-      55,
-      56,
-      57,
-      58,
-      59,
-      60,
-      61,
-      62,
-      63,
-      64,
-      65,
-      66,
-      67,
-      68,
-      69,
-      70,
-      71
+      55
     ]
   },
   {
@@ -136,393 +120,457 @@
     "source": "contracts/ARC11550Transfer.algo.ts:12",
     "errorMessage": "The requested action is not implemented in this contract. Are you using the correct OnComplete? Did you set your app ID?",
     "pc": [
-      72
+      56
     ]
   },
   {
     "teal": 30,
-    "source": "contracts/ARC11550Transfer.algo.ts:23",
+    "source": "contracts/ARC11550Transfer.algo.ts:21",
     "pc": [
-      73,
-      74,
-      75
+      57,
+      58,
+      59
     ]
   },
   {
     "teal": 31,
-    "source": "contracts/ARC11550Transfer.algo.ts:23",
+    "source": "contracts/ARC11550Transfer.algo.ts:21",
     "pc": [
-      76
+      60
     ]
   },
   {
     "teal": 32,
-    "source": "contracts/ARC11550Transfer.algo.ts:23",
+    "source": "contracts/ARC11550Transfer.algo.ts:21",
     "pc": [
-      77
+      61
     ]
   },
   {
     "teal": 36,
-    "source": "contracts/ARC11550Transfer.algo.ts:23",
+    "source": "contracts/ARC11550Transfer.algo.ts:21",
     "pc": [
+      62,
+      63,
+      64
+    ]
+  },
+  {
+    "teal": 40,
+    "source": "contracts/ARC11550Transfer.algo.ts:22",
+    "pc": [
+      65
+    ]
+  },
+  {
+    "teal": 41,
+    "source": "contracts/ARC11550Transfer.algo.ts:22",
+    "pc": [
+      66,
+      67
+    ]
+  },
+  {
+    "teal": 42,
+    "source": "contracts/ARC11550Transfer.algo.ts:22",
+    "pc": [
+      68,
+      69
+    ]
+  },
+  {
+    "teal": 43,
+    "source": "contracts/ARC11550Transfer.algo.ts:22",
+    "pc": [
+      70
+    ]
+  },
+  {
+    "teal": 44,
+    "source": "contracts/ARC11550Transfer.algo.ts:22",
+    "pc": [
+      71
+    ]
+  },
+  {
+    "teal": 45,
+    "source": "contracts/ARC11550Transfer.algo.ts:22",
+    "pc": [
+      72
+    ]
+  },
+  {
+    "teal": 46,
+    "source": "contracts/ARC11550Transfer.algo.ts:22",
+    "pc": [
+      73
+    ]
+  },
+  {
+    "teal": 47,
+    "source": "contracts/ARC11550Transfer.algo.ts:21",
+    "pc": [
+      74
+    ]
+  },
+  {
+    "teal": 52,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
+    "pc": [
+      75,
+      76,
+      77,
       78,
       79,
       80
     ]
   },
   {
-    "teal": 40,
-    "source": "contracts/ARC11550Transfer.algo.ts:24",
+    "teal": 55,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
     "pc": [
-      81
-    ]
-  },
-  {
-    "teal": 41,
-    "source": "contracts/ARC11550Transfer.algo.ts:24",
-    "pc": [
+      81,
       82,
       83
     ]
   },
   {
-    "teal": 42,
-    "source": "contracts/ARC11550Transfer.algo.ts:24",
+    "teal": 56,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
     "pc": [
-      84,
+      84
+    ]
+  },
+  {
+    "teal": 57,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
+    "pc": [
       85
     ]
   },
   {
-    "teal": 43,
-    "source": "contracts/ARC11550Transfer.algo.ts:24",
+    "teal": 58,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
     "pc": [
-      86
-    ]
-  },
-  {
-    "teal": 44,
-    "source": "contracts/ARC11550Transfer.algo.ts:24",
-    "pc": [
+      86,
       87
     ]
   },
   {
-    "teal": 45,
-    "source": "contracts/ARC11550Transfer.algo.ts:24",
+    "teal": 59,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
     "pc": [
       88
     ]
   },
   {
-    "teal": 46,
-    "source": "contracts/ARC11550Transfer.algo.ts:24",
+    "teal": 62,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
+    "errorMessage": "argument 0 (params) for arc11550_mint must be a (byte[32],byte[8],uint64,uint64,address)",
     "pc": [
       89
     ]
   },
   {
-    "teal": 47,
-    "source": "contracts/ARC11550Transfer.algo.ts:23",
+    "teal": 65,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
     "pc": [
-      90
+      90,
+      91,
+      92
     ]
   },
   {
-    "teal": 52,
-    "source": "contracts/ARC11550Transfer.algo.ts:27",
+    "teal": 66,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
     "pc": [
-      91,
-      92,
-      93,
+      93
+    ]
+  },
+  {
+    "teal": 69,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
+    "pc": [
       94,
       95,
       96
     ]
   },
   {
-    "teal": 55,
-    "source": "contracts/ARC11550Transfer.algo.ts:27",
+    "teal": 70,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
     "pc": [
-      97,
-      98,
+      97
+    ]
+  },
+  {
+    "teal": 71,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
+    "pc": [
+      98
+    ]
+  },
+  {
+    "teal": 72,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
+    "pc": [
       99
     ]
   },
   {
-    "teal": 56,
-    "source": "contracts/ARC11550Transfer.algo.ts:27",
+    "teal": 73,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
     "pc": [
       100
     ]
   },
   {
-    "teal": 57,
-    "source": "contracts/ARC11550Transfer.algo.ts:27",
+    "teal": 74,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
     "pc": [
       101
     ]
   },
   {
-    "teal": 58,
-    "source": "contracts/ARC11550Transfer.algo.ts:27",
+    "teal": 78,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
     "pc": [
       102,
-      103
-    ]
-  },
-  {
-    "teal": 59,
-    "source": "contracts/ARC11550Transfer.algo.ts:27",
-    "pc": [
+      103,
       104
     ]
   },
   {
-    "teal": 62,
-    "source": "contracts/ARC11550Transfer.algo.ts:27",
-    "errorMessage": "argument 0 (params) for arc11550_mint must be a (byte[32],byte[8],uint64,uint64,address)",
+    "teal": 81,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
     "pc": [
       105
     ]
   },
   {
-    "teal": 65,
-    "source": "contracts/ARC11550Transfer.algo.ts:27",
+    "teal": 82,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
     "pc": [
-      106,
-      107,
+      106
+    ]
+  },
+  {
+    "teal": 86,
+    "source": "contracts/ARC11550Transfer.algo.ts:26",
+    "pc": [
+      107
+    ]
+  },
+  {
+    "teal": 87,
+    "source": "contracts/ARC11550Transfer.algo.ts:26",
+    "pc": [
       108
     ]
   },
   {
-    "teal": 66,
-    "source": "contracts/ARC11550Transfer.algo.ts:27",
+    "teal": 88,
+    "source": "contracts/ARC11550Transfer.algo.ts:26",
     "pc": [
-      109
+      109,
+      110
     ]
   },
   {
-    "teal": 69,
+    "teal": 92,
     "source": "contracts/ARC11550Transfer.algo.ts:27",
     "pc": [
-      110,
-      111,
+      111
+    ]
+  },
+  {
+    "teal": 93,
+    "source": "contracts/ARC11550Transfer.algo.ts:27",
+    "pc": [
       112
     ]
   },
   {
-    "teal": 70,
+    "teal": 94,
     "source": "contracts/ARC11550Transfer.algo.ts:27",
     "pc": [
       113
     ]
   },
   {
-    "teal": 71,
+    "teal": 95,
     "source": "contracts/ARC11550Transfer.algo.ts:27",
     "pc": [
       114
     ]
   },
   {
-    "teal": 72,
+    "teal": 96,
     "source": "contracts/ARC11550Transfer.algo.ts:27",
     "pc": [
       115
     ]
   },
   {
-    "teal": 73,
+    "teal": 97,
     "source": "contracts/ARC11550Transfer.algo.ts:27",
     "pc": [
       116
     ]
   },
   {
-    "teal": 74,
+    "teal": 98,
     "source": "contracts/ARC11550Transfer.algo.ts:27",
     "pc": [
       117
     ]
   },
   {
-    "teal": 78,
-    "source": "contracts/ARC11550Transfer.algo.ts:27",
+    "teal": 102,
+    "source": "contracts/ARC11550Transfer.algo.ts:29",
     "pc": [
-      118,
-      119,
-      120
+      118
     ]
   },
   {
-    "teal": 81,
-    "source": "contracts/ARC11550Transfer.algo.ts:27",
+    "teal": 103,
+    "source": "contracts/ARC11550Transfer.algo.ts:29",
     "pc": [
+      119
+    ]
+  },
+  {
+    "teal": 104,
+    "source": "contracts/ARC11550Transfer.algo.ts:29",
+    "pc": [
+      120,
       121
     ]
   },
   {
-    "teal": 82,
-    "source": "contracts/ARC11550Transfer.algo.ts:27",
-    "pc": [
-      122
-    ]
-  },
-  {
-    "teal": 86,
-    "source": "contracts/ARC11550Transfer.algo.ts:28",
-    "pc": [
-      123
-    ]
-  },
-  {
-    "teal": 87,
-    "source": "contracts/ARC11550Transfer.algo.ts:28",
-    "pc": [
-      124
-    ]
-  },
-  {
-    "teal": 88,
-    "source": "contracts/ARC11550Transfer.algo.ts:28",
-    "pc": [
-      125,
-      126
-    ]
-  },
-  {
-    "teal": 92,
+    "teal": 105,
     "source": "contracts/ARC11550Transfer.algo.ts:29",
     "pc": [
+      122,
+      123,
+      124,
+      125,
+      126,
       127
     ]
   },
   {
-    "teal": 93,
+    "teal": 106,
     "source": "contracts/ARC11550Transfer.algo.ts:29",
     "pc": [
-      128
-    ]
-  },
-  {
-    "teal": 94,
-    "source": "contracts/ARC11550Transfer.algo.ts:29",
-    "pc": [
+      128,
       129
     ]
   },
   {
-    "teal": 95,
+    "teal": 110,
     "source": "contracts/ARC11550Transfer.algo.ts:29",
     "pc": [
-      130
-    ]
-  },
-  {
-    "teal": 96,
-    "source": "contracts/ARC11550Transfer.algo.ts:29",
-    "pc": [
+      130,
       131
     ]
   },
   {
-    "teal": 97,
+    "teal": 111,
     "source": "contracts/ARC11550Transfer.algo.ts:29",
     "pc": [
-      132
-    ]
-  },
-  {
-    "teal": 98,
-    "source": "contracts/ARC11550Transfer.algo.ts:29",
-    "pc": [
+      132,
       133
     ]
   },
   {
-    "teal": 102,
-    "source": "contracts/ARC11550Transfer.algo.ts:31",
+    "teal": 114,
+    "source": "contracts/ARC11550Transfer.algo.ts:29",
     "pc": [
       134
     ]
   },
   {
-    "teal": 103,
-    "source": "contracts/ARC11550Transfer.algo.ts:31",
+    "teal": 115,
+    "source": "contracts/ARC11550Transfer.algo.ts:29",
     "pc": [
-      135
+      135,
+      136
     ]
   },
   {
-    "teal": 104,
-    "source": "contracts/ARC11550Transfer.algo.ts:31",
+    "teal": 118,
+    "source": "contracts/ARC11550Transfer.algo.ts:29",
     "pc": [
-      136,
       137
     ]
   },
   {
-    "teal": 105,
-    "source": "contracts/ARC11550Transfer.algo.ts:31",
+    "teal": 119,
+    "source": "contracts/ARC11550Transfer.algo.ts:29",
     "pc": [
       138,
-      139,
-      140,
-      141,
+      139
+    ]
+  },
+  {
+    "teal": 120,
+    "source": "contracts/ARC11550Transfer.algo.ts:29",
+    "pc": [
+      140
+    ]
+  },
+  {
+    "teal": 121,
+    "source": "contracts/ARC11550Transfer.algo.ts:29",
+    "pc": [
+      141
+    ]
+  },
+  {
+    "teal": 122,
+    "source": "contracts/ARC11550Transfer.algo.ts:29",
+    "pc": [
       142,
       143
     ]
   },
   {
-    "teal": 106,
-    "source": "contracts/ARC11550Transfer.algo.ts:31",
+    "teal": 123,
+    "source": "contracts/ARC11550Transfer.algo.ts:29",
     "pc": [
       144,
-      145
+      145,
+      146
     ]
   },
   {
-    "teal": 110,
-    "source": "contracts/ARC11550Transfer.algo.ts:31",
+    "teal": 124,
+    "source": "contracts/ARC11550Transfer.algo.ts:29",
     "pc": [
-      146,
       147
     ]
   },
   {
-    "teal": 111,
-    "source": "contracts/ARC11550Transfer.algo.ts:31",
+    "teal": 125,
+    "source": "contracts/ARC11550Transfer.algo.ts:29",
     "pc": [
       148,
       149
     ]
   },
   {
-    "teal": 114,
+    "teal": 129,
     "source": "contracts/ARC11550Transfer.algo.ts:31",
     "pc": [
-      150
-    ]
-  },
-  {
-    "teal": 115,
-    "source": "contracts/ARC11550Transfer.algo.ts:31",
-    "pc": [
+      150,
       151,
-      152
-    ]
-  },
-  {
-    "teal": 118,
-    "source": "contracts/ARC11550Transfer.algo.ts:31",
-    "pc": [
+      152,
       153
     ]
   },
   {
-    "teal": 119,
+    "teal": 130,
     "source": "contracts/ARC11550Transfer.algo.ts:31",
     "pc": [
       154,
@@ -530,21 +578,21 @@
     ]
   },
   {
-    "teal": 120,
+    "teal": 131,
     "source": "contracts/ARC11550Transfer.algo.ts:31",
     "pc": [
       156
     ]
   },
   {
-    "teal": 121,
+    "teal": 132,
     "source": "contracts/ARC11550Transfer.algo.ts:31",
     "pc": [
       157
     ]
   },
   {
-    "teal": 122,
+    "teal": 133,
     "source": "contracts/ARC11550Transfer.algo.ts:31",
     "pc": [
       158,
@@ -552,440 +600,416 @@
     ]
   },
   {
-    "teal": 123,
+    "teal": 134,
     "source": "contracts/ARC11550Transfer.algo.ts:31",
     "pc": [
-      160,
+      160
+    ]
+  },
+  {
+    "teal": 135,
+    "source": "contracts/ARC11550Transfer.algo.ts:31",
+    "pc": [
       161,
       162
     ]
   },
   {
-    "teal": 124,
+    "teal": 136,
     "source": "contracts/ARC11550Transfer.algo.ts:31",
     "pc": [
       163
     ]
   },
   {
-    "teal": 125,
+    "teal": 137,
     "source": "contracts/ARC11550Transfer.algo.ts:31",
     "pc": [
-      164,
+      164
+    ]
+  },
+  {
+    "teal": 138,
+    "source": "contracts/ARC11550Transfer.algo.ts:31",
+    "pc": [
       165
     ]
   },
   {
-    "teal": 129,
-    "source": "contracts/ARC11550Transfer.algo.ts:33",
+    "teal": 142,
+    "source": "contracts/ARC11550Transfer.algo.ts:32",
     "pc": [
       166,
       167
     ]
   },
   {
-    "teal": 130,
-    "source": "contracts/ARC11550Transfer.algo.ts:33",
+    "teal": 145,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
     "pc": [
-      168
+      168,
+      169
     ]
   },
   {
-    "teal": 131,
-    "source": "contracts/ARC11550Transfer.algo.ts:33",
+    "teal": 148,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
     "pc": [
-      169,
-      170
-    ]
-  },
-  {
-    "teal": 132,
-    "source": "contracts/ARC11550Transfer.algo.ts:33",
-    "pc": [
+      170,
       171
     ]
   },
   {
-    "teal": 133,
-    "source": "contracts/ARC11550Transfer.algo.ts:33",
+    "teal": 149,
+    "source": "contracts/ARC11550Transfer.algo.ts:25",
     "pc": [
-      172,
-      173
+      172
     ]
   },
   {
-    "teal": 134,
-    "source": "contracts/ARC11550Transfer.algo.ts:33",
+    "teal": 154,
+    "source": "contracts/ARC11550Transfer.algo.ts:35",
     "pc": [
-      174
-    ]
-  },
-  {
-    "teal": 135,
-    "source": "contracts/ARC11550Transfer.algo.ts:33",
-    "pc": [
+      173,
+      174,
       175
     ]
   },
   {
-    "teal": 136,
-    "source": "contracts/ARC11550Transfer.algo.ts:33",
+    "teal": 155,
+    "source": "contracts/ARC11550Transfer.algo.ts:35",
     "pc": [
-      176
-    ]
-  },
-  {
-    "teal": 140,
-    "source": "contracts/ARC11550Transfer.algo.ts:34",
-    "pc": [
+      176,
       177,
       178
     ]
   },
   {
-    "teal": 143,
-    "source": "contracts/ARC11550Transfer.algo.ts:27",
+    "teal": 158,
+    "source": "contracts/ARC11550Transfer.algo.ts:35",
     "pc": [
       179,
-      180
+      180,
+      181
     ]
   },
   {
-    "teal": 146,
-    "source": "contracts/ARC11550Transfer.algo.ts:27",
+    "teal": 159,
+    "source": "contracts/ARC11550Transfer.algo.ts:35",
     "pc": [
-      181,
       182
     ]
   },
   {
-    "teal": 147,
-    "source": "contracts/ARC11550Transfer.algo.ts:27",
+    "teal": 162,
+    "source": "contracts/ARC11550Transfer.algo.ts:35",
     "pc": [
-      183
+      183,
+      184,
+      185
     ]
   },
   {
-    "teal": 152,
-    "source": "contracts/ARC11550Transfer.algo.ts:37",
+    "teal": 163,
+    "source": "contracts/ARC11550Transfer.algo.ts:35",
     "pc": [
-      184,
-      185,
       186
     ]
   },
   {
-    "teal": 153,
-    "source": "contracts/ARC11550Transfer.algo.ts:37",
+    "teal": 164,
+    "source": "contracts/ARC11550Transfer.algo.ts:35",
     "pc": [
-      187,
-      188,
-      189
+      187
     ]
   },
   {
-    "teal": 156,
-    "source": "contracts/ARC11550Transfer.algo.ts:37",
+    "teal": 168,
+    "source": "contracts/ARC11550Transfer.algo.ts:35",
     "pc": [
-      190,
-      191,
+      188,
+      189,
+      190
+    ]
+  },
+  {
+    "teal": 171,
+    "source": "contracts/ARC11550Transfer.algo.ts:35",
+    "pc": [
+      191
+    ]
+  },
+  {
+    "teal": 177,
+    "source": "contracts/ARC11550Transfer.algo.ts:36",
+    "pc": [
       192
     ]
   },
   {
-    "teal": 157,
-    "source": "contracts/ARC11550Transfer.algo.ts:37",
+    "teal": 178,
+    "source": "contracts/ARC11550Transfer.algo.ts:36",
     "pc": [
       193
     ]
   },
   {
-    "teal": 160,
-    "source": "contracts/ARC11550Transfer.algo.ts:37",
+    "teal": 179,
+    "source": "contracts/ARC11550Transfer.algo.ts:36",
     "pc": [
       194,
-      195,
-      196
+      195
     ]
   },
   {
-    "teal": 161,
-    "source": "contracts/ARC11550Transfer.algo.ts:37",
+    "teal": 180,
+    "source": "contracts/ARC11550Transfer.algo.ts:36",
     "pc": [
-      197
-    ]
-  },
-  {
-    "teal": 162,
-    "source": "contracts/ARC11550Transfer.algo.ts:37",
-    "pc": [
-      198
-    ]
-  },
-  {
-    "teal": 166,
-    "source": "contracts/ARC11550Transfer.algo.ts:37",
-    "pc": [
+      196,
+      197,
+      198,
       199,
       200,
       201
     ]
   },
   {
-    "teal": 171,
-    "source": "contracts/ARC11550Transfer.algo.ts:39",
+    "teal": 181,
+    "source": "contracts/ARC11550Transfer.algo.ts:36",
     "pc": [
       202,
-      203,
-      204
+      203
     ]
   },
   {
-    "teal": 172,
-    "source": "contracts/ARC11550Transfer.algo.ts:39",
+    "teal": 185,
+    "source": "contracts/ARC11550Transfer.algo.ts:37",
     "pc": [
+      204,
       205
     ]
   },
   {
-    "teal": 173,
-    "source": "contracts/ARC11550Transfer.algo.ts:39",
+    "teal": 186,
+    "source": "contracts/ARC11550Transfer.algo.ts:37",
     "pc": [
-      206
-    ]
-  },
-  {
-    "teal": 174,
-    "source": "contracts/ARC11550Transfer.algo.ts:39",
-    "pc": [
+      206,
       207
     ]
   },
   {
-    "teal": 175,
-    "source": "contracts/ARC11550Transfer.algo.ts:39",
+    "teal": 189,
+    "source": "contracts/ARC11550Transfer.algo.ts:36",
     "pc": [
       208
     ]
   },
   {
-    "teal": 176,
-    "source": "contracts/ARC11550Transfer.algo.ts:39",
+    "teal": 190,
+    "source": "contracts/ARC11550Transfer.algo.ts:36",
     "pc": [
       209,
-      210,
+      210
+    ]
+  },
+  {
+    "teal": 193,
+    "source": "contracts/ARC11550Transfer.algo.ts:36",
+    "pc": [
       211
     ]
   },
   {
-    "teal": 186,
-    "source": "contracts/ARC11550Transfer.algo.ts:41",
+    "teal": 194,
+    "source": "contracts/ARC11550Transfer.algo.ts:36",
     "pc": [
-      212
-    ]
-  },
-  {
-    "teal": 187,
-    "source": "contracts/ARC11550Transfer.algo.ts:41",
-    "pc": [
+      212,
       213
     ]
   },
   {
-    "teal": 188,
-    "source": "contracts/ARC11550Transfer.algo.ts:41",
+    "teal": 195,
+    "source": "contracts/ARC11550Transfer.algo.ts:36",
     "pc": [
-      214,
+      214
+    ]
+  },
+  {
+    "teal": 196,
+    "source": "contracts/ARC11550Transfer.algo.ts:36",
+    "pc": [
       215
     ]
   },
   {
-    "teal": 189,
-    "source": "contracts/ARC11550Transfer.algo.ts:41",
+    "teal": 197,
+    "source": "contracts/ARC11550Transfer.algo.ts:36",
     "pc": [
       216,
-      217,
+      217
+    ]
+  },
+  {
+    "teal": 198,
+    "source": "contracts/ARC11550Transfer.algo.ts:36",
+    "pc": [
       218,
       219,
-      220,
+      220
+    ]
+  },
+  {
+    "teal": 199,
+    "source": "contracts/ARC11550Transfer.algo.ts:36",
+    "pc": [
       221
     ]
   },
   {
-    "teal": 190,
-    "source": "contracts/ARC11550Transfer.algo.ts:41",
+    "teal": 200,
+    "source": "contracts/ARC11550Transfer.algo.ts:36",
     "pc": [
       222,
       223
     ]
   },
   {
-    "teal": 194,
-    "source": "contracts/ARC11550Transfer.algo.ts:42",
+    "teal": 205,
+    "source": "contracts/ARC11550Transfer.algo.ts:41",
     "pc": [
-      224
-    ]
-  },
-  {
-    "teal": 195,
-    "source": "contracts/ARC11550Transfer.algo.ts:42",
-    "pc": [
+      224,
       225
     ]
   },
   {
-    "teal": 196,
-    "source": "contracts/ARC11550Transfer.algo.ts:42",
+    "teal": 206,
+    "source": "contracts/ARC11550Transfer.algo.ts:41",
     "pc": [
       226,
-      227
+      227,
+      228
     ]
   },
   {
-    "teal": 200,
+    "teal": 216,
     "source": "contracts/ARC11550Transfer.algo.ts:43",
     "pc": [
-      228,
       229
     ]
   },
   {
-    "teal": 201,
+    "teal": 217,
     "source": "contracts/ARC11550Transfer.algo.ts:43",
     "pc": [
-      230,
-      231
+      230
     ]
   },
   {
-    "teal": 202,
+    "teal": 218,
     "source": "contracts/ARC11550Transfer.algo.ts:43",
     "pc": [
-      232,
-      233
+      231,
+      232
     ]
   },
   {
-    "teal": 203,
+    "teal": 219,
     "source": "contracts/ARC11550Transfer.algo.ts:43",
     "pc": [
-      234
-    ]
-  },
-  {
-    "teal": 204,
-    "source": "contracts/ARC11550Transfer.algo.ts:43",
-    "pc": [
-      235
-    ]
-  },
-  {
-    "teal": 205,
-    "source": "contracts/ARC11550Transfer.algo.ts:43",
-    "pc": [
-      236
-    ]
-  },
-  {
-    "teal": 206,
-    "source": "contracts/ARC11550Transfer.algo.ts:43",
-    "pc": [
-      237
-    ]
-  },
-  {
-    "teal": 207,
-    "source": "contracts/ARC11550Transfer.algo.ts:43",
-    "pc": [
+      233,
+      234,
+      235,
+      236,
+      237,
       238
     ]
   },
   {
-    "teal": 208,
+    "teal": 220,
     "source": "contracts/ARC11550Transfer.algo.ts:43",
     "pc": [
       239,
-      240,
-      241
+      240
     ]
   },
   {
-    "teal": 209,
-    "source": "contracts/ARC11550Transfer.algo.ts:43",
+    "teal": 224,
+    "source": "contracts/ARC11550Transfer.algo.ts:44",
     "pc": [
+      241,
       242
     ]
   },
   {
-    "teal": 210,
-    "source": "contracts/ARC11550Transfer.algo.ts:43",
+    "teal": 225,
+    "source": "contracts/ARC11550Transfer.algo.ts:44",
     "pc": [
-      243
+      243,
+      244
     ]
   },
   {
-    "teal": 211,
-    "source": "contracts/ARC11550Transfer.algo.ts:43",
+    "teal": 229,
+    "source": "contracts/ARC11550Transfer.algo.ts:45",
     "pc": [
-      244,
-      245
-    ]
-  },
-  {
-    "teal": 214,
-    "source": "contracts/ARC11550Transfer.algo.ts:41",
-    "pc": [
+      245,
       246
     ]
   },
   {
-    "teal": 215,
-    "source": "contracts/ARC11550Transfer.algo.ts:41",
+    "teal": 230,
+    "source": "contracts/ARC11550Transfer.algo.ts:45",
     "pc": [
       247,
       248
     ]
   },
   {
-    "teal": 218,
-    "source": "contracts/ARC11550Transfer.algo.ts:41",
+    "teal": 231,
+    "source": "contracts/ARC11550Transfer.algo.ts:45",
     "pc": [
-      249
+      249,
+      250
     ]
   },
   {
-    "teal": 219,
-    "source": "contracts/ARC11550Transfer.algo.ts:41",
+    "teal": 232,
+    "source": "contracts/ARC11550Transfer.algo.ts:45",
     "pc": [
-      250,
       251
     ]
   },
   {
-    "teal": 220,
-    "source": "contracts/ARC11550Transfer.algo.ts:41",
+    "teal": 233,
+    "source": "contracts/ARC11550Transfer.algo.ts:45",
     "pc": [
       252
     ]
   },
   {
-    "teal": 221,
-    "source": "contracts/ARC11550Transfer.algo.ts:41",
+    "teal": 234,
+    "source": "contracts/ARC11550Transfer.algo.ts:45",
     "pc": [
       253
     ]
   },
   {
-    "teal": 222,
-    "source": "contracts/ARC11550Transfer.algo.ts:41",
+    "teal": 235,
+    "source": "contracts/ARC11550Transfer.algo.ts:45",
     "pc": [
-      254,
+      254
+    ]
+  },
+  {
+    "teal": 236,
+    "source": "contracts/ARC11550Transfer.algo.ts:45",
+    "pc": [
       255
     ]
   },
   {
-    "teal": 223,
-    "source": "contracts/ARC11550Transfer.algo.ts:41",
+    "teal": 237,
+    "source": "contracts/ARC11550Transfer.algo.ts:45",
     "pc": [
       256,
       257,
@@ -993,277 +1017,360 @@
     ]
   },
   {
-    "teal": 224,
-    "source": "contracts/ARC11550Transfer.algo.ts:41",
+    "teal": 238,
+    "source": "contracts/ARC11550Transfer.algo.ts:45",
     "pc": [
       259
     ]
   },
   {
-    "teal": 225,
-    "source": "contracts/ARC11550Transfer.algo.ts:41",
+    "teal": 239,
+    "source": "contracts/ARC11550Transfer.algo.ts:45",
     "pc": [
       260
     ]
   },
   {
-    "teal": 226,
-    "source": "contracts/ARC11550Transfer.algo.ts:40",
+    "teal": 240,
+    "source": "contracts/ARC11550Transfer.algo.ts:45",
     "pc": [
-      261
-    ]
-  },
-  {
-    "teal": 234,
-    "source": "contracts/ARC11550Transfer.algo.ts:48",
-    "pc": [
+      261,
       262
     ]
   },
   {
-    "teal": 235,
-    "source": "contracts/ARC11550Transfer.algo.ts:48",
+    "teal": 243,
+    "source": "contracts/ARC11550Transfer.algo.ts:43",
     "pc": [
       263
     ]
   },
   {
-    "teal": 236,
-    "source": "contracts/ARC11550Transfer.algo.ts:48",
+    "teal": 244,
+    "source": "contracts/ARC11550Transfer.algo.ts:43",
     "pc": [
       264,
       265
     ]
   },
   {
-    "teal": 237,
-    "source": "contracts/ARC11550Transfer.algo.ts:48",
+    "teal": 247,
+    "source": "contracts/ARC11550Transfer.algo.ts:43",
     "pc": [
-      266,
+      266
+    ]
+  },
+  {
+    "teal": 248,
+    "source": "contracts/ARC11550Transfer.algo.ts:43",
+    "pc": [
       267,
-      268,
-      269,
-      270,
-      271
+      268
     ]
   },
   {
-    "teal": 238,
-    "source": "contracts/ARC11550Transfer.algo.ts:48",
+    "teal": 249,
+    "source": "contracts/ARC11550Transfer.algo.ts:43",
     "pc": [
-      272,
-      273
+      269
     ]
   },
   {
-    "teal": 242,
-    "source": "contracts/ARC11550Transfer.algo.ts:49",
+    "teal": 250,
+    "source": "contracts/ARC11550Transfer.algo.ts:43",
     "pc": [
+      270
+    ]
+  },
+  {
+    "teal": 251,
+    "source": "contracts/ARC11550Transfer.algo.ts:43",
+    "pc": [
+      271,
+      272
+    ]
+  },
+  {
+    "teal": 252,
+    "source": "contracts/ARC11550Transfer.algo.ts:43",
+    "pc": [
+      273,
       274,
       275
     ]
   },
   {
-    "teal": 243,
-    "source": "contracts/ARC11550Transfer.algo.ts:49",
+    "teal": 253,
+    "source": "contracts/ARC11550Transfer.algo.ts:43",
     "pc": [
-      276,
+      276
+    ]
+  },
+  {
+    "teal": 254,
+    "source": "contracts/ARC11550Transfer.algo.ts:43",
+    "pc": [
       277
     ]
   },
   {
-    "teal": 247,
+    "teal": 255,
+    "source": "contracts/ARC11550Transfer.algo.ts:42",
+    "pc": [
+      278
+    ]
+  },
+  {
+    "teal": 263,
     "source": "contracts/ARC11550Transfer.algo.ts:50",
     "pc": [
-      278,
       279
     ]
   },
   {
-    "teal": 248,
+    "teal": 264,
     "source": "contracts/ARC11550Transfer.algo.ts:50",
     "pc": [
       280
     ]
   },
   {
-    "teal": 249,
+    "teal": 265,
     "source": "contracts/ARC11550Transfer.algo.ts:50",
     "pc": [
-      281
-    ]
-  },
-  {
-    "teal": 250,
-    "source": "contracts/ARC11550Transfer.algo.ts:50",
-    "pc": [
+      281,
       282
     ]
   },
   {
-    "teal": 251,
+    "teal": 266,
     "source": "contracts/ARC11550Transfer.algo.ts:50",
     "pc": [
-      283
-    ]
-  },
-  {
-    "teal": 252,
-    "source": "contracts/ARC11550Transfer.algo.ts:50",
-    "pc": [
-      284
-    ]
-  },
-  {
-    "teal": 253,
-    "source": "contracts/ARC11550Transfer.algo.ts:50",
-    "pc": [
+      283,
+      284,
       285,
       286,
-      287
-    ]
-  },
-  {
-    "teal": 254,
-    "source": "contracts/ARC11550Transfer.algo.ts:50",
-    "pc": [
+      287,
       288
     ]
   },
   {
-    "teal": 255,
+    "teal": 267,
     "source": "contracts/ARC11550Transfer.algo.ts:50",
     "pc": [
-      289
+      289,
+      290
     ]
   },
   {
-    "teal": 256,
-    "source": "contracts/ARC11550Transfer.algo.ts:50",
+    "teal": 271,
+    "source": "contracts/ARC11550Transfer.algo.ts:51",
     "pc": [
-      290,
-      291
-    ]
-  },
-  {
-    "teal": 259,
-    "source": "contracts/ARC11550Transfer.algo.ts:48",
-    "pc": [
+      291,
       292
     ]
   },
   {
-    "teal": 260,
-    "source": "contracts/ARC11550Transfer.algo.ts:48",
+    "teal": 272,
+    "source": "contracts/ARC11550Transfer.algo.ts:51",
     "pc": [
       293,
       294
     ]
   },
   {
-    "teal": 263,
-    "source": "contracts/ARC11550Transfer.algo.ts:48",
+    "teal": 276,
+    "source": "contracts/ARC11550Transfer.algo.ts:52",
     "pc": [
-      295
-    ]
-  },
-  {
-    "teal": 264,
-    "source": "contracts/ARC11550Transfer.algo.ts:37",
-    "pc": [
+      295,
       296
     ]
   },
   {
-    "teal": 267,
-    "source": "contracts/ARC11550Transfer.algo.ts:12",
+    "teal": 277,
+    "source": "contracts/ARC11550Transfer.algo.ts:52",
     "pc": [
-      297,
-      298,
-      299,
-      300,
-      301,
-      302
+      297
     ]
   },
   {
-    "teal": 268,
-    "source": "contracts/ARC11550Transfer.algo.ts:12",
+    "teal": 278,
+    "source": "contracts/ARC11550Transfer.algo.ts:52",
     "pc": [
+      298
+    ]
+  },
+  {
+    "teal": 279,
+    "source": "contracts/ARC11550Transfer.algo.ts:52",
+    "pc": [
+      299
+    ]
+  },
+  {
+    "teal": 280,
+    "source": "contracts/ARC11550Transfer.algo.ts:52",
+    "pc": [
+      300
+    ]
+  },
+  {
+    "teal": 281,
+    "source": "contracts/ARC11550Transfer.algo.ts:52",
+    "pc": [
+      301
+    ]
+  },
+  {
+    "teal": 282,
+    "source": "contracts/ARC11550Transfer.algo.ts:52",
+    "pc": [
+      302,
       303,
-      304,
+      304
+    ]
+  },
+  {
+    "teal": 283,
+    "source": "contracts/ARC11550Transfer.algo.ts:52",
+    "pc": [
       305
     ]
   },
   {
-    "teal": 269,
-    "source": "contracts/ARC11550Transfer.algo.ts:12",
+    "teal": 284,
+    "source": "contracts/ARC11550Transfer.algo.ts:52",
     "pc": [
-      306,
+      306
+    ]
+  },
+  {
+    "teal": 285,
+    "source": "contracts/ARC11550Transfer.algo.ts:52",
+    "pc": [
       307,
-      308,
+      308
+    ]
+  },
+  {
+    "teal": 288,
+    "source": "contracts/ARC11550Transfer.algo.ts:50",
+    "pc": [
       309
     ]
   },
   {
-    "teal": 272,
-    "source": "contracts/ARC11550Transfer.algo.ts:12",
-    "errorMessage": "this contract does not implement the given ABI method for create NoOp",
+    "teal": 289,
+    "source": "contracts/ARC11550Transfer.algo.ts:50",
     "pc": [
-      310
+      310,
+      311
     ]
   },
   {
-    "teal": 275,
+    "teal": 292,
+    "source": "contracts/ARC11550Transfer.algo.ts:50",
+    "pc": [
+      312
+    ]
+  },
+  {
+    "teal": 293,
+    "source": "contracts/ARC11550Transfer.algo.ts:35",
+    "pc": [
+      313
+    ]
+  },
+  {
+    "teal": 296,
     "source": "contracts/ARC11550Transfer.algo.ts:12",
     "pc": [
-      311,
-      312,
-      313,
       314,
       315,
-      316
+      316,
+      317,
+      318,
+      319
     ]
   },
   {
-    "teal": 276,
+    "teal": 297,
     "source": "contracts/ARC11550Transfer.algo.ts:12",
     "pc": [
-      317,
-      318,
-      319,
       320,
       321,
       322
     ]
   },
   {
-    "teal": 277,
+    "teal": 298,
     "source": "contracts/ARC11550Transfer.algo.ts:12",
     "pc": [
       323,
       324,
-      325
+      325,
+      326
     ]
   },
   {
-    "teal": 278,
+    "teal": 301,
+    "source": "contracts/ARC11550Transfer.algo.ts:12",
+    "errorMessage": "this contract does not implement the given ABI method for create NoOp",
+    "pc": [
+      327
+    ]
+  },
+  {
+    "teal": 304,
     "source": "contracts/ARC11550Transfer.algo.ts:12",
     "pc": [
-      326,
-      327,
       328,
       329,
       330,
-      331
+      331,
+      332,
+      333
     ]
   },
   {
-    "teal": 281,
+    "teal": 305,
+    "source": "contracts/ARC11550Transfer.algo.ts:12",
+    "pc": [
+      334,
+      335,
+      336,
+      337,
+      338,
+      339
+    ]
+  },
+  {
+    "teal": 306,
+    "source": "contracts/ARC11550Transfer.algo.ts:12",
+    "pc": [
+      340,
+      341,
+      342
+    ]
+  },
+  {
+    "teal": 307,
+    "source": "contracts/ARC11550Transfer.algo.ts:12",
+    "pc": [
+      343,
+      344,
+      345,
+      346,
+      347,
+      348
+    ]
+  },
+  {
+    "teal": 310,
     "source": "contracts/ARC11550Transfer.algo.ts:12",
     "errorMessage": "this contract does not implement the given ABI method for call NoOp",
     "pc": [
-      332
+      349
     ]
   }
 ]

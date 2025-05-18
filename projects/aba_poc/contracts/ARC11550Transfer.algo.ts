@@ -10,10 +10,8 @@ export type AccountAppAndAssetId = {
 export type UniversalId = uint64;
 
 export class ARC11550Transfer extends Contract {
-  transferHookApp = GlobalStateKey<AppID>();
-
   /** Maps a universal ID to an accounting app and an ID */
-  idMapping = BoxMap<UniversalId, AccountAppAndAssetId>();
+  idMapping = BoxMap<UniversalId, AccountAppAndAssetId>({ prefix: 'id' });
 
   /** Uniquely identify any ARC11550 asset minted through this application regardless of the account app. The universal ID is generally
    * only used off-chain to smooth out the transition from ASAs (i.e wallets & explorers) and to help users easily identify individual
@@ -35,11 +33,15 @@ export class ARC11550Transfer extends Contract {
   }
 
   arc11550_transfer(accountingApp: AppID, transfers: Transfer[]) {
+    const transferHookApp = sendMethodCall<typeof ARC11550Accounting.prototype.arc11550_transferHookApp>({
+      applicationID: accountingApp,
+    });
+
     // If there is a transfer hook app, ensure that is approves the transfers
-    if (this.transferHookApp.exists) {
+    if (transferHookApp) {
       assert(
         sendMethodCall<typeof ARC11550TransferHook.prototype.approved>({
-          applicationID: this.transferHookApp.value,
+          applicationID: transferHookApp,
           methodArgs: [this.txn.sender, transfers],
         })
       );

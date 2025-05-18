@@ -56,8 +56,11 @@ export class ARC11550Accounting extends Contract {
   /** Arbitrary metadata for an asset that may be immutable or mutable */
   metadata = BoxMap<MetadataKey, Metadata>({ prefix: 'm' });
 
-  /** The app that implements arc11550_transfer */
+  /** The app that implements arc11550_transfer and arc11550_mint */
   transferApp = GlobalStateKey<AppID>();
+
+  /** The app that is called upon every transfer to approve or deny it (or any other action based on the transfer(s)) */
+  transferHookApp = GlobalStateKey<AppID>();
 
   /** The cap to total tokens that can be minted */
   mintCap = GlobalStateKey<uint64>();
@@ -68,10 +71,11 @@ export class ARC11550Accounting extends Contract {
   /** Allowances for a given sender, holder, and asset id */
   allowances = BoxMap<AllowanceKey, Allowance>({ prefix: 'a' });
 
-  createApplication(transferApp: AppID, mintCap: uint64) {
+  createApplication(transferApp: AppID, transferHookApp: AppID, mintCap: uint64) {
     this.transferApp.value = transferApp;
     this.minted.value = 0;
     this.mintCap.value = mintCap;
+    this.transferHookApp.value = transferHookApp;
   }
 
   arc11550_minted(): uint64 {
@@ -153,6 +157,10 @@ export class ARC11550Accounting extends Contract {
 
   arc11550_transferApp(): AppID {
     return this.transferApp.value;
+  }
+
+  arc11550_transferHookApp(): AppID {
+    return this.transferHookApp.value;
   }
 
   doTransfers(transfers: Transfer[]) {
