@@ -74,17 +74,6 @@ export class ARC11550Accounting extends Contract {
     this.mintCap.value = mintCap;
   }
 
-  doMint(params: Params): uint64 {
-    const id = this.minted.value;
-    assert(id <= this.mintCap.value);
-    assert(this.txn.sender === this.minter.value);
-
-    this.params(id).value = params;
-    this.minted.value += 1;
-
-    return id;
-  }
-
   arc11550_minted(): uint64 {
     return this.minted.value;
   }
@@ -176,6 +165,19 @@ export class ARC11550Accounting extends Contract {
       this.balances({ id: t.id, address: t.from }).value -= t.amount;
       this.balances({ id: t.id, address: t.to }).value += t.amount;
     }
+  }
+
+  doMint(params: Params): uint64 {
+    assert(globals.callerApplicationID == this.transferApp.value);
+
+    const id = this.minted.value;
+    assert(id <= this.mintCap.value);
+    assert(this.txn.sender === this.minter.value);
+
+    this.params(id).value = params;
+    this.minted.value += 1;
+
+    return id;
   }
 }
 

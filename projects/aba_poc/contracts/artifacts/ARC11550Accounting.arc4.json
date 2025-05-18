@@ -19,18 +19,6 @@
       }
     },
     {
-      "name": "doMint",
-      "args": [
-        {
-          "name": "params",
-          "type": "(byte[32],byte[8],uint64,uint64,address)"
-        }
-      ],
-      "returns": {
-        "type": "uint64"
-      }
-    },
-    {
       "name": "arc11550_minted",
       "args": [],
       "returns": {
@@ -155,6 +143,18 @@
       ],
       "returns": {
         "type": "void"
+      }
+    },
+    {
+      "name": "doMint",
+      "args": [
+        {
+          "name": "params",
+          "type": "(byte[32],byte[8],uint64,uint64,address)"
+        }
+      ],
+      "returns": {
+        "type": "uint64"
       }
     }
   ]
