@@ -3,7 +3,7 @@ import { Contract } from '@algorandfoundation/tealscript';
 export type TokenId = uint64;
 
 export type Transfer = {
-  id: TokenId;
+  tokenId: TokenId;
   from: Address;
   to: Address;
   amount: uint64;
@@ -18,13 +18,13 @@ export type Params = {
 };
 
 export type IdAndAddress = {
-  id: TokenId;
+  tokenId: TokenId;
   address: Address;
 };
 
 export type MetadataKey = {
-  id: TokenId;
-  key: string;
+  tokenId: TokenId;
+  key: bytes;
 };
 
 export type Metadata = {
@@ -35,7 +35,7 @@ export type Metadata = {
 export type AllowanceKey = {
   holder: Address;
   sender: Address;
-  id: TokenId;
+  tokenId: TokenId;
 };
 
 export type Allowance = {
@@ -56,12 +56,6 @@ export class ARC11550Data extends Contract {
   /** Arbitrary metadata for an token that may be immutable or mutable */
   metadata = BoxMap<MetadataKey, Metadata>({ prefix: 'm' });
 
-  /** The app that implements arc11550_transfer and arc11550_mint */
-  transferApp = GlobalStateKey<AppID>();
-
-  /** The app that is called upon every transfer to approve or deny it (or any other action based on the transfer(s)) */
-  transferHookApp = GlobalStateKey<AppID>();
-
   /** The cap to total tokens that can be minted */
   mintCap = GlobalStateKey<uint64>();
 
@@ -70,6 +64,12 @@ export class ARC11550Data extends Contract {
 
   /** Allowances for a given sender, holder, and token id */
   allowances = BoxMap<AllowanceKey, Allowance>({ prefix: 'a' });
+
+  /** The app that is called upon every transfer to approve or deny it (or any other action based on the transfer(s)) */
+  transferHookApp = GlobalStateKey<AppID>();
+
+  /** The app that implements arc11550_transfer and arc11550_mint */
+  transferApp = GlobalStateKey<AppID>();
 
   createApplication(transferApp: AppID, transferHookApp: AppID, mintCap: uint64) {
     this.transferApp.value = transferApp;
@@ -98,7 +98,7 @@ export class ARC11550Data extends Contract {
   // }
 
   arc11550_setMetadata(key: MetadataKey, data: bytes) {
-    assert(this.txn.sender === this.params(key.id).value.manager);
+    assert(this.txn.sender === this.params(key.tokenId).value.manager);
 
     if (this.metadata(key).exists) {
       assert(this.metadata(key).value.mutable);
@@ -115,15 +115,15 @@ export class ARC11550Data extends Contract {
   // }
 
   arc11550_balanceOf(id: TokenId, account: Address): uint64 {
-    return this.balances({ id: id, address: account }).value;
+    return this.balances({ tokenId: id, address: account }).value;
   }
 
   arc11550_balancesOf(idAndAddrs: IdAndAddress[]): uint64[] {
     const balances: uint64[] = [];
     for (let i = 0; i < idAndAddrs.length; i += 1) {
-      const id = idAndAddrs[i].id;
+      const id = idAndAddrs[i].tokenId;
       const addr = idAndAddrs[i].address;
-      balances.push(this.balances({ id: id, address: addr }).value);
+      balances.push(this.balances({ tokenId: id, address: addr }).value);
     }
 
     return balances;
@@ -144,7 +144,7 @@ export class ARC11550Data extends Contract {
   }
 
   arc11550_approve(allowanceKey: AllowanceKey, allowance: Allowance) {
-    assert(this.txn.sender === this.params(allowanceKey.id).value.manager);
+    assert(this.txn.sender === this.params(allowanceKey.tokenId).value.manager);
     this.allowances(allowanceKey).value = allowance;
   }
 
@@ -170,12 +170,16 @@ export class ARC11550Data extends Contract {
       const t = transfers[i];
 
       if (t.from !== this.txn.sender) {
-        const allowance = this.allowances({ holder: t.from, sender: this.txn.sender, id: t.id } as AllowanceKey).value;
+        const allowance = this.allowances({
+          holder: t.from,
+          sender: this.txn.sender,
+          tokenId: t.tokenId,
+        } as AllowanceKey).value;
         assert(allowance.untilTimestamp >= globals.latestTimestamp);
         allowance.amount -= t.amount;
       }
-      this.balances({ id: t.id, address: t.from }).value -= t.amount;
-      this.balances({ id: t.id, address: t.to }).value += t.amount;
+      this.balances({ tokenId: t.tokenId, address: t.from }).value -= t.amount;
+      this.balances({ tokenId: t.tokenId, address: t.to }).value += t.amount;
     }
   }
 

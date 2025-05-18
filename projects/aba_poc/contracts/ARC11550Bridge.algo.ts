@@ -67,7 +67,7 @@ export class ARC11550Bridge extends Contract {
       applicationID: arc11550.dataApp,
       methodArgs: [
         arc11550.dataApp,
-        [{ id: arc11550.id, amount: axfer.assetAmount, from: this.app.address, to: receiver }],
+        [{ tokenId: arc11550.id, amount: axfer.assetAmount, from: this.app.address, to: receiver }],
       ],
     });
 
@@ -82,12 +82,12 @@ export class ARC11550Bridge extends Contract {
     // Ensure the app used for the transfer is the actual transfer app for the token
     assert(xferCall.applicationID == sendMethodCall<typeof ARC11550Data.prototype.arc11550_transferApp>({}));
 
-    const arc11550: Arc11550Id = { dataApp: dataApp, id: xfer.id };
+    const arc11550: Arc11550Id = { dataApp: dataApp, id: xfer.tokenId };
 
     if (!this.arc11550ToAsaMap(arc11550).exists) {
       const params = sendMethodCall<typeof ARC11550Data.prototype.arc11550_params>({
         applicationID: arc11550.dataApp,
-        methodArgs: [xfer.id],
+        methodArgs: [xfer.tokenId],
       });
 
       sendAssetCreation({

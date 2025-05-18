@@ -55,14 +55,9 @@ export class ARC11550Transfer extends Contract {
 }
 
 export class ARC11550TransferHook extends Contract {
-  /** Determines whether a transfer is approved or not. This implementation just ensures the caller is sending from their own address, but
+  /** Determines whether a transfer is approved or not. This implementation always returns true, but
    * there are other possibilities such as ERC20-style approvals, whitelists, blacklists, enforced royalties, etc. */
   approved(caller: Address, transfers: Transfer[]): boolean {
-    for (let i = 0; i < transfers.length; i += 1) {
-      const t = transfers[i];
-      if (t.from !== caller) return false;
-    }
-
     return true;
   }
 }
