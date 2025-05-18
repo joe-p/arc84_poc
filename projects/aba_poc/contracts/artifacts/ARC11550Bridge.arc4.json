@@ -38,7 +38,7 @@
           "type": "appl"
         },
         {
-          "name": "idx",
+          "name": "xferIndex",
           "type": "uint64"
         },
         {

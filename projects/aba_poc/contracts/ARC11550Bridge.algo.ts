@@ -64,9 +64,9 @@ export class ARC11550Bridge extends Contract {
     return arc11550;
   }
 
-  arc11550ToAsa(xferCall: AppCallTxn, idx: uint64, receiver: Address): AssetID {
+  arc11550ToAsa(xferCall: AppCallTxn, xferIndex: uint64, receiver: Address): AssetID {
     const xfers: Transfer[] = castBytes<Transfer[]>(xferCall.applicationArgs[1]);
-    const xfer = xfers[0];
+    const xfer = xfers[xferIndex];
 
     const arc11550: Arc11550Id = { app: xferCall.applicationID, id: xfer.id };
 
