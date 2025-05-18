@@ -165,7 +165,7 @@
   {
     "teal": 40,
     "source": "contracts/DeclarationRegistry.algo.ts:119",
-    "errorMessage": "argument 0 (addrAsset) for approveRequest must be a (address,uint64,uint64)",
+    "errorMessage": "argument 0 (addrToken) for approveRequest must be a (address,uint64,uint64)",
     "pc": [
       60
     ]
@@ -351,7 +351,7 @@
   {
     "teal": 85,
     "source": "contracts/DeclarationRegistry.algo.ts:123",
-    "errorMessage": "argument 0 (addrAsset) for approveRequestRemoval must be a (address,uint64,uint64)",
+    "errorMessage": "argument 0 (addrToken) for approveRequestRemoval must be a (address,uint64,uint64)",
     "pc": [
       94
     ]
@@ -537,7 +537,7 @@
   {
     "teal": 130,
     "source": "contracts/DeclarationRegistry.algo.ts:127",
-    "errorMessage": "argument 0 (addrAsset) for approveDeclaration must be a (address,uint64,uint64)",
+    "errorMessage": "argument 0 (addrToken) for approveDeclaration must be a (address,uint64,uint64)",
     "pc": [
       128
     ]
@@ -748,7 +748,7 @@
   {
     "teal": 178,
     "source": "contracts/DeclarationRegistry.algo.ts:131",
-    "errorMessage": "argument 0 (addrAsset) for approveDeclarationRemoval must be a (address,uint64,uint64)",
+    "errorMessage": "argument 0 (addrToken) for approveDeclarationRemoval must be a (address,uint64,uint64)",
     "pc": [
       169
     ]

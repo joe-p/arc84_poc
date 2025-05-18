@@ -29,14 +29,14 @@ switch *call_NoOp *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEM
 	// The ABI return prefix
 	bytec 1 // 0x151f7c75
 
-	// addrAsset: (address,uint64,uint64)
+	// addrToken: (address,uint64,uint64)
 	txna ApplicationArgs 1
 	dup
 	len
 	intc 2 // 48
 	==
 
-	// argument 0 (addrAsset) for declare must be a (address,uint64,uint64)
+	// argument 0 (addrToken) for declare must be a (address,uint64,uint64)
 	assert
 
 	// execute declare((address,uint64,uint64))bool
@@ -50,9 +50,9 @@ switch *call_NoOp *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEM
 	intc 0 // 1
 	return
 
-// declare(addrAsset: AddressAsset): boolean
+// declare(addrToken: AddressToken): boolean
 //
-// Declare the given ARC11550 asset for the given address. If an approval app has been defined for the address, that app is called to ensure the
+// Declare the given ARC11550 token for the given address. If an approval app has been defined for the address, that app is called to ensure the
 // declaration is allowed. If an approval app has not be defined, the transaction sender must match the declaration address
 declare:
 	proto 1 1
@@ -62,8 +62,8 @@ declare:
 
 	// *if0_condition
 	// contracts/DeclarationRegistry.algo.ts:26
-	// this.declarations(addrAsset).exists
-	frame_dig -1 // addrAsset: AddressAsset
+	// this.declarations(addrToken).exists
+	frame_dig -1 // addrToken: AddressToken
 	box_len
 	swap
 	pop
@@ -78,9 +78,9 @@ declare:
 *if0_end:
 	// *if1_condition
 	// contracts/DeclarationRegistry.algo.ts:31
-	// this.approvalApps(addrAsset).exists
+	// this.approvalApps(addrToken).exists
 	bytec 0 //  "a"
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	concat
 	box_len
 	swap
@@ -90,8 +90,8 @@ declare:
 	// *if1_consequent
 	// contracts/DeclarationRegistry.algo.ts:32
 	// approved = sendMethodCall<typeof ApprovalApp.prototype.approveDeclaration>({
-	//         applicationID: this.approvalApps(addrAsset).value,
-	//         methodArgs: [this.txn.sender, addrAsset],
+	//         applicationID: this.approvalApps(addrToken).value,
+	//         methodArgs: [this.txn.sender, addrToken],
 	//       })
 	itxn_begin
 	intc 3 //  appl
@@ -100,22 +100,22 @@ declare:
 	itxn_field ApplicationArgs
 
 	// contracts/DeclarationRegistry.algo.ts:33
-	// applicationID: this.approvalApps(addrAsset).value
+	// applicationID: this.approvalApps(addrToken).value
 	bytec 0 //  "a"
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	concat
 	box_get
 
-	// box value does not exist: this.approvalApps(addrAsset).value
+	// box value does not exist: this.approvalApps(addrToken).value
 	assert
 	btoi
 	itxn_field ApplicationID
 
 	// contracts/DeclarationRegistry.algo.ts:34
-	// methodArgs: [this.txn.sender, addrAsset]
+	// methodArgs: [this.txn.sender, addrToken]
 	txn Sender
 	itxn_field ApplicationArgs
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	itxn_field ApplicationArgs
 
 	// Fee field not set, defaulting to 0
@@ -136,9 +136,9 @@ declare:
 
 *if1_else:
 	// contracts/DeclarationRegistry.algo.ts:37
-	// approved = this.txn.sender == addrAsset.addr
+	// approved = this.txn.sender == addrToken.addr
 	txn Sender
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	extract 0 32
 	==
 	frame_bury 0 // approved: boolean
@@ -159,8 +159,8 @@ declare:
 
 *if2_end:
 	// contracts/DeclarationRegistry.algo.ts:42
-	// this.declarations(addrAsset).value = '' as bytes<0>
-	frame_dig -1 // addrAsset: AddressAsset
+	// this.declarations(addrToken).value = '' as bytes<0>
+	frame_dig -1 // addrToken: AddressToken
 	bytec 4 //  ""
 	box_put
 
@@ -178,14 +178,14 @@ declare:
 	// The ABI return prefix
 	bytec 1 // 0x151f7c75
 
-	// addrAsset: (address,uint64,uint64)
+	// addrToken: (address,uint64,uint64)
 	txna ApplicationArgs 1
 	dup
 	len
 	intc 2 // 48
 	==
 
-	// argument 0 (addrAsset) for request must be a (address,uint64,uint64)
+	// argument 0 (addrToken) for request must be a (address,uint64,uint64)
 	assert
 
 	// execute request((address,uint64,uint64))bool
@@ -199,9 +199,9 @@ declare:
 	intc 0 // 1
 	return
 
-// request(addrAsset: AddressAsset): boolean
+// request(addrToken: AddressToken): boolean
 //
-// Declare the given ARC11550 asset for the given address. If an approval app has been added for the user, that app is called to ensure the
+// Declare the given ARC11550 token for the given address. If an approval app has been added for the user, that app is called to ensure the
 // declaration is allowed
 request:
 	proto 1 1
@@ -211,9 +211,9 @@ request:
 
 	// *if3_condition
 	// contracts/DeclarationRegistry.algo.ts:50
-	// this.requests(addrAsset).exists
+	// this.requests(addrToken).exists
 	bytec 3 //  "r"
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	concat
 	box_len
 	swap
@@ -229,9 +229,9 @@ request:
 *if3_end:
 	// *if4_condition
 	// contracts/DeclarationRegistry.algo.ts:54
-	// this.approvalApps(addrAsset).exists
+	// this.approvalApps(addrToken).exists
 	bytec 0 //  "a"
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	concat
 	box_len
 	swap
@@ -241,8 +241,8 @@ request:
 	// *if4_consequent
 	// contracts/DeclarationRegistry.algo.ts:55
 	// approved = sendMethodCall<typeof ApprovalApp.prototype.approveRequest>({
-	//         applicationID: this.approvalApps(addrAsset).value,
-	//         methodArgs: [this.txn.sender, addrAsset],
+	//         applicationID: this.approvalApps(addrToken).value,
+	//         methodArgs: [this.txn.sender, addrToken],
 	//       })
 	itxn_begin
 	intc 3 //  appl
@@ -251,22 +251,22 @@ request:
 	itxn_field ApplicationArgs
 
 	// contracts/DeclarationRegistry.algo.ts:56
-	// applicationID: this.approvalApps(addrAsset).value
+	// applicationID: this.approvalApps(addrToken).value
 	bytec 0 //  "a"
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	concat
 	box_get
 
-	// box value does not exist: this.approvalApps(addrAsset).value
+	// box value does not exist: this.approvalApps(addrToken).value
 	assert
 	btoi
 	itxn_field ApplicationID
 
 	// contracts/DeclarationRegistry.algo.ts:57
-	// methodArgs: [this.txn.sender, addrAsset]
+	// methodArgs: [this.txn.sender, addrToken]
 	txn Sender
 	itxn_field ApplicationArgs
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	itxn_field ApplicationArgs
 
 	// Fee field not set, defaulting to 0
@@ -301,9 +301,9 @@ request:
 
 *if4_end:
 	// contracts/DeclarationRegistry.algo.ts:63
-	// this.requests(addrAsset).value = '' as bytes<0>
+	// this.requests(addrToken).value = '' as bytes<0>
 	bytec 3 //  "r"
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	concat
 	bytec 4 //  ""
 	box_put
@@ -322,14 +322,14 @@ request:
 	// The ABI return prefix
 	bytec 1 // 0x151f7c75
 
-	// addrAsset: (address,uint64,uint64)
+	// addrToken: (address,uint64,uint64)
 	txna ApplicationArgs 1
 	dup
 	len
 	intc 2 // 48
 	==
 
-	// argument 0 (addrAsset) for removeDeclaration must be a (address,uint64,uint64)
+	// argument 0 (addrToken) for removeDeclaration must be a (address,uint64,uint64)
 	assert
 
 	// execute removeDeclaration((address,uint64,uint64))bool
@@ -343,7 +343,7 @@ request:
 	intc 0 // 1
 	return
 
-// removeDeclaration(addrAsset: AddressAsset): boolean
+// removeDeclaration(addrToken: AddressToken): boolean
 removeDeclaration:
 	proto 1 1
 
@@ -352,8 +352,8 @@ removeDeclaration:
 
 	// *if6_condition
 	// contracts/DeclarationRegistry.algo.ts:69
-	// !this.declarations(addrAsset).exists
-	frame_dig -1 // addrAsset: AddressAsset
+	// !this.declarations(addrToken).exists
+	frame_dig -1 // addrToken: AddressToken
 	box_len
 	swap
 	pop
@@ -369,9 +369,9 @@ removeDeclaration:
 *if6_end:
 	// *if7_condition
 	// contracts/DeclarationRegistry.algo.ts:75
-	// this.approvalApps(addrAsset).exists
+	// this.approvalApps(addrToken).exists
 	bytec 0 //  "a"
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	concat
 	box_len
 	swap
@@ -381,8 +381,8 @@ removeDeclaration:
 	// *if7_consequent
 	// contracts/DeclarationRegistry.algo.ts:76
 	// approved = sendMethodCall<typeof ApprovalApp.prototype.approveDeclarationRemoval>({
-	//         applicationID: this.approvalApps(addrAsset).value,
-	//         methodArgs: [this.txn.sender, addrAsset],
+	//         applicationID: this.approvalApps(addrToken).value,
+	//         methodArgs: [this.txn.sender, addrToken],
 	//       })
 	itxn_begin
 	intc 3 //  appl
@@ -391,22 +391,22 @@ removeDeclaration:
 	itxn_field ApplicationArgs
 
 	// contracts/DeclarationRegistry.algo.ts:77
-	// applicationID: this.approvalApps(addrAsset).value
+	// applicationID: this.approvalApps(addrToken).value
 	bytec 0 //  "a"
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	concat
 	box_get
 
-	// box value does not exist: this.approvalApps(addrAsset).value
+	// box value does not exist: this.approvalApps(addrToken).value
 	assert
 	btoi
 	itxn_field ApplicationID
 
 	// contracts/DeclarationRegistry.algo.ts:78
-	// methodArgs: [this.txn.sender, addrAsset]
+	// methodArgs: [this.txn.sender, addrToken]
 	txn Sender
 	itxn_field ApplicationArgs
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	itxn_field ApplicationArgs
 
 	// Fee field not set, defaulting to 0
@@ -427,9 +427,9 @@ removeDeclaration:
 
 *if7_else:
 	// contracts/DeclarationRegistry.algo.ts:81
-	// approved = this.txn.sender == addrAsset.addr
+	// approved = this.txn.sender == addrToken.addr
 	txn Sender
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	extract 0 32
 	==
 	frame_bury 0 // approved: boolean
@@ -450,8 +450,8 @@ removeDeclaration:
 
 *if8_end:
 	// contracts/DeclarationRegistry.algo.ts:85
-	// this.declarations(addrAsset).delete()
-	frame_dig -1 // addrAsset: AddressAsset
+	// this.declarations(addrToken).delete()
+	frame_dig -1 // addrToken: AddressToken
 	box_del
 
 	// contracts/DeclarationRegistry.algo.ts:86
@@ -468,14 +468,14 @@ removeDeclaration:
 	// The ABI return prefix
 	bytec 1 // 0x151f7c75
 
-	// addrAsset: (address,uint64,uint64)
+	// addrToken: (address,uint64,uint64)
 	txna ApplicationArgs 1
 	dup
 	len
 	intc 2 // 48
 	==
 
-	// argument 0 (addrAsset) for removeRequest must be a (address,uint64,uint64)
+	// argument 0 (addrToken) for removeRequest must be a (address,uint64,uint64)
 	assert
 
 	// execute removeRequest((address,uint64,uint64))bool
@@ -489,7 +489,7 @@ removeDeclaration:
 	intc 0 // 1
 	return
 
-// removeRequest(addrAsset: AddressAsset): boolean
+// removeRequest(addrToken: AddressToken): boolean
 removeRequest:
 	proto 1 1
 
@@ -498,9 +498,9 @@ removeRequest:
 
 	// *if9_condition
 	// contracts/DeclarationRegistry.algo.ts:90
-	// !this.requests(addrAsset).exists
+	// !this.requests(addrToken).exists
 	bytec 3 //  "r"
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	concat
 	box_len
 	swap
@@ -517,9 +517,9 @@ removeRequest:
 *if9_end:
 	// *if10_condition
 	// contracts/DeclarationRegistry.algo.ts:95
-	// this.approvalApps(addrAsset).exists
+	// this.approvalApps(addrToken).exists
 	bytec 0 //  "a"
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	concat
 	box_len
 	swap
@@ -529,8 +529,8 @@ removeRequest:
 	// *if10_consequent
 	// contracts/DeclarationRegistry.algo.ts:96
 	// approved = sendMethodCall<typeof ApprovalApp.prototype.approveRequestRemoval>({
-	//         applicationID: this.approvalApps(addrAsset).value,
-	//         methodArgs: [this.txn.sender, addrAsset],
+	//         applicationID: this.approvalApps(addrToken).value,
+	//         methodArgs: [this.txn.sender, addrToken],
 	//       })
 	itxn_begin
 	intc 3 //  appl
@@ -539,22 +539,22 @@ removeRequest:
 	itxn_field ApplicationArgs
 
 	// contracts/DeclarationRegistry.algo.ts:97
-	// applicationID: this.approvalApps(addrAsset).value
+	// applicationID: this.approvalApps(addrToken).value
 	bytec 0 //  "a"
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	concat
 	box_get
 
-	// box value does not exist: this.approvalApps(addrAsset).value
+	// box value does not exist: this.approvalApps(addrToken).value
 	assert
 	btoi
 	itxn_field ApplicationID
 
 	// contracts/DeclarationRegistry.algo.ts:98
-	// methodArgs: [this.txn.sender, addrAsset]
+	// methodArgs: [this.txn.sender, addrToken]
 	txn Sender
 	itxn_field ApplicationArgs
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	itxn_field ApplicationArgs
 
 	// Fee field not set, defaulting to 0
@@ -575,9 +575,9 @@ removeRequest:
 
 *if10_else:
 	// contracts/DeclarationRegistry.algo.ts:101
-	// approved = this.txn.sender == addrAsset.addr
+	// approved = this.txn.sender == addrToken.addr
 	txn Sender
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	extract 0 32
 	==
 	frame_bury 0 // approved: boolean
@@ -598,9 +598,9 @@ removeRequest:
 
 *if11_end:
 	// contracts/DeclarationRegistry.algo.ts:105
-	// this.requests(addrAsset).delete()
+	// this.requests(addrToken).delete()
 	bytec 3 //  "r"
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	concat
 	box_del
 
@@ -618,14 +618,14 @@ removeRequest:
 	// The ABI return prefix
 	bytec 1 // 0x151f7c75
 
-	// addrAsset: (address,uint64,uint64)
+	// addrToken: (address,uint64,uint64)
 	txna ApplicationArgs 1
 	dup
 	len
 	intc 2 // 48
 	==
 
-	// argument 0 (addrAsset) for isRequested must be a (address,uint64,uint64)
+	// argument 0 (addrToken) for isRequested must be a (address,uint64,uint64)
 	assert
 
 	// execute isRequested((address,uint64,uint64))bool
@@ -639,14 +639,14 @@ removeRequest:
 	intc 0 // 1
 	return
 
-// isRequested(addrAsset: AddressAsset): boolean
+// isRequested(addrToken: AddressToken): boolean
 isRequested:
 	proto 1 1
 
 	// contracts/DeclarationRegistry.algo.ts:110
-	// return this.requests(addrAsset).exists;
+	// return this.requests(addrToken).exists;
 	bytec 3 //  "r"
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	concat
 	box_len
 	swap
@@ -658,14 +658,14 @@ isRequested:
 	// The ABI return prefix
 	bytec 1 // 0x151f7c75
 
-	// addrAsset: (address,uint64,uint64)
+	// addrToken: (address,uint64,uint64)
 	txna ApplicationArgs 1
 	dup
 	len
 	intc 2 // 48
 	==
 
-	// argument 0 (addrAsset) for isDeclared must be a (address,uint64,uint64)
+	// argument 0 (addrToken) for isDeclared must be a (address,uint64,uint64)
 	assert
 
 	// execute isDeclared((address,uint64,uint64))bool
@@ -679,14 +679,14 @@ isRequested:
 	intc 0 // 1
 	return
 
-// isDeclared(addrAsset: AddressAsset): boolean
+// isDeclared(addrToken: AddressToken): boolean
 isDeclared:
 	proto 1 1
 
 	// contracts/DeclarationRegistry.algo.ts:114
-	// return this.requests(addrAsset).exists;
+	// return this.requests(addrToken).exists;
 	bytec 3 //  "r"
-	frame_dig -1 // addrAsset: AddressAsset
+	frame_dig -1 // addrToken: AddressToken
 	concat
 	box_len
 	swap

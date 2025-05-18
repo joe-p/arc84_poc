@@ -169,7 +169,7 @@
   {
     "teal": 40,
     "source": "contracts/DeclarationRegistry.algo.ts:25",
-    "errorMessage": "argument 0 (addrAsset) for declare must be a (address,uint64,uint64)",
+    "errorMessage": "argument 0 (addrToken) for declare must be a (address,uint64,uint64)",
     "pc": [
       64
     ]
@@ -437,7 +437,7 @@
   {
     "teal": 110,
     "source": "contracts/DeclarationRegistry.algo.ts:33",
-    "errorMessage": "box value does not exist: this.approvalApps(addrAsset).value",
+    "errorMessage": "box value does not exist: this.approvalApps(addrToken).value",
     "pc": [
       121
     ]
@@ -753,7 +753,7 @@
   {
     "teal": 189,
     "source": "contracts/DeclarationRegistry.algo.ts:49",
-    "errorMessage": "argument 0 (addrAsset) for request must be a (address,uint64,uint64)",
+    "errorMessage": "argument 0 (addrToken) for request must be a (address,uint64,uint64)",
     "pc": [
       190
     ]
@@ -1035,7 +1035,7 @@
   {
     "teal": 261,
     "source": "contracts/DeclarationRegistry.algo.ts:56",
-    "errorMessage": "box value does not exist: this.approvalApps(addrAsset).value",
+    "errorMessage": "box value does not exist: this.approvalApps(addrToken).value",
     "pc": [
       249
     ]
@@ -1316,7 +1316,7 @@
   {
     "teal": 333,
     "source": "contracts/DeclarationRegistry.algo.ts:68",
-    "errorMessage": "argument 0 (addrAsset) for removeDeclaration must be a (address,uint64,uint64)",
+    "errorMessage": "argument 0 (addrToken) for removeDeclaration must be a (address,uint64,uint64)",
     "pc": [
       307
     ]
@@ -1591,7 +1591,7 @@
   {
     "teal": 401,
     "source": "contracts/DeclarationRegistry.algo.ts:77",
-    "errorMessage": "box value does not exist: this.approvalApps(addrAsset).value",
+    "errorMessage": "box value does not exist: this.approvalApps(addrToken).value",
     "pc": [
       365
     ]
@@ -1899,7 +1899,7 @@
   {
     "teal": 479,
     "source": "contracts/DeclarationRegistry.algo.ts:89",
-    "errorMessage": "argument 0 (addrAsset) for removeRequest must be a (address,uint64,uint64)",
+    "errorMessage": "argument 0 (addrToken) for removeRequest must be a (address,uint64,uint64)",
     "pc": [
       432
     ]
@@ -2188,7 +2188,7 @@
   {
     "teal": 549,
     "source": "contracts/DeclarationRegistry.algo.ts:97",
-    "errorMessage": "box value does not exist: this.approvalApps(addrAsset).value",
+    "errorMessage": "box value does not exist: this.approvalApps(addrToken).value",
     "pc": [
       492
     ]
@@ -2510,7 +2510,7 @@
   {
     "teal": 629,
     "source": "contracts/DeclarationRegistry.algo.ts:109",
-    "errorMessage": "argument 0 (addrAsset) for isRequested must be a (address,uint64,uint64)",
+    "errorMessage": "argument 0 (addrToken) for isRequested must be a (address,uint64,uint64)",
     "pc": [
       561
     ]
@@ -2687,7 +2687,7 @@
   {
     "teal": 669,
     "source": "contracts/DeclarationRegistry.algo.ts:113",
-    "errorMessage": "argument 0 (addrAsset) for isDeclared must be a (address,uint64,uint64)",
+    "errorMessage": "argument 0 (addrToken) for isDeclared must be a (address,uint64,uint64)",
     "pc": [
       593
     ]

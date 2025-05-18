@@ -29,14 +29,14 @@ switch *call_NoOp *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEM
 	// The ABI return prefix
 	bytec 0 // 0x151f7c75
 
-	// addrAsset: (address,uint64,uint64)
+	// addrToken: (address,uint64,uint64)
 	txna ApplicationArgs 2
 	dup
 	len
 	intc 3 // 48
 	==
 
-	// argument 0 (addrAsset) for approveRequest must be a (address,uint64,uint64)
+	// argument 0 (addrToken) for approveRequest must be a (address,uint64,uint64)
 	assert
 
 	// sender: address
@@ -60,7 +60,7 @@ switch *call_NoOp *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEM
 	intc 0 // 1
 	return
 
-// approveRequest(sender: Address, addrAsset: AddressAsset): boolean
+// approveRequest(sender: Address, addrToken: AddressToken): boolean
 approveRequest:
 	proto 2 1
 
@@ -74,14 +74,14 @@ approveRequest:
 	// The ABI return prefix
 	bytec 0 // 0x151f7c75
 
-	// addrAsset: (address,uint64,uint64)
+	// addrToken: (address,uint64,uint64)
 	txna ApplicationArgs 2
 	dup
 	len
 	intc 3 // 48
 	==
 
-	// argument 0 (addrAsset) for approveRequestRemoval must be a (address,uint64,uint64)
+	// argument 0 (addrToken) for approveRequestRemoval must be a (address,uint64,uint64)
 	assert
 
 	// sender: address
@@ -105,7 +105,7 @@ approveRequest:
 	intc 0 // 1
 	return
 
-// approveRequestRemoval(sender: Address, addrAsset: AddressAsset): boolean
+// approveRequestRemoval(sender: Address, addrToken: AddressToken): boolean
 approveRequestRemoval:
 	proto 2 1
 
@@ -119,14 +119,14 @@ approveRequestRemoval:
 	// The ABI return prefix
 	bytec 0 // 0x151f7c75
 
-	// addrAsset: (address,uint64,uint64)
+	// addrToken: (address,uint64,uint64)
 	txna ApplicationArgs 2
 	dup
 	len
 	intc 3 // 48
 	==
 
-	// argument 0 (addrAsset) for approveDeclaration must be a (address,uint64,uint64)
+	// argument 0 (addrToken) for approveDeclaration must be a (address,uint64,uint64)
 	assert
 
 	// sender: address
@@ -150,14 +150,14 @@ approveRequestRemoval:
 	intc 0 // 1
 	return
 
-// approveDeclaration(sender: Address, addrAsset: AddressAsset): boolean
+// approveDeclaration(sender: Address, addrToken: AddressToken): boolean
 approveDeclaration:
 	proto 2 1
 
 	// contracts/DeclarationRegistry.algo.ts:128
-	// return sender === addrAsset.addr;
+	// return sender === addrToken.addr;
 	frame_dig -1 // sender: Address
-	frame_dig -2 // addrAsset: AddressAsset
+	frame_dig -2 // addrToken: AddressToken
 	extract 0 32
 	==
 	retsub
@@ -167,14 +167,14 @@ approveDeclaration:
 	// The ABI return prefix
 	bytec 0 // 0x151f7c75
 
-	// addrAsset: (address,uint64,uint64)
+	// addrToken: (address,uint64,uint64)
 	txna ApplicationArgs 2
 	dup
 	len
 	intc 3 // 48
 	==
 
-	// argument 0 (addrAsset) for approveDeclarationRemoval must be a (address,uint64,uint64)
+	// argument 0 (addrToken) for approveDeclarationRemoval must be a (address,uint64,uint64)
 	assert
 
 	// sender: address
@@ -198,14 +198,14 @@ approveDeclaration:
 	intc 0 // 1
 	return
 
-// approveDeclarationRemoval(sender: Address, addrAsset: AddressAsset): boolean
+// approveDeclarationRemoval(sender: Address, addrToken: AddressToken): boolean
 approveDeclarationRemoval:
 	proto 2 1
 
 	// contracts/DeclarationRegistry.algo.ts:132
-	// return sender === addrAsset.addr;
+	// return sender === addrToken.addr;
 	frame_dig -1 // sender: Address
-	frame_dig -2 // addrAsset: AddressAsset
+	frame_dig -2 // addrToken: AddressToken
 	extract 0 32
 	==
 	retsub

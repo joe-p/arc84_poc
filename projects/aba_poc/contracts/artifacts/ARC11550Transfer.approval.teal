@@ -98,7 +98,7 @@ arc11550_mint:
 	app_global_put
 
 	// contracts/ARC11550Transfer.algo.ts:29
-	// assetId = sendMethodCall<typeof ARC11550Data.prototype.doMint>({ methodArgs: [params] })
+	// tokenId = sendMethodCall<typeof ARC11550Data.prototype.doMint>({ methodArgs: [params] })
 	itxn_begin
 	intc 2 //  appl
 	itxn_field TypeEnum
@@ -122,24 +122,24 @@ arc11550_mint:
 	itxnas Logs
 	extract 4 0
 	btoi
-	frame_bury 1 // assetId: uint64
+	frame_bury 1 // tokenId: uint64
 
 	// contracts/ARC11550Transfer.algo.ts:31
-	// this.idMapping(uid).value = { dataApp: dataApp, id: assetId }
+	// this.idMapping(uid).value = { dataApp: dataApp, id: tokenId }
 	pushbytes 0x6964 // "id"
 	frame_dig 0 // uid: uint64
 	itob
 	concat
 	frame_dig -1 // dataApp: AppID
 	itob
-	frame_dig 1 // assetId: uint64
+	frame_dig 1 // tokenId: uint64
 	itob
 	concat
 	box_put
 
 	// contracts/ARC11550Transfer.algo.ts:32
-	// return assetId;
-	frame_dig 1 // assetId: uint64
+	// return tokenId;
+	frame_dig 1 // tokenId: uint64
 
 	// set the subroutine return value
 	frame_bury 0
