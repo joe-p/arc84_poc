@@ -28,7 +28,7 @@ export class ARC11550Transfer extends Contract {
     let uid = this.universalId.value;
     this.universalId.value -= 1;
 
-    const assetId = sendMethodCall<typeof ARC11550Accounting.prototype.doMint>({});
+    const assetId = sendMethodCall<typeof ARC11550Accounting.prototype.doMint>({ methodArgs: [params] });
 
     this.idMapping(uid).value = { accountingApp: accountingApp, id: assetId };
     return assetId;

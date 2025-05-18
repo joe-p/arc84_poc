@@ -98,11 +98,16 @@ arc11550_mint:
 	app_global_put
 
 	// contracts/ARC11550Transfer.algo.ts:31
-	// assetId = sendMethodCall<typeof ARC11550Accounting.prototype.doMint>({})
+	// assetId = sendMethodCall<typeof ARC11550Accounting.prototype.doMint>({ methodArgs: [params] })
 	itxn_begin
 	intc 2 //  appl
 	itxn_field TypeEnum
 	pushbytes 0x41057855 // method "doMint((byte[32],byte[8],uint64,uint64,address))uint64"
+	itxn_field ApplicationArgs
+
+	// contracts/ARC11550Transfer.algo.ts:31
+	// methodArgs: [params]
+	frame_dig -2 // params: Params
 	itxn_field ApplicationArgs
 
 	// Fee field not set, defaulting to 0
