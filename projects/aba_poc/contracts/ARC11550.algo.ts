@@ -32,6 +32,17 @@ export type Metadata = {
   data: bytes;
 };
 
+export type AllowanceKey = {
+  holder: Address;
+  sender: Address;
+  id: Id;
+};
+
+export type Allowance = {
+  amount: uint64;
+  untilTimestamp: uint64;
+};
+
 export class ARC11550 extends Contract {
   /** The total number of tokens minted. This is used to calculate the token IDs */
   minted = GlobalStateKey<Id>();
@@ -54,8 +65,14 @@ export class ARC11550 extends Contract {
   /** The minter can mint new tokens */
   minter = GlobalStateKey<Address>();
 
-  createApplication(app: AppID, mintCap: uint64) {
-    this.transferHookApp.value = app;
+  /** Allowances for a given sender, holder, and asset id */
+  allowances = BoxMap<AllowanceKey, Allowance>({ prefix: 'a' });
+
+  createApplication(hookApp: AppID, mintCap: uint64) {
+    if (hookApp) {
+      this.transferHookApp.value = hookApp;
+    }
+
     this.minted.value = 0;
     this.mintCap.value = mintCap;
   }
@@ -149,26 +166,24 @@ export class ARC11550 extends Contract {
   // This is intentional because it will ensure all apps/client code use the same interface
   arc11550_transfer(transfers: Transfer[]) {
     // If there is a transfer hook app, ensure that is approves the transfers
-    if (this.transferHookApp.value.id != 0) {
+    if (this.transferHookApp.exists) {
       assert(
         sendMethodCall<typeof ARC11550TransferHook.prototype.approved>({
           applicationID: this.transferHookApp.value,
           methodArgs: [this.txn.sender, transfers],
         })
       );
-
-      for (let i = 0; i < transfers.length; i += 1) {
-        const t = transfers[i];
-        this.balances({ id: t.id, address: t.from }).value -= t.amount;
-        this.balances({ id: t.id, address: t.to }).value += t.amount;
-      }
-      return;
     }
 
     // If there is no transfer hook app, then only allow sending of the caller's own assets
     for (let i = 0; i < transfers.length; i += 1) {
       const t = transfers[i];
-      assert(t.from === this.txn.sender);
+
+      if (t.from !== this.txn.sender) {
+        const allowance = this.allowances({ holder: t.from, sender: this.txn.sender, id: t.id } as AllowanceKey).value;
+        assert(allowance.untilTimestamp >= globals.latestTimestamp);
+        allowance.amount -= t.amount;
+      }
       this.balances({ id: t.id, address: t.from }).value -= t.amount;
       this.balances({ id: t.id, address: t.to }).value += t.amount;
     }

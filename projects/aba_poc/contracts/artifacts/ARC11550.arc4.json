@@ -6,7 +6,7 @@
       "name": "createApplication",
       "args": [
         {
-          "name": "app",
+          "name": "hookApp",
           "type": "uint64"
         },
         {
