@@ -489,9 +489,9 @@ arc11550ToAsa:
 	dupn 5
 
 	// contracts/ARC11550Bridge.algo.ts:78
-	// xfers: Transfer[] = castBytes<Transfer[]>(xferCall.applicationArgs[1])
+	// xfers: Transfer[] = castBytes<Transfer[]>(xferCall.applicationArgs[2])
 	frame_dig -1 // xferCall: AppCallTxn
-	gtxns ApplicationArgs 1
+	gtxns ApplicationArgs 2
 	frame_bury 0 // xfers: Transfer[]
 	frame_dig -2 // xferIndex: uint64
 	frame_bury 1 // accessor: accessor//0//xfer
