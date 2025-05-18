@@ -10,13 +10,13 @@ export type AccountAppAndAssetId = {
 export type UniversalId = uint64;
 
 export class ARC11550Transfer extends Contract {
-  /** Maps a universal ID to an data app and an ID */
-  idMapping = BoxMap<UniversalId, AccountAppAndAssetId>({ prefix: 'id' });
-
-  /** Uniquely identify any ARC11550 asset minted through this application regardless of the account app. The universal ID is generally
+  /** The universalId uniquely identifies any ARC11550 asset minted through this application regardless of the data app. The universal ID is generally
    * only used off-chain to smooth out the transition from ASAs (i.e wallets & explorers) and to help users easily identify individual
    * tokens */
   universalId = GlobalStateKey<UniversalId>();
+
+  /** Maps a universal ID to an data app and an ID */
+  idMapping = BoxMap<UniversalId, AccountAppAndAssetId>({ prefix: 'id' });
 
   createApplication() {
     this.universalId.value = 2 ** 64 - 1;
