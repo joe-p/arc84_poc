@@ -130,6 +130,34 @@
       }
     },
     {
+      "name": "arc11550_approve",
+      "args": [
+        {
+          "name": "allowanceKey",
+          "type": "(address,address,uint64)"
+        },
+        {
+          "name": "allowance",
+          "type": "(uint64,uint64)"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "arc11550_setApprovals",
+      "args": [
+        {
+          "name": "allowances",
+          "type": "((address,address,uint64),(uint64,uint64))[]"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
       "name": "arc11550_transfer",
       "args": [
         {

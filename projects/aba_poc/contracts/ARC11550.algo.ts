@@ -162,6 +162,18 @@ export class ARC11550 extends Contract {
     return params;
   }
 
+  arc11550_approve(allowanceKey: AllowanceKey, allowance: Allowance) {
+    assert(this.txn.sender === this.params(allowanceKey.id).value.manager);
+    this.allowances(allowanceKey).value = allowance;
+  }
+
+  arc11550_setApprovals(allowances: { key: AllowanceKey; allowance: Allowance }[]) {
+    for (let i = 0; i < allowances.length; i += 1) {
+      const a = allowances[i];
+      this.arc11550_approve(a.key, a.allowance);
+    }
+  }
+
   // NOTE: There is only one transfer method instead of two methods for single and multi transfers
   // This is intentional because it will ensure all apps/client code use the same interface
   arc11550_transfer(transfers: Transfer[]) {
