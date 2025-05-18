@@ -497,7 +497,7 @@ arc11550ToAsa:
 	frame_bury 1 // accessor: accessor//0//xfer
 
 	// contracts/ARC11550Bridge.algo.ts:81
-	// arc11550: Arc11550Id = { accountingApp: xferCall.applicationID, id: xfer.id }
+	// arc11550: Arc11550Id = { accountingApp: AppID.fromUint64(btoi(xferCall.applicationArgs[1])), id: xfer.id }
 	frame_dig 0 // xfers: Transfer[]
 	store 255 // full array
 	intc 0 //  initial offset
@@ -514,7 +514,8 @@ arc11550ToAsa:
 	btoi
 	itob
 	frame_dig -1 // xferCall: AppCallTxn
-	gtxns ApplicationID
+	gtxns ApplicationArgs 1
+	btoi
 	itob
 	concat
 	frame_bury 2 // arc11550: Arc11550Id
