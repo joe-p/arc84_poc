@@ -202,7 +202,7 @@ asaToArc11550:
 
 	// contracts/ARC11550Bridge.algo.ts:39
 	// approvalProgram: ARC11550Accounting.approvalProgram()
-	pushbytes 0x0a200a0008015020482858103826090004151f7c750162066d696e746564016d017001610b7472616e73666572417070076d696e7443617031181481060b3119088d0c04ad00000000000000000000049f0000000000000000000000361a0217361a011788000224438a020027078bff672b226727088bfe6789298800051650b024438a00012b648929361a0188000450b024438a010127048bff50be4489361a02570200361a0188000224438a020031002109210427058bff35ff34ff5700081716504e02ba124427048bff50bd4c4841000e27048bff50be4435ff34ff22534427048bff50be4435ff244935fb34ff34ff4f02594935fe4934ff4c59240b81020835fd34ff2234fe528bfe4915165706024c504935fc34ff34fe34fd0834ff1552505035ff88043c34ff27048bff5049bc484cbf8929361a02491521041244361a01178800051650b024438a02012a8bff168bfe5050be44178929361a0157020088000e4915230a165706024c5050b024438a0101284703288c00228c018b018bff1521060a0c4100448bff35ff228b0121060b08220834ff4c2358178c028bff35ff228b0121060b08230834ff4c2104588c038b002a8b02168b035050be441716508c008b0124088c0142ffb08b008c0046038929361a011788000450b024438a010127058bff1650be448929361a0157020088000f491521070a165706024c5050b024438a0101284702288c00228c018b018bff15230a0c4100288bff35ff228b01230b0834ff4c2358178c028b0027058b021650be44508c008b0124088c0142ffcd8b008c00460289361a02491521081244361a0149152105124488000224438a020031002109210427058bff5740081716504e02ba124427068bff508bfebf89361a0157020088000224438a01002849228c008b008bff1521070a0c4100378b008c018bff35ff228b0121070b0821050834ff4c2108588bff35ff228b0121070b08220834ff4c21055888ff928b0024088c0042ffbd89361a0157020088000224438a0100284702320d2707641244228c008b008bff15250a0c4101ac8b008c018bff35ff228b01250b08230834ff4c2104583100134100b127068bff35ff228b01250b08230834ff4c2104583100508bff35ff228b01250b08220834ff4c2358171650508c02232327068bff35ff228b01250b08230834ff4c2104583100508bff35ff228b01250b08220834ff4c2358171650504e02ba1732070f4422492327068bff35ff228b01250b08230834ff4c2104583100508bff35ff228b01250b08220834ff4c2358171650504e02ba178bff35ff228b01250b0821050834ff4c23581709168b024e02bb2a8bff35ff228b01250b08220834ff4c235817168bff35ff228b01250b08230834ff4c2104585050be44178bff35ff228b01250b0821050834ff4c235817092a8bff35ff228b01250b08220834ff4c235817168bff35ff228b01250b08230834ff4c21045850504c16bf2a8bff35ff228b01250b08220834ff4c235817168bff35ff228b01250b0821060834ff4c2104585050be44178bff35ff228b01250b0821050834ff4c235817082a8bff35ff228b01250b08220834ff4c235817168bff35ff228b01250b0821060834ff4c21045850504c16bf8b0024088c0042fe498929361a014915210712448800051650b024438a010128320d27076412442b648c008b002708640e44310080066d696e74657264124427058b0016508bffbf2b6424082b4c678b008c00898004917c48b6361a008e01fb55008004dd42f5a080043ac232548004bbb9de678004d04acbc2800465dd8717800451f504be80042ad2eb558004d579175d80040f0fa173800462b5078b800441057855361a008e0bfb15fb24fb3afbd2fbf7fc72fc8afce9fd21fd78ff4b0034fc1534fd0c40000b34fc1534fd2435f942000834fd34fc152235f90935fa89
+	pushbytes 0x0a200a0008015020482858103826090004151f7c750162066d696e746564016d01700b7472616e736665724170700161076d696e7443617031181481060b3119088d0c04bd0000000000000000000004af0000000000000000000000361a0217361a011788000224438a020027068bff672b226727088bfe6789298800051650b024438a00012b648929361a0188000450b024438a010127048bff50be4489361a02570200361a0188000224438a020031002109210427058bff35ff34ff5700081716504e02ba124427048bff50bd4c4841000e27048bff50be4435ff34ff22534427048bff50be4435ff244935fb34ff34ff4f02594935fe4934ff4c59240b81020835fd34ff2234fe528bfe4915165706024c504935fc34ff34fe34fd0834ff1552505035ff88045434ff27048bff5049bc484cbf8929361a02491521041244361a01178800051650b024438a02012a8bff168bfe5050be44178929361a0157020088000e4915230a165706024c5050b024438a0101284703288c00228c018b018bff1521060a0c4100448bff35ff228b0121060b08220834ff4c2358178c028bff35ff228b0121060b08230834ff4c2104588c038b002a8b02168b035050be441716508c008b0124088c0142ffb08b008c0046038929361a011788000450b024438a010127058bff1650be448929361a0157020088000f491521070a165706024c5050b024438a0101284702288c00228c018b018bff15230a0c4100288bff35ff228b01230b0834ff4c2358178c028b0027058b021650be44508c008b0124088c0142ffcd8b008c00460289361a02491521081244361a0149152105124488000224438a020031002109210427058bff5740081716504e02ba124427078bff508bfebf89361a0157020088000224438a01002849228c008b008bff1521070a0c4100378b008c018bff35ff228b0121070b0821050834ff4c2108588bff35ff228b0121070b08220834ff4c21055888ff928b0024088c0042ffbd89298800051650b024438a000127066489361a0157020088000224438a0100284702320d2706641244228c008b008bff15250a0c4101ac8b008c018bff35ff228b01250b08230834ff4c2104583100134100b127078bff35ff228b01250b08230834ff4c2104583100508bff35ff228b01250b08220834ff4c2358171650508c02232327078bff35ff228b01250b08230834ff4c2104583100508bff35ff228b01250b08220834ff4c2358171650504e02ba1732070f4422492327078bff35ff228b01250b08230834ff4c2104583100508bff35ff228b01250b08220834ff4c2358171650504e02ba178bff35ff228b01250b0821050834ff4c23581709168b024e02bb2a8bff35ff228b01250b08220834ff4c235817168bff35ff228b01250b08230834ff4c2104585050be44178bff35ff228b01250b0821050834ff4c235817092a8bff35ff228b01250b08220834ff4c235817168bff35ff228b01250b08230834ff4c21045850504c16bf2a8bff35ff228b01250b08220834ff4c235817168bff35ff228b01250b0821060834ff4c2104585050be44178bff35ff228b01250b0821050834ff4c235817082a8bff35ff228b01250b08220834ff4c235817168bff35ff228b01250b0821060834ff4c21045850504c16bf8b0024088c0042fe498929361a014915210712448800051650b024438a010128320d27066412442b648c008b002708640e44310080066d696e74657264124427058b0016508bffbf2b6424082b4c678b008c00898004917c48b6361a008e01fb45008004dd42f5a080043ac232548004bbb9de678004d04acbc2800465dd8717800451f504be80042ad2eb558004d579175d80040f0fa1738004c14e68d9800462b5078b800441057855361a008e0cfafdfb0cfb22fbbafbdffc5afc72fcd1fd09fd60fd70ff430034fc1534fd0c40000b34fc1534fd2435f942000834fd34fc152235f90935fa89
 	itxn_field ApprovalProgram
 
 	// contracts/ARC11550Bridge.algo.ts:40
@@ -486,7 +486,7 @@ arc11550ToAsa:
 
 	// Push empty bytes after the frame pointer to reserve space for local variables
 	bytec 0 // 0x
-	dupn 5
+	dupn 6
 
 	// contracts/ARC11550Bridge.algo.ts:78
 	// xfers: Transfer[] = castBytes<Transfer[]>(xferCall.applicationArgs[2])
@@ -496,8 +496,40 @@ arc11550ToAsa:
 	frame_dig -2 // xferIndex: uint64
 	frame_bury 1 // accessor: accessor//0//xfer
 
-	// contracts/ARC11550Bridge.algo.ts:81
-	// arc11550: Arc11550Id = { accountingApp: AppID.fromUint64(btoi(xferCall.applicationArgs[1])), id: xfer.id }
+	// contracts/ARC11550Bridge.algo.ts:80
+	// accountingApp = AppID.fromUint64(btoi(xferCall.applicationArgs[1]))
+	frame_dig -1 // xferCall: AppCallTxn
+	gtxns ApplicationArgs 1
+	btoi
+	frame_bury 2 // accountingApp: uint64
+
+	// contracts/ARC11550Bridge.algo.ts:83
+	// assert(xferCall.applicationID == sendMethodCall<typeof ARC11550Accounting.prototype.arc11550_transferApp>({}))
+	frame_dig -1 // xferCall: AppCallTxn
+	gtxns ApplicationID
+	itxn_begin
+	intc 3 //  appl
+	itxn_field TypeEnum
+	pushbytes 0xc14e68d9 // method "arc11550_transferApp()uint64"
+	itxn_field ApplicationArgs
+
+	// Fee field not set, defaulting to 0
+	intc 0 // 0
+	itxn_field Fee
+
+	// Submit inner transaction
+	itxn_submit
+	itxn NumLogs
+	intc 1 // 1
+	-
+	itxnas Logs
+	extract 4 0
+	btoi
+	==
+	assert
+
+	// contracts/ARC11550Bridge.algo.ts:85
+	// arc11550: Arc11550Id = { accountingApp: accountingApp, id: xfer.id }
 	frame_dig 0 // xfers: Transfer[]
 	store 255 // full array
 	intc 0 //  initial offset
@@ -513,18 +545,16 @@ arc11550ToAsa:
 	extract3
 	btoi
 	itob
-	frame_dig -1 // xferCall: AppCallTxn
-	gtxns ApplicationArgs 1
-	btoi
+	frame_dig 2 // accountingApp: uint64
 	itob
 	concat
-	frame_bury 2 // arc11550: Arc11550Id
+	frame_bury 3 // arc11550: Arc11550Id
 
 	// *if1_condition
-	// contracts/ARC11550Bridge.algo.ts:83
+	// contracts/ARC11550Bridge.algo.ts:87
 	// !this.arc11550ToAsaMap(arc11550).exists
 	bytec 2 //  "app"
-	frame_dig 2 // arc11550: Arc11550Id
+	frame_dig 3 // arc11550: Arc11550Id
 	concat
 	box_len
 	swap
@@ -533,7 +563,7 @@ arc11550ToAsa:
 	bz *if1_end
 
 	// *if1_consequent
-	// contracts/ARC11550Bridge.algo.ts:84
+	// contracts/ARC11550Bridge.algo.ts:88
 	// params = sendMethodCall<typeof ARC11550Accounting.prototype.arc11550_params>({
 	//         applicationID: arc11550.accountingApp,
 	//         methodArgs: [xfer.id],
@@ -544,14 +574,14 @@ arc11550ToAsa:
 	pushbytes 0x51f504be // method "arc11550_params(uint64)(byte[32],byte[8],uint64,uint64,address)"
 	itxn_field ApplicationArgs
 
-	// contracts/ARC11550Bridge.algo.ts:85
+	// contracts/ARC11550Bridge.algo.ts:89
 	// applicationID: arc11550.accountingApp
-	frame_dig 2 // arc11550: Arc11550Id
+	frame_dig 3 // arc11550: Arc11550Id
 	extract 8 8
 	btoi
 	itxn_field ApplicationID
 
-	// contracts/ARC11550Bridge.algo.ts:86
+	// contracts/ARC11550Bridge.algo.ts:90
 	// methodArgs: [xfer.id]
 	frame_dig 0 // xfers: Transfer[]
 	store 255 // full array
@@ -581,9 +611,9 @@ arc11550ToAsa:
 	-
 	itxnas Logs
 	extract 4 0
-	frame_bury 3 // params: (byte[32],byte[8],uint64,uint64,address)
+	frame_bury 4 // params: (byte[32],byte[8],uint64,uint64,address)
 
-	// contracts/ARC11550Bridge.algo.ts:89
+	// contracts/ARC11550Bridge.algo.ts:93
 	// sendAssetCreation({
 	//         configAssetTotal: params.total as uint64,
 	//         configAssetDecimals: params.decimals as uint64,
@@ -595,33 +625,33 @@ arc11550ToAsa:
 	pushint 3 // acfg
 	itxn_field TypeEnum
 
-	// contracts/ARC11550Bridge.algo.ts:90
+	// contracts/ARC11550Bridge.algo.ts:94
 	// configAssetTotal: params.total as uint64
-	frame_dig 3 // params: (byte[32],byte[8],uint64,uint64,address)
+	frame_dig 4 // params: (byte[32],byte[8],uint64,uint64,address)
 	extract 40 8
 	btoi
 	itxn_field ConfigAssetTotal
 
-	// contracts/ARC11550Bridge.algo.ts:91
+	// contracts/ARC11550Bridge.algo.ts:95
 	// configAssetDecimals: params.decimals as uint64
-	frame_dig 3 // params: (byte[32],byte[8],uint64,uint64,address)
+	frame_dig 4 // params: (byte[32],byte[8],uint64,uint64,address)
 	extract 48 8
 	btoi
 	itxn_field ConfigAssetDecimals
 
-	// contracts/ARC11550Bridge.algo.ts:92
+	// contracts/ARC11550Bridge.algo.ts:96
 	// configAssetName: params.name as bytes
-	frame_dig 3 // params: (byte[32],byte[8],uint64,uint64,address)
+	frame_dig 4 // params: (byte[32],byte[8],uint64,uint64,address)
 	extract 0 32
 	itxn_field ConfigAssetName
 
-	// contracts/ARC11550Bridge.algo.ts:93
+	// contracts/ARC11550Bridge.algo.ts:97
 	// configAssetUnitName: params.symbol as bytes
-	frame_dig 3 // params: (byte[32],byte[8],uint64,uint64,address)
+	frame_dig 4 // params: (byte[32],byte[8],uint64,uint64,address)
 	extract 32 8
 	itxn_field ConfigAssetUnitName
 
-	// contracts/ARC11550Bridge.algo.ts:94
+	// contracts/ARC11550Bridge.algo.ts:98
 	// configAssetReserve: this.app.address
 	global CurrentApplicationAddress
 	itxn_field ConfigAssetReserve
@@ -634,59 +664,59 @@ arc11550ToAsa:
 	itxn_submit
 	itxn CreatedAssetID
 
-	// contracts/ARC11550Bridge.algo.ts:97
+	// contracts/ARC11550Bridge.algo.ts:101
 	// asa = this.itxn.createdAssetID
 	itxn CreatedAssetID
-	frame_bury 4 // asa: uint64
+	frame_bury 5 // asa: uint64
 
-	// contracts/ARC11550Bridge.algo.ts:98
+	// contracts/ARC11550Bridge.algo.ts:102
 	// this.arc11550ToAsaMap(arc11550).value = asa
 	bytec 2 //  "app"
-	frame_dig 2 // arc11550: Arc11550Id
+	frame_dig 3 // arc11550: Arc11550Id
 	concat
-	frame_dig 4 // asa: uint64
+	frame_dig 5 // asa: uint64
 	itob
 	box_put
 
-	// contracts/ARC11550Bridge.algo.ts:99
+	// contracts/ARC11550Bridge.algo.ts:103
 	// this.asaToArc11550Map(asa).value = arc11550
 	bytec 1 //  "asa"
-	frame_dig 4 // asa: uint64
+	frame_dig 5 // asa: uint64
 	itob
 	concat
-	frame_dig 2 // arc11550: Arc11550Id
+	frame_dig 3 // arc11550: Arc11550Id
 	box_put
 
 *if1_end:
-	// contracts/ARC11550Bridge.algo.ts:102
+	// contracts/ARC11550Bridge.algo.ts:106
 	// asa = this.arc11550ToAsaMap(arc11550).value
 	bytec 2 //  "app"
-	frame_dig 2 // arc11550: Arc11550Id
+	frame_dig 3 // arc11550: Arc11550Id
 	concat
 	box_get
 
 	// box value does not exist: this.arc11550ToAsaMap(arc11550).value
 	assert
 	btoi
-	frame_bury 5 // asa: uint64
+	frame_bury 6 // asa: uint64
 
-	// contracts/ARC11550Bridge.algo.ts:104
+	// contracts/ARC11550Bridge.algo.ts:108
 	// sendAssetTransfer({ xferAsset: asa, assetReceiver: receiver, assetAmount: xfer.amount })
 	itxn_begin
 	intc 5 //  axfer
 	itxn_field TypeEnum
 
-	// contracts/ARC11550Bridge.algo.ts:104
+	// contracts/ARC11550Bridge.algo.ts:108
 	// xferAsset: asa
-	frame_dig 5 // asa: uint64
+	frame_dig 6 // asa: uint64
 	itxn_field XferAsset
 
-	// contracts/ARC11550Bridge.algo.ts:104
+	// contracts/ARC11550Bridge.algo.ts:108
 	// assetReceiver: receiver
 	frame_dig -3 // receiver: Address
 	itxn_field AssetReceiver
 
-	// contracts/ARC11550Bridge.algo.ts:104
+	// contracts/ARC11550Bridge.algo.ts:108
 	// assetAmount: xfer.amount
 	frame_dig 0 // xfers: Transfer[]
 	store 255 // full array
@@ -711,15 +741,15 @@ arc11550ToAsa:
 	// Submit inner transaction
 	itxn_submit
 
-	// contracts/ARC11550Bridge.algo.ts:106
+	// contracts/ARC11550Bridge.algo.ts:110
 	// return asa;
-	frame_dig 5 // asa: uint64
+	frame_dig 6 // asa: uint64
 
 	// set the subroutine return value
 	frame_bury 0
 
 	// pop all local variables from the stack
-	popn 5
+	popn 6
 	retsub
 
 *create_NoOp:

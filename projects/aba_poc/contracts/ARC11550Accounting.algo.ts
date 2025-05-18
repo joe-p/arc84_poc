@@ -151,6 +151,10 @@ export class ARC11550Accounting extends Contract {
     }
   }
 
+  arc11550_transferApp(): AppID {
+    return this.transferApp.value;
+  }
+
   doTransfers(transfers: Transfer[]) {
     assert(globals.callerApplicationID == this.transferApp.value);
 

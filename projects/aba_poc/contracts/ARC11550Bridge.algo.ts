@@ -77,8 +77,12 @@ export class ARC11550Bridge extends Contract {
   arc11550ToAsa(xferCall: AppCallTxn, xferIndex: uint64, receiver: Address): AssetID {
     const xfers: Transfer[] = castBytes<Transfer[]>(xferCall.applicationArgs[2]);
     const xfer = xfers[xferIndex];
+    const accountingApp = AppID.fromUint64(btoi(xferCall.applicationArgs[1]));
 
-    const arc11550: Arc11550Id = { accountingApp: AppID.fromUint64(btoi(xferCall.applicationArgs[1])), id: xfer.id };
+    // Ensure the app used for the transfer is the actual transfer app for the asset
+    assert(xferCall.applicationID == sendMethodCall<typeof ARC11550Accounting.prototype.arc11550_transferApp>({}));
+
+    const arc11550: Arc11550Id = { accountingApp: accountingApp, id: xfer.id };
 
     if (!this.arc11550ToAsaMap(arc11550).exists) {
       const params = sendMethodCall<typeof ARC11550Accounting.prototype.arc11550_params>({
