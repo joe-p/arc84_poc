@@ -1,9 +1,9 @@
 import { Contract } from '@algorandfoundation/tealscript';
 
-export type Id = uint64;
+export type TokenId = uint64;
 
 export type Transfer = {
-  id: Id;
+  id: TokenId;
   from: Address;
   to: Address;
   amount: uint64;
@@ -18,12 +18,12 @@ export type Params = {
 };
 
 export type IdAndAddress = {
-  id: Id;
+  id: TokenId;
   address: Address;
 };
 
 export type MetadataKey = {
-  id: Id;
+  id: TokenId;
   key: string;
 };
 
@@ -35,7 +35,7 @@ export type Metadata = {
 export type AllowanceKey = {
   holder: Address;
   sender: Address;
-  id: Id;
+  id: TokenId;
 };
 
 export type Allowance = {
@@ -45,10 +45,10 @@ export type Allowance = {
 
 export class ARC11550Data extends Contract {
   /** The total number of tokens minted. This is used to calculate the token IDs */
-  minted = GlobalStateKey<Id>();
+  minted = GlobalStateKey<TokenId>();
 
   /** The parameters for a given token */
-  params = BoxMap<Id, Params>({ prefix: 'p' });
+  params = BoxMap<TokenId, Params>({ prefix: 'p' });
 
   /** The balance for a given user and token */
   balances = BoxMap<IdAndAddress, uint64>({ prefix: 'b' });
@@ -114,7 +114,7 @@ export class ARC11550Data extends Contract {
   //   }
   // }
 
-  arc11550_balanceOf(id: Id, account: Address): uint64 {
+  arc11550_balanceOf(id: TokenId, account: Address): uint64 {
     return this.balances({ id: id, address: account }).value;
   }
 
@@ -129,11 +129,11 @@ export class ARC11550Data extends Contract {
     return balances;
   }
 
-  arc11550_params(id: Id): Params {
+  arc11550_params(id: TokenId): Params {
     return this.params(id).value;
   }
 
-  arc11550_mulitpleParams(ids: Id[]): Params[] {
+  arc11550_mulitpleParams(ids: TokenId[]): Params[] {
     const params: Params[] = [];
     for (let i = 0; i < ids.length; i += 1) {
       const id = ids[i];

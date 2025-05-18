@@ -73,7 +73,7 @@ createApplication:
 	intc 0 // 1
 	return
 
-// arc11550_mint(dataApp: AppID, params: Params): Id
+// arc11550_mint(dataApp: AppID, params: Params): TokenId
 arc11550_mint:
 	proto 2 1
 

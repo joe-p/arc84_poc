@@ -1,10 +1,10 @@
 //
 import { Contract } from '@algorandfoundation/tealscript';
-import { Id, Transfer, ARC11550Data, Params } from './ARC11550Data.algo';
+import { TokenId, Transfer, ARC11550Data, Params } from './ARC11550Data.algo';
 
 export type AccountAppAndTokenId = {
   dataApp: AppID;
-  id: Id;
+  id: TokenId;
 };
 
 export type UniversalId = uint64;
@@ -22,7 +22,7 @@ export class ARC11550Transfer extends Contract {
     this.universalId.value = 2 ** 64 - 1;
   }
 
-  arc11550_mint(dataApp: AppID, params: Params): Id {
+  arc11550_mint(dataApp: AppID, params: Params): TokenId {
     let uid = this.universalId.value;
     this.universalId.value -= 1;
 

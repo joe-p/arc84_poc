@@ -65,13 +65,13 @@ approved:
 	bytec 0 // 0x
 	dup
 
-	// contracts/ARC11550Transfer.algo.ts:61
+	// contracts/ARC11550Data.algo.ts:200
 	// for (let i = 0; i < transfers.length; i += 1)
 	intc 0 // 0
 	frame_bury 0 // i: uint64
 
 *for_0:
-	// contracts/ARC11550Transfer.algo.ts:61
+	// contracts/ARC11550Data.algo.ts:200
 	// i < transfers.length
 	frame_dig 0 // i: uint64
 	frame_dig -2 // transfers: Transfer[]
@@ -84,7 +84,7 @@ approved:
 	frame_bury 1 // accessor: accessor//0//t
 
 	// *if0_condition
-	// contracts/ARC11550Transfer.algo.ts:63
+	// contracts/ARC11550Data.algo.ts:202
 	// t.from !== caller
 	frame_dig -2 // transfers: Transfer[]
 	store 255 // full array
@@ -104,7 +104,7 @@ approved:
 	bz *if0_end
 
 	// *if0_consequent
-	// contracts/ARC11550Transfer.algo.ts:63
+	// contracts/ARC11550Data.algo.ts:202
 	// return false;
 	intc 0 // 0
 	b *approved*return
@@ -112,7 +112,7 @@ approved:
 *if0_end:
 
 *for_0_continue:
-	// contracts/ARC11550Transfer.algo.ts:61
+	// contracts/ARC11550Data.algo.ts:200
 	// i += 1
 	frame_dig 0 // i: uint64
 	intc 1 // 1
@@ -121,7 +121,7 @@ approved:
 	b *for_0
 
 *for_0_end:
-	// contracts/ARC11550Transfer.algo.ts:66
+	// contracts/ARC11550Data.algo.ts:205
 	// return true;
 	intc 1 // 1
 
