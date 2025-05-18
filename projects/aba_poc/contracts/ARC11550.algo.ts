@@ -33,8 +33,8 @@ export type Metadata = {
 };
 
 export class ARC11550 extends Contract {
-  /** The ID to use for the next asset that is minted */
-  nextId = GlobalStateKey<Id>();
+  /** The total number of tokens minted. This is used to calculate the token IDs */
+  minted = GlobalStateKey<Id>();
 
   /** The parameters for a given asset */
   params = BoxMap<Id, Params>({ prefix: 'p' });
@@ -48,31 +48,40 @@ export class ARC11550 extends Contract {
   /** The app to be called when a transfer is initiated, potentially rejecting it */
   transferHookApp = GlobalStateKey<AppID>();
 
+  /** The cap to total tokens that can be minted */
+  mintCap = GlobalStateKey<uint64>();
+
   /** The minter can mint new tokens */
   minter = GlobalStateKey<Address>();
 
-  createApplication(app: AppID) {
+  createApplication(app: AppID, mintCap: uint64) {
     this.transferHookApp.value = app;
-    this.nextId.value = 0;
+    this.minted.value = 0;
+    this.mintCap.value = mintCap;
   }
 
   arc11550_mint(params: Params): uint64 {
+    const id = this.minted.value;
+    assert(id <= this.mintCap.value);
+
     assert(this.txn.sender === this.minter.value);
-    this.params(this.nextId.value).value = params;
+    this.params(id).value = params;
 
-    const id = this.nextId.value;
-    this.nextId.value += 1;
-
+    this.minted.value += 1;
     return id;
   }
 
   arc11550_multiMint(params: Params[]): uint64 {
-    const firstId = this.nextId.value;
+    const firstId = this.minted.value;
     for (let i = 0; i < params.length; i += 1) {
       this.arc11550_mint(params[i]);
     }
 
     return firstId;
+  }
+
+  arc11550_minted(): uint64 {
+    return this.minted.value;
   }
 
   arc11550_metadata(key: MetadataKey): Metadata {

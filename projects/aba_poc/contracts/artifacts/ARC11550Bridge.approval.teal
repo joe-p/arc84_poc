@@ -159,17 +159,19 @@ asaToArc11550:
 	// *if0_consequent
 	// contracts/ARC11550Bridge.algo.ts:33
 	// sendMethodCall<typeof ARC11550.prototype.createApplication>({
-	//         methodArgs: [AppID.fromUint64(0)],
+	//         methodArgs: [AppID.fromUint64(0), 1],
 	//       })
 	itxn_begin
 	intc 2 //  appl
 	itxn_field TypeEnum
-	pushbytes 0x973b616f // method "createApplication(uint64)void"
+	pushbytes 0x917c48b6 // method "createApplication(uint64,uint64)void"
 	itxn_field ApplicationArgs
 
 	// contracts/ARC11550Bridge.algo.ts:34
-	// methodArgs: [AppID.fromUint64(0)]
+	// methodArgs: [AppID.fromUint64(0), 1]
 	bytec 3 // 0x0000000000000000
+	itxn_field ApplicationArgs
+	pushbytes 0x0000000000000001
 	itxn_field ApplicationArgs
 
 	// Fee field not set, defaulting to 0
