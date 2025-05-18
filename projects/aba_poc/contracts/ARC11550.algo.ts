@@ -59,14 +59,36 @@ export class ARC11550 extends Contract {
   arc11550_mint(params: Params): uint64 {
     assert(this.txn.sender === this.minter.value);
     this.params(this.nextId.value).value = params;
+
+    const id = this.nextId.value;
     this.nextId.value += 1;
 
-    return this.nextId.value - 1;
+    return id;
+  }
+
+  arc11550_multiMint(params: Params[]): uint64 {
+    const firstId = this.nextId.value;
+    for (let i = 0; i < params.length; i += 1) {
+      this.arc11550_mint(params[i]);
+    }
+
+    return firstId;
   }
 
   arc11550_metadata(key: MetadataKey): Metadata {
     return this.metadata(key).value;
   }
+
+  // TODO: Nested dynamic types not supported by TEALScript
+  // arc11550_multipleMetadata(keys: MetadataKey[]): Metadata[] {
+  //   const metadata: Metadata[] = [];
+  //   for (let i = 0; i < keys.length; i += 1) {
+  //     const key = keys[i];
+  //     metadata[i] = this.metadata(key).value;
+  //   }
+  //
+  //   return metadata;
+  // }
 
   arc11550_setMetadata(key: MetadataKey, data: bytes) {
     assert(this.txn.sender === this.params(key.id).value.manager);
@@ -78,14 +100,44 @@ export class ARC11550 extends Contract {
     this.metadata(key).value.data = data;
   }
 
+  // TODO: Nested dynamic types not supported by TEALScript
+  // arc11550_setMultipleMetadata(keysAndData: { key: MetadataKey; data: bytes }[]) {
+  //   for (let i = 0; i < keysAndData.length; i += 1) {
+  //     this.arc11550_setMetadata(keysAndData[i].key, keysAndData[i].data);
+  //   }
+  // }
+
   arc11550_balanceOf(id: Id, account: Address): uint64 {
     return this.balances({ id: id, address: account }).value;
+  }
+
+  arc11550_balancesOf(idAndAddrs: IdAndAddress[]): uint64[] {
+    const balances: uint64[] = [];
+    for (let i = 0; i < idAndAddrs.length; i += 1) {
+      const id = idAndAddrs[i].id;
+      const addr = idAndAddrs[i].address;
+      balances.push(this.balances({ id: id, address: addr }).value);
+    }
+
+    return balances;
   }
 
   arc11550_params(id: Id): Params {
     return this.params(id).value;
   }
 
+  arc11550_mulitpleParams(ids: Id[]): Params[] {
+    const params: Params[] = [];
+    for (let i = 0; i < ids.length; i += 1) {
+      const id = ids[i];
+      params.push(this.params(id).value);
+    }
+
+    return params;
+  }
+
+  // NOTE: There is only one transfer method instead of two methods for single and multi transfers
+  // This is intentional because it will ensure all apps/client code use the same interface
   arc11550_transfer(transfers: Transfer[]) {
     // If there is a transfer hook app, ensure that is approves the transfers
     if (this.transferHookApp.value.id != 0) {
