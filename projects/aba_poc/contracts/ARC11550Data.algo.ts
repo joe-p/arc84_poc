@@ -43,7 +43,10 @@ export type AllowanceKey = {
 
 export type Allowance = {
   amount: uint64;
-  untilTimestamp: uint64;
+  remainingAmount: uint64;
+  cooldown: uint64;
+  lastUsed: uint64;
+  expirationTimestamp: uint64;
 };
 
 export type Collection = {
@@ -204,8 +207,17 @@ export class ARC11550Data extends Contract {
           sender: this.txn.sender,
           tokenId: t.tokenId,
         } as AllowanceKey).value;
-        assert(allowance.untilTimestamp >= globals.latestTimestamp);
-        allowance.amount -= t.amount;
+
+        const currentTime = globals.latestTimestamp;
+        assert(allowance.expirationTimestamp >= currentTime);
+
+        // If there isn't enough remaining in the allowance, see if we can reset the remaining amount due to the cooldown
+        if (allowance.remainingAmount < t.amount && currentTime - allowance.lastUsed >= allowance.cooldown) {
+          allowance.remainingAmount = allowance.amount;
+          allowance.lastUsed = currentTime;
+        }
+
+        allowance.remainingAmount -= t.amount;
       }
       this.balances({ tokenId: t.tokenId, address: t.from }).value -= t.amount;
       this.balances({ tokenId: t.tokenId, address: t.to }).value += t.amount;
