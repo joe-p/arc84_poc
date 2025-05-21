@@ -57,6 +57,7 @@ describe('ARC11550', () => {
 
   test('mint', async () => {
     const result = await dataClient.send.arc11550Mint({
+      extraFee: microAlgos(1000),
       args: {
         collectionId,
         params: {

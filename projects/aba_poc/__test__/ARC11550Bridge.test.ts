@@ -63,6 +63,7 @@ describe('ARC11550 Bridge', () => {
 
     // Mint token
     result = await dataClient.send.arc11550Mint({
+      extraFee: microAlgos(1000),
       args: {
         collectionId,
         params: {

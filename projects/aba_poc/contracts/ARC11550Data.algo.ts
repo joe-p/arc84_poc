@@ -79,8 +79,6 @@ export class ARC11550Data extends Contract {
   /** The app that implements arc11550_transfer */
   transferApp = GlobalStateKey<AppID>();
 
-  tokenId = GlobalStateKey<TokenId>();
-
   collectionId = GlobalStateKey<CollectionId>();
 
   collections = BoxMap<CollectionId, Collection>({ prefix: 'c' });
@@ -241,8 +239,16 @@ export class ARC11550Data extends Contract {
     assert(this.txn.sender === collection.manager);
     assert(collection.mintCap >= collection.minted);
 
-    const id = this.tokenId.value;
-    this.tokenId.value += 1;
+    // Use an app ID for the token ID to be sure there will not be a collision with
+    // ASAs
+    sendMethodCall<typeof TempApp.prototype.new>({
+      onCompletion: OnCompletion.DeleteApplication,
+      approvalProgram: TempApp.approvalProgram(),
+      clearStateProgram: TempApp.clearProgram(),
+    });
+
+    const id = this.itxn.createdApplicationID.id;
+
     collection.minted += 1;
 
     this.params(id).value = params;
@@ -262,4 +268,9 @@ export class ARC11550TransferHook extends Contract {
   approved(caller: Address, transfers: Transfer[]): boolean {
     return true;
   }
+}
+
+export class TempApp extends Contract {
+  @allow.create('DeleteApplication')
+  new() {}
 }

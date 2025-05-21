@@ -1,0 +1,13 @@
+{
+  "name": "TempApp",
+  "desc": "",
+  "methods": [
+    {
+      "name": "new",
+      "args": [],
+      "returns": {
+        "type": "void"
+      }
+    }
+  ]
+}
