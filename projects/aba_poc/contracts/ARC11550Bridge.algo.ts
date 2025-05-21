@@ -27,6 +27,10 @@ export class ARC11550Bridge extends Contract {
 
   createApplication(dataApp: AppID) {
     this.dataApp.value = dataApp;
+    this.collection.value = sendMethodCall<typeof ARC11550Data.prototype.arc11550_newCollection>({
+      applicationID: dataApp,
+      methodArgs: [this.app.address, btoi(hex('0xFFFFFFFFFFFFFFFF'))],
+    });
   }
 
   optInToAsa(asa: AssetID) {
@@ -46,7 +50,7 @@ export class ARC11550Bridge extends Contract {
 
     assert(asa.clawback === Address.zeroAddress);
 
-    // If there isn't already an app for this ASA, create it
+    // If there isn't already a token for this ASA, create it
     if (!this.asaToArc11550Map(axfer.xferAsset).exists) {
       const id = sendMethodCall<typeof ARC11550Data.prototype.arc11550_mint>({
         applicationID: this.dataApp.value,
@@ -70,8 +74,13 @@ export class ARC11550Bridge extends Contract {
 
     const arc11550 = this.asaToArc11550Map(asa).value;
 
-    sendMethodCall<typeof ARC11550Transfer.prototype.arc11550_transfer>({
+    const xferApp = sendMethodCall<typeof ARC11550Data.prototype.arc11550_transferApp>({
       applicationID: arc11550.dataApp,
+    });
+
+    // TODO: Get transfer app instead of using data app
+    sendMethodCall<typeof ARC11550Transfer.prototype.arc11550_transfer>({
+      applicationID: xferApp,
       methodArgs: [
         arc11550.dataApp,
         [{ tokenId: arc11550.id, amount: axfer.assetAmount, from: this.app.address, to: receiver }],

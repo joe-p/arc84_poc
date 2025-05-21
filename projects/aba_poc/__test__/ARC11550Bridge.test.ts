@@ -15,6 +15,7 @@ let testAccount: string;
 let collectionId: bigint;
 let tokenId: bigint;
 let bridgedAsa: bigint;
+let nativeAsa: bigint;
 
 function b(str: string, len?: number) {
   return new Uint8Array(Buffer.from(str.padEnd(len ?? 0, '\x00')));
@@ -80,7 +81,10 @@ describe('ARC11550 Bridge', () => {
     tokenId = result.return!;
 
     // Create bridge contract
-    const bridgeResults = await bridgeFactory.send.create.createApplication({ args: [dataClient.appId] });
+    const bridgeResults = await bridgeFactory.send.create.createApplication({
+      extraFee: microAlgos(1000),
+      args: [dataClient.appId],
+    });
     bridgeClient = bridgeResults.appClient;
 
     await algorand.account.ensureFunded(
@@ -95,6 +99,15 @@ describe('ARC11550 Bridge', () => {
       data: dataClient.appAddress,
       testAccount: testAccount,
     });
+
+    nativeAsa = (
+      await algorand.send.assetCreate({
+        sender: testAccount,
+        total: 1337n,
+        assetName: 'native asa',
+        unitName: 'nASA',
+      })
+    ).assetId;
   });
 
   test('new sc to asa', async () => {
@@ -139,5 +152,23 @@ describe('ARC11550 Bridge', () => {
     const asaAcctInfo = await algorand.asset.getAccountInformation(testAccount, bridgedAsa);
 
     expect(asaAcctInfo.balance).toBe(100n);
+  });
+
+  test('new asa to sc', async () => {
+    const { algorand } = fixture.context;
+
+    const xferAmount = 50n;
+    const xfer = await algorand.createTransaction.assetTransfer({
+      sender: testAccount,
+      receiver: bridgeClient.appAddress,
+      assetId: nativeAsa,
+      amount: xferAmount,
+    });
+
+    await bridgeClient
+      .newGroup()
+      .optInToAsa({ extraFee: microAlgos(1000), args: { asa: nativeAsa } })
+      .asaToArc11550({ extraFee: microAlgos(6000), args: { axfer: xfer, receiver: testAccount } })
+      .send();
   });
 });
