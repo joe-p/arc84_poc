@@ -178,6 +178,10 @@
       "desc": "*********************\nTransfer/Mint Methods\n*********************",
       "args": [
         {
+          "name": "sender",
+          "type": "address"
+        },
+        {
           "name": "transfers",
           "type": "(uint64,address,address,uint64)[]"
         }

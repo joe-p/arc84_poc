@@ -23,14 +23,10 @@ switch *call_NoOp *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEM
 	// The requested action is not implemented in this contract. Are you using the correct OnComplete? Did you set your app ID?
 	err
 
-// approved(address,(uint64,address,address,uint64)[],uint64)bool
+// approved(address,(uint64,address,address,uint64)[])bool
 *abi_route_approved:
 	// The ABI return prefix
 	pushbytes 0x151f7c75
-
-	// idx: uint64
-	txna ApplicationArgs 3
-	btoi
 
 	// transfers: (uint64,address,address,uint64)[]
 	txna ApplicationArgs 2
@@ -43,10 +39,10 @@ switch *call_NoOp *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEM
 	pushint 32
 	==
 
-	// argument 2 (caller) for approved must be a address
+	// argument 1 (caller) for approved must be a address
 	assert
 
-	// execute approved(address,(uint64,address,address,uint64)[],uint64)bool
+	// execute approved(address,(uint64,address,address,uint64)[])bool
 	callsub approved
 	pushbytes 0x00
 	pushint 0
@@ -57,14 +53,14 @@ switch *call_NoOp *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEM
 	intc 0 // 1
 	return
 
-// approved(caller: Address, transfers: Transfer[], idx: uint64): boolean
+// approved(caller: Address, transfers: Transfer[]): boolean
 //
-// Determines whether a transfer is approved or not. This implementation always returns true, but
-// there are other possibilities such as ERC20-style approvals, whitelists, blacklists, enforced royalties, etc.
+// Determines whether a transfer is approved or not. This implementation just returns true (which is the same as not setting a
+// transferHookApp), but there are many possibilities such as dynamic whitelists, blacklists, enforced royalties, token-gating, etc.
 approved:
-	proto 3 1
+	proto 2 1
 
-	// contracts/ARC11550Transfer.algo.ts:34
+	// contracts/ARC11550Data.algo.ts:263
 	// return true;
 	intc 0 // 1
 	retsub
@@ -82,7 +78,7 @@ approved:
 	err
 
 *call_NoOp:
-	pushbytes 0x64b9bd45 // method "approved(address,(uint64,address,address,uint64)[],uint64)bool"
+	pushbytes 0xb4c17a7b // method "approved(address,(uint64,address,address,uint64)[])bool"
 	txna ApplicationArgs 0
 	match *abi_route_approved
 

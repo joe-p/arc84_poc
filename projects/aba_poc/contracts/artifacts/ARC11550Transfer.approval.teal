@@ -185,12 +185,12 @@ arc11550_transfer:
 	// contracts/ARC11550Transfer.algo.ts:23
 	// sendMethodCall<typeof ARC11550Data.prototype.doTransfers>({
 	//       applicationID: dataApp,
-	//       methodArgs: [transfers],
+	//       methodArgs: [this.txn.sender, transfers],
 	//     })
 	itxn_begin
 	intc 2 //  appl
 	itxn_field TypeEnum
-	pushbytes 0x62b5078b // method "doTransfers((uint64,address,address,uint64)[])void"
+	pushbytes 0x21a85e1b // method "doTransfers(address,(uint64,address,address,uint64)[])void"
 	itxn_field ApplicationArgs
 
 	// contracts/ARC11550Transfer.algo.ts:24
@@ -199,7 +199,9 @@ arc11550_transfer:
 	itxn_field ApplicationID
 
 	// contracts/ARC11550Transfer.algo.ts:25
-	// methodArgs: [transfers]
+	// methodArgs: [this.txn.sender, transfers]
+	txn Sender
+	itxn_field ApplicationArgs
 	frame_dig -2 // transfers: Transfer[]
 	dup
 	len

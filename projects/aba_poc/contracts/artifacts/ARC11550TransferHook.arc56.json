@@ -4,7 +4,7 @@
   "methods": [
     {
       "name": "approved",
-      "desc": "Determines whether a transfer is approved or not. This implementation always returns true, but\nthere are other possibilities such as ERC20-style approvals, whitelists, blacklists, enforced royalties, etc.",
+      "desc": "Determines whether a transfer is approved or not. This implementation just returns true (which is the same as not setting a\ntransferHookApp), but there are many possibilities such as dynamic whitelists, blacklists, enforced royalties, token-gating, etc.",
       "args": [
         {
           "name": "caller",
@@ -13,10 +13,6 @@
         {
           "name": "transfers",
           "type": "(uint64,address,address,uint64)[]"
-        },
-        {
-          "name": "idx",
-          "type": "uint64"
         }
       ],
       "returns": {
@@ -79,14 +75,14 @@
       "sourceInfo": [
         {
           "teal": 1,
-          "source": "contracts/ARC11550Transfer.algo.ts:30",
+          "source": "contracts/ARC11550Data.algo.ts:259",
           "pc": [
             0
           ]
         },
         {
           "teal": 2,
-          "source": "contracts/ARC11550Transfer.algo.ts:30",
+          "source": "contracts/ARC11550Data.algo.ts:259",
           "pc": [
             1,
             2,
@@ -95,7 +91,7 @@
         },
         {
           "teal": 14,
-          "source": "contracts/ARC11550Transfer.algo.ts:30",
+          "source": "contracts/ARC11550Data.algo.ts:259",
           "pc": [
             4,
             5
@@ -103,14 +99,14 @@
         },
         {
           "teal": 15,
-          "source": "contracts/ARC11550Transfer.algo.ts:30",
+          "source": "contracts/ARC11550Data.algo.ts:259",
           "pc": [
             6
           ]
         },
         {
           "teal": 16,
-          "source": "contracts/ARC11550Transfer.algo.ts:30",
+          "source": "contracts/ARC11550Data.algo.ts:259",
           "pc": [
             7,
             8
@@ -118,14 +114,14 @@
         },
         {
           "teal": 17,
-          "source": "contracts/ARC11550Transfer.algo.ts:30",
+          "source": "contracts/ARC11550Data.algo.ts:259",
           "pc": [
             9
           ]
         },
         {
           "teal": 18,
-          "source": "contracts/ARC11550Transfer.algo.ts:30",
+          "source": "contracts/ARC11550Data.algo.ts:259",
           "pc": [
             10,
             11
@@ -133,14 +129,14 @@
         },
         {
           "teal": 19,
-          "source": "contracts/ARC11550Transfer.algo.ts:30",
+          "source": "contracts/ARC11550Data.algo.ts:259",
           "pc": [
             12
           ]
         },
         {
           "teal": 20,
-          "source": "contracts/ARC11550Transfer.algo.ts:30",
+          "source": "contracts/ARC11550Data.algo.ts:259",
           "pc": [
             13,
             14,
@@ -172,7 +168,7 @@
         },
         {
           "teal": 24,
-          "source": "contracts/ARC11550Transfer.algo.ts:30",
+          "source": "contracts/ARC11550Data.algo.ts:259",
           "errorMessage": "The requested action is not implemented in this contract. Are you using the correct OnComplete? Did you set your app ID?",
           "pc": [
             39
@@ -180,7 +176,7 @@
         },
         {
           "teal": 29,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
+          "source": "contracts/ARC11550Data.algo.ts:262",
           "pc": [
             40,
             41,
@@ -192,7 +188,7 @@
         },
         {
           "teal": 32,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
+          "source": "contracts/ARC11550Data.algo.ts:262",
           "pc": [
             46,
             47,
@@ -201,257 +197,241 @@
         },
         {
           "teal": 33,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
+          "source": "contracts/ARC11550Data.algo.ts:262",
           "pc": [
-            49
+            49,
+            50,
+            51
           ]
         },
         {
           "teal": 36,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
+          "source": "contracts/ARC11550Data.algo.ts:262",
           "pc": [
-            50,
-            51,
-            52
+            52,
+            53,
+            54
           ]
         },
         {
           "teal": 37,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
+          "source": "contracts/ARC11550Data.algo.ts:262",
           "pc": [
-            53,
-            54,
             55
           ]
         },
         {
-          "teal": 40,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
+          "teal": 38,
+          "source": "contracts/ARC11550Data.algo.ts:262",
           "pc": [
-            56,
+            56
+          ]
+        },
+        {
+          "teal": 39,
+          "source": "contracts/ARC11550Data.algo.ts:262",
+          "pc": [
             57,
             58
           ]
         },
         {
-          "teal": 41,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
+          "teal": 40,
+          "source": "contracts/ARC11550Data.algo.ts:262",
           "pc": [
             59
           ]
         },
         {
-          "teal": 42,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
+          "teal": 43,
+          "source": "contracts/ARC11550Data.algo.ts:262",
+          "errorMessage": "argument 1 (caller) for approved must be a address",
           "pc": [
             60
           ]
         },
         {
-          "teal": 43,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
+          "teal": 46,
+          "source": "contracts/ARC11550Data.algo.ts:262",
           "pc": [
             61,
-            62
-          ]
-        },
-        {
-          "teal": 44,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
-          "pc": [
+            62,
             63
           ]
         },
         {
           "teal": 47,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
-          "errorMessage": "argument 2 (caller) for approved must be a address",
+          "source": "contracts/ARC11550Data.algo.ts:262",
           "pc": [
-            64
-          ]
-        },
-        {
-          "teal": 50,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
-          "pc": [
+            64,
             65,
-            66,
-            67
+            66
           ]
         },
         {
-          "teal": 51,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
+          "teal": 48,
+          "source": "contracts/ARC11550Data.algo.ts:262",
           "pc": [
-            68,
+            67,
+            68
+          ]
+        },
+        {
+          "teal": 49,
+          "source": "contracts/ARC11550Data.algo.ts:262",
+          "pc": [
             69,
             70
           ]
         },
         {
-          "teal": 52,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
+          "teal": 50,
+          "source": "contracts/ARC11550Data.algo.ts:262",
           "pc": [
-            71,
+            71
+          ]
+        },
+        {
+          "teal": 51,
+          "source": "contracts/ARC11550Data.algo.ts:262",
+          "pc": [
             72
           ]
         },
         {
-          "teal": 53,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
+          "teal": 52,
+          "source": "contracts/ARC11550Data.algo.ts:262",
           "pc": [
-            73,
+            73
+          ]
+        },
+        {
+          "teal": 53,
+          "source": "contracts/ARC11550Data.algo.ts:262",
+          "pc": [
             74
           ]
         },
         {
           "teal": 54,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
+          "source": "contracts/ARC11550Data.algo.ts:262",
           "pc": [
             75
           ]
         },
         {
-          "teal": 55,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
+          "teal": 61,
+          "source": "contracts/ARC11550Data.algo.ts:262",
           "pc": [
-            76
-          ]
-        },
-        {
-          "teal": 56,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
-          "pc": [
-            77
-          ]
-        },
-        {
-          "teal": 57,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
-          "pc": [
+            76,
+            77,
             78
           ]
         },
         {
-          "teal": 58,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
+          "teal": 65,
+          "source": "contracts/ARC11550Data.algo.ts:263",
           "pc": [
             79
           ]
         },
         {
-          "teal": 65,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
+          "teal": 66,
+          "source": "contracts/ARC11550Data.algo.ts:262",
           "pc": [
-            80,
-            81,
-            82
+            80
           ]
         },
         {
           "teal": 69,
-          "source": "contracts/ARC11550Transfer.algo.ts:34",
+          "source": "contracts/ARC11550Data.algo.ts:259",
           "pc": [
-            83
+            81
           ]
         },
         {
           "teal": 70,
-          "source": "contracts/ARC11550Transfer.algo.ts:33",
+          "source": "contracts/ARC11550Data.algo.ts:259",
           "pc": [
-            84
+            82
           ]
         },
         {
           "teal": 73,
-          "source": "contracts/ARC11550Transfer.algo.ts:30",
+          "source": "contracts/ARC11550Data.algo.ts:259",
           "pc": [
-            85
+            83,
+            84,
+            85,
+            86,
+            87,
+            88
           ]
         },
         {
           "teal": 74,
-          "source": "contracts/ARC11550Transfer.algo.ts:30",
+          "source": "contracts/ARC11550Data.algo.ts:259",
           "pc": [
-            86
-          ]
-        },
-        {
-          "teal": 77,
-          "source": "contracts/ARC11550Transfer.algo.ts:30",
-          "pc": [
-            87,
-            88,
             89,
             90,
-            91,
-            92
+            91
           ]
         },
         {
-          "teal": 78,
-          "source": "contracts/ARC11550Transfer.algo.ts:30",
+          "teal": 75,
+          "source": "contracts/ARC11550Data.algo.ts:259",
           "pc": [
+            92,
             93,
             94,
             95
           ]
         },
         {
-          "teal": 79,
-          "source": "contracts/ARC11550Transfer.algo.ts:30",
+          "teal": 78,
+          "source": "contracts/ARC11550Data.algo.ts:259",
+          "errorMessage": "this contract does not implement the given ABI method for create NoOp",
           "pc": [
-            96,
+            96
+          ]
+        },
+        {
+          "teal": 81,
+          "source": "contracts/ARC11550Data.algo.ts:259",
+          "pc": [
             97,
             98,
-            99
+            99,
+            100,
+            101,
+            102
           ]
         },
         {
           "teal": 82,
-          "source": "contracts/ARC11550Transfer.algo.ts:30",
-          "errorMessage": "this contract does not implement the given ABI method for create NoOp",
+          "source": "contracts/ARC11550Data.algo.ts:259",
           "pc": [
-            100
-          ]
-        },
-        {
-          "teal": 85,
-          "source": "contracts/ARC11550Transfer.algo.ts:30",
-          "pc": [
-            101,
-            102,
             103,
             104,
-            105,
-            106
+            105
           ]
         },
         {
-          "teal": 86,
-          "source": "contracts/ARC11550Transfer.algo.ts:30",
+          "teal": 83,
+          "source": "contracts/ARC11550Data.algo.ts:259",
           "pc": [
+            106,
             107,
             108,
             109
           ]
         },
         {
-          "teal": 87,
-          "source": "contracts/ARC11550Transfer.algo.ts:30",
-          "pc": [
-            110,
-            111,
-            112,
-            113
-          ]
-        },
-        {
-          "teal": 90,
-          "source": "contracts/ARC11550Transfer.algo.ts:30",
+          "teal": 86,
+          "source": "contracts/ARC11550Data.algo.ts:259",
           "errorMessage": "this contract does not implement the given ABI method for call NoOp",
           "pc": [
-            114
+            110
           ]
         }
       ],
@@ -463,11 +443,11 @@
     }
   },
   "source": {
-    "approval": "I3ByYWdtYSB2ZXJzaW9uIDEwCmludGNibG9jayAxCgovLyBUaGlzIFRFQUwgd2FzIGdlbmVyYXRlZCBieSBURUFMU2NyaXB0IHYwLjEwNi4zCi8vIGh0dHBzOi8vZ2l0aHViLmNvbS9hbGdvcmFuZGZvdW5kYXRpb24vVEVBTFNjcmlwdAoKLy8gVGhpcyBjb250cmFjdCBpcyBjb21wbGlhbnQgd2l0aCBhbmQvb3IgaW1wbGVtZW50cyB0aGUgZm9sbG93aW5nIEFSQ3M6IFsgQVJDNCBdCgovLyBUaGUgZm9sbG93aW5nIHRlbiBsaW5lcyBvZiBURUFMIGhhbmRsZSBpbml0aWFsIHByb2dyYW0gZmxvdwovLyBUaGlzIHBhdHRlcm4gaXMgdXNlZCB0byBtYWtlIGl0IGVhc3kgZm9yIGFueW9uZSB0byBwYXJzZSB0aGUgc3RhcnQgb2YgdGhlIHByb2dyYW0gYW5kIGRldGVybWluZSBpZiBhIHNwZWNpZmljIGFjdGlvbiBpcyBhbGxvd2VkCi8vIEhlcmUsIGFjdGlvbiByZWZlcnMgdG8gdGhlIE9uQ29tcGxldGUgaW4gY29tYmluYXRpb24gd2l0aCB3aGV0aGVyIHRoZSBhcHAgaXMgYmVpbmcgY3JlYXRlZCBvciBjYWxsZWQKLy8gRXZlcnkgcG9zc2libGUgYWN0aW9uIGZvciB0aGlzIGNvbnRyYWN0IGlzIHJlcHJlc2VudGVkIGluIHRoZSBzd2l0Y2ggc3RhdGVtZW50Ci8vIElmIHRoZSBhY3Rpb24gaXMgbm90IGltcGxlbWVudGVkIGluIHRoZSBjb250cmFjdCwgaXRzIHJlc3BlY3RpdmUgYnJhbmNoIHdpbGwgYmUgIipOT1RfSU1QTEVNRU5URUQiIHdoaWNoIGp1c3QgY29udGFpbnMgImVyciIKdHhuIEFwcGxpY2F0aW9uSUQKIQpwdXNoaW50IDYKKgp0eG4gT25Db21wbGV0aW9uCisKc3dpdGNoICpjYWxsX05vT3AgKk5PVF9JTVBMRU1FTlRFRCAqTk9UX0lNUExFTUVOVEVEICpOT1RfSU1QTEVNRU5URUQgKk5PVF9JTVBMRU1FTlRFRCAqTk9UX0lNUExFTUVOVEVEICpjcmVhdGVfTm9PcCAqTk9UX0lNUExFTUVOVEVEICpOT1RfSU1QTEVNRU5URUQgKk5PVF9JTVBMRU1FTlRFRCAqTk9UX0lNUExFTUVOVEVEICpOT1RfSU1QTEVNRU5URUQKCipOT1RfSU1QTEVNRU5URUQ6CgkvLyBUaGUgcmVxdWVzdGVkIGFjdGlvbiBpcyBub3QgaW1wbGVtZW50ZWQgaW4gdGhpcyBjb250cmFjdC4gQXJlIHlvdSB1c2luZyB0aGUgY29ycmVjdCBPbkNvbXBsZXRlPyBEaWQgeW91IHNldCB5b3VyIGFwcCBJRD8KCWVycgoKLy8gYXBwcm92ZWQoYWRkcmVzcywodWludDY0LGFkZHJlc3MsYWRkcmVzcyx1aW50NjQpW10sdWludDY0KWJvb2wKKmFiaV9yb3V0ZV9hcHByb3ZlZDoKCS8vIFRoZSBBQkkgcmV0dXJuIHByZWZpeAoJcHVzaGJ5dGVzIDB4MTUxZjdjNzUKCgkvLyBpZHg6IHVpbnQ2NAoJdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMwoJYnRvaQoKCS8vIHRyYW5zZmVyczogKHVpbnQ2NCxhZGRyZXNzLGFkZHJlc3MsdWludDY0KVtdCgl0eG5hIEFwcGxpY2F0aW9uQXJncyAyCglleHRyYWN0IDIgMAoKCS8vIGNhbGxlcjogYWRkcmVzcwoJdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMQoJZHVwCglsZW4KCXB1c2hpbnQgMzIKCT09CgoJLy8gYXJndW1lbnQgMiAoY2FsbGVyKSBmb3IgYXBwcm92ZWQgbXVzdCBiZSBhIGFkZHJlc3MKCWFzc2VydAoKCS8vIGV4ZWN1dGUgYXBwcm92ZWQoYWRkcmVzcywodWludDY0LGFkZHJlc3MsYWRkcmVzcyx1aW50NjQpW10sdWludDY0KWJvb2wKCWNhbGxzdWIgYXBwcm92ZWQKCXB1c2hieXRlcyAweDAwCglwdXNoaW50IDAKCXVuY292ZXIgMgoJc2V0Yml0Cgljb25jYXQKCWxvZwoJaW50YyAwIC8vIDEKCXJldHVybgoKLy8gYXBwcm92ZWQoY2FsbGVyOiBBZGRyZXNzLCB0cmFuc2ZlcnM6IFRyYW5zZmVyW10sIGlkeDogdWludDY0KTogYm9vbGVhbgovLwovLyBEZXRlcm1pbmVzIHdoZXRoZXIgYSB0cmFuc2ZlciBpcyBhcHByb3ZlZCBvciBub3QuIFRoaXMgaW1wbGVtZW50YXRpb24gYWx3YXlzIHJldHVybnMgdHJ1ZSwgYnV0Ci8vIHRoZXJlIGFyZSBvdGhlciBwb3NzaWJpbGl0aWVzIHN1Y2ggYXMgRVJDMjAtc3R5bGUgYXBwcm92YWxzLCB3aGl0ZWxpc3RzLCBibGFja2xpc3RzLCBlbmZvcmNlZCByb3lhbHRpZXMsIGV0Yy4KYXBwcm92ZWQ6Cglwcm90byAzIDEKCgkvLyBjb250cmFjdHMvQVJDMTE1NTBUcmFuc2Zlci5hbGdvLnRzOjM0CgkvLyByZXR1cm4gdHJ1ZTsKCWludGMgMCAvLyAxCglyZXRzdWIKCiphYmlfcm91dGVfY3JlYXRlQXBwbGljYXRpb246CglpbnRjIDAgLy8gMQoJcmV0dXJuCgoqY3JlYXRlX05vT3A6CglwdXNoYnl0ZXMgMHhiODQ0N2IzNiAvLyBtZXRob2QgImNyZWF0ZUFwcGxpY2F0aW9uKCl2b2lkIgoJdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMAoJbWF0Y2ggKmFiaV9yb3V0ZV9jcmVhdGVBcHBsaWNhdGlvbgoKCS8vIHRoaXMgY29udHJhY3QgZG9lcyBub3QgaW1wbGVtZW50IHRoZSBnaXZlbiBBQkkgbWV0aG9kIGZvciBjcmVhdGUgTm9PcAoJZXJyCgoqY2FsbF9Ob09wOgoJcHVzaGJ5dGVzIDB4NjRiOWJkNDUgLy8gbWV0aG9kICJhcHByb3ZlZChhZGRyZXNzLCh1aW50NjQsYWRkcmVzcyxhZGRyZXNzLHVpbnQ2NClbXSx1aW50NjQpYm9vbCIKCXR4bmEgQXBwbGljYXRpb25BcmdzIDAKCW1hdGNoICphYmlfcm91dGVfYXBwcm92ZWQKCgkvLyB0aGlzIGNvbnRyYWN0IGRvZXMgbm90IGltcGxlbWVudCB0aGUgZ2l2ZW4gQUJJIG1ldGhvZCBmb3IgY2FsbCBOb09wCgllcnI=",
+    "approval": "I3ByYWdtYSB2ZXJzaW9uIDEwCmludGNibG9jayAxCgovLyBUaGlzIFRFQUwgd2FzIGdlbmVyYXRlZCBieSBURUFMU2NyaXB0IHYwLjEwNi4zCi8vIGh0dHBzOi8vZ2l0aHViLmNvbS9hbGdvcmFuZGZvdW5kYXRpb24vVEVBTFNjcmlwdAoKLy8gVGhpcyBjb250cmFjdCBpcyBjb21wbGlhbnQgd2l0aCBhbmQvb3IgaW1wbGVtZW50cyB0aGUgZm9sbG93aW5nIEFSQ3M6IFsgQVJDNCBdCgovLyBUaGUgZm9sbG93aW5nIHRlbiBsaW5lcyBvZiBURUFMIGhhbmRsZSBpbml0aWFsIHByb2dyYW0gZmxvdwovLyBUaGlzIHBhdHRlcm4gaXMgdXNlZCB0byBtYWtlIGl0IGVhc3kgZm9yIGFueW9uZSB0byBwYXJzZSB0aGUgc3RhcnQgb2YgdGhlIHByb2dyYW0gYW5kIGRldGVybWluZSBpZiBhIHNwZWNpZmljIGFjdGlvbiBpcyBhbGxvd2VkCi8vIEhlcmUsIGFjdGlvbiByZWZlcnMgdG8gdGhlIE9uQ29tcGxldGUgaW4gY29tYmluYXRpb24gd2l0aCB3aGV0aGVyIHRoZSBhcHAgaXMgYmVpbmcgY3JlYXRlZCBvciBjYWxsZWQKLy8gRXZlcnkgcG9zc2libGUgYWN0aW9uIGZvciB0aGlzIGNvbnRyYWN0IGlzIHJlcHJlc2VudGVkIGluIHRoZSBzd2l0Y2ggc3RhdGVtZW50Ci8vIElmIHRoZSBhY3Rpb24gaXMgbm90IGltcGxlbWVudGVkIGluIHRoZSBjb250cmFjdCwgaXRzIHJlc3BlY3RpdmUgYnJhbmNoIHdpbGwgYmUgIipOT1RfSU1QTEVNRU5URUQiIHdoaWNoIGp1c3QgY29udGFpbnMgImVyciIKdHhuIEFwcGxpY2F0aW9uSUQKIQpwdXNoaW50IDYKKgp0eG4gT25Db21wbGV0aW9uCisKc3dpdGNoICpjYWxsX05vT3AgKk5PVF9JTVBMRU1FTlRFRCAqTk9UX0lNUExFTUVOVEVEICpOT1RfSU1QTEVNRU5URUQgKk5PVF9JTVBMRU1FTlRFRCAqTk9UX0lNUExFTUVOVEVEICpjcmVhdGVfTm9PcCAqTk9UX0lNUExFTUVOVEVEICpOT1RfSU1QTEVNRU5URUQgKk5PVF9JTVBMRU1FTlRFRCAqTk9UX0lNUExFTUVOVEVEICpOT1RfSU1QTEVNRU5URUQKCipOT1RfSU1QTEVNRU5URUQ6CgkvLyBUaGUgcmVxdWVzdGVkIGFjdGlvbiBpcyBub3QgaW1wbGVtZW50ZWQgaW4gdGhpcyBjb250cmFjdC4gQXJlIHlvdSB1c2luZyB0aGUgY29ycmVjdCBPbkNvbXBsZXRlPyBEaWQgeW91IHNldCB5b3VyIGFwcCBJRD8KCWVycgoKLy8gYXBwcm92ZWQoYWRkcmVzcywodWludDY0LGFkZHJlc3MsYWRkcmVzcyx1aW50NjQpW10pYm9vbAoqYWJpX3JvdXRlX2FwcHJvdmVkOgoJLy8gVGhlIEFCSSByZXR1cm4gcHJlZml4CglwdXNoYnl0ZXMgMHgxNTFmN2M3NQoKCS8vIHRyYW5zZmVyczogKHVpbnQ2NCxhZGRyZXNzLGFkZHJlc3MsdWludDY0KVtdCgl0eG5hIEFwcGxpY2F0aW9uQXJncyAyCglleHRyYWN0IDIgMAoKCS8vIGNhbGxlcjogYWRkcmVzcwoJdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMQoJZHVwCglsZW4KCXB1c2hpbnQgMzIKCT09CgoJLy8gYXJndW1lbnQgMSAoY2FsbGVyKSBmb3IgYXBwcm92ZWQgbXVzdCBiZSBhIGFkZHJlc3MKCWFzc2VydAoKCS8vIGV4ZWN1dGUgYXBwcm92ZWQoYWRkcmVzcywodWludDY0LGFkZHJlc3MsYWRkcmVzcyx1aW50NjQpW10pYm9vbAoJY2FsbHN1YiBhcHByb3ZlZAoJcHVzaGJ5dGVzIDB4MDAKCXB1c2hpbnQgMAoJdW5jb3ZlciAyCglzZXRiaXQKCWNvbmNhdAoJbG9nCglpbnRjIDAgLy8gMQoJcmV0dXJuCgovLyBhcHByb3ZlZChjYWxsZXI6IEFkZHJlc3MsIHRyYW5zZmVyczogVHJhbnNmZXJbXSk6IGJvb2xlYW4KLy8KLy8gRGV0ZXJtaW5lcyB3aGV0aGVyIGEgdHJhbnNmZXIgaXMgYXBwcm92ZWQgb3Igbm90LiBUaGlzIGltcGxlbWVudGF0aW9uIGp1c3QgcmV0dXJucyB0cnVlICh3aGljaCBpcyB0aGUgc2FtZSBhcyBub3Qgc2V0dGluZyBhCi8vIHRyYW5zZmVySG9va0FwcCksIGJ1dCB0aGVyZSBhcmUgbWFueSBwb3NzaWJpbGl0aWVzIHN1Y2ggYXMgZHluYW1pYyB3aGl0ZWxpc3RzLCBibGFja2xpc3RzLCBlbmZvcmNlZCByb3lhbHRpZXMsIHRva2VuLWdhdGluZywgZXRjLgphcHByb3ZlZDoKCXByb3RvIDIgMQoKCS8vIGNvbnRyYWN0cy9BUkMxMTU1MERhdGEuYWxnby50czoyNjMKCS8vIHJldHVybiB0cnVlOwoJaW50YyAwIC8vIDEKCXJldHN1YgoKKmFiaV9yb3V0ZV9jcmVhdGVBcHBsaWNhdGlvbjoKCWludGMgMCAvLyAxCglyZXR1cm4KCipjcmVhdGVfTm9PcDoKCXB1c2hieXRlcyAweGI4NDQ3YjM2IC8vIG1ldGhvZCAiY3JlYXRlQXBwbGljYXRpb24oKXZvaWQiCgl0eG5hIEFwcGxpY2F0aW9uQXJncyAwCgltYXRjaCAqYWJpX3JvdXRlX2NyZWF0ZUFwcGxpY2F0aW9uCgoJLy8gdGhpcyBjb250cmFjdCBkb2VzIG5vdCBpbXBsZW1lbnQgdGhlIGdpdmVuIEFCSSBtZXRob2QgZm9yIGNyZWF0ZSBOb09wCgllcnIKCipjYWxsX05vT3A6CglwdXNoYnl0ZXMgMHhiNGMxN2E3YiAvLyBtZXRob2QgImFwcHJvdmVkKGFkZHJlc3MsKHVpbnQ2NCxhZGRyZXNzLGFkZHJlc3MsdWludDY0KVtdKWJvb2wiCgl0eG5hIEFwcGxpY2F0aW9uQXJncyAwCgltYXRjaCAqYWJpX3JvdXRlX2FwcHJvdmVkCgoJLy8gdGhpcyBjb250cmFjdCBkb2VzIG5vdCBpbXBsZW1lbnQgdGhlIGdpdmVuIEFCSSBtZXRob2QgZm9yIGNhbGwgTm9PcAoJZXJy",
     "clear": "I3ByYWdtYSB2ZXJzaW9uIDEw"
   },
   "byteCode": {
-    "approval": "CiABATEYFIEGCzEZCI0MAD4AAAAAAAAAAAAAADAAAAAAAAAAAAAAAIAEFR98dTYaAxc2GgJXAgA2GgFJFYEgEkSIAAyAAQCBAE8CVFCwIkOKAwEiiSJDgAS4RHs2NhoAjgH/8QCABGS5vUU2GgCOAf+2AA==",
+    "approval": "CiABATEYFIEGCzEZCI0MADoAAAAAAAAAAAAAACwAAAAAAAAAAAAAAIAEFR98dTYaAlcCADYaAUkVgSASRIgADIABAIEATwJUULAiQ4oCASKJIkOABLhEezY2GgCOAf/xAIAEtMF6ezYaAI4B/7oA",
     "clear": "Cg=="
   },
   "compilerInfo": {

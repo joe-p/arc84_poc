@@ -4,7 +4,7 @@
   "methods": [
     {
       "name": "approved",
-      "desc": "Determines whether a transfer is approved or not. This implementation always returns true, but\nthere are other possibilities such as ERC20-style approvals, whitelists, blacklists, enforced royalties, etc.",
+      "desc": "Determines whether a transfer is approved or not. This implementation just returns true (which is the same as not setting a\ntransferHookApp), but there are many possibilities such as dynamic whitelists, blacklists, enforced royalties, token-gating, etc.",
       "args": [
         {
           "name": "caller",
@@ -13,10 +13,6 @@
         {
           "name": "transfers",
           "type": "(uint64,address,address,uint64)[]"
-        },
-        {
-          "name": "idx",
-          "type": "uint64"
         }
       ],
       "returns": {

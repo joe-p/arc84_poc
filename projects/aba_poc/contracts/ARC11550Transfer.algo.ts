@@ -22,7 +22,7 @@ export class ARC11550Transfer extends Contract {
 
     sendMethodCall<typeof ARC11550Data.prototype.doTransfers>({
       applicationID: dataApp,
-      methodArgs: [transfers],
+      methodArgs: [this.txn.sender, transfers],
     });
   }
 }

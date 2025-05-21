@@ -74,7 +74,7 @@ export class ARC11550Data extends Contract {
   collectionMetadata = BoxMap<MetadataKey, Metadata>({ prefix: 'M' });
 
   /** Allowances for a given sender, holder, and token id */
-  allowances = BoxMap<AllowanceKey, Allowance>({ prefix: 'a' });
+  allowances = BoxMap<bytes<32>, Allowance>({ prefix: 'a' });
 
   /** The app that implements arc11550_transfer */
   transferApp = GlobalStateKey<AppID>();
@@ -175,7 +175,7 @@ export class ARC11550Data extends Contract {
 
   arc11550_setAllowance(allowanceKey: AllowanceKey, allowance: Allowance) {
     assert(this.txn.sender === this.params(allowanceKey.tokenId).value.manager);
-    this.allowances(allowanceKey).value = allowance;
+    this.allowances(sha256(rawBytes(allowanceKey))).value = allowance;
   }
 
   /**********************
@@ -195,18 +195,24 @@ export class ARC11550Data extends Contract {
    * Transfer/Mint Methods
    ***********************/
 
-  doTransfers(transfers: Transfer[]) {
+  doTransfers(sender: Address, transfers: Transfer[]) {
     assert(globals.callerApplicationID == this.transferApp.value);
 
     for (let i = 0; i < transfers.length; i += 1) {
       const t = transfers[i];
 
-      if (t.from !== this.txn.sender) {
-        const allowance = this.allowances({
-          holder: t.from,
-          sender: this.txn.sender,
-          tokenId: t.tokenId,
-        } as AllowanceKey).value;
+      if (t.from !== sender) {
+        const key = sha256(
+          rawBytes({
+            holder: t.from,
+            sender: sender,
+            tokenId: t.tokenId,
+          } as AllowanceKey)
+        );
+
+        assert(this.allowances(key).exists);
+
+        const allowance = this.allowances(key).value;
 
         const currentTime = globals.latestTimestamp;
         assert(allowance.expirationTimestamp >= currentTime);
@@ -220,6 +226,11 @@ export class ARC11550Data extends Contract {
         allowance.remainingAmount -= t.amount;
       }
       this.balances({ tokenId: t.tokenId, address: t.from }).value -= t.amount;
+
+      const recvKey: IdAndAddress = { tokenId: t.tokenId, address: t.to };
+      if (!this.balances(recvKey).exists) {
+        this.balances(recvKey).create;
+      }
       this.balances({ tokenId: t.tokenId, address: t.to }).value += t.amount;
     }
   }
@@ -235,6 +246,11 @@ export class ARC11550Data extends Contract {
     collection.minted += 1;
 
     this.params(id).value = params;
+
+    const key: IdAndAddress = { tokenId: id, address: params.manager };
+
+    this.balances(key).create();
+    this.balances(key).value = params.total;
 
     return id;
   }
