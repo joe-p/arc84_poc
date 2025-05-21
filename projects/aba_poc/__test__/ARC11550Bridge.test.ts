@@ -16,6 +16,7 @@ let collectionId: bigint;
 let tokenId: bigint;
 let bridgedAsa: bigint;
 let nativeAsa: bigint;
+let bridgedToken: { id: bigint; account: string };
 
 function b(str: string, len?: number) {
   return new Uint8Array(Buffer.from(str.padEnd(len ?? 0, '\x00')));
@@ -157,7 +158,7 @@ describe('ARC11550 Bridge', () => {
   test('new asa to sc', async () => {
     const { algorand } = fixture.context;
 
-    const xferAmount = 50n;
+    const xferAmount = 42n;
     const xfer = await algorand.createTransaction.assetTransfer({
       sender: testAccount,
       receiver: bridgeClient.appAddress,
@@ -165,10 +166,15 @@ describe('ARC11550 Bridge', () => {
       amount: xferAmount,
     });
 
-    await bridgeClient
+    const results = await bridgeClient
       .newGroup()
       .optInToAsa({ extraFee: microAlgos(1000), args: { asa: nativeAsa } })
       .asaToArc11550({ extraFee: microAlgos(6000), args: { axfer: xfer, receiver: testAccount } })
       .send();
+
+    bridgedToken = results.returns.at(-1) as any;
+
+    const balanceRes = await dataClient.send.arc11550BalanceOf({ args: { account: testAccount, id: bridgedToken.id } });
+    expect(balanceRes.return).toBe(xferAmount);
   });
 });
