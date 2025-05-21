@@ -61,6 +61,22 @@
       "returns": {
         "type": "uint64"
       }
+    },
+    {
+      "name": "withdrawAsa",
+      "args": [
+        {
+          "name": "asa",
+          "type": "uint64"
+        },
+        {
+          "name": "withdrawalFor",
+          "type": "address"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
     }
   ]
 }

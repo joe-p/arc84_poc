@@ -1,9 +1,15 @@
 import { Contract } from '@algorandfoundation/tealscript';
 import { Transfer, ARC11550Data, CollectionId } from './ARC11550Data.algo';
 import { ARC11550Transfer } from './ARC11550Transfer.algo';
+
 export type Arc11550Id = {
   id: uint64;
   dataApp: AppID;
+};
+
+export type AsaAndAddr = {
+  asa: AssetID;
+  address: Address;
 };
 
 export class ARC11550Bridge extends Contract {
@@ -15,6 +21,9 @@ export class ARC11550Bridge extends Contract {
 
   /** The collection to mint to when using a new token */
   collection = GlobalStateKey<CollectionId>();
+
+  /** The amount of the given asset the given address has available to claim */
+  withdrawAmounts = BoxMap<AsaAndAddr, uint64>();
 
   createApplication(dataApp: AppID) {
     this.dataApp.value = dataApp;
@@ -73,14 +82,17 @@ export class ARC11550Bridge extends Contract {
   }
 
   arc11550ToAsa(xferCall: AppCallTxn, xferIndex: uint64, receiver: Address): AssetID {
-    const xfers: Transfer[] = castBytes<Transfer[]>(xferCall.applicationArgs[2]);
+    const xfers: Transfer[] = castBytes<Transfer[]>(extract3(xferCall.applicationArgs[2], 2, 0));
     const xfer = xfers[xferIndex];
     assert(xfer.to === this.app.address);
 
     const dataApp = AppID.fromUint64(btoi(xferCall.applicationArgs[1]));
 
     // Ensure the app used for the transfer is the actual transfer app for the token
-    assert(xferCall.applicationID == sendMethodCall<typeof ARC11550Data.prototype.arc11550_transferApp>({}));
+    assert(
+      xferCall.applicationID ==
+        sendMethodCall<typeof ARC11550Data.prototype.arc11550_transferApp>({ applicationID: dataApp })
+    );
 
     const arc11550: Arc11550Id = { dataApp: dataApp, id: xfer.tokenId };
 
@@ -105,9 +117,24 @@ export class ARC11550Bridge extends Contract {
 
     const asa = this.arc11550ToAsaMap(arc11550).value;
 
-    sendAssetTransfer({ xferAsset: asa, assetReceiver: receiver, assetAmount: xfer.amount });
+    if (!receiver.isOptedInToAsset(asa)) {
+      const key: AsaAndAddr = { asa: asa, address: receiver };
+      if (!this.withdrawAmounts(key).exists) this.withdrawAmounts(key).create();
+
+      this.withdrawAmounts(key).value += xfer.amount;
+    } else {
+      sendAssetTransfer({ xferAsset: asa, assetReceiver: receiver, assetAmount: xfer.amount });
+    }
 
     return asa;
+  }
+
+  withdrawAsa(asa: AssetID, withdrawalFor: Address) {
+    const key: AsaAndAddr = { asa: asa, address: withdrawalFor };
+    sendAssetTransfer({ xferAsset: asa, assetReceiver: withdrawalFor, assetAmount: this.withdrawAmounts(key).value });
+    this.withdrawAmounts(key).delete();
+
+    // TODO: Send back MBR
   }
 
   // TODO: arc11550ToAsa with approval
