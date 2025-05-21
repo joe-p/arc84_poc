@@ -177,4 +177,27 @@ describe('ARC11550 Bridge', () => {
     const balanceRes = await dataClient.send.arc11550BalanceOf({ args: { account: testAccount, id: bridgedToken.id } });
     expect(balanceRes.return).toBe(xferAmount);
   });
+
+  test('asa to sc', async () => {
+    const { algorand } = fixture.context;
+
+    const xferAmount = 42n;
+    const xfer = await algorand.createTransaction.assetTransfer({
+      sender: testAccount,
+      receiver: bridgeClient.appAddress,
+      assetId: nativeAsa,
+      amount: xferAmount,
+    });
+
+    const results = await bridgeClient
+      .newGroup()
+      .optInToAsa({ extraFee: microAlgos(1000), args: { asa: nativeAsa } })
+      .asaToArc11550({ extraFee: microAlgos(6000), args: { axfer: xfer, receiver: testAccount } })
+      .send();
+
+    bridgedToken = results.returns.at(-1) as any;
+
+    const balanceRes = await dataClient.send.arc11550BalanceOf({ args: { account: testAccount, id: bridgedToken.id } });
+    expect(balanceRes.return).toBe(xferAmount * 2n);
+  });
 });
