@@ -14,6 +14,7 @@ let bridgeClient: Arc11550BridgeClient;
 let testAccount: string;
 let collectionId: bigint;
 let tokenId: bigint;
+let bridgedAsa: bigint;
 
 function b(str: string, len?: number) {
   return new Uint8Array(Buffer.from(str.padEnd(len ?? 0, '\x00')));
@@ -103,25 +104,39 @@ describe('ARC11550 Bridge', () => {
       args: { dataApp: dataClient.appId, transfers: [[tokenId, testAccount, bridgeClient.appAddress, xferAmt]] },
     });
 
-    // const simResult = await bridgeClient
-    //   .newGroup()
-    //   .arc11550ToAsa({ args: { xferCall: xfer, xferIndex: 0, receiver: testAccount } })
-    //   .simulate({
-    //     allowUnnamedResources: true,
-    //     execTraceConfig: new algosdk.modelsv2.SimulateTraceConfig({ enable: true, stackChange: true }),
-    //   });
+    const bridgeResult = await bridgeClient.send.arc11550ToAsa({
+      args: { xferCall: xfer, xferIndex: 0, receiver: testAccount },
+    });
+
+    bridgedAsa = bridgeResult.return!;
+
+    await algorand.send.assetOptIn({ sender: testAccount, assetId: bridgedAsa });
+    await bridgeClient.send.withdrawAsa({
+      extraFee: microAlgos(1000),
+      args: { asa: bridgedAsa, withdrawalFor: testAccount },
+    });
+
+    const asaAcctInfo = await algorand.asset.getAccountInformation(testAccount, bridgedAsa);
+
+    expect(asaAcctInfo.balance).toBe(50n);
+  });
+
+  test('existing sc to asa', async () => {
+    const { algorand } = fixture.context;
+    const xferAmt = 50n;
+    const xfer = await xferClient.params.arc11550Transfer({
+      extraFee: microAlgos(20_000),
+      args: { dataApp: dataClient.appId, transfers: [[tokenId, testAccount, bridgeClient.appAddress, xferAmt]] },
+    });
 
     const bridgeResult = await bridgeClient.send.arc11550ToAsa({
       args: { xferCall: xfer, xferIndex: 0, receiver: testAccount },
     });
 
-    const asa = bridgeResult.return!;
+    expect(bridgeResult.return!).toBe(bridgedAsa);
 
-    await algorand.send.assetOptIn({ sender: testAccount, assetId: asa });
-    await bridgeClient.send.withdrawAsa({ extraFee: microAlgos(1000), args: { asa, withdrawalFor: testAccount } });
+    const asaAcctInfo = await algorand.asset.getAccountInformation(testAccount, bridgedAsa);
 
-    const asaAcctInfo = await algorand.asset.getAccountInformation(testAccount, asa);
-
-    expect(asaAcctInfo.balance).toBe(50n);
+    expect(asaAcctInfo.balance).toBe(100n);
   });
 });
