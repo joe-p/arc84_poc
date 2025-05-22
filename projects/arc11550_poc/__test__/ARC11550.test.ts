@@ -20,7 +20,7 @@ function b(str: string, len?: number) {
 describe('ARC11550', () => {
   beforeAll(async () => {
     await fixture.newScope();
-    testAccount = fixture.context.testAccount.addr;
+    testAccount = fixture.context.testAccount.addr.toString();
     const { algorand } = fixture;
 
     algorand.setSuggestedParamsCacheTimeout(0);
@@ -75,7 +75,7 @@ describe('ARC11550', () => {
   });
 
   test('xfer', async () => {
-    const alice = fixture.context.algorand.account.random().addr;
+    const alice = fixture.context.algorand.account.random().addr.toString();
     const xferAmt = 50n;
     await xferClient.send.arc11550Transfer({
       extraFee: microAlgos(20_000),
