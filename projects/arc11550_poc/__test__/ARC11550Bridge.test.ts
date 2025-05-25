@@ -1,9 +1,9 @@
-import { describe, test, expect, beforeAll, beforeEach } from '@jest/globals';
+import { describe, test, expect, beforeAll } from '@jest/globals';
 import { algorandFixture } from '@algorandfoundation/algokit-utils/testing';
 import { Config, microAlgos } from '@algorandfoundation/algokit-utils';
 import { Arc11550DataFactory, Arc11550DataClient } from '../contracts/clients/ARC11550DataClient';
 import { Arc11550TransferFactory, Arc11550TransferClient } from '../contracts/clients/ARC11550TransferClient';
-import { Arc11550BridgeFactory, Arc11550BridgeClient, Arc11550Id } from '../contracts/clients/ARC11550BridgeClient';
+import { Arc11550BridgeFactory, Arc11550BridgeClient } from '../contracts/clients/ARC11550BridgeClient';
 import { autoArc11550ToAsa } from '../src';
 
 const fixture = algorandFixture();
@@ -84,8 +84,6 @@ describe('ARC11550 Bridge', () => {
       receiver: bridgeClient.appAddress,
       amount: microAlgos(100_000),
     });
-
-
 
     // Create collection
     await algorand.send.payment({
