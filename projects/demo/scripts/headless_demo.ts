@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { AlgorandClient } from '@algorandfoundation/algokit-utils'
 import { autoArc11550ToAsa } from '../src/utils/autoBridge'
 import {
