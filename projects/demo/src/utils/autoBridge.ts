@@ -2,7 +2,7 @@
 /* eslint-disable no-await-in-loop */
 /* eslint-disable no-continue */
 /* eslint-disable no-restricted-syntax */
-import { AlgorandClient } from '@algorandfoundation/algokit-utils'
+import { AlgorandClient, populateAppCallResources } from '@algorandfoundation/algokit-utils'
 import * as algosdk from 'algosdk'
 import { Arc11550DataClient } from '../contracts/ARC11550Data'
 import { Arc11550TransferClient } from '../contracts/ARC11550Transfer'
@@ -89,12 +89,22 @@ export async function autoArc11550ToAsa(
     const bridgeTxns = await (
       await bridgeClient
         .newGroup()
-        .arc11550ToAsa({ sender: txn.sender, args: { xferCall, xferIndex: 0, receiver: txn.sender.toString() } })
+        .arc11550ToAsa({ sender: txn.sender.toString(), args: { xferCall, xferIndex: 0, receiver: txn.sender.toString() } })
         .composer()
     ).buildTransactions()
 
-    newTxns.push(...bridgeTxns.transactions)
+    const atc = new algosdk.AtomicTransactionComposer()
+    bridgeTxns.transactions.forEach((txn) => atc.addTransaction({ txn, signer: algosdk.makeEmptyTransactionSigner() }))
+
+    group.forEach((txn) => {
+      txn.group = undefined
+      atc.addTransaction({ txn, signer: algosdk.makeEmptyTransactionSigner() })
+    })
+
+    const populatedAtc = await populateAppCallResources(atc, algod)
+
+    populatedAtc.buildGroup().forEach((t) => newTxns.push(t.txn))
   }
 
-  return [...newTxns, ...group]
+  return newTxns
 }
