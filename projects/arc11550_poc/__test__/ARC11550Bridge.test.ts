@@ -17,6 +17,12 @@ function b(str: string, len?: number) {
   return new Uint8Array(Buffer.from(str.padEnd(len ?? 0, '\x00')));
 }
 
+const NEW_COLLECTION_MBR = 25_300n;
+const MINT_MBR = 66_600n;
+const NEW_HOLDER_MBR = 22_100n;
+const BRIDGE_NEW_TOKEN_MBR = 148_300n;
+const BRIDGE_NEW_ASA_MBR = 78_300n + 26_600n;
+
 describe('ARC11550 Bridge', () => {
   let dataClient: Arc11550DataClient;
   let xferClient: Arc11550TransferClient;
@@ -49,15 +55,45 @@ describe('ARC11550 Bridge', () => {
       defaultSender: testAccount,
     });
 
+    // Create and fund xfer contract
     const xferResults = await xferFactory.send.create.createApplication({ args: [] });
     xferClient = xferResults.appClient;
+    await algorand.send.payment({ sender: testAccount, receiver: xferClient.appAddress, amount: microAlgos(100_000) });
 
+    // Create and fund data contract
     const createResult = await dataFactory.send.create.createApplication({ args: [xferClient.appId] });
     dataClient = createResult.appClient;
+    await algorand.send.payment({ sender: testAccount, receiver: dataClient.appAddress, amount: microAlgos(100_000) });
 
-    await algorand.account.ensureFunded(dataClient.appAddress, await algorand.account.localNetDispenser(), (10).algo());
+    // Send payment for the new collection the bridge will create
+    await algorand.send.payment({
+      sender: testAccount,
+      receiver: dataClient.appAddress,
+      amount: microAlgos(NEW_COLLECTION_MBR),
+    });
+
+    // Create and fund bridge contract
+    const bridgeResults = await bridgeFactory.send.create.createApplication({
+      extraFee: microAlgos(1000),
+      args: [dataClient.appId],
+    });
+    bridgeClient = bridgeResults.appClient;
+
+    await algorand.send.payment({
+      sender: testAccount,
+      receiver: bridgeClient.appAddress,
+      amount: microAlgos(100_000),
+    });
+
+
 
     // Create collection
+    await algorand.send.payment({
+      sender: testAccount,
+      receiver: dataClient.appAddress,
+      amount: microAlgos(NEW_COLLECTION_MBR),
+    });
+
     let result = await dataClient.send.arc11550NewCollection({
       args: {
         manager: testAccount,
@@ -68,6 +104,11 @@ describe('ARC11550 Bridge', () => {
     collectionId = result.return!;
 
     // Mint token
+    await algorand.send.payment({
+      sender: testAccount,
+      receiver: dataClient.appAddress,
+      amount: microAlgos(MINT_MBR),
+    });
     result = await dataClient.send.arc11550Mint({
       extraFee: microAlgos(1000),
       args: {
@@ -85,24 +126,11 @@ describe('ARC11550 Bridge', () => {
 
     tokenId = result.return!;
 
-    // Create bridge contract
-    const bridgeResults = await bridgeFactory.send.create.createApplication({
-      extraFee: microAlgos(1000),
-      args: [dataClient.appId],
-    });
-    bridgeClient = bridgeResults.appClient;
-
-    await algorand.account.ensureFunded(
-      bridgeClient.appAddress,
-      await algorand.account.localNetDispenser(),
-      (10).algo()
-    );
-
     console.debug('Accounts', {
       bridge: bridgeClient.appAddress.toString(),
       xfer: xferClient.appAddress.toString(),
       data: dataClient.appAddress.toString(),
-      testAccount: testAccount,
+      testAccount,
     });
 
     nativeAsa = (
@@ -117,6 +145,20 @@ describe('ARC11550 Bridge', () => {
 
   test('new sc to asa', async () => {
     const { algorand } = fixture.context;
+
+    // Since this is the first time the bridge holds this asset, we need to send MBR for the balance/approval boxes
+    await algorand.send.payment({
+      sender: testAccount,
+      receiver: dataClient.appAddress,
+      amount: microAlgos(NEW_HOLDER_MBR),
+    });
+
+    await algorand.send.payment({
+      sender: testAccount,
+      receiver: bridgeClient.appAddress,
+      amount: microAlgos(BRIDGE_NEW_TOKEN_MBR),
+    });
+
     const xferAmt = 50n;
     const xfer = await xferClient.params.arc11550Transfer({
       extraFee: microAlgos(20_000),
@@ -176,6 +218,17 @@ describe('ARC11550 Bridge', () => {
       amount: xferAmount,
     });
 
+    await algorand.send.payment({
+      sender: testAccount,
+      receiver: bridgeClient.appAddress,
+      amount: microAlgos(BRIDGE_NEW_ASA_MBR),
+    });
+
+    await algorand.send.payment({
+      sender: testAccount,
+      receiver: dataClient.appAddress,
+      amount: microAlgos(MINT_MBR + NEW_HOLDER_MBR),
+    });
     const results = await bridgeClient
       .newGroup()
       .optInToAsa({ extraFee: microAlgos(1000), args: { asa: nativeAsa } })
