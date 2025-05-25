@@ -124,6 +124,7 @@ async function demo() {
     console.log('The above error occurred because we are trying to swap 10 USDC, but only have 5 USDC')
   }
 
+  console.log('Trying again, but this time with the tinyman SDK patched to auto-bridge the USDC ARC11550 to USDC ASA')
   monkeyPatchTinymanV2Swap(algorand.client.algod, BigInt(process.env.BRIDGE_APP_ID!))
   await fixedInputSwapWithoutSwapRouter({
     algodClient: algorand.client.algod,

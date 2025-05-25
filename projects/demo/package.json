@@ -41,8 +41,9 @@
     "@tinymanorg/tinyman-js-sdk": "^5.0.2",
     "@txnlab/use-wallet": "^4.0.0",
     "@txnlab/use-wallet-react": "^4.0.0",
-    "algosdk": "^3.0.0",
+    "algosdk": "git+https://github.com/joe-p/js-algorand-sdk.git#fix/addr_instanceof",
     "daisyui": "^4.0.0",
+    "dotenv": "^16.5.0",
     "notistack": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -77,6 +78,7 @@
     ]
   },
   "overrides": {
+    "algosdk": "git+https://github.com/joe-p/js-algorand-sdk.git#fix/addr_instanceof",
     "ws@>7.0.0 <7.5.9": "7.5.10"
   }
 }
