@@ -163,7 +163,7 @@
   },
   {
     "teal": 30,
-    "source": "contracts/ARC11550Bridge.algo.ts:28",
+    "source": "contracts/ARC11550Bridge.algo.ts:29",
     "pc": [
       95,
       96,
@@ -172,14 +172,14 @@
   },
   {
     "teal": 31,
-    "source": "contracts/ARC11550Bridge.algo.ts:28",
+    "source": "contracts/ARC11550Bridge.algo.ts:29",
     "pc": [
       98
     ]
   },
   {
     "teal": 34,
-    "source": "contracts/ARC11550Bridge.algo.ts:28",
+    "source": "contracts/ARC11550Bridge.algo.ts:29",
     "pc": [
       99,
       100,
@@ -188,21 +188,21 @@
   },
   {
     "teal": 35,
-    "source": "contracts/ARC11550Bridge.algo.ts:28",
+    "source": "contracts/ARC11550Bridge.algo.ts:29",
     "pc": [
       102
     ]
   },
   {
     "teal": 36,
-    "source": "contracts/ARC11550Bridge.algo.ts:28",
+    "source": "contracts/ARC11550Bridge.algo.ts:29",
     "pc": [
       103
     ]
   },
   {
     "teal": 40,
-    "source": "contracts/ARC11550Bridge.algo.ts:28",
+    "source": "contracts/ARC11550Bridge.algo.ts:29",
     "pc": [
       104,
       105,
@@ -211,14 +211,14 @@
   },
   {
     "teal": 44,
-    "source": "contracts/ARC11550Bridge.algo.ts:29",
+    "source": "contracts/ARC11550Bridge.algo.ts:30",
     "pc": [
       107
     ]
   },
   {
     "teal": 45,
-    "source": "contracts/ARC11550Bridge.algo.ts:29",
+    "source": "contracts/ARC11550Bridge.algo.ts:30",
     "pc": [
       108,
       109
@@ -226,14 +226,14 @@
   },
   {
     "teal": 46,
-    "source": "contracts/ARC11550Bridge.algo.ts:29",
+    "source": "contracts/ARC11550Bridge.algo.ts:30",
     "pc": [
       110
     ]
   },
   {
     "teal": 53,
-    "source": "contracts/ARC11550Bridge.algo.ts:30",
+    "source": "contracts/ARC11550Bridge.algo.ts:31",
     "pc": [
       111,
       112
@@ -241,21 +241,21 @@
   },
   {
     "teal": 54,
-    "source": "contracts/ARC11550Bridge.algo.ts:30",
+    "source": "contracts/ARC11550Bridge.algo.ts:31",
     "pc": [
       113
     ]
   },
   {
     "teal": 55,
-    "source": "contracts/ARC11550Bridge.algo.ts:30",
+    "source": "contracts/ARC11550Bridge.algo.ts:31",
     "pc": [
       114
     ]
   },
   {
     "teal": 56,
-    "source": "contracts/ARC11550Bridge.algo.ts:30",
+    "source": "contracts/ARC11550Bridge.algo.ts:31",
     "pc": [
       115,
       116
@@ -263,7 +263,7 @@
   },
   {
     "teal": 57,
-    "source": "contracts/ARC11550Bridge.algo.ts:30",
+    "source": "contracts/ARC11550Bridge.algo.ts:31",
     "pc": [
       117,
       118,
@@ -275,7 +275,7 @@
   },
   {
     "teal": 58,
-    "source": "contracts/ARC11550Bridge.algo.ts:30",
+    "source": "contracts/ARC11550Bridge.algo.ts:31",
     "pc": [
       123,
       124
@@ -283,7 +283,7 @@
   },
   {
     "teal": 62,
-    "source": "contracts/ARC11550Bridge.algo.ts:31",
+    "source": "contracts/ARC11550Bridge.algo.ts:32",
     "pc": [
       125,
       126
@@ -291,7 +291,7 @@
   },
   {
     "teal": 63,
-    "source": "contracts/ARC11550Bridge.algo.ts:31",
+    "source": "contracts/ARC11550Bridge.algo.ts:32",
     "pc": [
       127,
       128
@@ -299,7 +299,7 @@
   },
   {
     "teal": 67,
-    "source": "contracts/ARC11550Bridge.algo.ts:32",
+    "source": "contracts/ARC11550Bridge.algo.ts:33",
     "pc": [
       129,
       130
@@ -307,7 +307,7 @@
   },
   {
     "teal": 68,
-    "source": "contracts/ARC11550Bridge.algo.ts:32",
+    "source": "contracts/ARC11550Bridge.algo.ts:33",
     "pc": [
       131,
       132
@@ -315,7 +315,7 @@
   },
   {
     "teal": 69,
-    "source": "contracts/ARC11550Bridge.algo.ts:32",
+    "source": "contracts/ARC11550Bridge.algo.ts:33",
     "pc": [
       133,
       134,
@@ -331,7 +331,7 @@
   },
   {
     "teal": 70,
-    "source": "contracts/ARC11550Bridge.algo.ts:32",
+    "source": "contracts/ARC11550Bridge.algo.ts:33",
     "pc": [
       143,
       144
@@ -339,14 +339,14 @@
   },
   {
     "teal": 73,
-    "source": "contracts/ARC11550Bridge.algo.ts:30",
+    "source": "contracts/ARC11550Bridge.algo.ts:31",
     "pc": [
       145
     ]
   },
   {
     "teal": 74,
-    "source": "contracts/ARC11550Bridge.algo.ts:30",
+    "source": "contracts/ARC11550Bridge.algo.ts:31",
     "pc": [
       146,
       147
@@ -354,14 +354,14 @@
   },
   {
     "teal": 77,
-    "source": "contracts/ARC11550Bridge.algo.ts:30",
+    "source": "contracts/ARC11550Bridge.algo.ts:31",
     "pc": [
       148
     ]
   },
   {
     "teal": 78,
-    "source": "contracts/ARC11550Bridge.algo.ts:30",
+    "source": "contracts/ARC11550Bridge.algo.ts:31",
     "pc": [
       149,
       150
@@ -369,21 +369,21 @@
   },
   {
     "teal": 79,
-    "source": "contracts/ARC11550Bridge.algo.ts:30",
+    "source": "contracts/ARC11550Bridge.algo.ts:31",
     "pc": [
       151
     ]
   },
   {
     "teal": 80,
-    "source": "contracts/ARC11550Bridge.algo.ts:30",
+    "source": "contracts/ARC11550Bridge.algo.ts:31",
     "pc": [
       152
     ]
   },
   {
     "teal": 81,
-    "source": "contracts/ARC11550Bridge.algo.ts:30",
+    "source": "contracts/ARC11550Bridge.algo.ts:31",
     "pc": [
       153,
       154
@@ -391,7 +391,7 @@
   },
   {
     "teal": 82,
-    "source": "contracts/ARC11550Bridge.algo.ts:30",
+    "source": "contracts/ARC11550Bridge.algo.ts:31",
     "pc": [
       155,
       156,
@@ -400,28 +400,28 @@
   },
   {
     "teal": 83,
-    "source": "contracts/ARC11550Bridge.algo.ts:30",
+    "source": "contracts/ARC11550Bridge.algo.ts:31",
     "pc": [
       158
     ]
   },
   {
     "teal": 84,
-    "source": "contracts/ARC11550Bridge.algo.ts:30",
+    "source": "contracts/ARC11550Bridge.algo.ts:31",
     "pc": [
       159
     ]
   },
   {
     "teal": 85,
-    "source": "contracts/ARC11550Bridge.algo.ts:28",
+    "source": "contracts/ARC11550Bridge.algo.ts:29",
     "pc": [
       160
     ]
   },
   {
     "teal": 90,
-    "source": "contracts/ARC11550Bridge.algo.ts:36",
+    "source": "contracts/ARC11550Bridge.algo.ts:37",
     "pc": [
       161,
       162,
@@ -430,14 +430,14 @@
   },
   {
     "teal": 91,
-    "source": "contracts/ARC11550Bridge.algo.ts:36",
+    "source": "contracts/ARC11550Bridge.algo.ts:37",
     "pc": [
       164
     ]
   },
   {
     "teal": 94,
-    "source": "contracts/ARC11550Bridge.algo.ts:36",
+    "source": "contracts/ARC11550Bridge.algo.ts:37",
     "pc": [
       165,
       166,
@@ -446,21 +446,21 @@
   },
   {
     "teal": 95,
-    "source": "contracts/ARC11550Bridge.algo.ts:36",
+    "source": "contracts/ARC11550Bridge.algo.ts:37",
     "pc": [
       168
     ]
   },
   {
     "teal": 96,
-    "source": "contracts/ARC11550Bridge.algo.ts:36",
+    "source": "contracts/ARC11550Bridge.algo.ts:37",
     "pc": [
       169
     ]
   },
   {
     "teal": 100,
-    "source": "contracts/ARC11550Bridge.algo.ts:36",
+    "source": "contracts/ARC11550Bridge.algo.ts:37",
     "pc": [
       170,
       171,
@@ -469,14 +469,14 @@
   },
   {
     "teal": 108,
-    "source": "contracts/ARC11550Bridge.algo.ts:37",
+    "source": "contracts/ARC11550Bridge.algo.ts:38",
     "pc": [
       173
     ]
   },
   {
     "teal": 109,
-    "source": "contracts/ARC11550Bridge.algo.ts:37",
+    "source": "contracts/ARC11550Bridge.algo.ts:38",
     "pc": [
       174,
       175
@@ -484,7 +484,7 @@
   },
   {
     "teal": 110,
-    "source": "contracts/ARC11550Bridge.algo.ts:37",
+    "source": "contracts/ARC11550Bridge.algo.ts:38",
     "pc": [
       176,
       177
@@ -492,7 +492,7 @@
   },
   {
     "teal": 114,
-    "source": "contracts/ARC11550Bridge.algo.ts:38",
+    "source": "contracts/ARC11550Bridge.algo.ts:39",
     "pc": [
       178,
       179
@@ -500,7 +500,7 @@
   },
   {
     "teal": 115,
-    "source": "contracts/ARC11550Bridge.algo.ts:38",
+    "source": "contracts/ARC11550Bridge.algo.ts:39",
     "pc": [
       180,
       181
@@ -508,14 +508,14 @@
   },
   {
     "teal": 119,
-    "source": "contracts/ARC11550Bridge.algo.ts:39",
+    "source": "contracts/ARC11550Bridge.algo.ts:40",
     "pc": [
       182
     ]
   },
   {
     "teal": 120,
-    "source": "contracts/ARC11550Bridge.algo.ts:39",
+    "source": "contracts/ARC11550Bridge.algo.ts:40",
     "pc": [
       183,
       184
@@ -523,7 +523,7 @@
   },
   {
     "teal": 124,
-    "source": "contracts/ARC11550Bridge.algo.ts:40",
+    "source": "contracts/ARC11550Bridge.algo.ts:41",
     "pc": [
       185,
       186
@@ -531,7 +531,7 @@
   },
   {
     "teal": 125,
-    "source": "contracts/ARC11550Bridge.algo.ts:40",
+    "source": "contracts/ARC11550Bridge.algo.ts:41",
     "pc": [
       187,
       188
@@ -539,14 +539,14 @@
   },
   {
     "teal": 128,
-    "source": "contracts/ARC11550Bridge.algo.ts:37",
+    "source": "contracts/ARC11550Bridge.algo.ts:38",
     "pc": [
       189
     ]
   },
   {
     "teal": 129,
-    "source": "contracts/ARC11550Bridge.algo.ts:37",
+    "source": "contracts/ARC11550Bridge.algo.ts:38",
     "pc": [
       190,
       191
@@ -554,21 +554,21 @@
   },
   {
     "teal": 132,
-    "source": "contracts/ARC11550Bridge.algo.ts:37",
+    "source": "contracts/ARC11550Bridge.algo.ts:38",
     "pc": [
       192
     ]
   },
   {
     "teal": 133,
-    "source": "contracts/ARC11550Bridge.algo.ts:36",
+    "source": "contracts/ARC11550Bridge.algo.ts:37",
     "pc": [
       193
     ]
   },
   {
     "teal": 138,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       194,
       195
@@ -576,7 +576,7 @@
   },
   {
     "teal": 141,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       196,
       197,
@@ -585,21 +585,21 @@
   },
   {
     "teal": 142,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       199
     ]
   },
   {
     "teal": 143,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       200
     ]
   },
   {
     "teal": 144,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       201,
       202
@@ -607,14 +607,14 @@
   },
   {
     "teal": 145,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       203
     ]
   },
   {
     "teal": 148,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "errorMessage": "argument 0 (receiver) for asaToArc11550 must be a address",
     "pc": [
       204
@@ -622,7 +622,7 @@
   },
   {
     "teal": 151,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       205,
       206
@@ -630,28 +630,28 @@
   },
   {
     "teal": 152,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       207
     ]
   },
   {
     "teal": 153,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       208
     ]
   },
   {
     "teal": 154,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       209
     ]
   },
   {
     "teal": 155,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       210,
       211
@@ -659,7 +659,7 @@
   },
   {
     "teal": 156,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       212,
       213
@@ -667,14 +667,14 @@
   },
   {
     "teal": 157,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       214
     ]
   },
   {
     "teal": 160,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "errorMessage": "argument 1 (axfer) for asaToArc11550 must be a axfer transaction",
     "pc": [
       215
@@ -682,7 +682,7 @@
   },
   {
     "teal": 163,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       216,
       217,
@@ -691,35 +691,35 @@
   },
   {
     "teal": 164,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       219
     ]
   },
   {
     "teal": 165,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       220
     ]
   },
   {
     "teal": 166,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       221
     ]
   },
   {
     "teal": 167,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       222
     ]
   },
   {
     "teal": 171,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       223,
       224,
@@ -728,14 +728,14 @@
   },
   {
     "teal": 174,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       226
     ]
   },
   {
     "teal": 175,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       227,
       228
@@ -743,7 +743,7 @@
   },
   {
     "teal": 182,
-    "source": "contracts/ARC11550Bridge.algo.ts:45",
+    "source": "contracts/ARC11550Bridge.algo.ts:46",
     "pc": [
       229,
       230
@@ -751,7 +751,7 @@
   },
   {
     "teal": 183,
-    "source": "contracts/ARC11550Bridge.algo.ts:46",
+    "source": "contracts/ARC11550Bridge.algo.ts:47",
     "pc": [
       231,
       232
@@ -759,7 +759,7 @@
   },
   {
     "teal": 184,
-    "source": "contracts/ARC11550Bridge.algo.ts:46",
+    "source": "contracts/ARC11550Bridge.algo.ts:47",
     "pc": [
       233,
       234
@@ -767,14 +767,14 @@
   },
   {
     "teal": 185,
-    "source": "contracts/ARC11550Bridge.algo.ts:46",
+    "source": "contracts/ARC11550Bridge.algo.ts:47",
     "pc": [
       235
     ]
   },
   {
     "teal": 188,
-    "source": "contracts/ARC11550Bridge.algo.ts:46",
+    "source": "contracts/ARC11550Bridge.algo.ts:47",
     "errorMessage": "transaction verification failed: {\"txn\":\"axfer\",\"field\":\"assetReceiver\",\"expected\":\"this.app.address\"}",
     "pc": [
       236
@@ -782,7 +782,7 @@
   },
   {
     "teal": 192,
-    "source": "contracts/ARC11550Bridge.algo.ts:49",
+    "source": "contracts/ARC11550Bridge.algo.ts:50",
     "pc": [
       237,
       238
@@ -790,7 +790,7 @@
   },
   {
     "teal": 193,
-    "source": "contracts/ARC11550Bridge.algo.ts:49",
+    "source": "contracts/ARC11550Bridge.algo.ts:50",
     "pc": [
       239,
       240
@@ -798,252 +798,216 @@
   },
   {
     "teal": 194,
-    "source": "contracts/ARC11550Bridge.algo.ts:49",
+    "source": "contracts/ARC11550Bridge.algo.ts:50",
     "pc": [
       241,
       242
     ]
   },
   {
-    "teal": 198,
-    "source": "contracts/ARC11550Bridge.algo.ts:51",
-    "pc": [
-      243,
-      244
-    ]
-  },
-  {
     "teal": 199,
-    "source": "contracts/ARC11550Bridge.algo.ts:51",
+    "source": "contracts/ARC11550Bridge.algo.ts:53",
     "pc": [
-      245,
-      246
+      243
     ]
   },
   {
     "teal": 200,
-    "source": "contracts/ARC11550Bridge.algo.ts:51",
+    "source": "contracts/ARC11550Bridge.algo.ts:53",
     "pc": [
-      247
+      244,
+      245
     ]
   },
   {
     "teal": 201,
-    "source": "contracts/ARC11550Bridge.algo.ts:51",
+    "source": "contracts/ARC11550Bridge.algo.ts:53",
     "pc": [
-      248,
-      249
+      246,
+      247
     ]
   },
   {
     "teal": 202,
-    "source": "contracts/ARC11550Bridge.algo.ts:51",
+    "source": "contracts/ARC11550Bridge.algo.ts:53",
+    "pc": [
+      248
+    ]
+  },
+  {
+    "teal": 203,
+    "source": "contracts/ARC11550Bridge.algo.ts:53",
+    "pc": [
+      249
+    ]
+  },
+  {
+    "teal": 204,
+    "source": "contracts/ARC11550Bridge.algo.ts:53",
     "pc": [
       250
     ]
   },
   {
-    "teal": 203,
-    "source": "contracts/ARC11550Bridge.algo.ts:51",
+    "teal": 205,
+    "source": "contracts/ARC11550Bridge.algo.ts:53",
     "pc": [
       251
     ]
   },
   {
-    "teal": 208,
-    "source": "contracts/ARC11550Bridge.algo.ts:54",
+    "teal": 206,
+    "source": "contracts/ARC11550Bridge.algo.ts:53",
     "pc": [
       252
     ]
   },
   {
-    "teal": 209,
-    "source": "contracts/ARC11550Bridge.algo.ts:54",
+    "teal": 207,
+    "source": "contracts/ARC11550Bridge.algo.ts:53",
     "pc": [
-      253,
-      254
+      253
     ]
   },
   {
-    "teal": 210,
-    "source": "contracts/ARC11550Bridge.algo.ts:54",
+    "teal": 208,
+    "source": "contracts/ARC11550Bridge.algo.ts:53",
     "pc": [
+      254,
       255,
       256
     ]
   },
   {
-    "teal": 211,
+    "teal": 226,
     "source": "contracts/ARC11550Bridge.algo.ts:54",
     "pc": [
       257
     ]
   },
   {
-    "teal": 212,
+    "teal": 227,
     "source": "contracts/ARC11550Bridge.algo.ts:54",
     "pc": [
       258
     ]
   },
   {
-    "teal": 213,
+    "teal": 228,
     "source": "contracts/ARC11550Bridge.algo.ts:54",
     "pc": [
-      259
-    ]
-  },
-  {
-    "teal": 214,
-    "source": "contracts/ARC11550Bridge.algo.ts:54",
-    "pc": [
+      259,
       260
     ]
   },
   {
-    "teal": 215,
+    "teal": 229,
     "source": "contracts/ARC11550Bridge.algo.ts:54",
     "pc": [
-      261
-    ]
-  },
-  {
-    "teal": 216,
-    "source": "contracts/ARC11550Bridge.algo.ts:54",
-    "pc": [
-      262
-    ]
-  },
-  {
-    "teal": 217,
-    "source": "contracts/ARC11550Bridge.algo.ts:54",
-    "pc": [
+      261,
+      262,
       263,
       264,
-      265
+      265,
+      266
+    ]
+  },
+  {
+    "teal": 230,
+    "source": "contracts/ARC11550Bridge.algo.ts:54",
+    "pc": [
+      267,
+      268
+    ]
+  },
+  {
+    "teal": 234,
+    "source": "contracts/ARC11550Bridge.algo.ts:55",
+    "pc": [
+      269
     ]
   },
   {
     "teal": 235,
     "source": "contracts/ARC11550Bridge.algo.ts:55",
     "pc": [
-      266
+      270
     ]
   },
   {
     "teal": 236,
     "source": "contracts/ARC11550Bridge.algo.ts:55",
     "pc": [
-      267
-    ]
-  },
-  {
-    "teal": 237,
-    "source": "contracts/ARC11550Bridge.algo.ts:55",
-    "pc": [
-      268,
-      269
-    ]
-  },
-  {
-    "teal": 238,
-    "source": "contracts/ARC11550Bridge.algo.ts:55",
-    "pc": [
-      270,
       271,
-      272,
+      272
+    ]
+  },
+  {
+    "teal": 250,
+    "source": "contracts/ARC11550Bridge.algo.ts:57",
+    "pc": [
       273,
-      274,
+      274
+    ]
+  },
+  {
+    "teal": 251,
+    "source": "contracts/ARC11550Bridge.algo.ts:57",
+    "pc": [
       275
     ]
   },
   {
-    "teal": 239,
-    "source": "contracts/ARC11550Bridge.algo.ts:55",
+    "teal": 252,
+    "source": "contracts/ARC11550Bridge.algo.ts:57",
     "pc": [
-      276,
-      277
+      276
     ]
   },
   {
-    "teal": 243,
-    "source": "contracts/ARC11550Bridge.algo.ts:56",
+    "teal": 253,
+    "source": "contracts/ARC11550Bridge.algo.ts:57",
     "pc": [
+      277,
       278
     ]
   },
   {
-    "teal": 244,
-    "source": "contracts/ARC11550Bridge.algo.ts:56",
+    "teal": 254,
+    "source": "contracts/ARC11550Bridge.algo.ts:62",
     "pc": [
-      279
+      279,
+      280
     ]
   },
   {
-    "teal": 245,
-    "source": "contracts/ARC11550Bridge.algo.ts:56",
+    "teal": 255,
+    "source": "contracts/ARC11550Bridge.algo.ts:62",
     "pc": [
-      280,
-      281
+      281,
+      282
     ]
   },
   {
-    "teal": 259,
-    "source": "contracts/ARC11550Bridge.algo.ts:58",
+    "teal": 256,
+    "source": "contracts/ARC11550Bridge.algo.ts:62",
     "pc": [
-      282,
       283
     ]
   },
   {
-    "teal": 260,
-    "source": "contracts/ARC11550Bridge.algo.ts:58",
+    "teal": 257,
+    "source": "contracts/ARC11550Bridge.algo.ts:62",
     "pc": [
-      284
-    ]
-  },
-  {
-    "teal": 261,
-    "source": "contracts/ARC11550Bridge.algo.ts:58",
-    "pc": [
-      285
-    ]
-  },
-  {
-    "teal": 262,
-    "source": "contracts/ARC11550Bridge.algo.ts:58",
-    "pc": [
+      284,
+      285,
       286,
-      287
-    ]
-  },
-  {
-    "teal": 263,
-    "source": "contracts/ARC11550Bridge.algo.ts:63",
-    "pc": [
+      287,
       288,
-      289
-    ]
-  },
-  {
-    "teal": 264,
-    "source": "contracts/ARC11550Bridge.algo.ts:63",
-    "pc": [
+      289,
       290,
-      291
-    ]
-  },
-  {
-    "teal": 265,
-    "source": "contracts/ARC11550Bridge.algo.ts:63",
-    "pc": [
-      292
-    ]
-  },
-  {
-    "teal": 266,
-    "source": "contracts/ARC11550Bridge.algo.ts:63",
-    "pc": [
+      291,
+      292,
       293,
       294,
       295,
@@ -1068,164 +1032,200 @@
       314,
       315,
       316,
-      317,
-      318,
-      319,
+      317
+    ]
+  },
+  {
+    "teal": 258,
+    "source": "contracts/ARC11550Bridge.algo.ts:62",
+    "pc": [
+      318
+    ]
+  },
+  {
+    "teal": 259,
+    "source": "contracts/ARC11550Bridge.algo.ts:62",
+    "pc": [
+      319
+    ]
+  },
+  {
+    "teal": 260,
+    "source": "contracts/ARC11550Bridge.algo.ts:62",
+    "pc": [
       320,
       321,
-      322,
-      323,
-      324,
-      325,
-      326
+      322
+    ]
+  },
+  {
+    "teal": 261,
+    "source": "contracts/ARC11550Bridge.algo.ts:62",
+    "pc": [
+      323
+    ]
+  },
+  {
+    "teal": 262,
+    "source": "contracts/ARC11550Bridge.algo.ts:62",
+    "pc": [
+      324
+    ]
+  },
+  {
+    "teal": 263,
+    "source": "contracts/ARC11550Bridge.algo.ts:62",
+    "pc": [
+      325
+    ]
+  },
+  {
+    "teal": 264,
+    "source": "contracts/ARC11550Bridge.algo.ts:62",
+    "pc": [
+      326,
+      327,
+      328
+    ]
+  },
+  {
+    "teal": 265,
+    "source": "contracts/ARC11550Bridge.algo.ts:63",
+    "pc": [
+      329,
+      330
+    ]
+  },
+  {
+    "teal": 266,
+    "source": "contracts/ARC11550Bridge.algo.ts:63",
+    "pc": [
+      331,
+      332
     ]
   },
   {
     "teal": 267,
     "source": "contracts/ARC11550Bridge.algo.ts:63",
     "pc": [
-      327
+      333
     ]
   },
   {
     "teal": 268,
     "source": "contracts/ARC11550Bridge.algo.ts:63",
     "pc": [
-      328
+      334,
+      335
     ]
   },
   {
     "teal": 269,
     "source": "contracts/ARC11550Bridge.algo.ts:63",
     "pc": [
-      329,
-      330,
-      331
+      336
     ]
   },
   {
     "teal": 270,
     "source": "contracts/ARC11550Bridge.algo.ts:63",
     "pc": [
-      332
+      337
     ]
   },
   {
     "teal": 271,
     "source": "contracts/ARC11550Bridge.algo.ts:63",
     "pc": [
-      333
+      338,
+      339,
+      340
     ]
   },
   {
     "teal": 272,
     "source": "contracts/ARC11550Bridge.algo.ts:63",
     "pc": [
-      334
+      341
     ]
   },
   {
     "teal": 273,
     "source": "contracts/ARC11550Bridge.algo.ts:63",
     "pc": [
-      335,
-      336,
-      337
-    ]
-  },
-  {
-    "teal": 274,
-    "source": "contracts/ARC11550Bridge.algo.ts:64",
-    "pc": [
-      338,
-      339
-    ]
-  },
-  {
-    "teal": 275,
-    "source": "contracts/ARC11550Bridge.algo.ts:64",
-    "pc": [
-      340,
-      341
-    ]
-  },
-  {
-    "teal": 276,
-    "source": "contracts/ARC11550Bridge.algo.ts:64",
-    "pc": [
       342
     ]
   },
   {
-    "teal": 277,
-    "source": "contracts/ARC11550Bridge.algo.ts:64",
+    "teal": 274,
+    "source": "contracts/ARC11550Bridge.algo.ts:63",
     "pc": [
-      343,
-      344
+      343
     ]
   },
   {
-    "teal": 278,
-    "source": "contracts/ARC11550Bridge.algo.ts:64",
+    "teal": 275,
+    "source": "contracts/ARC11550Bridge.algo.ts:63",
     "pc": [
-      345
-    ]
-  },
-  {
-    "teal": 279,
-    "source": "contracts/ARC11550Bridge.algo.ts:64",
-    "pc": [
+      344,
+      345,
       346
     ]
   },
   {
-    "teal": 280,
-    "source": "contracts/ARC11550Bridge.algo.ts:64",
+    "teal": 276,
+    "source": "contracts/ARC11550Bridge.algo.ts:63",
     "pc": [
-      347,
+      347
+    ]
+  },
+  {
+    "teal": 277,
+    "source": "contracts/ARC11550Bridge.algo.ts:59",
+    "pc": [
       348,
       349
     ]
   },
   {
-    "teal": 281,
-    "source": "contracts/ARC11550Bridge.algo.ts:64",
+    "teal": 278,
+    "source": "contracts/ARC11550Bridge.algo.ts:59",
     "pc": [
-      350
-    ]
-  },
-  {
-    "teal": 282,
-    "source": "contracts/ARC11550Bridge.algo.ts:64",
-    "pc": [
+      350,
       351
     ]
   },
   {
-    "teal": 283,
-    "source": "contracts/ARC11550Bridge.algo.ts:64",
+    "teal": 279,
+    "source": "contracts/ARC11550Bridge.algo.ts:59",
     "pc": [
       352
     ]
   },
   {
-    "teal": 284,
-    "source": "contracts/ARC11550Bridge.algo.ts:64",
+    "teal": 280,
+    "source": "contracts/ARC11550Bridge.algo.ts:59",
     "pc": [
-      353,
-      354,
-      355
+      353
     ]
   },
   {
-    "teal": 285,
-    "source": "contracts/ARC11550Bridge.algo.ts:64",
+    "teal": 281,
+    "source": "contracts/ARC11550Bridge.algo.ts:59",
     "pc": [
+      354
+    ]
+  },
+  {
+    "teal": 282,
+    "source": "contracts/ARC11550Bridge.algo.ts:60",
+    "pc": [
+      355,
       356
     ]
   },
   {
-    "teal": 286,
+    "teal": 283,
     "source": "contracts/ARC11550Bridge.algo.ts:60",
     "pc": [
       357,
@@ -1233,225 +1233,225 @@
     ]
   },
   {
-    "teal": 287,
+    "teal": 284,
     "source": "contracts/ARC11550Bridge.algo.ts:60",
     "pc": [
-      359,
+      359
+    ]
+  },
+  {
+    "teal": 285,
+    "source": "contracts/ARC11550Bridge.algo.ts:60",
+    "pc": [
       360
     ]
   },
   {
-    "teal": 288,
+    "teal": 286,
     "source": "contracts/ARC11550Bridge.algo.ts:60",
     "pc": [
       361
     ]
   },
   {
-    "teal": 289,
-    "source": "contracts/ARC11550Bridge.algo.ts:60",
+    "teal": 287,
+    "source": "contracts/ARC11550Bridge.algo.ts:61",
     "pc": [
-      362
-    ]
-  },
-  {
-    "teal": 290,
-    "source": "contracts/ARC11550Bridge.algo.ts:60",
-    "pc": [
+      362,
       363
     ]
   },
   {
-    "teal": 291,
+    "teal": 288,
     "source": "contracts/ARC11550Bridge.algo.ts:61",
     "pc": [
-      364,
-      365
+      364
     ]
   },
   {
-    "teal": 292,
-    "source": "contracts/ARC11550Bridge.algo.ts:61",
+    "teal": 289,
+    "source": "contracts/ARC11550Bridge.algo.ts:64",
     "pc": [
-      366,
+      365,
+      366
+    ]
+  },
+  {
+    "teal": 290,
+    "source": "contracts/ARC11550Bridge.algo.ts:64",
+    "pc": [
       367
     ]
   },
   {
-    "teal": 293,
-    "source": "contracts/ARC11550Bridge.algo.ts:61",
+    "teal": 291,
+    "source": "contracts/ARC11550Bridge.algo.ts:58",
     "pc": [
-      368
-    ]
-  },
-  {
-    "teal": 294,
-    "source": "contracts/ARC11550Bridge.algo.ts:61",
-    "pc": [
+      368,
       369
     ]
   },
   {
-    "teal": 295,
-    "source": "contracts/ARC11550Bridge.algo.ts:61",
+    "teal": 294,
+    "source": "contracts/ARC11550Bridge.algo.ts:54",
     "pc": [
       370
     ]
   },
   {
-    "teal": 296,
-    "source": "contracts/ARC11550Bridge.algo.ts:62",
+    "teal": 295,
+    "source": "contracts/ARC11550Bridge.algo.ts:54",
     "pc": [
       371,
       372
     ]
   },
   {
-    "teal": 297,
-    "source": "contracts/ARC11550Bridge.algo.ts:62",
+    "teal": 298,
+    "source": "contracts/ARC11550Bridge.algo.ts:54",
     "pc": [
       373
     ]
   },
   {
-    "teal": 298,
-    "source": "contracts/ARC11550Bridge.algo.ts:65",
+    "teal": 299,
+    "source": "contracts/ARC11550Bridge.algo.ts:54",
     "pc": [
       374,
       375
     ]
   },
   {
-    "teal": 299,
-    "source": "contracts/ARC11550Bridge.algo.ts:65",
+    "teal": 300,
+    "source": "contracts/ARC11550Bridge.algo.ts:54",
     "pc": [
       376
     ]
   },
   {
-    "teal": 300,
-    "source": "contracts/ARC11550Bridge.algo.ts:59",
+    "teal": 301,
+    "source": "contracts/ARC11550Bridge.algo.ts:54",
     "pc": [
-      377,
-      378
+      377
     ]
   },
   {
-    "teal": 303,
-    "source": "contracts/ARC11550Bridge.algo.ts:55",
+    "teal": 302,
+    "source": "contracts/ARC11550Bridge.algo.ts:54",
     "pc": [
+      378,
       379
     ]
   },
   {
-    "teal": 304,
-    "source": "contracts/ARC11550Bridge.algo.ts:55",
+    "teal": 303,
+    "source": "contracts/ARC11550Bridge.algo.ts:54",
     "pc": [
       380,
-      381
-    ]
-  },
-  {
-    "teal": 307,
-    "source": "contracts/ARC11550Bridge.algo.ts:55",
-    "pc": [
+      381,
       382
     ]
   },
   {
-    "teal": 308,
-    "source": "contracts/ARC11550Bridge.algo.ts:55",
+    "teal": 304,
+    "source": "contracts/ARC11550Bridge.algo.ts:54",
     "pc": [
-      383,
-      384
+      383
     ]
   },
   {
-    "teal": 309,
-    "source": "contracts/ARC11550Bridge.algo.ts:55",
+    "teal": 305,
+    "source": "contracts/ARC11550Bridge.algo.ts:54",
     "pc": [
+      384,
       385
     ]
   },
   {
-    "teal": 310,
-    "source": "contracts/ARC11550Bridge.algo.ts:55",
+    "teal": 309,
+    "source": "contracts/ARC11550Bridge.algo.ts:69",
     "pc": [
-      386
+      386,
+      387
     ]
   },
   {
-    "teal": 311,
-    "source": "contracts/ARC11550Bridge.algo.ts:55",
+    "teal": 310,
+    "source": "contracts/ARC11550Bridge.algo.ts:69",
     "pc": [
-      387,
       388
     ]
   },
   {
-    "teal": 312,
-    "source": "contracts/ARC11550Bridge.algo.ts:55",
+    "teal": 311,
+    "source": "contracts/ARC11550Bridge.algo.ts:69",
     "pc": [
-      389,
-      390,
-      391
+      389
+    ]
+  },
+  {
+    "teal": 312,
+    "source": "contracts/ARC11550Bridge.algo.ts:69",
+    "pc": [
+      390
     ]
   },
   {
     "teal": 313,
-    "source": "contracts/ARC11550Bridge.algo.ts:55",
+    "source": "contracts/ARC11550Bridge.algo.ts:69",
+    "pc": [
+      391
+    ]
+  },
+  {
+    "teal": 314,
+    "source": "contracts/ARC11550Bridge.algo.ts:69",
     "pc": [
       392
     ]
   },
   {
-    "teal": 314,
-    "source": "contracts/ARC11550Bridge.algo.ts:55",
+    "teal": 315,
+    "source": "contracts/ARC11550Bridge.algo.ts:69",
     "pc": [
       393,
       394
     ]
   },
   {
-    "teal": 318,
-    "source": "contracts/ARC11550Bridge.algo.ts:70",
-    "pc": [
-      395,
-      396
-    ]
-  },
-  {
     "teal": 319,
     "source": "contracts/ARC11550Bridge.algo.ts:70",
     "pc": [
-      397
+      395
     ]
   },
   {
     "teal": 320,
     "source": "contracts/ARC11550Bridge.algo.ts:70",
     "pc": [
-      398
+      396,
+      397
     ]
   },
   {
     "teal": 321,
     "source": "contracts/ARC11550Bridge.algo.ts:70",
     "pc": [
-      399
+      398
     ]
   },
   {
     "teal": 322,
     "source": "contracts/ARC11550Bridge.algo.ts:70",
     "pc": [
-      400
+      399
     ]
   },
   {
     "teal": 323,
     "source": "contracts/ARC11550Bridge.algo.ts:70",
     "pc": [
+      400,
       401
     ]
   },
@@ -1459,36 +1459,36 @@
     "teal": 324,
     "source": "contracts/ARC11550Bridge.algo.ts:70",
     "pc": [
-      402,
-      403
+      402
     ]
   },
   {
     "teal": 328,
     "source": "contracts/ARC11550Bridge.algo.ts:71",
     "pc": [
-      404
+      403
     ]
   },
   {
     "teal": 329,
     "source": "contracts/ARC11550Bridge.algo.ts:71",
     "pc": [
-      405,
-      406
+      404,
+      405
     ]
   },
   {
     "teal": 330,
     "source": "contracts/ARC11550Bridge.algo.ts:71",
     "pc": [
-      407
+      406
     ]
   },
   {
     "teal": 331,
     "source": "contracts/ARC11550Bridge.algo.ts:71",
     "pc": [
+      407,
       408
     ]
   },
@@ -1496,95 +1496,95 @@
     "teal": 332,
     "source": "contracts/ARC11550Bridge.algo.ts:71",
     "pc": [
-      409,
-      410
+      409
     ]
   },
   {
     "teal": 333,
     "source": "contracts/ARC11550Bridge.algo.ts:71",
     "pc": [
-      411
-    ]
-  },
-  {
-    "teal": 337,
-    "source": "contracts/ARC11550Bridge.algo.ts:72",
-    "pc": [
-      412
+      410
     ]
   },
   {
     "teal": 338,
-    "source": "contracts/ARC11550Bridge.algo.ts:72",
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
     "pc": [
-      413,
-      414
+      411
     ]
   },
   {
     "teal": 339,
-    "source": "contracts/ARC11550Bridge.algo.ts:72",
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
+    "pc": [
+      412,
+      413
+    ]
+  },
+  {
+    "teal": 340,
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
+    "pc": [
+      414
+    ]
+  },
+  {
+    "teal": 341,
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
     "pc": [
       415
     ]
   },
   {
-    "teal": 340,
-    "source": "contracts/ARC11550Bridge.algo.ts:72",
+    "teal": 342,
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
     "pc": [
       416,
       417
     ]
   },
   {
-    "teal": 341,
-    "source": "contracts/ARC11550Bridge.algo.ts:72",
+    "teal": 348,
+    "source": "contracts/ARC11550Bridge.algo.ts:76",
     "pc": [
       418
     ]
   },
   {
-    "teal": 342,
-    "source": "contracts/ARC11550Bridge.algo.ts:72",
+    "teal": 349,
+    "source": "contracts/ARC11550Bridge.algo.ts:76",
     "pc": [
       419
     ]
   },
   {
-    "teal": 347,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
-    "pc": [
-      420
-    ]
-  },
-  {
-    "teal": 348,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
-    "pc": [
-      421,
-      422
-    ]
-  },
-  {
-    "teal": 349,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
-    "pc": [
-      423
-    ]
-  },
-  {
     "teal": 350,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
+    "source": "contracts/ARC11550Bridge.algo.ts:76",
     "pc": [
-      424
+      420,
+      421
     ]
   },
   {
     "teal": 351,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
+    "source": "contracts/ARC11550Bridge.algo.ts:76",
     "pc": [
-      425,
+      422,
+      423
+    ]
+  },
+  {
+    "teal": 352,
+    "source": "contracts/ARC11550Bridge.algo.ts:76",
+    "pc": [
+      424,
+      425
+    ]
+  },
+  {
+    "teal": 356,
+    "source": "contracts/ARC11550Bridge.algo.ts:77",
+    "pc": [
       426
     ]
   },
@@ -1597,14 +1597,14 @@
   },
   {
     "teal": 358,
-    "source": "contracts/ARC11550Bridge.algo.ts:77",
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
     "pc": [
       428
     ]
   },
   {
     "teal": 359,
-    "source": "contracts/ARC11550Bridge.algo.ts:77",
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
     "pc": [
       429,
       430
@@ -1612,585 +1612,586 @@
   },
   {
     "teal": 360,
-    "source": "contracts/ARC11550Bridge.algo.ts:77",
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
     "pc": [
-      431,
-      432
+      431
     ]
   },
   {
     "teal": 361,
-    "source": "contracts/ARC11550Bridge.algo.ts:77",
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
+    "pc": [
+      432
+    ]
+  },
+  {
+    "teal": 362,
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
     "pc": [
       433,
       434
     ]
   },
   {
-    "teal": 365,
-    "source": "contracts/ARC11550Bridge.algo.ts:78",
+    "teal": 363,
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
     "pc": [
       435
     ]
   },
   {
-    "teal": 366,
-    "source": "contracts/ARC11550Bridge.algo.ts:78",
+    "teal": 364,
+    "source": "contracts/ARC11550Bridge.algo.ts:77",
     "pc": [
       436
     ]
   },
   {
-    "teal": 367,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
+    "teal": 365,
+    "source": "contracts/ARC11550Bridge.algo.ts:77",
     "pc": [
-      437
+      437,
+      438
     ]
   },
   {
     "teal": 368,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
+    "source": "contracts/ARC11550Bridge.algo.ts:76",
     "pc": [
-      438,
       439
     ]
   },
   {
     "teal": 369,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
+    "source": "contracts/ARC11550Bridge.algo.ts:76",
     "pc": [
-      440
-    ]
-  },
-  {
-    "teal": 370,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
-    "pc": [
+      440,
       441
     ]
   },
   {
-    "teal": 371,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
-    "pc": [
-      442,
-      443
-    ]
-  },
-  {
     "teal": 372,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
+    "source": "contracts/ARC11550Bridge.algo.ts:76",
     "pc": [
-      444
+      442
     ]
   },
   {
     "teal": 373,
-    "source": "contracts/ARC11550Bridge.algo.ts:78",
+    "source": "contracts/ARC11550Bridge.algo.ts:76",
+    "pc": [
+      443,
+      444
+    ]
+  },
+  {
+    "teal": 374,
+    "source": "contracts/ARC11550Bridge.algo.ts:76",
     "pc": [
       445
     ]
   },
   {
-    "teal": 374,
-    "source": "contracts/ARC11550Bridge.algo.ts:78",
+    "teal": 375,
+    "source": "contracts/ARC11550Bridge.algo.ts:76",
     "pc": [
-      446,
-      447
+      446
     ]
   },
   {
-    "teal": 377,
-    "source": "contracts/ARC11550Bridge.algo.ts:77",
+    "teal": 376,
+    "source": "contracts/ARC11550Bridge.algo.ts:76",
     "pc": [
+      447,
       448
     ]
   },
   {
-    "teal": 378,
-    "source": "contracts/ARC11550Bridge.algo.ts:77",
+    "teal": 377,
+    "source": "contracts/ARC11550Bridge.algo.ts:76",
     "pc": [
       449,
-      450
-    ]
-  },
-  {
-    "teal": 381,
-    "source": "contracts/ARC11550Bridge.algo.ts:77",
-    "pc": [
+      450,
       451
     ]
   },
   {
-    "teal": 382,
-    "source": "contracts/ARC11550Bridge.algo.ts:77",
+    "teal": 378,
+    "source": "contracts/ARC11550Bridge.algo.ts:76",
     "pc": [
-      452,
-      453
+      452
     ]
   },
   {
-    "teal": 383,
-    "source": "contracts/ARC11550Bridge.algo.ts:77",
+    "teal": 379,
+    "source": "contracts/ARC11550Bridge.algo.ts:76",
     "pc": [
+      453,
       454
     ]
   },
   {
-    "teal": 384,
-    "source": "contracts/ARC11550Bridge.algo.ts:77",
+    "teal": 389,
+    "source": "contracts/ARC11550Bridge.algo.ts:81",
     "pc": [
       455
     ]
   },
   {
-    "teal": 385,
-    "source": "contracts/ARC11550Bridge.algo.ts:77",
+    "teal": 390,
+    "source": "contracts/ARC11550Bridge.algo.ts:81",
     "pc": [
-      456,
-      457
+      456
     ]
   },
   {
-    "teal": 386,
-    "source": "contracts/ARC11550Bridge.algo.ts:77",
+    "teal": 391,
+    "source": "contracts/ARC11550Bridge.algo.ts:81",
     "pc": [
-      458,
+      457,
+      458
+    ]
+  },
+  {
+    "teal": 392,
+    "source": "contracts/ARC11550Bridge.algo.ts:81",
+    "pc": [
       459,
-      460
-    ]
-  },
-  {
-    "teal": 387,
-    "source": "contracts/ARC11550Bridge.algo.ts:77",
-    "pc": [
-      461
-    ]
-  },
-  {
-    "teal": 388,
-    "source": "contracts/ARC11550Bridge.algo.ts:77",
-    "pc": [
+      460,
+      461,
       462,
-      463
+      463,
+      464
+    ]
+  },
+  {
+    "teal": 393,
+    "source": "contracts/ARC11550Bridge.algo.ts:81",
+    "pc": [
+      465,
+      466
+    ]
+  },
+  {
+    "teal": 397,
+    "source": "contracts/ARC11550Bridge.algo.ts:82",
+    "pc": [
+      467,
+      468
     ]
   },
   {
     "teal": 398,
     "source": "contracts/ARC11550Bridge.algo.ts:82",
     "pc": [
-      464
-    ]
-  },
-  {
-    "teal": 399,
-    "source": "contracts/ARC11550Bridge.algo.ts:82",
-    "pc": [
-      465
-    ]
-  },
-  {
-    "teal": 400,
-    "source": "contracts/ARC11550Bridge.algo.ts:82",
-    "pc": [
-      466,
-      467
-    ]
-  },
-  {
-    "teal": 401,
-    "source": "contracts/ARC11550Bridge.algo.ts:82",
-    "pc": [
-      468,
       469,
-      470,
-      471,
-      472,
+      470
+    ]
+  },
+  {
+    "teal": 405,
+    "source": "contracts/ARC11550Bridge.algo.ts:84",
+    "pc": [
+      471
+    ]
+  },
+  {
+    "teal": 406,
+    "source": "contracts/ARC11550Bridge.algo.ts:84",
+    "pc": [
+      472
+    ]
+  },
+  {
+    "teal": 407,
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
+    "pc": [
       473
     ]
   },
   {
-    "teal": 402,
-    "source": "contracts/ARC11550Bridge.algo.ts:82",
+    "teal": 408,
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
     "pc": [
       474,
       475
     ]
   },
   {
-    "teal": 406,
-    "source": "contracts/ARC11550Bridge.algo.ts:83",
+    "teal": 409,
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
     "pc": [
-      476,
+      476
+    ]
+  },
+  {
+    "teal": 410,
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
+    "pc": [
       477
     ]
   },
   {
-    "teal": 407,
-    "source": "contracts/ARC11550Bridge.algo.ts:83",
+    "teal": 411,
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
     "pc": [
       478,
       479
     ]
   },
   {
-    "teal": 414,
-    "source": "contracts/ARC11550Bridge.algo.ts:85",
+    "teal": 412,
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
     "pc": [
       480
     ]
   },
   {
-    "teal": 415,
-    "source": "contracts/ARC11550Bridge.algo.ts:85",
+    "teal": 413,
+    "source": "contracts/ARC11550Bridge.algo.ts:84",
     "pc": [
       481
     ]
   },
   {
-    "teal": 416,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
+    "teal": 414,
+    "source": "contracts/ARC11550Bridge.algo.ts:84",
     "pc": [
       482
     ]
   },
   {
-    "teal": 417,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
+    "teal": 415,
+    "source": "contracts/ARC11550Bridge.algo.ts:84",
     "pc": [
       483,
       484
     ]
   },
   {
-    "teal": 418,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
+    "teal": 416,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
     "pc": [
       485
     ]
   },
   {
-    "teal": 419,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
+    "teal": 417,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
     "pc": [
       486
     ]
   },
   {
-    "teal": 420,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
+    "teal": 418,
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
     "pc": [
-      487,
-      488
+      487
     ]
   },
   {
-    "teal": 421,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
+    "teal": 419,
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
     "pc": [
+      488,
       489
     ]
   },
   {
-    "teal": 422,
-    "source": "contracts/ARC11550Bridge.algo.ts:85",
+    "teal": 420,
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
     "pc": [
       490
     ]
   },
   {
-    "teal": 423,
-    "source": "contracts/ARC11550Bridge.algo.ts:85",
+    "teal": 421,
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
     "pc": [
       491
     ]
   },
   {
-    "teal": 424,
-    "source": "contracts/ARC11550Bridge.algo.ts:85",
+    "teal": 422,
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
     "pc": [
       492,
       493
     ]
   },
   {
-    "teal": 425,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
+    "teal": 423,
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
     "pc": [
       494
     ]
   },
   {
-    "teal": 426,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
+    "teal": 424,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
     "pc": [
       495
     ]
   },
   {
-    "teal": 427,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
+    "teal": 425,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
     "pc": [
       496
     ]
   },
   {
-    "teal": 428,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
+    "teal": 426,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
     "pc": [
       497,
       498
     ]
   },
   {
-    "teal": 429,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
+    "teal": 427,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
     "pc": [
       499
     ]
   },
   {
-    "teal": 430,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
+    "teal": 428,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
     "pc": [
-      500
+      500,
+      501
     ]
   },
   {
-    "teal": 431,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
+    "teal": 429,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
     "pc": [
-      501,
       502
     ]
   },
   {
-    "teal": 432,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
+    "teal": 430,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
     "pc": [
-      503
-    ]
-  },
-  {
-    "teal": 433,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
-    "pc": [
+      503,
       504
     ]
   },
   {
-    "teal": 434,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
+    "teal": 431,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
     "pc": [
-      505
+      505,
+      506
     ]
   },
   {
-    "teal": 435,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
+    "teal": 432,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
     "pc": [
-      506,
       507
     ]
   },
   {
-    "teal": 436,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
+    "teal": 433,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
     "pc": [
       508
     ]
   },
   {
-    "teal": 437,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
+    "teal": 434,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
     "pc": [
-      509,
+      509
+    ]
+  },
+  {
+    "teal": 435,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
+    "pc": [
       510
     ]
   },
   {
-    "teal": 438,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
+    "teal": 436,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
     "pc": [
-      511
+      511,
+      512
     ]
   },
   {
-    "teal": 439,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
+    "teal": 437,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
     "pc": [
-      512,
       513
     ]
   },
   {
-    "teal": 440,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
+    "teal": 438,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
     "pc": [
-      514,
-      515
+      514
     ]
   },
   {
-    "teal": 441,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
+    "teal": 439,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
     "pc": [
-      516
-    ]
-  },
-  {
-    "teal": 442,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
-    "pc": [
+      515,
+      516,
       517
     ]
   },
   {
-    "teal": 443,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
+    "teal": 440,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
     "pc": [
       518
     ]
   },
   {
-    "teal": 444,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
+    "teal": 441,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
     "pc": [
       519
     ]
   },
   {
-    "teal": 445,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
+    "teal": 442,
+    "source": "contracts/ARC11550Bridge.algo.ts:85",
     "pc": [
       520,
       521
     ]
   },
   {
-    "teal": 446,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
+    "teal": 445,
+    "source": "contracts/ARC11550Bridge.algo.ts:81",
     "pc": [
       522
     ]
   },
   {
-    "teal": 447,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
+    "teal": 446,
+    "source": "contracts/ARC11550Bridge.algo.ts:81",
     "pc": [
-      523
-    ]
-  },
-  {
-    "teal": 448,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
-    "pc": [
-      524,
-      525,
-      526
+      523,
+      524
     ]
   },
   {
     "teal": 449,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
+    "source": "contracts/ARC11550Bridge.algo.ts:81",
     "pc": [
+      525
+    ]
+  },
+  {
+    "teal": 453,
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
+    "pc": [
+      526,
       527
     ]
   },
   {
-    "teal": 450,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
+    "teal": 454,
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
     "pc": [
       528
     ]
   },
   {
-    "teal": 451,
-    "source": "contracts/ARC11550Bridge.algo.ts:86",
+    "teal": 457,
+    "source": "contracts/ARC11550Bridge.algo.ts:74",
+    "errorMessage": "box value does not exist: this.asaToArc11550Map(asa).value",
     "pc": [
-      529,
-      530
+      529
     ]
   },
   {
-    "teal": 454,
-    "source": "contracts/ARC11550Bridge.algo.ts:82",
+    "teal": 460,
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
+      530,
       531
     ]
   },
   {
-    "teal": 455,
-    "source": "contracts/ARC11550Bridge.algo.ts:82",
+    "teal": 463,
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       532,
       533
     ]
   },
   {
-    "teal": 458,
-    "source": "contracts/ARC11550Bridge.algo.ts:82",
+    "teal": 464,
+    "source": "contracts/ARC11550Bridge.algo.ts:45",
     "pc": [
       534
     ]
   },
   {
-    "teal": 462,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
+    "teal": 469,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
       535,
       536
     ]
   },
   {
-    "teal": 463,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
-    "pc": [
-      537
-    ]
-  },
-  {
-    "teal": 466,
-    "source": "contracts/ARC11550Bridge.algo.ts:75",
-    "errorMessage": "box value does not exist: this.asaToArc11550Map(asa).value",
-    "pc": [
-      538
-    ]
-  },
-  {
-    "teal": 469,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
-    "pc": [
-      539,
-      540
-    ]
-  },
-  {
     "teal": 472,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
-      541,
-      542
+      537,
+      538,
+      539
     ]
   },
   {
     "teal": 473,
-    "source": "contracts/ARC11550Bridge.algo.ts:44",
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
+      540
+    ]
+  },
+  {
+    "teal": 474,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
+    "pc": [
+      541
+    ]
+  },
+  {
+    "teal": 475,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
+    "pc": [
+      542,
       543
     ]
   },
   {
-    "teal": 478,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "teal": 476,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
-      544,
+      544
+    ]
+  },
+  {
+    "teal": 479,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
+    "errorMessage": "argument 0 (receiver) for arc11550ToAsa must be a address",
+    "pc": [
       545
     ]
   },
   {
-    "teal": 481,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "teal": 482,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
       546,
       547,
@@ -2198,221 +2199,214 @@
     ]
   },
   {
-    "teal": 482,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "teal": 483,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
       549
     ]
   },
   {
-    "teal": 483,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "teal": 486,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
-      550
+      550,
+      551
     ]
   },
   {
-    "teal": 484,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "teal": 487,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
-      551,
       552
     ]
   },
   {
-    "teal": 485,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "teal": 488,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
       553
     ]
   },
   {
-    "teal": 488,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
-    "errorMessage": "argument 0 (receiver) for arc11550ToAsa must be a address",
+    "teal": 489,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
       554
     ]
   },
   {
-    "teal": 491,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "teal": 490,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
       555,
-      556,
+      556
+    ]
+  },
+  {
+    "teal": 491,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
+    "pc": [
       557
     ]
   },
   {
     "teal": 492,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
       558
     ]
   },
   {
     "teal": 495,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
+    "errorMessage": "argument 2 (xferCall) for arc11550ToAsa must be a appl transaction",
     "pc": [
-      559,
-      560
-    ]
-  },
-  {
-    "teal": 496,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
-    "pc": [
-      561
-    ]
-  },
-  {
-    "teal": 497,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
-    "pc": [
-      562
+      559
     ]
   },
   {
     "teal": 498,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
+    "pc": [
+      560,
+      561,
+      562
+    ]
+  },
+  {
+    "teal": 499,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
       563
     ]
   },
   {
-    "teal": 499,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "teal": 500,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
-      564,
+      564
+    ]
+  },
+  {
+    "teal": 501,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
+    "pc": [
       565
     ]
   },
   {
-    "teal": 500,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "teal": 502,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
       566
     ]
   },
   {
-    "teal": 501,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "teal": 503,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
       567
     ]
   },
   {
-    "teal": 504,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
-    "errorMessage": "argument 2 (xferCall) for arc11550ToAsa must be a appl transaction",
-    "pc": [
-      568
-    ]
-  },
-  {
     "teal": 507,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
+      568,
       569,
-      570,
-      571
-    ]
-  },
-  {
-    "teal": 508,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
-    "pc": [
-      572
-    ]
-  },
-  {
-    "teal": 509,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
-    "pc": [
-      573
+      570
     ]
   },
   {
     "teal": 510,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
-      574
+      571
     ]
   },
   {
     "teal": 511,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
-      575
+      572,
+      573
     ]
   },
   {
-    "teal": 512,
+    "teal": 515,
     "source": "contracts/ARC11550Bridge.algo.ts:93",
     "pc": [
-      576
+      574,
+      575
     ]
   },
   {
     "teal": 516,
     "source": "contracts/ARC11550Bridge.algo.ts:93",
     "pc": [
+      576,
       577,
-      578,
-      579
+      578
+    ]
+  },
+  {
+    "teal": 517,
+    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "pc": [
+      579,
+      580,
+      581
+    ]
+  },
+  {
+    "teal": 518,
+    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "pc": [
+      582,
+      583
     ]
   },
   {
     "teal": 519,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "source": "contracts/ARC11550Bridge.algo.ts:94",
     "pc": [
-      580
+      584,
+      585
     ]
   },
   {
     "teal": 520,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
-    "pc": [
-      581,
-      582
-    ]
-  },
-  {
-    "teal": 524,
     "source": "contracts/ARC11550Bridge.algo.ts:94",
     "pc": [
-      583,
-      584
-    ]
-  },
-  {
-    "teal": 525,
-    "source": "contracts/ARC11550Bridge.algo.ts:94",
-    "pc": [
-      585,
       586,
       587
     ]
   },
   {
-    "teal": 526,
-    "source": "contracts/ARC11550Bridge.algo.ts:94",
+    "teal": 524,
+    "source": "contracts/ARC11550Bridge.algo.ts:95",
     "pc": [
       588,
-      589,
-      590
+      589
     ]
   },
   {
-    "teal": 527,
-    "source": "contracts/ARC11550Bridge.algo.ts:94",
+    "teal": 525,
+    "source": "contracts/ARC11550Bridge.algo.ts:95",
     "pc": [
-      591,
+      590,
+      591
+    ]
+  },
+  {
+    "teal": 526,
+    "source": "contracts/ARC11550Bridge.algo.ts:95",
+    "pc": [
       592
     ]
   },
   {
-    "teal": 528,
+    "teal": 527,
     "source": "contracts/ARC11550Bridge.algo.ts:95",
     "pc": [
       593,
@@ -2420,7 +2414,7 @@
     ]
   },
   {
-    "teal": 529,
+    "teal": 528,
     "source": "contracts/ARC11550Bridge.algo.ts:95",
     "pc": [
       595,
@@ -2428,576 +2422,576 @@
     ]
   },
   {
-    "teal": 533,
-    "source": "contracts/ARC11550Bridge.algo.ts:96",
+    "teal": 529,
+    "source": "contracts/ARC11550Bridge.algo.ts:95",
     "pc": [
-      597,
+      597
+    ]
+  },
+  {
+    "teal": 530,
+    "source": "contracts/ARC11550Bridge.algo.ts:95",
+    "pc": [
       598
     ]
   },
   {
-    "teal": 534,
-    "source": "contracts/ARC11550Bridge.algo.ts:96",
+    "teal": 531,
+    "source": "contracts/ARC11550Bridge.algo.ts:95",
     "pc": [
       599,
       600
     ]
   },
   {
-    "teal": 535,
-    "source": "contracts/ARC11550Bridge.algo.ts:96",
+    "teal": 532,
+    "source": "contracts/ARC11550Bridge.algo.ts:95",
     "pc": [
       601
     ]
   },
   {
-    "teal": 536,
-    "source": "contracts/ARC11550Bridge.algo.ts:96",
+    "teal": 533,
+    "source": "contracts/ARC11550Bridge.algo.ts:95",
     "pc": [
       602,
       603
     ]
   },
   {
-    "teal": 537,
-    "source": "contracts/ARC11550Bridge.algo.ts:96",
+    "teal": 534,
+    "source": "contracts/ARC11550Bridge.algo.ts:95",
     "pc": [
-      604,
-      605
+      604
     ]
   },
   {
-    "teal": 538,
-    "source": "contracts/ARC11550Bridge.algo.ts:96",
+    "teal": 535,
+    "source": "contracts/ARC11550Bridge.algo.ts:95",
     "pc": [
+      605,
       606
     ]
   },
   {
-    "teal": 539,
-    "source": "contracts/ARC11550Bridge.algo.ts:96",
+    "teal": 536,
+    "source": "contracts/ARC11550Bridge.algo.ts:95",
     "pc": [
       607
     ]
   },
   {
-    "teal": 540,
-    "source": "contracts/ARC11550Bridge.algo.ts:96",
+    "teal": 537,
+    "source": "contracts/ARC11550Bridge.algo.ts:95",
     "pc": [
       608,
       609
     ]
   },
   {
-    "teal": 541,
-    "source": "contracts/ARC11550Bridge.algo.ts:96",
+    "teal": 538,
+    "source": "contracts/ARC11550Bridge.algo.ts:95",
     "pc": [
       610
     ]
   },
   {
-    "teal": 542,
-    "source": "contracts/ARC11550Bridge.algo.ts:96",
+    "teal": 539,
+    "source": "contracts/ARC11550Bridge.algo.ts:95",
     "pc": [
-      611,
-      612
+      611
     ]
   },
   {
     "teal": 543,
-    "source": "contracts/ARC11550Bridge.algo.ts:96",
+    "source": "contracts/ARC11550Bridge.algo.ts:97",
     "pc": [
+      612,
       613
     ]
   },
   {
     "teal": 544,
-    "source": "contracts/ARC11550Bridge.algo.ts:96",
+    "source": "contracts/ARC11550Bridge.algo.ts:97",
     "pc": [
       614,
-      615
-    ]
-  },
-  {
-    "teal": 545,
-    "source": "contracts/ARC11550Bridge.algo.ts:96",
-    "pc": [
+      615,
       616
     ]
   },
   {
-    "teal": 546,
-    "source": "contracts/ARC11550Bridge.algo.ts:96",
+    "teal": 545,
+    "source": "contracts/ARC11550Bridge.algo.ts:97",
     "pc": [
-      617,
-      618
+      617
     ]
   },
   {
-    "teal": 547,
-    "source": "contracts/ARC11550Bridge.algo.ts:96",
+    "teal": 546,
+    "source": "contracts/ARC11550Bridge.algo.ts:97",
     "pc": [
+      618,
       619
     ]
   },
   {
-    "teal": 548,
-    "source": "contracts/ARC11550Bridge.algo.ts:96",
-    "pc": [
-      620
-    ]
-  },
-  {
-    "teal": 552,
-    "source": "contracts/ARC11550Bridge.algo.ts:98",
-    "pc": [
-      621,
-      622
-    ]
-  },
-  {
     "teal": 553,
-    "source": "contracts/ARC11550Bridge.algo.ts:98",
+    "source": "contracts/ARC11550Bridge.algo.ts:101",
     "pc": [
-      623,
-      624,
-      625
+      620,
+      621
     ]
   },
   {
     "teal": 554,
-    "source": "contracts/ARC11550Bridge.algo.ts:98",
+    "source": "contracts/ARC11550Bridge.algo.ts:101",
     "pc": [
-      626
+      622,
+      623
     ]
   },
   {
     "teal": 555,
-    "source": "contracts/ARC11550Bridge.algo.ts:98",
+    "source": "contracts/ARC11550Bridge.algo.ts:102",
     "pc": [
-      627,
-      628
+      624
     ]
   },
   {
-    "teal": 562,
+    "teal": 556,
     "source": "contracts/ARC11550Bridge.algo.ts:102",
     "pc": [
-      629,
-      630
+      625
+    ]
+  },
+  {
+    "teal": 557,
+    "source": "contracts/ARC11550Bridge.algo.ts:102",
+    "pc": [
+      626,
+      627
+    ]
+  },
+  {
+    "teal": 558,
+    "source": "contracts/ARC11550Bridge.algo.ts:102",
+    "pc": [
+      628,
+      629
+    ]
+  },
+  {
+    "teal": 559,
+    "source": "contracts/ARC11550Bridge.algo.ts:102",
+    "pc": [
+      630,
+      631
     ]
   },
   {
     "teal": 563,
     "source": "contracts/ARC11550Bridge.algo.ts:102",
     "pc": [
-      631,
-      632
-    ]
-  },
-  {
-    "teal": 564,
-    "source": "contracts/ARC11550Bridge.algo.ts:103",
-    "pc": [
+      632,
       633
     ]
   },
   {
-    "teal": 565,
-    "source": "contracts/ARC11550Bridge.algo.ts:103",
+    "teal": 564,
+    "source": "contracts/ARC11550Bridge.algo.ts:102",
     "pc": [
-      634
-    ]
-  },
-  {
-    "teal": 566,
-    "source": "contracts/ARC11550Bridge.algo.ts:103",
-    "pc": [
-      635,
-      636
+      634,
+      635
     ]
   },
   {
     "teal": 567,
-    "source": "contracts/ARC11550Bridge.algo.ts:103",
+    "source": "contracts/ARC11550Bridge.algo.ts:102",
+    "pc": [
+      636
+    ]
+  },
+  {
+    "teal": 568,
+    "source": "contracts/ARC11550Bridge.algo.ts:102",
     "pc": [
       637,
       638
     ]
   },
   {
-    "teal": 568,
-    "source": "contracts/ARC11550Bridge.algo.ts:103",
+    "teal": 571,
+    "source": "contracts/ARC11550Bridge.algo.ts:102",
     "pc": [
-      639,
-      640
+      639
     ]
   },
   {
     "teal": 572,
-    "source": "contracts/ARC11550Bridge.algo.ts:103",
+    "source": "contracts/ARC11550Bridge.algo.ts:102",
     "pc": [
-      641,
-      642
+      640,
+      641
     ]
   },
   {
     "teal": 573,
-    "source": "contracts/ARC11550Bridge.algo.ts:103",
+    "source": "contracts/ARC11550Bridge.algo.ts:102",
     "pc": [
-      643,
-      644
+      642
     ]
   },
   {
-    "teal": 576,
-    "source": "contracts/ARC11550Bridge.algo.ts:103",
+    "teal": 574,
+    "source": "contracts/ARC11550Bridge.algo.ts:102",
     "pc": [
+      643
+    ]
+  },
+  {
+    "teal": 575,
+    "source": "contracts/ARC11550Bridge.algo.ts:102",
+    "pc": [
+      644,
       645
     ]
   },
   {
-    "teal": 577,
-    "source": "contracts/ARC11550Bridge.algo.ts:103",
+    "teal": 576,
+    "source": "contracts/ARC11550Bridge.algo.ts:102",
     "pc": [
       646,
-      647
-    ]
-  },
-  {
-    "teal": 580,
-    "source": "contracts/ARC11550Bridge.algo.ts:103",
-    "pc": [
+      647,
       648
     ]
   },
   {
-    "teal": 581,
-    "source": "contracts/ARC11550Bridge.algo.ts:103",
+    "teal": 577,
+    "source": "contracts/ARC11550Bridge.algo.ts:102",
     "pc": [
-      649,
+      649
+    ]
+  },
+  {
+    "teal": 578,
+    "source": "contracts/ARC11550Bridge.algo.ts:101",
+    "pc": [
       650
     ]
   },
   {
-    "teal": 582,
-    "source": "contracts/ARC11550Bridge.algo.ts:103",
+    "teal": 579,
+    "source": "contracts/ARC11550Bridge.algo.ts:100",
     "pc": [
       651
     ]
   },
   {
     "teal": 583,
-    "source": "contracts/ARC11550Bridge.algo.ts:103",
+    "source": "contracts/ARC11550Bridge.algo.ts:105",
     "pc": [
-      652
+      652,
+      653
     ]
   },
   {
     "teal": 584,
-    "source": "contracts/ARC11550Bridge.algo.ts:103",
+    "source": "contracts/ARC11550Bridge.algo.ts:105",
     "pc": [
-      653,
-      654
+      654,
+      655
     ]
   },
   {
     "teal": 585,
-    "source": "contracts/ARC11550Bridge.algo.ts:103",
+    "source": "contracts/ARC11550Bridge.algo.ts:105",
     "pc": [
-      655,
-      656,
-      657
+      656
     ]
   },
   {
     "teal": 586,
-    "source": "contracts/ARC11550Bridge.algo.ts:103",
+    "source": "contracts/ARC11550Bridge.algo.ts:105",
     "pc": [
+      657,
       658
     ]
   },
   {
     "teal": 587,
-    "source": "contracts/ARC11550Bridge.algo.ts:102",
+    "source": "contracts/ARC11550Bridge.algo.ts:105",
     "pc": [
-      659
-    ]
-  },
-  {
-    "teal": 588,
-    "source": "contracts/ARC11550Bridge.algo.ts:101",
-    "pc": [
+      659,
       660
     ]
   },
   {
-    "teal": 592,
-    "source": "contracts/ARC11550Bridge.algo.ts:106",
+    "teal": 588,
+    "source": "contracts/ARC11550Bridge.algo.ts:105",
     "pc": [
-      661,
+      661
+    ]
+  },
+  {
+    "teal": 589,
+    "source": "contracts/ARC11550Bridge.algo.ts:105",
+    "pc": [
       662
     ]
   },
   {
-    "teal": 593,
-    "source": "contracts/ARC11550Bridge.algo.ts:106",
+    "teal": 590,
+    "source": "contracts/ARC11550Bridge.algo.ts:105",
     "pc": [
-      663,
+      663
+    ]
+  },
+  {
+    "teal": 591,
+    "source": "contracts/ARC11550Bridge.algo.ts:105",
+    "pc": [
       664
     ]
   },
   {
-    "teal": 594,
-    "source": "contracts/ARC11550Bridge.algo.ts:106",
+    "teal": 592,
+    "source": "contracts/ARC11550Bridge.algo.ts:105",
     "pc": [
-      665
+      665,
+      666
     ]
   },
   {
-    "teal": 595,
-    "source": "contracts/ARC11550Bridge.algo.ts:106",
+    "teal": 593,
+    "source": "contracts/ARC11550Bridge.algo.ts:105",
     "pc": [
-      666,
       667
     ]
   },
   {
-    "teal": 596,
-    "source": "contracts/ARC11550Bridge.algo.ts:106",
+    "teal": 594,
+    "source": "contracts/ARC11550Bridge.algo.ts:105",
     "pc": [
-      668,
+      668
+    ]
+  },
+  {
+    "teal": 595,
+    "source": "contracts/ARC11550Bridge.algo.ts:105",
+    "pc": [
       669
     ]
   },
   {
-    "teal": 597,
-    "source": "contracts/ARC11550Bridge.algo.ts:106",
+    "teal": 596,
+    "source": "contracts/ARC11550Bridge.algo.ts:105",
     "pc": [
       670
     ]
   },
   {
-    "teal": 598,
-    "source": "contracts/ARC11550Bridge.algo.ts:106",
+    "teal": 597,
+    "source": "contracts/ARC11550Bridge.algo.ts:105",
     "pc": [
       671
     ]
   },
   {
-    "teal": 599,
-    "source": "contracts/ARC11550Bridge.algo.ts:106",
+    "teal": 598,
+    "source": "contracts/ARC11550Bridge.algo.ts:105",
     "pc": [
-      672
-    ]
-  },
-  {
-    "teal": 600,
-    "source": "contracts/ARC11550Bridge.algo.ts:106",
-    "pc": [
+      672,
       673
     ]
   },
   {
-    "teal": 601,
-    "source": "contracts/ARC11550Bridge.algo.ts:106",
+    "teal": 599,
+    "source": "contracts/ARC11550Bridge.algo.ts:105",
     "pc": [
-      674,
+      674
+    ]
+  },
+  {
+    "teal": 600,
+    "source": "contracts/ARC11550Bridge.algo.ts:105",
+    "pc": [
       675
     ]
   },
   {
-    "teal": 602,
-    "source": "contracts/ARC11550Bridge.algo.ts:106",
+    "teal": 601,
+    "source": "contracts/ARC11550Bridge.algo.ts:105",
     "pc": [
-      676
-    ]
-  },
-  {
-    "teal": 603,
-    "source": "contracts/ARC11550Bridge.algo.ts:106",
-    "pc": [
+      676,
       677
     ]
   },
   {
-    "teal": 604,
-    "source": "contracts/ARC11550Bridge.algo.ts:106",
+    "teal": 606,
+    "source": "contracts/ARC11550Bridge.algo.ts:107",
     "pc": [
       678
     ]
   },
   {
-    "teal": 605,
-    "source": "contracts/ARC11550Bridge.algo.ts:106",
+    "teal": 607,
+    "source": "contracts/ARC11550Bridge.algo.ts:107",
     "pc": [
-      679
-    ]
-  },
-  {
-    "teal": 606,
-    "source": "contracts/ARC11550Bridge.algo.ts:106",
-    "pc": [
+      679,
       680
     ]
   },
   {
-    "teal": 607,
-    "source": "contracts/ARC11550Bridge.algo.ts:106",
+    "teal": 608,
+    "source": "contracts/ARC11550Bridge.algo.ts:107",
     "pc": [
-      681,
+      681
+    ]
+  },
+  {
+    "teal": 609,
+    "source": "contracts/ARC11550Bridge.algo.ts:107",
+    "pc": [
       682
     ]
   },
   {
-    "teal": 608,
-    "source": "contracts/ARC11550Bridge.algo.ts:106",
+    "teal": 610,
+    "source": "contracts/ARC11550Bridge.algo.ts:107",
     "pc": [
       683
     ]
   },
   {
-    "teal": 609,
-    "source": "contracts/ARC11550Bridge.algo.ts:106",
+    "teal": 611,
+    "source": "contracts/ARC11550Bridge.algo.ts:107",
     "pc": [
       684
     ]
   },
   {
-    "teal": 610,
-    "source": "contracts/ARC11550Bridge.algo.ts:106",
+    "teal": 612,
+    "source": "contracts/ARC11550Bridge.algo.ts:107",
     "pc": [
-      685,
-      686
+      685
     ]
   },
   {
-    "teal": 615,
-    "source": "contracts/ARC11550Bridge.algo.ts:108",
+    "teal": 613,
+    "source": "contracts/ARC11550Bridge.algo.ts:107",
     "pc": [
-      687
-    ]
-  },
-  {
-    "teal": 616,
-    "source": "contracts/ARC11550Bridge.algo.ts:108",
-    "pc": [
-      688,
-      689
-    ]
-  },
-  {
-    "teal": 617,
-    "source": "contracts/ARC11550Bridge.algo.ts:108",
-    "pc": [
-      690
-    ]
-  },
-  {
-    "teal": 618,
-    "source": "contracts/ARC11550Bridge.algo.ts:108",
-    "pc": [
-      691
-    ]
-  },
-  {
-    "teal": 619,
-    "source": "contracts/ARC11550Bridge.algo.ts:108",
-    "pc": [
-      692
-    ]
-  },
-  {
-    "teal": 620,
-    "source": "contracts/ARC11550Bridge.algo.ts:108",
-    "pc": [
-      693
+      686,
+      687,
+      688
     ]
   },
   {
     "teal": 621,
     "source": "contracts/ARC11550Bridge.algo.ts:108",
     "pc": [
-      694
+      689
     ]
   },
   {
     "teal": 622,
     "source": "contracts/ARC11550Bridge.algo.ts:108",
     "pc": [
+      690
+    ]
+  },
+  {
+    "teal": 623,
+    "source": "contracts/ARC11550Bridge.algo.ts:108",
+    "pc": [
+      691,
+      692
+    ]
+  },
+  {
+    "teal": 624,
+    "source": "contracts/ARC11550Bridge.algo.ts:108",
+    "pc": [
+      693,
+      694,
       695,
       696,
-      697
+      697,
+      698
+    ]
+  },
+  {
+    "teal": 625,
+    "source": "contracts/ARC11550Bridge.algo.ts:108",
+    "pc": [
+      699,
+      700
+    ]
+  },
+  {
+    "teal": 629,
+    "source": "contracts/ARC11550Bridge.algo.ts:109",
+    "pc": [
+      701,
+      702
     ]
   },
   {
     "teal": 630,
     "source": "contracts/ARC11550Bridge.algo.ts:109",
     "pc": [
-      698
+      703,
+      704,
+      705
     ]
   },
   {
     "teal": 631,
     "source": "contracts/ARC11550Bridge.algo.ts:109",
     "pc": [
-      699
+      706
     ]
   },
   {
     "teal": 632,
     "source": "contracts/ARC11550Bridge.algo.ts:109",
     "pc": [
-      700,
-      701
+      707,
+      708
     ]
   },
   {
-    "teal": 633,
-    "source": "contracts/ARC11550Bridge.algo.ts:109",
+    "teal": 636,
+    "source": "contracts/ARC11550Bridge.algo.ts:110",
     "pc": [
-      702,
-      703,
-      704,
-      705,
-      706,
-      707
+      709,
+      710
     ]
   },
   {
-    "teal": 634,
-    "source": "contracts/ARC11550Bridge.algo.ts:109",
+    "teal": 637,
+    "source": "contracts/ARC11550Bridge.algo.ts:110",
     "pc": [
-      708,
-      709
+      711,
+      712
     ]
   },
   {
     "teal": 638,
     "source": "contracts/ARC11550Bridge.algo.ts:110",
     "pc": [
-      710,
-      711
+      713
     ]
   },
   {
     "teal": 639,
     "source": "contracts/ARC11550Bridge.algo.ts:110",
     "pc": [
-      712,
-      713,
-      714
-    ]
-  },
-  {
-    "teal": 640,
-    "source": "contracts/ARC11550Bridge.algo.ts:110",
-    "pc": [
+      714,
       715
     ]
   },
   {
-    "teal": 641,
+    "teal": 640,
     "source": "contracts/ARC11550Bridge.algo.ts:110",
     "pc": [
       716,
@@ -3005,306 +2999,300 @@
     ]
   },
   {
-    "teal": 645,
-    "source": "contracts/ARC11550Bridge.algo.ts:111",
+    "teal": 641,
+    "source": "contracts/ARC11550Bridge.algo.ts:110",
     "pc": [
-      718,
+      718
+    ]
+  },
+  {
+    "teal": 642,
+    "source": "contracts/ARC11550Bridge.algo.ts:110",
+    "pc": [
       719
     ]
   },
   {
-    "teal": 646,
-    "source": "contracts/ARC11550Bridge.algo.ts:111",
+    "teal": 643,
+    "source": "contracts/ARC11550Bridge.algo.ts:110",
     "pc": [
-      720,
+      720
+    ]
+  },
+  {
+    "teal": 644,
+    "source": "contracts/ARC11550Bridge.algo.ts:110",
+    "pc": [
       721
     ]
   },
   {
-    "teal": 647,
-    "source": "contracts/ARC11550Bridge.algo.ts:111",
+    "teal": 645,
+    "source": "contracts/ARC11550Bridge.algo.ts:110",
     "pc": [
-      722
+      722,
+      723
     ]
   },
   {
-    "teal": 648,
-    "source": "contracts/ARC11550Bridge.algo.ts:111",
+    "teal": 646,
+    "source": "contracts/ARC11550Bridge.algo.ts:110",
     "pc": [
-      723,
       724
     ]
   },
   {
-    "teal": 649,
-    "source": "contracts/ARC11550Bridge.algo.ts:111",
+    "teal": 647,
+    "source": "contracts/ARC11550Bridge.algo.ts:110",
     "pc": [
-      725,
+      725
+    ]
+  },
+  {
+    "teal": 648,
+    "source": "contracts/ARC11550Bridge.algo.ts:110",
+    "pc": [
       726
     ]
   },
   {
-    "teal": 650,
-    "source": "contracts/ARC11550Bridge.algo.ts:111",
+    "teal": 649,
+    "source": "contracts/ARC11550Bridge.algo.ts:110",
     "pc": [
       727
     ]
   },
   {
-    "teal": 651,
-    "source": "contracts/ARC11550Bridge.algo.ts:111",
+    "teal": 650,
+    "source": "contracts/ARC11550Bridge.algo.ts:110",
     "pc": [
       728
     ]
   },
   {
-    "teal": 652,
-    "source": "contracts/ARC11550Bridge.algo.ts:111",
+    "teal": 651,
+    "source": "contracts/ARC11550Bridge.algo.ts:110",
     "pc": [
-      729
-    ]
-  },
-  {
-    "teal": 653,
-    "source": "contracts/ARC11550Bridge.algo.ts:111",
-    "pc": [
+      729,
       730
     ]
   },
   {
     "teal": 654,
-    "source": "contracts/ARC11550Bridge.algo.ts:111",
+    "source": "contracts/ARC11550Bridge.algo.ts:108",
     "pc": [
-      731,
-      732
+      731
     ]
   },
   {
     "teal": 655,
-    "source": "contracts/ARC11550Bridge.algo.ts:111",
+    "source": "contracts/ARC11550Bridge.algo.ts:108",
     "pc": [
+      732,
       733
     ]
   },
   {
-    "teal": 656,
-    "source": "contracts/ARC11550Bridge.algo.ts:111",
+    "teal": 658,
+    "source": "contracts/ARC11550Bridge.algo.ts:108",
     "pc": [
       734
     ]
   },
   {
-    "teal": 657,
-    "source": "contracts/ARC11550Bridge.algo.ts:111",
+    "teal": 659,
+    "source": "contracts/ARC11550Bridge.algo.ts:108",
     "pc": [
-      735
-    ]
-  },
-  {
-    "teal": 658,
-    "source": "contracts/ARC11550Bridge.algo.ts:111",
-    "pc": [
+      735,
       736
     ]
   },
   {
-    "teal": 659,
-    "source": "contracts/ARC11550Bridge.algo.ts:111",
+    "teal": 660,
+    "source": "contracts/ARC11550Bridge.algo.ts:108",
     "pc": [
       737
     ]
   },
   {
-    "teal": 660,
-    "source": "contracts/ARC11550Bridge.algo.ts:111",
+    "teal": 661,
+    "source": "contracts/ARC11550Bridge.algo.ts:108",
     "pc": [
-      738,
-      739
+      738
     ]
   },
   {
-    "teal": 663,
-    "source": "contracts/ARC11550Bridge.algo.ts:109",
+    "teal": 662,
+    "source": "contracts/ARC11550Bridge.algo.ts:108",
     "pc": [
+      739,
       740
     ]
   },
   {
-    "teal": 664,
-    "source": "contracts/ARC11550Bridge.algo.ts:109",
+    "teal": 663,
+    "source": "contracts/ARC11550Bridge.algo.ts:108",
     "pc": [
       741,
-      742
-    ]
-  },
-  {
-    "teal": 667,
-    "source": "contracts/ARC11550Bridge.algo.ts:109",
-    "pc": [
+      742,
       743
     ]
   },
   {
-    "teal": 668,
-    "source": "contracts/ARC11550Bridge.algo.ts:109",
+    "teal": 664,
+    "source": "contracts/ARC11550Bridge.algo.ts:108",
     "pc": [
       744,
       745
     ]
   },
   {
-    "teal": 669,
-    "source": "contracts/ARC11550Bridge.algo.ts:109",
+    "teal": 674,
+    "source": "contracts/ARC11550Bridge.algo.ts:113",
     "pc": [
       746
     ]
   },
   {
-    "teal": 670,
-    "source": "contracts/ARC11550Bridge.algo.ts:109",
+    "teal": 675,
+    "source": "contracts/ARC11550Bridge.algo.ts:113",
     "pc": [
-      747
+      747,
+      748
     ]
   },
   {
-    "teal": 671,
-    "source": "contracts/ARC11550Bridge.algo.ts:109",
+    "teal": 676,
+    "source": "contracts/ARC11550Bridge.algo.ts:113",
     "pc": [
-      748,
-      749
+      749,
+      750
     ]
   },
   {
-    "teal": 672,
-    "source": "contracts/ARC11550Bridge.algo.ts:109",
+    "teal": 680,
+    "source": "contracts/ARC11550Bridge.algo.ts:114",
     "pc": [
-      750,
       751,
       752
     ]
   },
   {
-    "teal": 673,
-    "source": "contracts/ARC11550Bridge.algo.ts:109",
+    "teal": 681,
+    "source": "contracts/ARC11550Bridge.algo.ts:114",
     "pc": [
       753,
-      754
+      754,
+      755
+    ]
+  },
+  {
+    "teal": 682,
+    "source": "contracts/ARC11550Bridge.algo.ts:114",
+    "pc": [
+      756
     ]
   },
   {
     "teal": 683,
     "source": "contracts/ARC11550Bridge.algo.ts:114",
     "pc": [
-      755
+      757,
+      758
     ]
   },
   {
-    "teal": 684,
-    "source": "contracts/ARC11550Bridge.algo.ts:114",
+    "teal": 687,
+    "source": "contracts/ARC11550Bridge.algo.ts:115",
     "pc": [
-      756,
-      757
+      759,
+      760
     ]
   },
   {
-    "teal": 685,
-    "source": "contracts/ARC11550Bridge.algo.ts:114",
+    "teal": 688,
+    "source": "contracts/ARC11550Bridge.algo.ts:115",
     "pc": [
-      758,
-      759
+      761,
+      762,
+      763
     ]
   },
   {
     "teal": 689,
     "source": "contracts/ARC11550Bridge.algo.ts:115",
     "pc": [
-      760,
-      761
+      764
     ]
   },
   {
     "teal": 690,
     "source": "contracts/ARC11550Bridge.algo.ts:115",
     "pc": [
-      762,
-      763,
-      764
+      765,
+      766
     ]
   },
   {
-    "teal": 691,
-    "source": "contracts/ARC11550Bridge.algo.ts:115",
+    "teal": 694,
+    "source": "contracts/ARC11550Bridge.algo.ts:116",
     "pc": [
-      765
+      767,
+      768
     ]
   },
   {
-    "teal": 692,
-    "source": "contracts/ARC11550Bridge.algo.ts:115",
+    "teal": 695,
+    "source": "contracts/ARC11550Bridge.algo.ts:116",
     "pc": [
-      766,
-      767
+      769,
+      770,
+      771
     ]
   },
   {
     "teal": 696,
     "source": "contracts/ARC11550Bridge.algo.ts:116",
     "pc": [
-      768,
-      769
-    ]
-  },
-  {
-    "teal": 697,
-    "source": "contracts/ARC11550Bridge.algo.ts:116",
-    "pc": [
-      770,
-      771,
-      772
-    ]
-  },
-  {
-    "teal": 698,
-    "source": "contracts/ARC11550Bridge.algo.ts:116",
-    "pc": [
+      772,
       773
     ]
   },
   {
-    "teal": 699,
-    "source": "contracts/ARC11550Bridge.algo.ts:116",
+    "teal": 700,
+    "source": "contracts/ARC11550Bridge.algo.ts:117",
     "pc": [
       774,
       775
     ]
   },
   {
-    "teal": 703,
+    "teal": 701,
     "source": "contracts/ARC11550Bridge.algo.ts:117",
     "pc": [
       776,
-      777
+      777,
+      778
     ]
   },
   {
-    "teal": 704,
+    "teal": 702,
     "source": "contracts/ARC11550Bridge.algo.ts:117",
     "pc": [
-      778,
       779,
       780
     ]
   },
   {
-    "teal": 705,
-    "source": "contracts/ARC11550Bridge.algo.ts:117",
+    "teal": 706,
+    "source": "contracts/ARC11550Bridge.algo.ts:118",
     "pc": [
       781,
       782
     ]
   },
   {
-    "teal": 709,
+    "teal": 707,
     "source": "contracts/ARC11550Bridge.algo.ts:118",
     "pc": [
       783,
@@ -3313,72 +3301,84 @@
   },
   {
     "teal": 710,
-    "source": "contracts/ARC11550Bridge.algo.ts:118",
+    "source": "contracts/ARC11550Bridge.algo.ts:113",
     "pc": [
-      785,
+      785
+    ]
+  },
+  {
+    "teal": 711,
+    "source": "contracts/ARC11550Bridge.algo.ts:113",
+    "pc": [
       786,
       787
     ]
   },
   {
-    "teal": 711,
-    "source": "contracts/ARC11550Bridge.algo.ts:118",
+    "teal": 714,
+    "source": "contracts/ARC11550Bridge.algo.ts:113",
     "pc": [
-      788,
-      789
+      788
     ]
   },
   {
     "teal": 715,
-    "source": "contracts/ARC11550Bridge.algo.ts:119",
+    "source": "contracts/ARC11550Bridge.algo.ts:113",
     "pc": [
-      790,
-      791
-    ]
-  },
-  {
-    "teal": 716,
-    "source": "contracts/ARC11550Bridge.algo.ts:119",
-    "pc": [
-      792,
-      793
+      789,
+      790
     ]
   },
   {
     "teal": 719,
-    "source": "contracts/ARC11550Bridge.algo.ts:114",
+    "source": "contracts/ARC11550Bridge.algo.ts:121",
     "pc": [
-      794
+      791,
+      792
     ]
   },
   {
     "teal": 720,
-    "source": "contracts/ARC11550Bridge.algo.ts:114",
+    "source": "contracts/ARC11550Bridge.algo.ts:121",
     "pc": [
-      795,
-      796
-    ]
-  },
-  {
-    "teal": 723,
-    "source": "contracts/ARC11550Bridge.algo.ts:114",
-    "pc": [
-      797
+      793,
+      794
     ]
   },
   {
     "teal": 724,
-    "source": "contracts/ARC11550Bridge.algo.ts:114",
+    "source": "contracts/ARC11550Bridge.algo.ts:122",
     "pc": [
-      798,
-      799
+      795
+    ]
+  },
+  {
+    "teal": 725,
+    "source": "contracts/ARC11550Bridge.algo.ts:122",
+    "pc": [
+      796,
+      797
+    ]
+  },
+  {
+    "teal": 726,
+    "source": "contracts/ARC11550Bridge.algo.ts:122",
+    "pc": [
+      798
+    ]
+  },
+  {
+    "teal": 727,
+    "source": "contracts/ARC11550Bridge.algo.ts:122",
+    "pc": [
+      799,
+      800
     ]
   },
   {
     "teal": 728,
     "source": "contracts/ARC11550Bridge.algo.ts:122",
     "pc": [
-      800,
       801
     ]
   },
@@ -3386,34 +3386,40 @@
     "teal": 729,
     "source": "contracts/ARC11550Bridge.algo.ts:122",
     "pc": [
-      802,
-      803
+      802
     ]
   },
   {
     "teal": 733,
     "source": "contracts/ARC11550Bridge.algo.ts:123",
     "pc": [
-      804
+      803
     ]
   },
   {
     "teal": 734,
     "source": "contracts/ARC11550Bridge.algo.ts:123",
     "pc": [
-      805,
-      806
+      804,
+      805
     ]
   },
   {
     "teal": 735,
     "source": "contracts/ARC11550Bridge.algo.ts:123",
     "pc": [
-      807
+      806
     ]
   },
   {
     "teal": 736,
+    "source": "contracts/ARC11550Bridge.algo.ts:123",
+    "pc": [
+      807
+    ]
+  },
+  {
+    "teal": 737,
     "source": "contracts/ARC11550Bridge.algo.ts:123",
     "pc": [
       808,
@@ -3421,150 +3427,138 @@
     ]
   },
   {
-    "teal": 737,
+    "teal": 738,
     "source": "contracts/ARC11550Bridge.algo.ts:123",
     "pc": [
       810
     ]
   },
   {
-    "teal": 738,
-    "source": "contracts/ARC11550Bridge.algo.ts:123",
+    "teal": 743,
+    "source": "contracts/ARC11550Bridge.algo.ts:126",
     "pc": [
       811
     ]
   },
   {
-    "teal": 742,
-    "source": "contracts/ARC11550Bridge.algo.ts:124",
+    "teal": 744,
+    "source": "contracts/ARC11550Bridge.algo.ts:126",
     "pc": [
-      812
+      812,
+      813
     ]
   },
   {
-    "teal": 743,
-    "source": "contracts/ARC11550Bridge.algo.ts:124",
+    "teal": 745,
+    "source": "contracts/ARC11550Bridge.algo.ts:126",
     "pc": [
-      813,
       814
     ]
   },
   {
-    "teal": 744,
-    "source": "contracts/ARC11550Bridge.algo.ts:124",
+    "teal": 746,
+    "source": "contracts/ARC11550Bridge.algo.ts:126",
     "pc": [
       815
     ]
   },
   {
-    "teal": 745,
-    "source": "contracts/ARC11550Bridge.algo.ts:124",
+    "teal": 749,
+    "source": "contracts/ARC11550Bridge.algo.ts:126",
+    "errorMessage": "box value does not exist: this.arc11550ToAsaMap(arc11550).value",
     "pc": [
       816
     ]
   },
   {
-    "teal": 746,
-    "source": "contracts/ARC11550Bridge.algo.ts:124",
+    "teal": 750,
+    "source": "contracts/ARC11550Bridge.algo.ts:126",
     "pc": [
-      817,
-      818
+      817
     ]
   },
   {
-    "teal": 747,
-    "source": "contracts/ARC11550Bridge.algo.ts:124",
+    "teal": 751,
+    "source": "contracts/ARC11550Bridge.algo.ts:126",
     "pc": [
+      818,
       819
     ]
   },
   {
-    "teal": 752,
-    "source": "contracts/ARC11550Bridge.algo.ts:127",
+    "teal": 756,
+    "source": "contracts/ARC11550Bridge.algo.ts:128",
     "pc": [
-      820
+      820,
+      821
     ]
   },
   {
-    "teal": 753,
-    "source": "contracts/ARC11550Bridge.algo.ts:127",
+    "teal": 757,
+    "source": "contracts/ARC11550Bridge.algo.ts:128",
     "pc": [
-      821,
-      822
-    ]
-  },
-  {
-    "teal": 754,
-    "source": "contracts/ARC11550Bridge.algo.ts:127",
-    "pc": [
+      822,
       823
     ]
   },
   {
-    "teal": 755,
-    "source": "contracts/ARC11550Bridge.algo.ts:127",
-    "pc": [
-      824
-    ]
-  },
-  {
     "teal": 758,
-    "source": "contracts/ARC11550Bridge.algo.ts:127",
-    "errorMessage": "box value does not exist: this.arc11550ToAsaMap(arc11550).value",
+    "source": "contracts/ARC11550Bridge.algo.ts:128",
     "pc": [
+      824,
       825
     ]
   },
   {
     "teal": 759,
-    "source": "contracts/ARC11550Bridge.algo.ts:127",
+    "source": "contracts/ARC11550Bridge.algo.ts:128",
     "pc": [
       826
     ]
   },
   {
     "teal": 760,
-    "source": "contracts/ARC11550Bridge.algo.ts:127",
+    "source": "contracts/ARC11550Bridge.algo.ts:128",
     "pc": [
-      827,
+      827
+    ]
+  },
+  {
+    "teal": 761,
+    "source": "contracts/ARC11550Bridge.algo.ts:128",
+    "pc": [
       828
     ]
   },
   {
-    "teal": 765,
-    "source": "contracts/ARC11550Bridge.algo.ts:129",
+    "teal": 762,
+    "source": "contracts/ARC11550Bridge.algo.ts:128",
     "pc": [
       829,
-      830
-    ]
-  },
-  {
-    "teal": 766,
-    "source": "contracts/ARC11550Bridge.algo.ts:129",
-    "pc": [
-      831,
-      832
+      830,
+      831
     ]
   },
   {
     "teal": 767,
     "source": "contracts/ARC11550Bridge.algo.ts:129",
     "pc": [
-      833,
-      834
+      832,
+      833
     ]
   },
   {
     "teal": 768,
     "source": "contracts/ARC11550Bridge.algo.ts:129",
     "pc": [
-      835
+      834
     ]
   },
   {
     "teal": 769,
     "source": "contracts/ARC11550Bridge.algo.ts:129",
     "pc": [
+      835,
       836
     ]
   },
@@ -3580,412 +3574,424 @@
     "source": "contracts/ARC11550Bridge.algo.ts:129",
     "pc": [
       838,
-      839,
-      840
+      839
     ]
   },
   {
     "teal": 776,
     "source": "contracts/ARC11550Bridge.algo.ts:130",
     "pc": [
-      841,
-      842
+      840,
+      841
     ]
   },
   {
     "teal": 777,
     "source": "contracts/ARC11550Bridge.algo.ts:130",
     "pc": [
-      843
+      842
     ]
   },
   {
     "teal": 778,
     "source": "contracts/ARC11550Bridge.algo.ts:130",
     "pc": [
-      844,
-      845
+      843
     ]
   },
   {
     "teal": 779,
     "source": "contracts/ARC11550Bridge.algo.ts:130",
     "pc": [
-      846
+      844
     ]
   },
   {
     "teal": 780,
     "source": "contracts/ARC11550Bridge.algo.ts:130",
     "pc": [
+      845
+    ]
+  },
+  {
+    "teal": 781,
+    "source": "contracts/ARC11550Bridge.algo.ts:130",
+    "pc": [
+      846,
       847,
       848
     ]
   },
   {
-    "teal": 785,
-    "source": "contracts/ARC11550Bridge.algo.ts:131",
+    "teal": 786,
+    "source": "contracts/ARC11550Bridge.algo.ts:130",
     "pc": [
       849,
       850
     ]
   },
   {
-    "teal": 786,
-    "source": "contracts/ARC11550Bridge.algo.ts:131",
+    "teal": 787,
+    "source": "contracts/ARC11550Bridge.algo.ts:130",
     "pc": [
       851
     ]
   },
   {
-    "teal": 787,
-    "source": "contracts/ARC11550Bridge.algo.ts:131",
+    "teal": 788,
+    "source": "contracts/ARC11550Bridge.algo.ts:130",
     "pc": [
       852
     ]
   },
   {
-    "teal": 788,
-    "source": "contracts/ARC11550Bridge.algo.ts:131",
+    "teal": 789,
+    "source": "contracts/ARC11550Bridge.algo.ts:130",
     "pc": [
       853
     ]
   },
   {
-    "teal": 789,
-    "source": "contracts/ARC11550Bridge.algo.ts:131",
+    "teal": 794,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
     "pc": [
-      854
-    ]
-  },
-  {
-    "teal": 790,
-    "source": "contracts/ARC11550Bridge.algo.ts:131",
-    "pc": [
-      855,
-      856,
-      857
+      854,
+      855
     ]
   },
   {
     "teal": 795,
-    "source": "contracts/ARC11550Bridge.algo.ts:131",
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
     "pc": [
-      858,
-      859
-    ]
-  },
-  {
-    "teal": 796,
-    "source": "contracts/ARC11550Bridge.algo.ts:131",
-    "pc": [
-      860
-    ]
-  },
-  {
-    "teal": 797,
-    "source": "contracts/ARC11550Bridge.algo.ts:131",
-    "pc": [
-      861
+      856
     ]
   },
   {
     "teal": 798,
-    "source": "contracts/ARC11550Bridge.algo.ts:131",
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
+    "errorMessage": "box value does not exist: this.withdrawAmounts(key).value",
     "pc": [
+      857
+    ]
+  },
+  {
+    "teal": 799,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
+    "pc": [
+      858
+    ]
+  },
+  {
+    "teal": 800,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
+    "pc": [
+      859,
+      860
+    ]
+  },
+  {
+    "teal": 801,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
+    "pc": [
+      861,
       862
     ]
   },
   {
-    "teal": 803,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
+    "teal": 802,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
     "pc": [
-      863,
-      864
+      863
     ]
   },
   {
-    "teal": 804,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
+    "teal": 803,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
     "pc": [
+      864,
       865
     ]
   },
   {
-    "teal": 807,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
-    "errorMessage": "box value does not exist: this.withdrawAmounts(key).value",
+    "teal": 804,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
     "pc": [
-      866
-    ]
-  },
-  {
-    "teal": 808,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
-    "pc": [
+      866,
       867
     ]
   },
   {
-    "teal": 809,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
+    "teal": 805,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
     "pc": [
-      868,
+      868
+    ]
+  },
+  {
+    "teal": 806,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
+    "pc": [
       869
     ]
   },
   {
-    "teal": 810,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
+    "teal": 807,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
     "pc": [
       870,
       871
     ]
   },
   {
-    "teal": 811,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
+    "teal": 808,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
     "pc": [
       872
     ]
   },
   {
-    "teal": 812,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
+    "teal": 809,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
     "pc": [
       873,
       874
     ]
   },
   {
-    "teal": 813,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
+    "teal": 810,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
     "pc": [
-      875,
+      875
+    ]
+  },
+  {
+    "teal": 811,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
+    "pc": [
       876
     ]
   },
   {
-    "teal": 814,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
+    "teal": 812,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
     "pc": [
       877
     ]
   },
   {
-    "teal": 815,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
+    "teal": 813,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
     "pc": [
       878
     ]
   },
   {
-    "teal": 816,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
+    "teal": 814,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
     "pc": [
-      879,
-      880
+      879
     ]
   },
   {
-    "teal": 817,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
+    "teal": 815,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
     "pc": [
+      880,
       881
     ]
   },
   {
-    "teal": 818,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
+    "teal": 816,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
     "pc": [
-      882,
+      882
+    ]
+  },
+  {
+    "teal": 817,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
+    "pc": [
       883
     ]
   },
   {
-    "teal": 819,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
+    "teal": 818,
+    "source": "contracts/ARC11550Bridge.algo.ts:132",
     "pc": [
       884
     ]
   },
   {
-    "teal": 820,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
+    "teal": 819,
+    "source": "contracts/ARC11550Bridge.algo.ts:128",
     "pc": [
-      885
-    ]
-  },
-  {
-    "teal": 821,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
-    "pc": [
-      886
-    ]
-  },
-  {
-    "teal": 822,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
-    "pc": [
+      885,
+      886,
       887
     ]
   },
   {
-    "teal": 823,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
+    "teal": 824,
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
       888
     ]
   },
   {
-    "teal": 824,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
+    "teal": 825,
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
       889,
       890
     ]
   },
   {
-    "teal": 825,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
-    "pc": [
-      891
-    ]
-  },
-  {
     "teal": 826,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
+      891,
       892
     ]
   },
   {
-    "teal": 827,
-    "source": "contracts/ARC11550Bridge.algo.ts:133",
+    "teal": 830,
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
-      893
+      893,
+      894
     ]
   },
   {
-    "teal": 828,
-    "source": "contracts/ARC11550Bridge.algo.ts:129",
+    "teal": 831,
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
-      894,
       895,
       896
     ]
   },
   {
-    "teal": 833,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
-    "pc": [
-      897
-    ]
-  },
-  {
-    "teal": 834,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
-    "pc": [
-      898,
-      899
-    ]
-  },
-  {
     "teal": 835,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
-      900,
-      901
+      897,
+      898
     ]
   },
   {
-    "teal": 839,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
+    "teal": 836,
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
-      902,
-      903
+      899,
+      900
     ]
   },
   {
     "teal": 840,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
-      904,
+      901,
+      902
+    ]
+  },
+  {
+    "teal": 841,
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
+    "pc": [
+      903,
+      904
+    ]
+  },
+  {
+    "teal": 842,
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
+    "pc": [
       905
     ]
   },
   {
-    "teal": 844,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
+    "teal": 843,
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
       906,
       907
     ]
   },
   {
-    "teal": 845,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
+    "teal": 844,
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
       908,
       909
     ]
   },
   {
-    "teal": 849,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
+    "teal": 845,
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
-      910,
+      910
+    ]
+  },
+  {
+    "teal": 846,
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
+    "pc": [
       911
     ]
   },
   {
-    "teal": 850,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
+    "teal": 847,
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
       912,
       913
     ]
   },
   {
-    "teal": 851,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
+    "teal": 848,
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
       914
     ]
   },
   {
-    "teal": 852,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
+    "teal": 849,
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
       915,
       916
     ]
   },
   {
-    "teal": 853,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
+    "teal": 850,
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
-      917,
+      917
+    ]
+  },
+  {
+    "teal": 851,
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
+    "pc": [
       918
     ]
   },
   {
-    "teal": 854,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
+    "teal": 852,
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
       919
     ]
   },
   {
-    "teal": 855,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
+    "teal": 853,
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
       920
     ]
   },
   {
-    "teal": 856,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
+    "teal": 854,
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
       921,
       922
@@ -3993,111 +3999,106 @@
   },
   {
     "teal": 857,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
       923
     ]
   },
   {
     "teal": 858,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
       924,
       925
     ]
   },
   {
-    "teal": 859,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
+    "teal": 861,
+    "source": "contracts/ARC11550Bridge.algo.ts:134",
     "pc": [
       926
     ]
   },
   {
-    "teal": 860,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
+    "teal": 866,
+    "source": "contracts/ARC11550Bridge.algo.ts:137",
     "pc": [
-      927
-    ]
-  },
-  {
-    "teal": 861,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
-    "pc": [
+      927,
       928
     ]
   },
   {
-    "teal": 862,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
+    "teal": 869,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
-      929
+      929,
+      930
     ]
   },
   {
-    "teal": 863,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
+    "teal": 872,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
-      930,
-      931
-    ]
-  },
-  {
-    "teal": 866,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
-    "pc": [
+      931,
       932
     ]
   },
   {
-    "teal": 867,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
+    "teal": 873,
+    "source": "contracts/ARC11550Bridge.algo.ts:92",
     "pc": [
-      933,
-      934
-    ]
-  },
-  {
-    "teal": 870,
-    "source": "contracts/ARC11550Bridge.algo.ts:135",
-    "pc": [
-      935
-    ]
-  },
-  {
-    "teal": 875,
-    "source": "contracts/ARC11550Bridge.algo.ts:138",
-    "pc": [
-      936,
-      937
+      933
     ]
   },
   {
     "teal": 878,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "source": "contracts/ARC11550Bridge.algo.ts:140",
     "pc": [
-      938,
-      939
+      934,
+      935,
+      936
+    ]
+  },
+  {
+    "teal": 879,
+    "source": "contracts/ARC11550Bridge.algo.ts:140",
+    "pc": [
+      937
+    ]
+  },
+  {
+    "teal": 880,
+    "source": "contracts/ARC11550Bridge.algo.ts:140",
+    "pc": [
+      938
     ]
   },
   {
     "teal": 881,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "source": "contracts/ARC11550Bridge.algo.ts:140",
     "pc": [
-      940,
-      941
+      939,
+      940
     ]
   },
   {
     "teal": 882,
-    "source": "contracts/ARC11550Bridge.algo.ts:93",
+    "source": "contracts/ARC11550Bridge.algo.ts:140",
+    "pc": [
+      941
+    ]
+  },
+  {
+    "teal": 885,
+    "source": "contracts/ARC11550Bridge.algo.ts:140",
+    "errorMessage": "argument 0 (withdrawalFor) for withdrawAsa must be a address",
     "pc": [
       942
     ]
   },
   {
-    "teal": 887,
-    "source": "contracts/ARC11550Bridge.algo.ts:141",
+    "teal": 888,
+    "source": "contracts/ARC11550Bridge.algo.ts:140",
     "pc": [
       943,
       944,
@@ -4105,45 +4106,38 @@
     ]
   },
   {
-    "teal": 888,
-    "source": "contracts/ARC11550Bridge.algo.ts:141",
+    "teal": 889,
+    "source": "contracts/ARC11550Bridge.algo.ts:140",
     "pc": [
       946
     ]
   },
   {
-    "teal": 889,
-    "source": "contracts/ARC11550Bridge.algo.ts:141",
+    "teal": 892,
+    "source": "contracts/ARC11550Bridge.algo.ts:140",
     "pc": [
-      947
-    ]
-  },
-  {
-    "teal": 890,
-    "source": "contracts/ARC11550Bridge.algo.ts:141",
-    "pc": [
+      947,
       948,
       949
     ]
   },
   {
-    "teal": 891,
-    "source": "contracts/ARC11550Bridge.algo.ts:141",
+    "teal": 893,
+    "source": "contracts/ARC11550Bridge.algo.ts:140",
     "pc": [
       950
     ]
   },
   {
     "teal": 894,
-    "source": "contracts/ARC11550Bridge.algo.ts:141",
-    "errorMessage": "argument 0 (withdrawalFor) for withdrawAsa must be a address",
+    "source": "contracts/ARC11550Bridge.algo.ts:140",
     "pc": [
       951
     ]
   },
   {
-    "teal": 897,
-    "source": "contracts/ARC11550Bridge.algo.ts:141",
+    "teal": 898,
+    "source": "contracts/ARC11550Bridge.algo.ts:140",
     "pc": [
       952,
       953,
@@ -4151,47 +4145,53 @@
     ]
   },
   {
-    "teal": 898,
-    "source": "contracts/ARC11550Bridge.algo.ts:141",
+    "teal": 901,
+    "source": "contracts/ARC11550Bridge.algo.ts:140",
     "pc": [
       955
     ]
   },
   {
-    "teal": 901,
+    "teal": 905,
     "source": "contracts/ARC11550Bridge.algo.ts:141",
     "pc": [
       956,
-      957,
+      957
+    ]
+  },
+  {
+    "teal": 906,
+    "source": "contracts/ARC11550Bridge.algo.ts:141",
+    "pc": [
       958
-    ]
-  },
-  {
-    "teal": 902,
-    "source": "contracts/ARC11550Bridge.algo.ts:141",
-    "pc": [
-      959
-    ]
-  },
-  {
-    "teal": 903,
-    "source": "contracts/ARC11550Bridge.algo.ts:141",
-    "pc": [
-      960
     ]
   },
   {
     "teal": 907,
     "source": "contracts/ARC11550Bridge.algo.ts:141",
     "pc": [
-      961,
+      959,
+      960
+    ]
+  },
+  {
+    "teal": 908,
+    "source": "contracts/ARC11550Bridge.algo.ts:141",
+    "pc": [
+      961
+    ]
+  },
+  {
+    "teal": 909,
+    "source": "contracts/ARC11550Bridge.algo.ts:141",
+    "pc": [
       962,
       963
     ]
   },
   {
-    "teal": 910,
-    "source": "contracts/ARC11550Bridge.algo.ts:141",
+    "teal": 913,
+    "source": "contracts/ARC11550Bridge.algo.ts:142",
     "pc": [
       964
     ]
@@ -4208,26 +4208,20 @@
     "teal": 915,
     "source": "contracts/ARC11550Bridge.algo.ts:142",
     "pc": [
-      967
+      967,
+      968
     ]
   },
   {
-    "teal": 916,
+    "teal": 919,
     "source": "contracts/ARC11550Bridge.algo.ts:142",
     "pc": [
-      968,
-      969
-    ]
-  },
-  {
-    "teal": 917,
-    "source": "contracts/ARC11550Bridge.algo.ts:142",
-    "pc": [
+      969,
       970
     ]
   },
   {
-    "teal": 918,
+    "teal": 920,
     "source": "contracts/ARC11550Bridge.algo.ts:142",
     "pc": [
       971,
@@ -4235,219 +4229,201 @@
     ]
   },
   {
-    "teal": 922,
-    "source": "contracts/ARC11550Bridge.algo.ts:143",
-    "pc": [
-      973
-    ]
-  },
-  {
-    "teal": 923,
-    "source": "contracts/ARC11550Bridge.algo.ts:143",
-    "pc": [
-      974,
-      975
-    ]
-  },
-  {
     "teal": 924,
-    "source": "contracts/ARC11550Bridge.algo.ts:143",
+    "source": "contracts/ARC11550Bridge.algo.ts:142",
     "pc": [
-      976,
-      977
+      973,
+      974
     ]
   },
   {
-    "teal": 928,
-    "source": "contracts/ARC11550Bridge.algo.ts:143",
+    "teal": 925,
+    "source": "contracts/ARC11550Bridge.algo.ts:142",
     "pc": [
-      978,
-      979
+      975,
+      976
     ]
   },
   {
     "teal": 929,
-    "source": "contracts/ARC11550Bridge.algo.ts:143",
+    "source": "contracts/ARC11550Bridge.algo.ts:142",
     "pc": [
-      980,
-      981
+      977,
+      978
+    ]
+  },
+  {
+    "teal": 930,
+    "source": "contracts/ARC11550Bridge.algo.ts:142",
+    "pc": [
+      979
     ]
   },
   {
     "teal": 933,
-    "source": "contracts/ARC11550Bridge.algo.ts:143",
+    "source": "contracts/ARC11550Bridge.algo.ts:142",
+    "errorMessage": "box value does not exist: this.withdrawAmounts(key).value",
+    "pc": [
+      980
+    ]
+  },
+  {
+    "teal": 934,
+    "source": "contracts/ARC11550Bridge.algo.ts:142",
+    "pc": [
+      981
+    ]
+  },
+  {
+    "teal": 935,
+    "source": "contracts/ARC11550Bridge.algo.ts:142",
     "pc": [
       982,
       983
     ]
   },
   {
-    "teal": 934,
-    "source": "contracts/ARC11550Bridge.algo.ts:143",
-    "pc": [
-      984,
-      985
-    ]
-  },
-  {
     "teal": 938,
-    "source": "contracts/ARC11550Bridge.algo.ts:143",
+    "source": "contracts/ARC11550Bridge.algo.ts:142",
     "pc": [
-      986,
-      987
+      984
     ]
   },
   {
     "teal": 939,
-    "source": "contracts/ARC11550Bridge.algo.ts:143",
+    "source": "contracts/ARC11550Bridge.algo.ts:142",
     "pc": [
-      988
+      985,
+      986
     ]
   },
   {
     "teal": 942,
-    "source": "contracts/ARC11550Bridge.algo.ts:143",
-    "errorMessage": "box value does not exist: this.withdrawAmounts(key).value",
+    "source": "contracts/ARC11550Bridge.algo.ts:142",
     "pc": [
+      987
+    ]
+  },
+  {
+    "teal": 946,
+    "source": "contracts/ARC11550Bridge.algo.ts:143",
+    "pc": [
+      988,
       989
-    ]
-  },
-  {
-    "teal": 943,
-    "source": "contracts/ARC11550Bridge.algo.ts:143",
-    "pc": [
-      990
-    ]
-  },
-  {
-    "teal": 944,
-    "source": "contracts/ARC11550Bridge.algo.ts:143",
-    "pc": [
-      991,
-      992
     ]
   },
   {
     "teal": 947,
     "source": "contracts/ARC11550Bridge.algo.ts:143",
     "pc": [
-      993
+      990
     ]
   },
   {
     "teal": 948,
-    "source": "contracts/ARC11550Bridge.algo.ts:143",
+    "source": "contracts/ARC11550Bridge.algo.ts:140",
     "pc": [
-      994,
-      995
+      991
     ]
   },
   {
     "teal": 951,
-    "source": "contracts/ARC11550Bridge.algo.ts:143",
+    "source": "contracts/ARC11550Bridge.algo.ts:15",
     "pc": [
-      996
+      992,
+      993,
+      994,
+      995,
+      996,
+      997
     ]
   },
   {
-    "teal": 955,
-    "source": "contracts/ARC11550Bridge.algo.ts:144",
+    "teal": 952,
+    "source": "contracts/ARC11550Bridge.algo.ts:15",
     "pc": [
-      997,
-      998
+      998,
+      999,
+      1000
+    ]
+  },
+  {
+    "teal": 953,
+    "source": "contracts/ARC11550Bridge.algo.ts:15",
+    "pc": [
+      1001,
+      1002,
+      1003,
+      1004
     ]
   },
   {
     "teal": 956,
-    "source": "contracts/ARC11550Bridge.algo.ts:144",
+    "source": "contracts/ARC11550Bridge.algo.ts:15",
+    "errorMessage": "this contract does not implement the given ABI method for create NoOp",
     "pc": [
-      999
+      1005
     ]
   },
   {
-    "teal": 957,
-    "source": "contracts/ARC11550Bridge.algo.ts:141",
+    "teal": 959,
+    "source": "contracts/ARC11550Bridge.algo.ts:15",
     "pc": [
-      1000
+      1006,
+      1007,
+      1008,
+      1009,
+      1010,
+      1011
     ]
   },
   {
     "teal": 960,
     "source": "contracts/ARC11550Bridge.algo.ts:15",
     "pc": [
-      1001,
-      1002,
-      1003,
-      1004,
-      1005,
-      1006
+      1012,
+      1013,
+      1014,
+      1015,
+      1016,
+      1017
     ]
   },
   {
     "teal": 961,
     "source": "contracts/ARC11550Bridge.algo.ts:15",
     "pc": [
-      1007,
-      1008,
-      1009
+      1018,
+      1019,
+      1020,
+      1021,
+      1022,
+      1023
     ]
   },
   {
     "teal": 962,
     "source": "contracts/ARC11550Bridge.algo.ts:15",
     "pc": [
-      1010,
-      1011,
-      1012,
-      1013
-    ]
-  },
-  {
-    "teal": 965,
-    "source": "contracts/ARC11550Bridge.algo.ts:15",
-    "errorMessage": "this contract does not implement the given ABI method for create NoOp",
-    "pc": [
-      1014
-    ]
-  },
-  {
-    "teal": 968,
-    "source": "contracts/ARC11550Bridge.algo.ts:15",
-    "pc": [
-      1015,
-      1016,
-      1017,
-      1018,
-      1019,
-      1020
-    ]
-  },
-  {
-    "teal": 969,
-    "source": "contracts/ARC11550Bridge.algo.ts:15",
-    "pc": [
-      1021,
-      1022,
-      1023,
       1024,
       1025,
-      1026
+      1026,
+      1027,
+      1028,
+      1029
     ]
   },
   {
-    "teal": 970,
+    "teal": 963,
     "source": "contracts/ARC11550Bridge.algo.ts:15",
     "pc": [
-      1027,
-      1028,
-      1029,
       1030,
       1031,
       1032
     ]
   },
   {
-    "teal": 971,
+    "teal": 964,
     "source": "contracts/ARC11550Bridge.algo.ts:15",
     "pc": [
       1033,
@@ -4455,40 +4431,19 @@
       1035,
       1036,
       1037,
-      1038
-    ]
-  },
-  {
-    "teal": 972,
-    "source": "contracts/ARC11550Bridge.algo.ts:15",
-    "pc": [
+      1038,
       1039,
       1040,
-      1041
+      1041,
+      1042
     ]
   },
   {
-    "teal": 973,
-    "source": "contracts/ARC11550Bridge.algo.ts:15",
-    "pc": [
-      1042,
-      1043,
-      1044,
-      1045,
-      1046,
-      1047,
-      1048,
-      1049,
-      1050,
-      1051
-    ]
-  },
-  {
-    "teal": 976,
+    "teal": 967,
     "source": "contracts/ARC11550Bridge.algo.ts:15",
     "errorMessage": "this contract does not implement the given ABI method for call NoOp",
     "pc": [
-      1052
+      1043
     ]
   }
 ]

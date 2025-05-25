@@ -14,6 +14,7 @@ export type AsaAndAddr = {
 
 export class ARC11550Bridge extends Contract {
   asaToArc11550Map = BoxMap<AssetID, Arc11550Id>({ prefix: 'asa' });
+
   arc11550ToAsaMap = BoxMap<Arc11550Id, AssetID>({ prefix: 'app' });
 
   /** The data app to use when creating new tokens */
@@ -47,8 +48,6 @@ export class ARC11550Bridge extends Contract {
     });
 
     const asa = axfer.xferAsset;
-
-    assert(asa.clawback === Address.zeroAddress);
 
     // If there isn't already a token for this ASA, create it
     if (!this.asaToArc11550Map(axfer.xferAsset).exists) {

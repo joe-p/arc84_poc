@@ -39,13 +39,13 @@ switch *call_NoOp *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEM
 createApplication:
 	proto 1 0
 
-	// contracts/ARC11550Bridge.algo.ts:29
+	// contracts/ARC11550Bridge.algo.ts:30
 	// this.dataApp.value = dataApp
 	bytec 3 //  "dataApp"
 	frame_dig -1 // dataApp: AppID
 	app_global_put
 
-	// contracts/ARC11550Bridge.algo.ts:30
+	// contracts/ARC11550Bridge.algo.ts:31
 	// this.collection.value = sendMethodCall<typeof ARC11550Data.prototype.arc11550_newCollection>({
 	//       applicationID: dataApp,
 	//       methodArgs: [this.app.address, btoi(hex('0xFFFFFFFFFFFFFFFF'))],
@@ -57,12 +57,12 @@ createApplication:
 	pushbytes 0xc69571f8 // method "arc11550_newCollection(address,uint64)uint64"
 	itxn_field ApplicationArgs
 
-	// contracts/ARC11550Bridge.algo.ts:31
+	// contracts/ARC11550Bridge.algo.ts:32
 	// applicationID: dataApp
 	frame_dig -1 // dataApp: AppID
 	itxn_field ApplicationID
 
-	// contracts/ARC11550Bridge.algo.ts:32
+	// contracts/ARC11550Bridge.algo.ts:33
 	// methodArgs: [this.app.address, btoi(hex('0xFFFFFFFFFFFFFFFF'))]
 	global CurrentApplicationAddress
 	itxn_field ApplicationArgs
@@ -99,7 +99,7 @@ createApplication:
 optInToAsa:
 	proto 1 0
 
-	// contracts/ARC11550Bridge.algo.ts:37
+	// contracts/ARC11550Bridge.algo.ts:38
 	// sendAssetTransfer({
 	//       xferAsset: asa,
 	//       assetAmount: 0,
@@ -109,17 +109,17 @@ optInToAsa:
 	intc 5 //  axfer
 	itxn_field TypeEnum
 
-	// contracts/ARC11550Bridge.algo.ts:38
+	// contracts/ARC11550Bridge.algo.ts:39
 	// xferAsset: asa
 	frame_dig -1 // asa: AssetID
 	itxn_field XferAsset
 
-	// contracts/ARC11550Bridge.algo.ts:39
+	// contracts/ARC11550Bridge.algo.ts:40
 	// assetAmount: 0
 	intc 0 // 0
 	itxn_field AssetAmount
 
-	// contracts/ARC11550Bridge.algo.ts:40
+	// contracts/ARC11550Bridge.algo.ts:41
 	// assetReceiver: this.app.address
 	global CurrentApplicationAddress
 	itxn_field AssetReceiver
@@ -174,7 +174,7 @@ asaToArc11550:
 	bytec 0 // 0x
 	dupn 4
 
-	// contracts/ARC11550Bridge.algo.ts:45
+	// contracts/ARC11550Bridge.algo.ts:46
 	// verifyAssetTransferTxn(axfer, {
 	//       assetReceiver: this.app.address,
 	//     })
@@ -187,23 +187,14 @@ asaToArc11550:
 	// transaction verification failed: {"txn":"axfer","field":"assetReceiver","expected":"this.app.address"}
 	assert
 
-	// contracts/ARC11550Bridge.algo.ts:49
+	// contracts/ARC11550Bridge.algo.ts:50
 	// asa = axfer.xferAsset
 	frame_dig -1 // axfer: AssetTransferTxn
 	gtxns XferAsset
 	frame_bury 0 // asa: uint64
 
-	// contracts/ARC11550Bridge.algo.ts:51
-	// assert(asa.clawback === Address.zeroAddress)
-	frame_dig 0 // asa: uint64
-	asset_params_get AssetClawback
-	pop
-	global ZeroAddress
-	==
-	assert
-
 	// *if0_condition
-	// contracts/ARC11550Bridge.algo.ts:54
+	// contracts/ARC11550Bridge.algo.ts:53
 	// !this.asaToArc11550Map(axfer.xferAsset).exists
 	bytec 1 //  "asa"
 	frame_dig -1 // axfer: AssetTransferTxn
@@ -217,7 +208,7 @@ asaToArc11550:
 	bz *if0_end
 
 	// *if0_consequent
-	// contracts/ARC11550Bridge.algo.ts:55
+	// contracts/ARC11550Bridge.algo.ts:54
 	// id = sendMethodCall<typeof ARC11550Data.prototype.arc11550_mint>({
 	//         applicationID: this.dataApp.value,
 	//         methodArgs: [
@@ -238,13 +229,13 @@ asaToArc11550:
 	pushbytes 0xbf8003d5 // method "arc11550_mint(uint64,(byte[32],byte[8],uint64,uint64,address,uint64))uint64"
 	itxn_field ApplicationArgs
 
-	// contracts/ARC11550Bridge.algo.ts:56
+	// contracts/ARC11550Bridge.algo.ts:55
 	// applicationID: this.dataApp.value
 	bytec 3 //  "dataApp"
 	app_global_get
 	itxn_field ApplicationID
 
-	// contracts/ARC11550Bridge.algo.ts:57
+	// contracts/ARC11550Bridge.algo.ts:56
 	// methodArgs: [
 	//           this.collection.value,
 	//           {
@@ -313,7 +304,7 @@ asaToArc11550:
 	btoi
 	frame_bury 1 // id: uint64
 
-	// contracts/ARC11550Bridge.algo.ts:70
+	// contracts/ARC11550Bridge.algo.ts:69
 	// appAndId: Arc11550Id = { dataApp: this.dataApp.value, id: id }
 	frame_dig 1 // id: uint64
 	itob
@@ -323,7 +314,7 @@ asaToArc11550:
 	concat
 	frame_bury 2 // appAndId: Arc11550Id
 
-	// contracts/ARC11550Bridge.algo.ts:71
+	// contracts/ARC11550Bridge.algo.ts:70
 	// this.asaToArc11550Map(asa).value = appAndId
 	bytec 1 //  "asa"
 	frame_dig 0 // asa: uint64
@@ -332,7 +323,7 @@ asaToArc11550:
 	frame_dig 2 // appAndId: Arc11550Id
 	box_put
 
-	// contracts/ARC11550Bridge.algo.ts:72
+	// contracts/ARC11550Bridge.algo.ts:71
 	// this.arc11550ToAsaMap(appAndId).value = asa
 	bytec 2 //  "app"
 	frame_dig 2 // appAndId: Arc11550Id
@@ -342,7 +333,7 @@ asaToArc11550:
 	box_put
 
 *if0_end:
-	// contracts/ARC11550Bridge.algo.ts:75
+	// contracts/ARC11550Bridge.algo.ts:74
 	// arc11550 = this.asaToArc11550Map(asa).value
 	bytec 1 //  "asa"
 	frame_dig 0 // asa: uint64
@@ -350,7 +341,7 @@ asaToArc11550:
 	concat
 	frame_bury 3 // storage key//arc11550
 
-	// contracts/ARC11550Bridge.algo.ts:77
+	// contracts/ARC11550Bridge.algo.ts:76
 	// xferApp = sendMethodCall<typeof ARC11550Data.prototype.arc11550_transferApp>({
 	//       applicationID: arc11550.dataApp,
 	//     })
@@ -360,7 +351,7 @@ asaToArc11550:
 	bytec 7 //  method "arc11550_transferApp()uint64"
 	itxn_field ApplicationArgs
 
-	// contracts/ARC11550Bridge.algo.ts:78
+	// contracts/ARC11550Bridge.algo.ts:77
 	// applicationID: arc11550.dataApp
 	intc 2 //  headOffset
 	intc 2 // 8
@@ -387,7 +378,7 @@ asaToArc11550:
 	btoi
 	frame_bury 4 // xferApp: uint64
 
-	// contracts/ARC11550Bridge.algo.ts:82
+	// contracts/ARC11550Bridge.algo.ts:81
 	// sendMethodCall<typeof ARC11550Transfer.prototype.arc11550_transfer>({
 	//       applicationID: xferApp,
 	//       methodArgs: [
@@ -401,12 +392,12 @@ asaToArc11550:
 	pushbytes 0x61bacfc8 // method "arc11550_transfer(uint64,(uint64,address,address,uint64)[])void"
 	itxn_field ApplicationArgs
 
-	// contracts/ARC11550Bridge.algo.ts:83
+	// contracts/ARC11550Bridge.algo.ts:82
 	// applicationID: xferApp
 	frame_dig 4 // xferApp: uint64
 	itxn_field ApplicationID
 
-	// contracts/ARC11550Bridge.algo.ts:84
+	// contracts/ARC11550Bridge.algo.ts:83
 	// methodArgs: [
 	//         arc11550.dataApp,
 	//         [{ tokenId: arc11550.id, amount: axfer.assetAmount, from: this.app.address, to: receiver }],
@@ -457,7 +448,7 @@ asaToArc11550:
 	// Submit inner transaction
 	itxn_submit
 
-	// contracts/ARC11550Bridge.algo.ts:90
+	// contracts/ARC11550Bridge.algo.ts:89
 	// return arc11550;
 	frame_dig 3 // storage key//arc11550
 	box_get
@@ -519,7 +510,7 @@ arc11550ToAsa:
 	bytec 0 // 0x
 	dupn 7
 
-	// contracts/ARC11550Bridge.algo.ts:94
+	// contracts/ARC11550Bridge.algo.ts:93
 	// xfers: Transfer[] = castBytes<Transfer[]>(extract3(xferCall.applicationArgs[2], 2, 0))
 	frame_dig -1 // xferCall: AppCallTxn
 	gtxns ApplicationArgs 2
@@ -528,7 +519,7 @@ arc11550ToAsa:
 	frame_dig -2 // xferIndex: uint64
 	frame_bury 1 // accessor: accessor//0//xfer
 
-	// contracts/ARC11550Bridge.algo.ts:96
+	// contracts/ARC11550Bridge.algo.ts:95
 	// assert(xfer.to === this.app.address)
 	frame_dig 0 // xfers: Transfer[]
 	store 255 // full array
@@ -547,14 +538,14 @@ arc11550ToAsa:
 	==
 	assert
 
-	// contracts/ARC11550Bridge.algo.ts:98
+	// contracts/ARC11550Bridge.algo.ts:97
 	// dataApp = AppID.fromUint64(btoi(xferCall.applicationArgs[1]))
 	frame_dig -1 // xferCall: AppCallTxn
 	gtxns ApplicationArgs 1
 	btoi
 	frame_bury 2 // dataApp: uint64
 
-	// contracts/ARC11550Bridge.algo.ts:101
+	// contracts/ARC11550Bridge.algo.ts:100
 	// assert(
 	//       xferCall.applicationID ==
 	//         sendMethodCall<typeof ARC11550Data.prototype.arc11550_transferApp>({ applicationID: dataApp })
@@ -567,7 +558,7 @@ arc11550ToAsa:
 	bytec 7 //  method "arc11550_transferApp()uint64"
 	itxn_field ApplicationArgs
 
-	// contracts/ARC11550Bridge.algo.ts:103
+	// contracts/ARC11550Bridge.algo.ts:102
 	// applicationID: dataApp
 	frame_dig 2 // dataApp: uint64
 	itxn_field ApplicationID
@@ -587,7 +578,7 @@ arc11550ToAsa:
 	==
 	assert
 
-	// contracts/ARC11550Bridge.algo.ts:106
+	// contracts/ARC11550Bridge.algo.ts:105
 	// arc11550: Arc11550Id = { dataApp: dataApp, id: xfer.tokenId }
 	frame_dig 0 // xfers: Transfer[]
 	store 255 // full array
@@ -610,7 +601,7 @@ arc11550ToAsa:
 	frame_bury 3 // arc11550: Arc11550Id
 
 	// *if1_condition
-	// contracts/ARC11550Bridge.algo.ts:108
+	// contracts/ARC11550Bridge.algo.ts:107
 	// !this.arc11550ToAsaMap(arc11550).exists
 	bytec 2 //  "app"
 	frame_dig 3 // arc11550: Arc11550Id
@@ -622,7 +613,7 @@ arc11550ToAsa:
 	bz *if1_end
 
 	// *if1_consequent
-	// contracts/ARC11550Bridge.algo.ts:109
+	// contracts/ARC11550Bridge.algo.ts:108
 	// params = sendMethodCall<typeof ARC11550Data.prototype.arc11550_params>({
 	//         applicationID: arc11550.dataApp,
 	//         methodArgs: [xfer.tokenId],
@@ -633,14 +624,14 @@ arc11550ToAsa:
 	pushbytes 0xa0ac943c // method "arc11550_params(uint64)(byte[32],byte[8],uint64,uint64,address,uint64)"
 	itxn_field ApplicationArgs
 
-	// contracts/ARC11550Bridge.algo.ts:110
+	// contracts/ARC11550Bridge.algo.ts:109
 	// applicationID: arc11550.dataApp
 	frame_dig 3 // arc11550: Arc11550Id
 	extract 8 8
 	btoi
 	itxn_field ApplicationID
 
-	// contracts/ARC11550Bridge.algo.ts:111
+	// contracts/ARC11550Bridge.algo.ts:110
 	// methodArgs: [xfer.tokenId]
 	frame_dig 0 // xfers: Transfer[]
 	store 255 // full array
@@ -672,7 +663,7 @@ arc11550ToAsa:
 	extract 4 0
 	frame_bury 4 // params: (byte[32],byte[8],uint64,uint64,address,uint64)
 
-	// contracts/ARC11550Bridge.algo.ts:114
+	// contracts/ARC11550Bridge.algo.ts:113
 	// sendAssetCreation({
 	//         configAssetTotal: params.total as uint64,
 	//         configAssetDecimals: params.decimals as uint64,
@@ -684,33 +675,33 @@ arc11550ToAsa:
 	pushint 3 // acfg
 	itxn_field TypeEnum
 
-	// contracts/ARC11550Bridge.algo.ts:115
+	// contracts/ARC11550Bridge.algo.ts:114
 	// configAssetTotal: params.total as uint64
 	frame_dig 4 // params: (byte[32],byte[8],uint64,uint64,address,uint64)
 	extract 40 8
 	btoi
 	itxn_field ConfigAssetTotal
 
-	// contracts/ARC11550Bridge.algo.ts:116
+	// contracts/ARC11550Bridge.algo.ts:115
 	// configAssetDecimals: params.decimals as uint64
 	frame_dig 4 // params: (byte[32],byte[8],uint64,uint64,address,uint64)
 	extract 48 8
 	btoi
 	itxn_field ConfigAssetDecimals
 
-	// contracts/ARC11550Bridge.algo.ts:117
+	// contracts/ARC11550Bridge.algo.ts:116
 	// configAssetName: params.name as bytes
 	frame_dig 4 // params: (byte[32],byte[8],uint64,uint64,address,uint64)
 	extract 0 32
 	itxn_field ConfigAssetName
 
-	// contracts/ARC11550Bridge.algo.ts:118
+	// contracts/ARC11550Bridge.algo.ts:117
 	// configAssetUnitName: params.symbol as bytes
 	frame_dig 4 // params: (byte[32],byte[8],uint64,uint64,address,uint64)
 	extract 32 8
 	itxn_field ConfigAssetUnitName
 
-	// contracts/ARC11550Bridge.algo.ts:119
+	// contracts/ARC11550Bridge.algo.ts:118
 	// configAssetReserve: this.app.address
 	global CurrentApplicationAddress
 	itxn_field ConfigAssetReserve
@@ -723,12 +714,12 @@ arc11550ToAsa:
 	itxn_submit
 	itxn CreatedAssetID
 
-	// contracts/ARC11550Bridge.algo.ts:122
+	// contracts/ARC11550Bridge.algo.ts:121
 	// asa = this.itxn.createdAssetID
 	itxn CreatedAssetID
 	frame_bury 5 // asa: uint64
 
-	// contracts/ARC11550Bridge.algo.ts:123
+	// contracts/ARC11550Bridge.algo.ts:122
 	// this.arc11550ToAsaMap(arc11550).value = asa
 	bytec 2 //  "app"
 	frame_dig 3 // arc11550: Arc11550Id
@@ -737,7 +728,7 @@ arc11550ToAsa:
 	itob
 	box_put
 
-	// contracts/ARC11550Bridge.algo.ts:124
+	// contracts/ARC11550Bridge.algo.ts:123
 	// this.asaToArc11550Map(asa).value = arc11550
 	bytec 1 //  "asa"
 	frame_dig 5 // asa: uint64
@@ -747,7 +738,7 @@ arc11550ToAsa:
 	box_put
 
 *if1_end:
-	// contracts/ARC11550Bridge.algo.ts:127
+	// contracts/ARC11550Bridge.algo.ts:126
 	// asa = this.arc11550ToAsaMap(arc11550).value
 	bytec 2 //  "app"
 	frame_dig 3 // arc11550: Arc11550Id
@@ -760,7 +751,7 @@ arc11550ToAsa:
 	frame_bury 6 // asa: uint64
 
 	// *if2_condition
-	// contracts/ARC11550Bridge.algo.ts:129
+	// contracts/ARC11550Bridge.algo.ts:128
 	// !receiver.isOptedInToAsset(asa)
 	frame_dig -3 // receiver: Address
 	frame_dig 6 // asa: uint64
@@ -771,7 +762,7 @@ arc11550ToAsa:
 	bz *if2_else
 
 	// *if2_consequent
-	// contracts/ARC11550Bridge.algo.ts:130
+	// contracts/ARC11550Bridge.algo.ts:129
 	// key: AsaAndAddr = { asa: asa, address: receiver }
 	frame_dig 6 // asa: uint64
 	itob
@@ -780,7 +771,7 @@ arc11550ToAsa:
 	frame_bury 7 // key: AsaAndAddr
 
 	// *if3_condition
-	// contracts/ARC11550Bridge.algo.ts:131
+	// contracts/ARC11550Bridge.algo.ts:130
 	// !this.withdrawAmounts(key).exists
 	frame_dig 7 // key: AsaAndAddr
 	box_len
@@ -790,7 +781,7 @@ arc11550ToAsa:
 	bz *if3_end
 
 	// *if3_consequent
-	// contracts/ARC11550Bridge.algo.ts:131
+	// contracts/ARC11550Bridge.algo.ts:130
 	// this.withdrawAmounts(key).create()
 	frame_dig 7 // key: AsaAndAddr
 	intc 2 // 8
@@ -798,7 +789,7 @@ arc11550ToAsa:
 	pop
 
 *if3_end:
-	// contracts/ARC11550Bridge.algo.ts:133
+	// contracts/ARC11550Bridge.algo.ts:132
 	// this.withdrawAmounts(key).value += xfer.amount
 	frame_dig 7 // key: AsaAndAddr
 	box_get
@@ -828,23 +819,23 @@ arc11550ToAsa:
 	b *if2_end
 
 *if2_else:
-	// contracts/ARC11550Bridge.algo.ts:135
+	// contracts/ARC11550Bridge.algo.ts:134
 	// sendAssetTransfer({ xferAsset: asa, assetReceiver: receiver, assetAmount: xfer.amount })
 	itxn_begin
 	intc 5 //  axfer
 	itxn_field TypeEnum
 
-	// contracts/ARC11550Bridge.algo.ts:135
+	// contracts/ARC11550Bridge.algo.ts:134
 	// xferAsset: asa
 	frame_dig 6 // asa: uint64
 	itxn_field XferAsset
 
-	// contracts/ARC11550Bridge.algo.ts:135
+	// contracts/ARC11550Bridge.algo.ts:134
 	// assetReceiver: receiver
 	frame_dig -3 // receiver: Address
 	itxn_field AssetReceiver
 
-	// contracts/ARC11550Bridge.algo.ts:135
+	// contracts/ARC11550Bridge.algo.ts:134
 	// assetAmount: xfer.amount
 	frame_dig 0 // xfers: Transfer[]
 	store 255 // full array
@@ -870,7 +861,7 @@ arc11550ToAsa:
 	itxn_submit
 
 *if2_end:
-	// contracts/ARC11550Bridge.algo.ts:138
+	// contracts/ARC11550Bridge.algo.ts:137
 	// return asa;
 	frame_dig 6 // asa: uint64
 
@@ -909,7 +900,7 @@ withdrawAsa:
 	// Push empty bytes after the frame pointer to reserve space for local variables
 	bytec 0 // 0x
 
-	// contracts/ARC11550Bridge.algo.ts:142
+	// contracts/ARC11550Bridge.algo.ts:141
 	// key: AsaAndAddr = { asa: asa, address: withdrawalFor }
 	frame_dig -1 // asa: AssetID
 	itob
@@ -917,23 +908,23 @@ withdrawAsa:
 	concat
 	frame_bury 0 // key: AsaAndAddr
 
-	// contracts/ARC11550Bridge.algo.ts:143
+	// contracts/ARC11550Bridge.algo.ts:142
 	// sendAssetTransfer({ xferAsset: asa, assetReceiver: withdrawalFor, assetAmount: this.withdrawAmounts(key).value })
 	itxn_begin
 	intc 5 //  axfer
 	itxn_field TypeEnum
 
-	// contracts/ARC11550Bridge.algo.ts:143
+	// contracts/ARC11550Bridge.algo.ts:142
 	// xferAsset: asa
 	frame_dig -1 // asa: AssetID
 	itxn_field XferAsset
 
-	// contracts/ARC11550Bridge.algo.ts:143
+	// contracts/ARC11550Bridge.algo.ts:142
 	// assetReceiver: withdrawalFor
 	frame_dig -2 // withdrawalFor: Address
 	itxn_field AssetReceiver
 
-	// contracts/ARC11550Bridge.algo.ts:143
+	// contracts/ARC11550Bridge.algo.ts:142
 	// assetAmount: this.withdrawAmounts(key).value
 	frame_dig 0 // key: AsaAndAddr
 	box_get
@@ -950,7 +941,7 @@ withdrawAsa:
 	// Submit inner transaction
 	itxn_submit
 
-	// contracts/ARC11550Bridge.algo.ts:144
+	// contracts/ARC11550Bridge.algo.ts:143
 	// this.withdrawAmounts(key).delete()
 	frame_dig 0 // key: AsaAndAddr
 	box_del
