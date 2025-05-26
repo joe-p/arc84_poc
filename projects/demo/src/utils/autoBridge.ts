@@ -128,3 +128,60 @@ export async function monkeyPatchTinymanV2Swap(algod: algosdk.Algodv2, bridgeApp
     })
   }
 }
+
+export async function getBalancesWithBrigedToken(
+  algod: algosdk.Algodv2,
+  account: algosdk.Address,
+  assetId: bigint,
+  bridgeAppId: bigint,
+): Promise<{
+  asa: {
+    id: bigint
+    balance: bigint
+    name?: string
+    symbol?: string
+  }
+  arc11550Token: {
+    id: bigint
+    balance: bigint
+    name?: string
+    symbol?: string
+  }
+}> {
+  let asaBalance: bigint = 0n
+  let bridgedTokenBalance: bigint = 0n
+
+  try {
+    asaBalance = (await algod.accountAssetInformation(account, assetId).do()).assetHolding!.amount!
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.log(`No balance of ASA ${assetId} for account ${account}`)
+  }
+
+  const bridgeClient = new Arc11550BridgeClient({ appId: bridgeAppId, algorand: AlgorandClient.fromClients({ algod }) })
+  const bridgedTokenId = await bridgeClient.state.box.asaToArc11550Map.value(assetId)
+
+  const asaInfo = await algod.getAssetByID(assetId).do()
+  const decimals = BigInt(asaInfo.params.decimals!)
+  const name = asaInfo.params.name
+
+  if (bridgedTokenId === undefined) {
+    return {
+      asa: { name, id: assetId, balance: asaBalance / 10n ** decimals },
+      arc11550Token: { name, id: 0n, balance: bridgedTokenBalance / 10n ** decimals },
+    }
+  }
+
+  const dataClient = new Arc11550DataClient({ appId: bridgedTokenId.dataApp, algorand: AlgorandClient.fromClients({ algod }) })
+
+  const bridgedTokenBalanceResult = await dataClient
+    .newGroup()
+    .arc11550BalanceOf({ sender: account.toString(), args: { account: account.toString(), id: bridgedTokenId.id } })
+    .simulate({ allowUnnamedResources: true, skipSignatures: true })
+
+  bridgedTokenBalance = bridgedTokenBalanceResult.returns.at(-1)! as unknown as bigint
+  return {
+    asa: { name, id: assetId, balance: asaBalance / 10n ** decimals },
+    arc11550Token: { name, id: bridgedTokenId.id, balance: bridgedTokenBalance / 10n ** decimals },
+  }
+}

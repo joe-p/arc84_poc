@@ -6,6 +6,7 @@ import { Swap, type SignerTransaction, poolUtils, SupportedNetwork, SwapType } f
 import algosdk, { type Algodv2 } from 'algosdk'
 import { setup, USDC_ASA_ID } from './setup'
 import 'dotenv/config'
+import { getBalancesWithBrigedToken } from '../src/utils/autoBridge'
 
 function signerWithSecretKey(account: algosdk.Account) {
   return function (txGroups: SignerTransaction[][]): Promise<Uint8Array[]> {
@@ -99,6 +100,7 @@ export async function attemptSwap() {
   } catch (e) {
     console.error(e)
     console.error('The above error occurred because we are trying to swap 10 USDC, but only have 5 USDC')
+    console.log(await getBalancesWithBrigedToken(algorand.client.algod, demoAccount.addr, USDC_ASA_ID, BigInt(process.env.BRIDGE_APP_ID!)))
     process.exit(1)
   }
 }
