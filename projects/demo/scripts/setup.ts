@@ -1,3 +1,5 @@
+#!/usr/bin/env bun
+
 /* eslint-disable no-console */
 import { AlgorandClient, microAlgos } from '@algorandfoundation/algokit-utils'
 import algosdk from 'algosdk'

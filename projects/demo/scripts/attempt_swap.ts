@@ -1,35 +1,11 @@
+#!/usr/bin/env bun
+
 /* eslint-disable no-console */
 import { AlgorandClient } from '@algorandfoundation/algokit-utils'
-import { autoArc11550ToAsa } from '../src/utils/autoBridge'
-import {
-  Swap,
-  type GenerateSwapTxnsParams,
-  type SignerTransaction,
-  poolUtils,
-  SupportedNetwork,
-  SwapType,
-} from '@tinymanorg/tinyman-js-sdk'
+import { Swap, type SignerTransaction, poolUtils, SupportedNetwork, SwapType } from '@tinymanorg/tinyman-js-sdk'
 import algosdk, { type Algodv2 } from 'algosdk'
 import { setup, USDC_ASA_ID } from './setup'
 import 'dotenv/config'
-
-const origSwapTxns = Swap.v2.generateTxns
-
-function monkeyPatchTinymanV2Swap(algod: Algodv2, bridgeAppId: bigint) {
-  Swap.v2.generateTxns = async (params: GenerateSwapTxnsParams): Promise<SignerTransaction[]> => {
-    const origGroup = await origSwapTxns(params)
-
-    const autoTxns = await autoArc11550ToAsa(
-      origGroup.map((t) => t.txn),
-      algod,
-      bridgeAppId,
-    )
-
-    return autoTxns.map((t) => {
-      return { txn: t, signers: origGroup[0].signers }
-    })
-  }
-}
 
 function signerWithSecretKey(account: algosdk.Account) {
   return function (txGroups: SignerTransaction[][]): Promise<Uint8Array[]> {
@@ -107,7 +83,7 @@ export async function fixedInputSwapWithoutSwapRouter({
   console.log({ txnID: swapExecutionResponse.txnID })
 }
 
-async function demo() {
+export async function attemptSwap() {
   await setup()
   const algorand = AlgorandClient.testNet()
   const demoAccount = (await algorand.account.fromEnvironment('DEMO')).account
@@ -122,17 +98,10 @@ async function demo() {
     })
   } catch (e) {
     console.error(e)
-    console.log('The above error occurred because we are trying to swap 10 USDC, but only have 5 USDC')
+    console.error('The above error occurred because we are trying to swap 10 USDC, but only have 5 USDC')
+    process.exit(1)
   }
-
-  console.log('Trying again, but this time with the tinyman SDK patched to auto-bridge the USDC ARC11550 to USDC ASA')
-  monkeyPatchTinymanV2Swap(algorand.client.algod, BigInt(process.env.BRIDGE_APP_ID!))
-  await fixedInputSwapWithoutSwapRouter({
-    algodClient: algorand.client.algod,
-    account: demoAccount,
-    asset_1: USDC_ASA_ID,
-    asset_2: 0n,
-    amount: 10_000_000n,
-  })
 }
-demo()
+if (import.meta.url === `file://${process.argv[1]}`) {
+  attemptSwap()
+}

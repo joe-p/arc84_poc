@@ -7,6 +7,8 @@ import * as algosdk from 'algosdk'
 import { Arc11550DataClient } from '../contracts/ARC11550Data'
 import { Arc11550TransferClient } from '../contracts/ARC11550Transfer'
 import { Arc11550BridgeClient, Arc11550Id } from '../contracts/ARC11550Bridge'
+import { GenerateSwapTxnsParams, Swap } from '@tinymanorg/tinyman-js-sdk'
+import { SignerTransaction } from '@txnlab/use-wallet'
 
 export async function autoArc11550ToAsa(
   group: algosdk.Transaction[],
@@ -107,4 +109,22 @@ export async function autoArc11550ToAsa(
   }
 
   return newTxns
+}
+
+const origSwapTxns = Swap.v2.generateTxns
+
+export async function monkeyPatchTinymanV2Swap(algod: algosdk.Algodv2, bridgeAppId: bigint) {
+  Swap.v2.generateTxns = async (params: GenerateSwapTxnsParams): Promise<SignerTransaction[]> => {
+    const origGroup = await origSwapTxns(params)
+
+    const autoTxns = await autoArc11550ToAsa(
+      origGroup.map((t) => t.txn),
+      algod,
+      bridgeAppId,
+    )
+
+    return autoTxns.map((t) => {
+      return { txn: t, signers: origGroup[0].signers }
+    })
+  }
 }
