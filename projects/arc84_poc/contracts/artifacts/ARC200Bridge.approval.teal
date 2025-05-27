@@ -39,7 +39,7 @@ switch *call_NoOp *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEM
 optInToAsa:
 	proto 1 0
 
-	// contracts/ARC200Bridge.algo.ts:21
+	// contracts/ARC200Bridge.algo.ts:22
 	// sendAssetTransfer({
 	//       xferAsset: asa,
 	//       assetAmount: 0,
@@ -49,17 +49,17 @@ optInToAsa:
 	intc 3 //  axfer
 	itxn_field TypeEnum
 
-	// contracts/ARC200Bridge.algo.ts:22
+	// contracts/ARC200Bridge.algo.ts:23
 	// xferAsset: asa
 	frame_dig -1 // asa: AssetID
 	itxn_field XferAsset
 
-	// contracts/ARC200Bridge.algo.ts:23
+	// contracts/ARC200Bridge.algo.ts:24
 	// assetAmount: 0
 	intc 0 // 0
 	itxn_field AssetAmount
 
-	// contracts/ARC200Bridge.algo.ts:24
+	// contracts/ARC200Bridge.algo.ts:25
 	// assetReceiver: this.app.address
 	global CurrentApplicationAddress
 	itxn_field AssetReceiver
@@ -115,7 +115,7 @@ asaToArc200:
 	bytec 0 // 0x
 	dupn 3
 
-	// contracts/ARC200Bridge.algo.ts:29
+	// contracts/ARC200Bridge.algo.ts:30
 	// verifyAssetTransferTxn(axfer, {
 	//       assetReceiver: this.app.address,
 	//     })
@@ -128,13 +128,13 @@ asaToArc200:
 	// transaction verification failed: {"txn":"axfer","field":"assetReceiver","expected":"this.app.address"}
 	assert
 
-	// contracts/ARC200Bridge.algo.ts:33
+	// contracts/ARC200Bridge.algo.ts:34
 	// asa = axfer.xferAsset
 	frame_dig -1 // axfer: AssetTransferTxn
 	gtxns XferAsset
 	frame_bury 0 // asa: uint64
 
-	// contracts/ARC200Bridge.algo.ts:35
+	// contracts/ARC200Bridge.algo.ts:36
 	// assert(asa.clawback === Address.zeroAddress)
 	frame_dig 0 // asa: uint64
 	asset_params_get AssetClawback
@@ -144,7 +144,7 @@ asaToArc200:
 	assert
 
 	// *if0_condition
-	// contracts/ARC200Bridge.algo.ts:38
+	// contracts/ARC200Bridge.algo.ts:39
 	// !this.asaToArc200Map(axfer.xferAsset).exists
 	bytec 1 //  "asa"
 	frame_dig -1 // axfer: AssetTransferTxn
@@ -158,12 +158,12 @@ asaToArc200:
 	bz *if0_end
 
 	// *if0_consequent
-	// contracts/ARC200Bridge.algo.ts:39
+	// contracts/ARC200Bridge.algo.ts:40
 	// sendMethodCall<typeof ARC200.prototype.createApplication>({
 	//         methodArgs: [
 	//           asa.name as bytes<32>,
 	//           asa.unitName as bytes<8>,
-	//           // FIXME: handle decimals > uint8
+	//           // PROBLEM: we need to go from uint64 to uint8
 	//           asa.decimals as uint8,
 	//           asa.total as uint256,
 	//         ],
@@ -174,11 +174,11 @@ asaToArc200:
 	pushbytes 0x8529f783 // method "createApplication(byte[32],byte[8],uint8,uint256)void"
 	itxn_field ApplicationArgs
 
-	// contracts/ARC200Bridge.algo.ts:40
+	// contracts/ARC200Bridge.algo.ts:41
 	// methodArgs: [
 	//           asa.name as bytes<32>,
 	//           asa.unitName as bytes<8>,
-	//           // FIXME: handle decimals > uint8
+	//           // PROBLEM: we need to go from uint64 to uint8
 	//           asa.decimals as uint8,
 	//           asa.total as uint256,
 	//         ]
@@ -225,12 +225,12 @@ asaToArc200:
 	// Submit inner transaction
 	itxn_submit
 
-	// contracts/ARC200Bridge.algo.ts:49
+	// contracts/ARC200Bridge.algo.ts:50
 	// app = this.itxn.createdApplicationID
 	itxn CreatedApplicationID
 	frame_bury 1 // app: uint64
 
-	// contracts/ARC200Bridge.algo.ts:51
+	// contracts/ARC200Bridge.algo.ts:52
 	// this.asaToArc200Map(asa).value = app
 	bytec 1 //  "asa"
 	frame_dig 0 // asa: uint64
@@ -240,7 +240,7 @@ asaToArc200:
 	itob
 	box_put
 
-	// contracts/ARC200Bridge.algo.ts:52
+	// contracts/ARC200Bridge.algo.ts:53
 	// this.arc200ToAsaMap(app).value = asa
 	bytec 2 //  "app"
 	frame_dig 1 // app: uint64
@@ -251,7 +251,7 @@ asaToArc200:
 	box_put
 
 *if0_end:
-	// contracts/ARC200Bridge.algo.ts:55
+	// contracts/ARC200Bridge.algo.ts:56
 	// arc200App = this.asaToArc200Map(asa).value
 	bytec 1 //  "asa"
 	frame_dig 0 // asa: uint64
@@ -264,7 +264,7 @@ asaToArc200:
 	btoi
 	frame_bury 2 // arc200App: uint64
 
-	// contracts/ARC200Bridge.algo.ts:57
+	// contracts/ARC200Bridge.algo.ts:58
 	// transferSucceeded = sendMethodCall<typeof ARC200.prototype.arc200_transfer>({
 	//       applicationID: arc200App,
 	//       methodArgs: [receiver, axfer.assetAmount as uint256],
@@ -275,12 +275,12 @@ asaToArc200:
 	pushbytes 0xda7025b9 // method "arc200_transfer(address,uint256)bool"
 	itxn_field ApplicationArgs
 
-	// contracts/ARC200Bridge.algo.ts:58
+	// contracts/ARC200Bridge.algo.ts:59
 	// applicationID: arc200App
 	frame_dig 2 // arc200App: uint64
 	itxn_field ApplicationID
 
-	// contracts/ARC200Bridge.algo.ts:59
+	// contracts/ARC200Bridge.algo.ts:60
 	// methodArgs: [receiver, axfer.assetAmount as uint256]
 	frame_dig -2 // receiver: Address
 	itxn_field ApplicationArgs
@@ -304,12 +304,12 @@ asaToArc200:
 	getbit
 	frame_bury 3 // transferSucceeded: bool
 
-	// contracts/ARC200Bridge.algo.ts:62
+	// contracts/ARC200Bridge.algo.ts:63
 	// assert(transferSucceeded)
 	frame_dig 3 // transferSucceeded: bool
 	assert
 
-	// contracts/ARC200Bridge.algo.ts:64
+	// contracts/ARC200Bridge.algo.ts:65
 	// return arc200App;
 	frame_dig 2 // arc200App: uint64
 
@@ -324,7 +324,7 @@ asaToArc200:
 getArc200Params:
 	proto 1 1
 
-	// contracts/ARC200Bridge.algo.ts:69
+	// contracts/ARC200Bridge.algo.ts:70
 	// return {
 	//       total: sendMethodCall<typeof ARC200.prototype.arc200_totalSupply>({ applicationID: app }),
 	//       name: sendMethodCall<typeof ARC200.prototype.arc200_name>({ applicationID: app }),
@@ -337,7 +337,7 @@ getArc200Params:
 	pushbytes 0xec996041 // method "arc200_totalSupply()uint256"
 	itxn_field ApplicationArgs
 
-	// contracts/ARC200Bridge.algo.ts:70
+	// contracts/ARC200Bridge.algo.ts:71
 	// applicationID: app
 	frame_dig -1 // app: AppID
 	itxn_field ApplicationID
@@ -354,7 +354,7 @@ getArc200Params:
 	itxnas Logs
 	extract 4 0
 
-	// contracts/ARC200Bridge.algo.ts:73
+	// contracts/ARC200Bridge.algo.ts:74
 	// sendMethodCall<typeof ARC200.prototype.arc200_decimals>({ applicationID: app })
 	itxn_begin
 	intc 2 //  appl
@@ -362,7 +362,7 @@ getArc200Params:
 	pushbytes 0x84ec13d5 // method "arc200_decimals()uint8"
 	itxn_field ApplicationArgs
 
-	// contracts/ARC200Bridge.algo.ts:73
+	// contracts/ARC200Bridge.algo.ts:74
 	// applicationID: app
 	frame_dig -1 // app: AppID
 	itxn_field ApplicationID
@@ -383,7 +383,7 @@ getArc200Params:
 	extract 7 1
 	concat
 
-	// contracts/ARC200Bridge.algo.ts:71
+	// contracts/ARC200Bridge.algo.ts:72
 	// sendMethodCall<typeof ARC200.prototype.arc200_name>({ applicationID: app })
 	itxn_begin
 	intc 2 //  appl
@@ -391,7 +391,7 @@ getArc200Params:
 	pushbytes 0x657d13ec // method "arc200_name()byte[32]"
 	itxn_field ApplicationArgs
 
-	// contracts/ARC200Bridge.algo.ts:71
+	// contracts/ARC200Bridge.algo.ts:72
 	// applicationID: app
 	frame_dig -1 // app: AppID
 	itxn_field ApplicationID
@@ -409,7 +409,7 @@ getArc200Params:
 	extract 4 0
 	concat
 
-	// contracts/ARC200Bridge.algo.ts:72
+	// contracts/ARC200Bridge.algo.ts:73
 	// sendMethodCall<typeof ARC200.prototype.arc200_symbol>({ applicationID: app })
 	itxn_begin
 	intc 2 //  appl
@@ -417,7 +417,7 @@ getArc200Params:
 	pushbytes 0xb6ae1a25 // method "arc200_symbol()byte[8]"
 	itxn_field ApplicationArgs
 
-	// contracts/ARC200Bridge.algo.ts:72
+	// contracts/ARC200Bridge.algo.ts:73
 	// applicationID: app
 	frame_dig -1 // app: AppID
 	itxn_field ApplicationID
@@ -476,7 +476,7 @@ arc200ToAsa:
 	dupn 3
 
 	// *if1_condition
-	// contracts/ARC200Bridge.algo.ts:78
+	// contracts/ARC200Bridge.algo.ts:79
 	// !this.arc200ToAsaMap(app).exists
 	bytec 2 //  "app"
 	frame_dig -1 // app: AppID
@@ -489,13 +489,13 @@ arc200ToAsa:
 	bz *if1_end
 
 	// *if1_consequent
-	// contracts/ARC200Bridge.algo.ts:79
+	// contracts/ARC200Bridge.algo.ts:80
 	// params = this.getArc200Params(app)
 	frame_dig -1 // app: AppID
 	callsub getArc200Params
 	frame_bury 0 // params: (uint256,uint8,byte[32],byte[8])
 
-	// contracts/ARC200Bridge.algo.ts:80
+	// contracts/ARC200Bridge.algo.ts:81
 	// sendAssetCreation({
 	//         configAssetTotal: params.total as uint64,
 	//         configAssetDecimals: params.decimals as uint64,
@@ -507,7 +507,7 @@ arc200ToAsa:
 	pushint 3 // acfg
 	itxn_field TypeEnum
 
-	// contracts/ARC200Bridge.algo.ts:81
+	// contracts/ARC200Bridge.algo.ts:82
 	// configAssetTotal: params.total as uint64
 	frame_dig 0 // params: (uint256,uint8,byte[32],byte[8])
 	extract 0 32
@@ -522,26 +522,26 @@ arc200ToAsa:
 	btoi
 	itxn_field ConfigAssetTotal
 
-	// contracts/ARC200Bridge.algo.ts:82
+	// contracts/ARC200Bridge.algo.ts:83
 	// configAssetDecimals: params.decimals as uint64
 	frame_dig 0 // params: (uint256,uint8,byte[32],byte[8])
 	extract 32 1
 	btoi
 	itxn_field ConfigAssetDecimals
 
-	// contracts/ARC200Bridge.algo.ts:83
+	// contracts/ARC200Bridge.algo.ts:84
 	// configAssetName: params.name as bytes
 	frame_dig 0 // params: (uint256,uint8,byte[32],byte[8])
 	extract 33 32
 	itxn_field ConfigAssetName
 
-	// contracts/ARC200Bridge.algo.ts:84
+	// contracts/ARC200Bridge.algo.ts:85
 	// configAssetUnitName: params.symbol as bytes
 	frame_dig 0 // params: (uint256,uint8,byte[32],byte[8])
 	extract 65 8
 	itxn_field ConfigAssetUnitName
 
-	// contracts/ARC200Bridge.algo.ts:85
+	// contracts/ARC200Bridge.algo.ts:86
 	// configAssetReserve: this.app.address
 	global CurrentApplicationAddress
 	itxn_field ConfigAssetReserve
@@ -554,12 +554,12 @@ arc200ToAsa:
 	itxn_submit
 	itxn CreatedAssetID
 
-	// contracts/ARC200Bridge.algo.ts:88
+	// contracts/ARC200Bridge.algo.ts:89
 	// asa = this.itxn.createdAssetID
 	itxn CreatedAssetID
 	frame_bury 1 // asa: uint64
 
-	// contracts/ARC200Bridge.algo.ts:89
+	// contracts/ARC200Bridge.algo.ts:90
 	// this.arc200ToAsaMap(app).value = asa
 	bytec 2 //  "app"
 	frame_dig -1 // app: AppID
@@ -569,7 +569,7 @@ arc200ToAsa:
 	itob
 	box_put
 
-	// contracts/ARC200Bridge.algo.ts:90
+	// contracts/ARC200Bridge.algo.ts:91
 	// this.asaToArc200Map(asa).value = app
 	bytec 1 //  "asa"
 	frame_dig 1 // asa: uint64
@@ -580,7 +580,7 @@ arc200ToAsa:
 	box_put
 
 *if1_end:
-	// contracts/ARC200Bridge.algo.ts:93
+	// contracts/ARC200Bridge.algo.ts:94
 	// asa = this.arc200ToAsaMap(app).value
 	bytec 2 //  "app"
 	frame_dig -1 // app: AppID
@@ -593,7 +593,7 @@ arc200ToAsa:
 	btoi
 	frame_bury 2 // asa: uint64
 
-	// contracts/ARC200Bridge.algo.ts:96
+	// contracts/ARC200Bridge.algo.ts:97
 	// transferSucceeded = sendMethodCall<typeof ARC200.prototype.arc200_transferFrom>({
 	//       applicationID: app,
 	//       methodArgs: [this.txn.sender, this.app.address, amount as uint256],
@@ -604,12 +604,12 @@ arc200ToAsa:
 	pushbytes 0x4a968f8f // method "arc200_transferFrom(address,address,uint256)bool"
 	itxn_field ApplicationArgs
 
-	// contracts/ARC200Bridge.algo.ts:97
+	// contracts/ARC200Bridge.algo.ts:98
 	// applicationID: app
 	frame_dig -1 // app: AppID
 	itxn_field ApplicationID
 
-	// contracts/ARC200Bridge.algo.ts:98
+	// contracts/ARC200Bridge.algo.ts:99
 	// methodArgs: [this.txn.sender, this.app.address, amount as uint256]
 	txn Sender
 	itxn_field ApplicationArgs
@@ -634,28 +634,28 @@ arc200ToAsa:
 	getbit
 	frame_bury 3 // transferSucceeded: bool
 
-	// contracts/ARC200Bridge.algo.ts:101
+	// contracts/ARC200Bridge.algo.ts:102
 	// assert(transferSucceeded)
 	frame_dig 3 // transferSucceeded: bool
 	assert
 
-	// contracts/ARC200Bridge.algo.ts:103
+	// contracts/ARC200Bridge.algo.ts:104
 	// sendAssetTransfer({ xferAsset: asa, assetReceiver: receiver, assetAmount: amount })
 	itxn_begin
 	intc 3 //  axfer
 	itxn_field TypeEnum
 
-	// contracts/ARC200Bridge.algo.ts:103
+	// contracts/ARC200Bridge.algo.ts:104
 	// xferAsset: asa
 	frame_dig 2 // asa: uint64
 	itxn_field XferAsset
 
-	// contracts/ARC200Bridge.algo.ts:103
+	// contracts/ARC200Bridge.algo.ts:104
 	// assetReceiver: receiver
 	frame_dig -3 // receiver: Address
 	itxn_field AssetReceiver
 
-	// contracts/ARC200Bridge.algo.ts:103
+	// contracts/ARC200Bridge.algo.ts:104
 	// assetAmount: amount
 	frame_dig -2 // amount: uint64
 	itxn_field AssetAmount
@@ -667,7 +667,7 @@ arc200ToAsa:
 	// Submit inner transaction
 	itxn_submit
 
-	// contracts/ARC200Bridge.algo.ts:105
+	// contracts/ARC200Bridge.algo.ts:106
 	// return asa;
 	frame_dig 2 // asa: uint64
 

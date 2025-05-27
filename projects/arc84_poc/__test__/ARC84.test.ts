@@ -1,4 +1,4 @@
-import { describe, test, expect, beforeAll, beforeEach } from '@jest/globals';
+import { describe, test, expect, beforeAll } from '@jest/globals';
 import { algorandFixture } from '@algorandfoundation/algokit-utils/testing';
 import { Config, microAlgos } from '@algorandfoundation/algokit-utils';
 import { Arc84DataFactory, Arc84DataClient } from '../contracts/clients/ARC84DataClient';

@@ -98,7 +98,8 @@ export class ARC84Bridge extends Contract {
 
     // Ensure the app used for the transfer is the actual transfer app for the token
     assert(
-      xferCall.applicationID == sendMethodCall<typeof ARC84Data.prototype.arc84_transferApp>({ applicationID: dataApp })
+      xferCall.applicationID ===
+        sendMethodCall<typeof ARC84Data.prototype.arc84_transferApp>({ applicationID: dataApp })
     );
 
     const arc84: Arc84Id = { dataApp: dataApp, id: xfer.tokenId };

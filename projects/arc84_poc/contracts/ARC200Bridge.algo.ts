@@ -15,6 +15,7 @@ export type ARC200Params = {
 
 export class ARC200Bridge extends Contract {
   asaToArc200Map = BoxMap<AssetID, AppID>({ prefix: 'asa' });
+
   arc200ToAsaMap = BoxMap<AppID, AssetID>({ prefix: 'app' });
 
   optInToAsa(asa: AssetID) {
@@ -40,7 +41,7 @@ export class ARC200Bridge extends Contract {
         methodArgs: [
           asa.name as bytes<32>,
           asa.unitName as bytes<8>,
-          // FIXME: handle decimals > uint8
+          // PROBLEM: we need to go from uint64 to uint8
           asa.decimals as uint8,
           asa.total as uint256,
         ],

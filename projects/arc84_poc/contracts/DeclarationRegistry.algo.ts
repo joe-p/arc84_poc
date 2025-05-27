@@ -8,6 +8,26 @@ export type AddressToken = {
   id: ARC84Id;
 };
 
+class ApprovalApp extends Contract {
+  // eslint-disable-next-line no-unused-vars
+  approveRequest(sender: Address, addrToken: AddressToken): boolean {
+    return true;
+  }
+
+  // eslint-disable-next-line no-unused-vars
+  approveRequestRemoval(sender: Address, addrToken: AddressToken): boolean {
+    return true;
+  }
+
+  approveDeclaration(sender: Address, addrToken: AddressToken): boolean {
+    return sender === addrToken.addr;
+  }
+
+  approveDeclarationRemoval(sender: Address, addrToken: AddressToken): boolean {
+    return sender === addrToken.addr;
+  }
+}
+
 export class DeclarationRegistry extends Contract {
   /** ARC84 declaration for a given user. Wallets & apps SHOULD show these tokens to users */
   declarations = BoxMap<AddressToken, bytes<0>>();
@@ -34,7 +54,7 @@ export class DeclarationRegistry extends Contract {
         methodArgs: [this.txn.sender, addrToken],
       });
     } else {
-      approved = this.txn.sender == addrToken.addr;
+      approved = this.txn.sender === addrToken.addr;
     }
 
     if (!approved) return false;
@@ -78,7 +98,7 @@ export class DeclarationRegistry extends Contract {
         methodArgs: [this.txn.sender, addrToken],
       });
     } else {
-      approved = this.txn.sender == addrToken.addr;
+      approved = this.txn.sender === addrToken.addr;
     }
 
     if (!approved) return false;
@@ -98,7 +118,7 @@ export class DeclarationRegistry extends Contract {
         methodArgs: [this.txn.sender, addrToken],
       });
     } else {
-      approved = this.txn.sender == addrToken.addr;
+      approved = this.txn.sender === addrToken.addr;
     }
 
     if (!approved) return false;
@@ -112,23 +132,5 @@ export class DeclarationRegistry extends Contract {
 
   isDeclared(addrToken: AddressToken): boolean {
     return this.requests(addrToken).exists;
-  }
-}
-
-class ApprovalApp extends Contract {
-  approveRequest(sender: Address, addrToken: AddressToken): boolean {
-    return true;
-  }
-
-  approveRequestRemoval(sender: Address, addrToken: AddressToken): boolean {
-    return true;
-  }
-
-  approveDeclaration(sender: Address, addrToken: AddressToken): boolean {
-    return sender === addrToken.addr;
-  }
-
-  approveDeclarationRemoval(sender: Address, addrToken: AddressToken): boolean {
-    return sender === addrToken.addr;
   }
 }

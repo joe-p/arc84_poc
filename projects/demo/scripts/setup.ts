@@ -3,7 +3,7 @@
 /* eslint-disable no-console */
 import { AlgorandClient, microAlgos } from '@algorandfoundation/algokit-utils'
 import algosdk from 'algosdk'
-import process, { exit } from 'process'
+import process from 'process'
 import { Arc84BridgeClient, Arc84BridgeFactory } from '../src/contracts/ARC84Bridge'
 import { Arc84DataClient, Arc84DataFactory } from '../src/contracts/ARC84Data'
 import { Arc84TransferClient, Arc84TransferFactory } from '../src/contracts/ARC84Transfer'
@@ -79,7 +79,7 @@ async function createContracts(algorand: AlgorandClient, usdcAcct: algosdk.Addre
   console.log(`XFER_APP_ID=${xferClient.appId}`)
   console.log(`BRIDGE_APP_ID=${bridgeClient.appId}`)
 
-  exit(1)
+  process.exit(1)
 }
 
 async function createBridgedUSDC(
@@ -118,7 +118,7 @@ async function createBridgedUSDC(
   console.log('Set the following env variable and run the script again:')
   console.log(`BRIDGED_USDC_TOKEN_ID=${bridgedToken.id}`)
 
-  exit(1)
+  process.exit(1)
 }
 
 export async function setup() {
@@ -138,7 +138,7 @@ export async function setup() {
     console.error('Please set the DEMO_MNEMONIC and USDC_HOLDER_MNEMONIC environment variables')
     console.error(`DEMO_MNEMONIC=${accounts[0]}`)
     console.error(`USDC_HOLDER_MNEMONIC=${accounts[1]}`)
-    exit(1)
+    process.exit(1)
   }
 
   const getUnderFundedAccounts = async () => {
@@ -237,7 +237,7 @@ export async function setup() {
 
   if (BRIDGED_USDC_TOKEN_ID === undefined) {
     await createBridgedUSDC(algorand, usdcAddr, bridgeClient, dataClient)
-    exit(1)
+    process.exit(1)
   }
 
   const tokenId = BigInt(BRIDGED_USDC_TOKEN_ID)

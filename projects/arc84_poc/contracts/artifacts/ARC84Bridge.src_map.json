@@ -2535,7 +2535,7 @@
     ]
   },
   {
-    "teal": 552,
+    "teal": 553,
     "source": "contracts/ARC84Bridge.algo.ts:101",
     "pc": [
       620,
@@ -2543,7 +2543,7 @@
     ]
   },
   {
-    "teal": 553,
+    "teal": 554,
     "source": "contracts/ARC84Bridge.algo.ts:101",
     "pc": [
       622,
@@ -2551,114 +2551,114 @@
     ]
   },
   {
-    "teal": 554,
-    "source": "contracts/ARC84Bridge.algo.ts:101",
+    "teal": 555,
+    "source": "contracts/ARC84Bridge.algo.ts:102",
     "pc": [
       624
     ]
   },
   {
-    "teal": 555,
-    "source": "contracts/ARC84Bridge.algo.ts:101",
+    "teal": 556,
+    "source": "contracts/ARC84Bridge.algo.ts:102",
     "pc": [
       625
     ]
   },
   {
-    "teal": 556,
-    "source": "contracts/ARC84Bridge.algo.ts:101",
+    "teal": 557,
+    "source": "contracts/ARC84Bridge.algo.ts:102",
     "pc": [
       626,
       627
     ]
   },
   {
-    "teal": 557,
-    "source": "contracts/ARC84Bridge.algo.ts:101",
+    "teal": 558,
+    "source": "contracts/ARC84Bridge.algo.ts:102",
     "pc": [
       628,
       629
     ]
   },
   {
-    "teal": 558,
-    "source": "contracts/ARC84Bridge.algo.ts:101",
+    "teal": 559,
+    "source": "contracts/ARC84Bridge.algo.ts:102",
     "pc": [
       630,
       631
     ]
   },
   {
-    "teal": 562,
-    "source": "contracts/ARC84Bridge.algo.ts:101",
+    "teal": 563,
+    "source": "contracts/ARC84Bridge.algo.ts:102",
     "pc": [
       632,
       633
     ]
   },
   {
-    "teal": 563,
-    "source": "contracts/ARC84Bridge.algo.ts:101",
+    "teal": 564,
+    "source": "contracts/ARC84Bridge.algo.ts:102",
     "pc": [
       634,
       635
     ]
   },
   {
-    "teal": 566,
-    "source": "contracts/ARC84Bridge.algo.ts:101",
+    "teal": 567,
+    "source": "contracts/ARC84Bridge.algo.ts:102",
     "pc": [
       636
     ]
   },
   {
-    "teal": 567,
-    "source": "contracts/ARC84Bridge.algo.ts:101",
+    "teal": 568,
+    "source": "contracts/ARC84Bridge.algo.ts:102",
     "pc": [
       637,
       638
     ]
   },
   {
-    "teal": 570,
-    "source": "contracts/ARC84Bridge.algo.ts:101",
+    "teal": 571,
+    "source": "contracts/ARC84Bridge.algo.ts:102",
     "pc": [
       639
     ]
   },
   {
-    "teal": 571,
-    "source": "contracts/ARC84Bridge.algo.ts:101",
+    "teal": 572,
+    "source": "contracts/ARC84Bridge.algo.ts:102",
     "pc": [
       640,
       641
     ]
   },
   {
-    "teal": 572,
-    "source": "contracts/ARC84Bridge.algo.ts:101",
+    "teal": 573,
+    "source": "contracts/ARC84Bridge.algo.ts:102",
     "pc": [
       642
     ]
   },
   {
-    "teal": 573,
-    "source": "contracts/ARC84Bridge.algo.ts:101",
+    "teal": 574,
+    "source": "contracts/ARC84Bridge.algo.ts:102",
     "pc": [
       643
     ]
   },
   {
-    "teal": 574,
-    "source": "contracts/ARC84Bridge.algo.ts:101",
+    "teal": 575,
+    "source": "contracts/ARC84Bridge.algo.ts:102",
     "pc": [
       644,
       645
     ]
   },
   {
-    "teal": 575,
-    "source": "contracts/ARC84Bridge.algo.ts:101",
+    "teal": 576,
+    "source": "contracts/ARC84Bridge.algo.ts:102",
     "pc": [
       646,
       647,
@@ -2666,219 +2666,219 @@
     ]
   },
   {
-    "teal": 576,
-    "source": "contracts/ARC84Bridge.algo.ts:101",
+    "teal": 577,
+    "source": "contracts/ARC84Bridge.algo.ts:102",
     "pc": [
       649
     ]
   },
   {
-    "teal": 577,
+    "teal": 578,
     "source": "contracts/ARC84Bridge.algo.ts:101",
     "pc": [
       650
     ]
   },
   {
-    "teal": 578,
+    "teal": 579,
     "source": "contracts/ARC84Bridge.algo.ts:100",
     "pc": [
       651
     ]
   },
   {
-    "teal": 582,
-    "source": "contracts/ARC84Bridge.algo.ts:104",
+    "teal": 583,
+    "source": "contracts/ARC84Bridge.algo.ts:105",
     "pc": [
       652,
       653
     ]
   },
   {
-    "teal": 583,
-    "source": "contracts/ARC84Bridge.algo.ts:104",
+    "teal": 584,
+    "source": "contracts/ARC84Bridge.algo.ts:105",
     "pc": [
       654,
       655
     ]
   },
   {
-    "teal": 584,
-    "source": "contracts/ARC84Bridge.algo.ts:104",
+    "teal": 585,
+    "source": "contracts/ARC84Bridge.algo.ts:105",
     "pc": [
       656
     ]
   },
   {
-    "teal": 585,
-    "source": "contracts/ARC84Bridge.algo.ts:104",
+    "teal": 586,
+    "source": "contracts/ARC84Bridge.algo.ts:105",
     "pc": [
       657,
       658
     ]
   },
   {
-    "teal": 586,
-    "source": "contracts/ARC84Bridge.algo.ts:104",
+    "teal": 587,
+    "source": "contracts/ARC84Bridge.algo.ts:105",
     "pc": [
       659,
       660
     ]
   },
   {
-    "teal": 587,
-    "source": "contracts/ARC84Bridge.algo.ts:104",
+    "teal": 588,
+    "source": "contracts/ARC84Bridge.algo.ts:105",
     "pc": [
       661
     ]
   },
   {
-    "teal": 588,
-    "source": "contracts/ARC84Bridge.algo.ts:104",
+    "teal": 589,
+    "source": "contracts/ARC84Bridge.algo.ts:105",
     "pc": [
       662
     ]
   },
   {
-    "teal": 589,
-    "source": "contracts/ARC84Bridge.algo.ts:104",
+    "teal": 590,
+    "source": "contracts/ARC84Bridge.algo.ts:105",
     "pc": [
       663
     ]
   },
   {
-    "teal": 590,
-    "source": "contracts/ARC84Bridge.algo.ts:104",
+    "teal": 591,
+    "source": "contracts/ARC84Bridge.algo.ts:105",
     "pc": [
       664
     ]
   },
   {
-    "teal": 591,
-    "source": "contracts/ARC84Bridge.algo.ts:104",
+    "teal": 592,
+    "source": "contracts/ARC84Bridge.algo.ts:105",
     "pc": [
       665,
       666
     ]
   },
   {
-    "teal": 592,
-    "source": "contracts/ARC84Bridge.algo.ts:104",
+    "teal": 593,
+    "source": "contracts/ARC84Bridge.algo.ts:105",
     "pc": [
       667
     ]
   },
   {
-    "teal": 593,
-    "source": "contracts/ARC84Bridge.algo.ts:104",
+    "teal": 594,
+    "source": "contracts/ARC84Bridge.algo.ts:105",
     "pc": [
       668
     ]
   },
   {
-    "teal": 594,
-    "source": "contracts/ARC84Bridge.algo.ts:104",
+    "teal": 595,
+    "source": "contracts/ARC84Bridge.algo.ts:105",
     "pc": [
       669
     ]
   },
   {
-    "teal": 595,
-    "source": "contracts/ARC84Bridge.algo.ts:104",
+    "teal": 596,
+    "source": "contracts/ARC84Bridge.algo.ts:105",
     "pc": [
       670
     ]
   },
   {
-    "teal": 596,
-    "source": "contracts/ARC84Bridge.algo.ts:104",
+    "teal": 597,
+    "source": "contracts/ARC84Bridge.algo.ts:105",
     "pc": [
       671
     ]
   },
   {
-    "teal": 597,
-    "source": "contracts/ARC84Bridge.algo.ts:104",
+    "teal": 598,
+    "source": "contracts/ARC84Bridge.algo.ts:105",
     "pc": [
       672,
       673
     ]
   },
   {
-    "teal": 598,
-    "source": "contracts/ARC84Bridge.algo.ts:104",
+    "teal": 599,
+    "source": "contracts/ARC84Bridge.algo.ts:105",
     "pc": [
       674
     ]
   },
   {
-    "teal": 599,
-    "source": "contracts/ARC84Bridge.algo.ts:104",
+    "teal": 600,
+    "source": "contracts/ARC84Bridge.algo.ts:105",
     "pc": [
       675
     ]
   },
   {
-    "teal": 600,
-    "source": "contracts/ARC84Bridge.algo.ts:104",
+    "teal": 601,
+    "source": "contracts/ARC84Bridge.algo.ts:105",
     "pc": [
       676,
       677
     ]
   },
   {
-    "teal": 605,
-    "source": "contracts/ARC84Bridge.algo.ts:106",
+    "teal": 606,
+    "source": "contracts/ARC84Bridge.algo.ts:107",
     "pc": [
       678
     ]
   },
   {
-    "teal": 606,
-    "source": "contracts/ARC84Bridge.algo.ts:106",
+    "teal": 607,
+    "source": "contracts/ARC84Bridge.algo.ts:107",
     "pc": [
       679,
       680
     ]
   },
   {
-    "teal": 607,
-    "source": "contracts/ARC84Bridge.algo.ts:106",
+    "teal": 608,
+    "source": "contracts/ARC84Bridge.algo.ts:107",
     "pc": [
       681
     ]
   },
   {
-    "teal": 608,
-    "source": "contracts/ARC84Bridge.algo.ts:106",
+    "teal": 609,
+    "source": "contracts/ARC84Bridge.algo.ts:107",
     "pc": [
       682
     ]
   },
   {
-    "teal": 609,
-    "source": "contracts/ARC84Bridge.algo.ts:106",
+    "teal": 610,
+    "source": "contracts/ARC84Bridge.algo.ts:107",
     "pc": [
       683
     ]
   },
   {
-    "teal": 610,
-    "source": "contracts/ARC84Bridge.algo.ts:106",
+    "teal": 611,
+    "source": "contracts/ARC84Bridge.algo.ts:107",
     "pc": [
       684
     ]
   },
   {
-    "teal": 611,
-    "source": "contracts/ARC84Bridge.algo.ts:106",
+    "teal": 612,
+    "source": "contracts/ARC84Bridge.algo.ts:107",
     "pc": [
       685
     ]
   },
   {
-    "teal": 612,
-    "source": "contracts/ARC84Bridge.algo.ts:106",
+    "teal": 613,
+    "source": "contracts/ARC84Bridge.algo.ts:107",
     "pc": [
       686,
       687,
@@ -2886,30 +2886,30 @@
     ]
   },
   {
-    "teal": 620,
-    "source": "contracts/ARC84Bridge.algo.ts:107",
+    "teal": 621,
+    "source": "contracts/ARC84Bridge.algo.ts:108",
     "pc": [
       689
     ]
   },
   {
-    "teal": 621,
-    "source": "contracts/ARC84Bridge.algo.ts:107",
+    "teal": 622,
+    "source": "contracts/ARC84Bridge.algo.ts:108",
     "pc": [
       690
     ]
   },
   {
-    "teal": 622,
-    "source": "contracts/ARC84Bridge.algo.ts:107",
+    "teal": 623,
+    "source": "contracts/ARC84Bridge.algo.ts:108",
     "pc": [
       691,
       692
     ]
   },
   {
-    "teal": 623,
-    "source": "contracts/ARC84Bridge.algo.ts:107",
+    "teal": 624,
+    "source": "contracts/ARC84Bridge.algo.ts:108",
     "pc": [
       693,
       694,
@@ -2920,24 +2920,24 @@
     ]
   },
   {
-    "teal": 624,
-    "source": "contracts/ARC84Bridge.algo.ts:107",
+    "teal": 625,
+    "source": "contracts/ARC84Bridge.algo.ts:108",
     "pc": [
       699,
       700
     ]
   },
   {
-    "teal": 628,
-    "source": "contracts/ARC84Bridge.algo.ts:108",
+    "teal": 629,
+    "source": "contracts/ARC84Bridge.algo.ts:109",
     "pc": [
       701,
       702
     ]
   },
   {
-    "teal": 629,
-    "source": "contracts/ARC84Bridge.algo.ts:108",
+    "teal": 630,
+    "source": "contracts/ARC84Bridge.algo.ts:109",
     "pc": [
       703,
       704,
@@ -2945,193 +2945,193 @@
     ]
   },
   {
-    "teal": 630,
-    "source": "contracts/ARC84Bridge.algo.ts:108",
+    "teal": 631,
+    "source": "contracts/ARC84Bridge.algo.ts:109",
     "pc": [
       706
     ]
   },
   {
-    "teal": 631,
-    "source": "contracts/ARC84Bridge.algo.ts:108",
+    "teal": 632,
+    "source": "contracts/ARC84Bridge.algo.ts:109",
     "pc": [
       707,
       708
     ]
   },
   {
-    "teal": 635,
-    "source": "contracts/ARC84Bridge.algo.ts:109",
+    "teal": 636,
+    "source": "contracts/ARC84Bridge.algo.ts:110",
     "pc": [
       709,
       710
     ]
   },
   {
-    "teal": 636,
-    "source": "contracts/ARC84Bridge.algo.ts:109",
+    "teal": 637,
+    "source": "contracts/ARC84Bridge.algo.ts:110",
     "pc": [
       711,
       712
     ]
   },
   {
-    "teal": 637,
-    "source": "contracts/ARC84Bridge.algo.ts:109",
+    "teal": 638,
+    "source": "contracts/ARC84Bridge.algo.ts:110",
     "pc": [
       713
     ]
   },
   {
-    "teal": 638,
-    "source": "contracts/ARC84Bridge.algo.ts:109",
+    "teal": 639,
+    "source": "contracts/ARC84Bridge.algo.ts:110",
     "pc": [
       714,
       715
     ]
   },
   {
-    "teal": 639,
-    "source": "contracts/ARC84Bridge.algo.ts:109",
+    "teal": 640,
+    "source": "contracts/ARC84Bridge.algo.ts:110",
     "pc": [
       716,
       717
     ]
   },
   {
-    "teal": 640,
-    "source": "contracts/ARC84Bridge.algo.ts:109",
+    "teal": 641,
+    "source": "contracts/ARC84Bridge.algo.ts:110",
     "pc": [
       718
     ]
   },
   {
-    "teal": 641,
-    "source": "contracts/ARC84Bridge.algo.ts:109",
+    "teal": 642,
+    "source": "contracts/ARC84Bridge.algo.ts:110",
     "pc": [
       719
     ]
   },
   {
-    "teal": 642,
-    "source": "contracts/ARC84Bridge.algo.ts:109",
+    "teal": 643,
+    "source": "contracts/ARC84Bridge.algo.ts:110",
     "pc": [
       720
     ]
   },
   {
-    "teal": 643,
-    "source": "contracts/ARC84Bridge.algo.ts:109",
+    "teal": 644,
+    "source": "contracts/ARC84Bridge.algo.ts:110",
     "pc": [
       721
     ]
   },
   {
-    "teal": 644,
-    "source": "contracts/ARC84Bridge.algo.ts:109",
+    "teal": 645,
+    "source": "contracts/ARC84Bridge.algo.ts:110",
     "pc": [
       722,
       723
     ]
   },
   {
-    "teal": 645,
-    "source": "contracts/ARC84Bridge.algo.ts:109",
+    "teal": 646,
+    "source": "contracts/ARC84Bridge.algo.ts:110",
     "pc": [
       724
     ]
   },
   {
-    "teal": 646,
-    "source": "contracts/ARC84Bridge.algo.ts:109",
+    "teal": 647,
+    "source": "contracts/ARC84Bridge.algo.ts:110",
     "pc": [
       725
     ]
   },
   {
-    "teal": 647,
-    "source": "contracts/ARC84Bridge.algo.ts:109",
+    "teal": 648,
+    "source": "contracts/ARC84Bridge.algo.ts:110",
     "pc": [
       726
     ]
   },
   {
-    "teal": 648,
-    "source": "contracts/ARC84Bridge.algo.ts:109",
+    "teal": 649,
+    "source": "contracts/ARC84Bridge.algo.ts:110",
     "pc": [
       727
     ]
   },
   {
-    "teal": 649,
-    "source": "contracts/ARC84Bridge.algo.ts:109",
+    "teal": 650,
+    "source": "contracts/ARC84Bridge.algo.ts:110",
     "pc": [
       728
     ]
   },
   {
-    "teal": 650,
-    "source": "contracts/ARC84Bridge.algo.ts:109",
+    "teal": 651,
+    "source": "contracts/ARC84Bridge.algo.ts:110",
     "pc": [
       729,
       730
     ]
   },
   {
-    "teal": 653,
-    "source": "contracts/ARC84Bridge.algo.ts:107",
+    "teal": 654,
+    "source": "contracts/ARC84Bridge.algo.ts:108",
     "pc": [
       731
     ]
   },
   {
-    "teal": 654,
-    "source": "contracts/ARC84Bridge.algo.ts:107",
+    "teal": 655,
+    "source": "contracts/ARC84Bridge.algo.ts:108",
     "pc": [
       732,
       733
     ]
   },
   {
-    "teal": 657,
-    "source": "contracts/ARC84Bridge.algo.ts:107",
+    "teal": 658,
+    "source": "contracts/ARC84Bridge.algo.ts:108",
     "pc": [
       734
     ]
   },
   {
-    "teal": 658,
-    "source": "contracts/ARC84Bridge.algo.ts:107",
+    "teal": 659,
+    "source": "contracts/ARC84Bridge.algo.ts:108",
     "pc": [
       735,
       736
     ]
   },
   {
-    "teal": 659,
-    "source": "contracts/ARC84Bridge.algo.ts:107",
+    "teal": 660,
+    "source": "contracts/ARC84Bridge.algo.ts:108",
     "pc": [
       737
     ]
   },
   {
-    "teal": 660,
-    "source": "contracts/ARC84Bridge.algo.ts:107",
+    "teal": 661,
+    "source": "contracts/ARC84Bridge.algo.ts:108",
     "pc": [
       738
     ]
   },
   {
-    "teal": 661,
-    "source": "contracts/ARC84Bridge.algo.ts:107",
+    "teal": 662,
+    "source": "contracts/ARC84Bridge.algo.ts:108",
     "pc": [
       739,
       740
     ]
   },
   {
-    "teal": 662,
-    "source": "contracts/ARC84Bridge.algo.ts:107",
+    "teal": 663,
+    "source": "contracts/ARC84Bridge.algo.ts:108",
     "pc": [
       741,
       742,
@@ -3139,47 +3139,47 @@
     ]
   },
   {
-    "teal": 663,
-    "source": "contracts/ARC84Bridge.algo.ts:107",
+    "teal": 664,
+    "source": "contracts/ARC84Bridge.algo.ts:108",
     "pc": [
       744,
       745
     ]
   },
   {
-    "teal": 673,
-    "source": "contracts/ARC84Bridge.algo.ts:112",
+    "teal": 674,
+    "source": "contracts/ARC84Bridge.algo.ts:113",
     "pc": [
       746
     ]
   },
   {
-    "teal": 674,
-    "source": "contracts/ARC84Bridge.algo.ts:112",
+    "teal": 675,
+    "source": "contracts/ARC84Bridge.algo.ts:113",
     "pc": [
       747,
       748
     ]
   },
   {
-    "teal": 675,
-    "source": "contracts/ARC84Bridge.algo.ts:112",
+    "teal": 676,
+    "source": "contracts/ARC84Bridge.algo.ts:113",
     "pc": [
       749,
       750
     ]
   },
   {
-    "teal": 679,
-    "source": "contracts/ARC84Bridge.algo.ts:113",
+    "teal": 680,
+    "source": "contracts/ARC84Bridge.algo.ts:114",
     "pc": [
       751,
       752
     ]
   },
   {
-    "teal": 680,
-    "source": "contracts/ARC84Bridge.algo.ts:113",
+    "teal": 681,
+    "source": "contracts/ARC84Bridge.algo.ts:114",
     "pc": [
       753,
       754,
@@ -3187,31 +3187,31 @@
     ]
   },
   {
-    "teal": 681,
-    "source": "contracts/ARC84Bridge.algo.ts:113",
+    "teal": 682,
+    "source": "contracts/ARC84Bridge.algo.ts:114",
     "pc": [
       756
     ]
   },
   {
-    "teal": 682,
-    "source": "contracts/ARC84Bridge.algo.ts:113",
+    "teal": 683,
+    "source": "contracts/ARC84Bridge.algo.ts:114",
     "pc": [
       757,
       758
     ]
   },
   {
-    "teal": 686,
-    "source": "contracts/ARC84Bridge.algo.ts:114",
+    "teal": 687,
+    "source": "contracts/ARC84Bridge.algo.ts:115",
     "pc": [
       759,
       760
     ]
   },
   {
-    "teal": 687,
-    "source": "contracts/ARC84Bridge.algo.ts:114",
+    "teal": 688,
+    "source": "contracts/ARC84Bridge.algo.ts:115",
     "pc": [
       761,
       762,
@@ -3219,31 +3219,31 @@
     ]
   },
   {
-    "teal": 688,
-    "source": "contracts/ARC84Bridge.algo.ts:114",
+    "teal": 689,
+    "source": "contracts/ARC84Bridge.algo.ts:115",
     "pc": [
       764
     ]
   },
   {
-    "teal": 689,
-    "source": "contracts/ARC84Bridge.algo.ts:114",
+    "teal": 690,
+    "source": "contracts/ARC84Bridge.algo.ts:115",
     "pc": [
       765,
       766
     ]
   },
   {
-    "teal": 693,
-    "source": "contracts/ARC84Bridge.algo.ts:115",
+    "teal": 694,
+    "source": "contracts/ARC84Bridge.algo.ts:116",
     "pc": [
       767,
       768
     ]
   },
   {
-    "teal": 694,
-    "source": "contracts/ARC84Bridge.algo.ts:115",
+    "teal": 695,
+    "source": "contracts/ARC84Bridge.algo.ts:116",
     "pc": [
       769,
       770,
@@ -3251,24 +3251,24 @@
     ]
   },
   {
-    "teal": 695,
-    "source": "contracts/ARC84Bridge.algo.ts:115",
+    "teal": 696,
+    "source": "contracts/ARC84Bridge.algo.ts:116",
     "pc": [
       772,
       773
     ]
   },
   {
-    "teal": 699,
-    "source": "contracts/ARC84Bridge.algo.ts:116",
+    "teal": 700,
+    "source": "contracts/ARC84Bridge.algo.ts:117",
     "pc": [
       774,
       775
     ]
   },
   {
-    "teal": 700,
-    "source": "contracts/ARC84Bridge.algo.ts:116",
+    "teal": 701,
+    "source": "contracts/ARC84Bridge.algo.ts:117",
     "pc": [
       776,
       777,
@@ -3276,263 +3276,263 @@
     ]
   },
   {
-    "teal": 701,
-    "source": "contracts/ARC84Bridge.algo.ts:116",
+    "teal": 702,
+    "source": "contracts/ARC84Bridge.algo.ts:117",
     "pc": [
       779,
       780
     ]
   },
   {
-    "teal": 705,
-    "source": "contracts/ARC84Bridge.algo.ts:117",
+    "teal": 706,
+    "source": "contracts/ARC84Bridge.algo.ts:118",
     "pc": [
       781,
       782
     ]
   },
   {
-    "teal": 706,
-    "source": "contracts/ARC84Bridge.algo.ts:117",
+    "teal": 707,
+    "source": "contracts/ARC84Bridge.algo.ts:118",
     "pc": [
       783,
       784
     ]
   },
   {
-    "teal": 709,
-    "source": "contracts/ARC84Bridge.algo.ts:112",
+    "teal": 710,
+    "source": "contracts/ARC84Bridge.algo.ts:113",
     "pc": [
       785
     ]
   },
   {
-    "teal": 710,
-    "source": "contracts/ARC84Bridge.algo.ts:112",
+    "teal": 711,
+    "source": "contracts/ARC84Bridge.algo.ts:113",
     "pc": [
       786,
       787
     ]
   },
   {
-    "teal": 713,
-    "source": "contracts/ARC84Bridge.algo.ts:112",
+    "teal": 714,
+    "source": "contracts/ARC84Bridge.algo.ts:113",
     "pc": [
       788
     ]
   },
   {
-    "teal": 714,
-    "source": "contracts/ARC84Bridge.algo.ts:112",
+    "teal": 715,
+    "source": "contracts/ARC84Bridge.algo.ts:113",
     "pc": [
       789,
       790
     ]
   },
   {
-    "teal": 718,
-    "source": "contracts/ARC84Bridge.algo.ts:120",
+    "teal": 719,
+    "source": "contracts/ARC84Bridge.algo.ts:121",
     "pc": [
       791,
       792
     ]
   },
   {
-    "teal": 719,
-    "source": "contracts/ARC84Bridge.algo.ts:120",
+    "teal": 720,
+    "source": "contracts/ARC84Bridge.algo.ts:121",
     "pc": [
       793,
       794
     ]
   },
   {
-    "teal": 723,
-    "source": "contracts/ARC84Bridge.algo.ts:121",
+    "teal": 724,
+    "source": "contracts/ARC84Bridge.algo.ts:122",
     "pc": [
       795
     ]
   },
   {
-    "teal": 724,
-    "source": "contracts/ARC84Bridge.algo.ts:121",
+    "teal": 725,
+    "source": "contracts/ARC84Bridge.algo.ts:122",
     "pc": [
       796,
       797
     ]
   },
   {
-    "teal": 725,
-    "source": "contracts/ARC84Bridge.algo.ts:121",
+    "teal": 726,
+    "source": "contracts/ARC84Bridge.algo.ts:122",
     "pc": [
       798
     ]
   },
   {
-    "teal": 726,
-    "source": "contracts/ARC84Bridge.algo.ts:121",
+    "teal": 727,
+    "source": "contracts/ARC84Bridge.algo.ts:122",
     "pc": [
       799,
       800
     ]
   },
   {
-    "teal": 727,
-    "source": "contracts/ARC84Bridge.algo.ts:121",
+    "teal": 728,
+    "source": "contracts/ARC84Bridge.algo.ts:122",
     "pc": [
       801
     ]
   },
   {
-    "teal": 728,
-    "source": "contracts/ARC84Bridge.algo.ts:121",
+    "teal": 729,
+    "source": "contracts/ARC84Bridge.algo.ts:122",
     "pc": [
       802
     ]
   },
   {
-    "teal": 732,
-    "source": "contracts/ARC84Bridge.algo.ts:122",
+    "teal": 733,
+    "source": "contracts/ARC84Bridge.algo.ts:123",
     "pc": [
       803
     ]
   },
   {
-    "teal": 733,
-    "source": "contracts/ARC84Bridge.algo.ts:122",
+    "teal": 734,
+    "source": "contracts/ARC84Bridge.algo.ts:123",
     "pc": [
       804,
       805
     ]
   },
   {
-    "teal": 734,
-    "source": "contracts/ARC84Bridge.algo.ts:122",
+    "teal": 735,
+    "source": "contracts/ARC84Bridge.algo.ts:123",
     "pc": [
       806
     ]
   },
   {
-    "teal": 735,
-    "source": "contracts/ARC84Bridge.algo.ts:122",
+    "teal": 736,
+    "source": "contracts/ARC84Bridge.algo.ts:123",
     "pc": [
       807
     ]
   },
   {
-    "teal": 736,
-    "source": "contracts/ARC84Bridge.algo.ts:122",
+    "teal": 737,
+    "source": "contracts/ARC84Bridge.algo.ts:123",
     "pc": [
       808,
       809
     ]
   },
   {
-    "teal": 737,
-    "source": "contracts/ARC84Bridge.algo.ts:122",
+    "teal": 738,
+    "source": "contracts/ARC84Bridge.algo.ts:123",
     "pc": [
       810
     ]
   },
   {
-    "teal": 742,
-    "source": "contracts/ARC84Bridge.algo.ts:125",
+    "teal": 743,
+    "source": "contracts/ARC84Bridge.algo.ts:126",
     "pc": [
       811
     ]
   },
   {
-    "teal": 743,
-    "source": "contracts/ARC84Bridge.algo.ts:125",
+    "teal": 744,
+    "source": "contracts/ARC84Bridge.algo.ts:126",
     "pc": [
       812,
       813
     ]
   },
   {
-    "teal": 744,
-    "source": "contracts/ARC84Bridge.algo.ts:125",
+    "teal": 745,
+    "source": "contracts/ARC84Bridge.algo.ts:126",
     "pc": [
       814
     ]
   },
   {
-    "teal": 745,
-    "source": "contracts/ARC84Bridge.algo.ts:125",
+    "teal": 746,
+    "source": "contracts/ARC84Bridge.algo.ts:126",
     "pc": [
       815
     ]
   },
   {
-    "teal": 748,
-    "source": "contracts/ARC84Bridge.algo.ts:125",
+    "teal": 749,
+    "source": "contracts/ARC84Bridge.algo.ts:126",
     "errorMessage": "box value does not exist: this.arc84ToAsaMap(arc84).value",
     "pc": [
       816
     ]
   },
   {
-    "teal": 749,
-    "source": "contracts/ARC84Bridge.algo.ts:125",
+    "teal": 750,
+    "source": "contracts/ARC84Bridge.algo.ts:126",
     "pc": [
       817
     ]
   },
   {
-    "teal": 750,
-    "source": "contracts/ARC84Bridge.algo.ts:125",
+    "teal": 751,
+    "source": "contracts/ARC84Bridge.algo.ts:126",
     "pc": [
       818,
       819
     ]
   },
   {
-    "teal": 755,
-    "source": "contracts/ARC84Bridge.algo.ts:127",
+    "teal": 756,
+    "source": "contracts/ARC84Bridge.algo.ts:128",
     "pc": [
       820,
       821
     ]
   },
   {
-    "teal": 756,
-    "source": "contracts/ARC84Bridge.algo.ts:127",
+    "teal": 757,
+    "source": "contracts/ARC84Bridge.algo.ts:128",
     "pc": [
       822,
       823
     ]
   },
   {
-    "teal": 757,
-    "source": "contracts/ARC84Bridge.algo.ts:127",
+    "teal": 758,
+    "source": "contracts/ARC84Bridge.algo.ts:128",
     "pc": [
       824,
       825
     ]
   },
   {
-    "teal": 758,
-    "source": "contracts/ARC84Bridge.algo.ts:127",
+    "teal": 759,
+    "source": "contracts/ARC84Bridge.algo.ts:128",
     "pc": [
       826
     ]
   },
   {
-    "teal": 759,
-    "source": "contracts/ARC84Bridge.algo.ts:127",
+    "teal": 760,
+    "source": "contracts/ARC84Bridge.algo.ts:128",
     "pc": [
       827
     ]
   },
   {
-    "teal": 760,
-    "source": "contracts/ARC84Bridge.algo.ts:127",
+    "teal": 761,
+    "source": "contracts/ARC84Bridge.algo.ts:128",
     "pc": [
       828
     ]
   },
   {
-    "teal": 761,
-    "source": "contracts/ARC84Bridge.algo.ts:127",
+    "teal": 762,
+    "source": "contracts/ARC84Bridge.algo.ts:128",
     "pc": [
       829,
       830,
@@ -3540,82 +3540,82 @@
     ]
   },
   {
-    "teal": 766,
-    "source": "contracts/ARC84Bridge.algo.ts:128",
+    "teal": 767,
+    "source": "contracts/ARC84Bridge.algo.ts:129",
     "pc": [
       832,
       833
     ]
   },
   {
-    "teal": 767,
-    "source": "contracts/ARC84Bridge.algo.ts:128",
+    "teal": 768,
+    "source": "contracts/ARC84Bridge.algo.ts:129",
     "pc": [
       834
     ]
   },
   {
-    "teal": 768,
-    "source": "contracts/ARC84Bridge.algo.ts:128",
+    "teal": 769,
+    "source": "contracts/ARC84Bridge.algo.ts:129",
     "pc": [
       835,
       836
     ]
   },
   {
-    "teal": 769,
-    "source": "contracts/ARC84Bridge.algo.ts:128",
+    "teal": 770,
+    "source": "contracts/ARC84Bridge.algo.ts:129",
     "pc": [
       837
     ]
   },
   {
-    "teal": 770,
-    "source": "contracts/ARC84Bridge.algo.ts:128",
+    "teal": 771,
+    "source": "contracts/ARC84Bridge.algo.ts:129",
     "pc": [
       838,
       839
     ]
   },
   {
-    "teal": 775,
-    "source": "contracts/ARC84Bridge.algo.ts:129",
+    "teal": 776,
+    "source": "contracts/ARC84Bridge.algo.ts:130",
     "pc": [
       840,
       841
     ]
   },
   {
-    "teal": 776,
-    "source": "contracts/ARC84Bridge.algo.ts:129",
+    "teal": 777,
+    "source": "contracts/ARC84Bridge.algo.ts:130",
     "pc": [
       842
     ]
   },
   {
-    "teal": 777,
-    "source": "contracts/ARC84Bridge.algo.ts:129",
+    "teal": 778,
+    "source": "contracts/ARC84Bridge.algo.ts:130",
     "pc": [
       843
     ]
   },
   {
-    "teal": 778,
-    "source": "contracts/ARC84Bridge.algo.ts:129",
+    "teal": 779,
+    "source": "contracts/ARC84Bridge.algo.ts:130",
     "pc": [
       844
     ]
   },
   {
-    "teal": 779,
-    "source": "contracts/ARC84Bridge.algo.ts:129",
+    "teal": 780,
+    "source": "contracts/ARC84Bridge.algo.ts:130",
     "pc": [
       845
     ]
   },
   {
-    "teal": 780,
-    "source": "contracts/ARC84Bridge.algo.ts:129",
+    "teal": 781,
+    "source": "contracts/ARC84Bridge.algo.ts:130",
     "pc": [
       846,
       847,
@@ -3623,207 +3623,207 @@
     ]
   },
   {
-    "teal": 785,
-    "source": "contracts/ARC84Bridge.algo.ts:129",
+    "teal": 786,
+    "source": "contracts/ARC84Bridge.algo.ts:130",
     "pc": [
       849,
       850
     ]
   },
   {
-    "teal": 786,
-    "source": "contracts/ARC84Bridge.algo.ts:129",
+    "teal": 787,
+    "source": "contracts/ARC84Bridge.algo.ts:130",
     "pc": [
       851
     ]
   },
   {
-    "teal": 787,
-    "source": "contracts/ARC84Bridge.algo.ts:129",
+    "teal": 788,
+    "source": "contracts/ARC84Bridge.algo.ts:130",
     "pc": [
       852
     ]
   },
   {
-    "teal": 788,
-    "source": "contracts/ARC84Bridge.algo.ts:129",
+    "teal": 789,
+    "source": "contracts/ARC84Bridge.algo.ts:130",
     "pc": [
       853
     ]
   },
   {
-    "teal": 793,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 794,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       854,
       855
     ]
   },
   {
-    "teal": 794,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 795,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       856
     ]
   },
   {
-    "teal": 797,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 798,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "errorMessage": "box value does not exist: this.withdrawAmounts(key).value",
     "pc": [
       857
     ]
   },
   {
-    "teal": 798,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 799,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       858
     ]
   },
   {
-    "teal": 799,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 800,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       859,
       860
     ]
   },
   {
-    "teal": 800,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 801,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       861,
       862
     ]
   },
   {
-    "teal": 801,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 802,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       863
     ]
   },
   {
-    "teal": 802,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 803,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       864,
       865
     ]
   },
   {
-    "teal": 803,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 804,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       866,
       867
     ]
   },
   {
-    "teal": 804,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 805,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       868
     ]
   },
   {
-    "teal": 805,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 806,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       869
     ]
   },
   {
-    "teal": 806,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 807,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       870,
       871
     ]
   },
   {
-    "teal": 807,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 808,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       872
     ]
   },
   {
-    "teal": 808,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 809,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       873,
       874
     ]
   },
   {
-    "teal": 809,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 810,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       875
     ]
   },
   {
-    "teal": 810,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 811,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       876
     ]
   },
   {
-    "teal": 811,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 812,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       877
     ]
   },
   {
-    "teal": 812,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 813,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       878
     ]
   },
   {
-    "teal": 813,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 814,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       879
     ]
   },
   {
-    "teal": 814,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 815,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       880,
       881
     ]
   },
   {
-    "teal": 815,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 816,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       882
     ]
   },
   {
-    "teal": 816,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 817,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       883
     ]
   },
   {
-    "teal": 817,
-    "source": "contracts/ARC84Bridge.algo.ts:131",
+    "teal": 818,
+    "source": "contracts/ARC84Bridge.algo.ts:132",
     "pc": [
       884
     ]
   },
   {
-    "teal": 818,
-    "source": "contracts/ARC84Bridge.algo.ts:127",
+    "teal": 819,
+    "source": "contracts/ARC84Bridge.algo.ts:128",
     "pc": [
       885,
       886,
@@ -3831,204 +3831,204 @@
     ]
   },
   {
-    "teal": 823,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 824,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       888
     ]
   },
   {
-    "teal": 824,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 825,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       889,
       890
     ]
   },
   {
-    "teal": 825,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 826,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       891,
       892
     ]
   },
   {
-    "teal": 829,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 830,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       893,
       894
     ]
   },
   {
-    "teal": 830,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 831,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       895,
       896
     ]
   },
   {
-    "teal": 834,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 835,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       897,
       898
     ]
   },
   {
-    "teal": 835,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 836,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       899,
       900
     ]
   },
   {
-    "teal": 839,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 840,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       901,
       902
     ]
   },
   {
-    "teal": 840,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 841,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       903,
       904
     ]
   },
   {
-    "teal": 841,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 842,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       905
     ]
   },
   {
-    "teal": 842,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 843,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       906,
       907
     ]
   },
   {
-    "teal": 843,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 844,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       908,
       909
     ]
   },
   {
-    "teal": 844,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 845,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       910
     ]
   },
   {
-    "teal": 845,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 846,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       911
     ]
   },
   {
-    "teal": 846,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 847,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       912,
       913
     ]
   },
   {
-    "teal": 847,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 848,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       914
     ]
   },
   {
-    "teal": 848,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 849,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       915,
       916
     ]
   },
   {
-    "teal": 849,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 850,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       917
     ]
   },
   {
-    "teal": 850,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 851,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       918
     ]
   },
   {
-    "teal": 851,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 852,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       919
     ]
   },
   {
-    "teal": 852,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 853,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       920
     ]
   },
   {
-    "teal": 853,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 854,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       921,
       922
     ]
   },
   {
-    "teal": 856,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 857,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       923
     ]
   },
   {
-    "teal": 857,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 858,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       924,
       925
     ]
   },
   {
-    "teal": 860,
-    "source": "contracts/ARC84Bridge.algo.ts:133",
+    "teal": 861,
+    "source": "contracts/ARC84Bridge.algo.ts:134",
     "pc": [
       926
     ]
   },
   {
-    "teal": 865,
-    "source": "contracts/ARC84Bridge.algo.ts:136",
+    "teal": 866,
+    "source": "contracts/ARC84Bridge.algo.ts:137",
     "pc": [
       927,
       928
     ]
   },
   {
-    "teal": 868,
+    "teal": 869,
     "source": "contracts/ARC84Bridge.algo.ts:92",
     "pc": [
       929,
@@ -4036,7 +4036,7 @@
     ]
   },
   {
-    "teal": 871,
+    "teal": 872,
     "source": "contracts/ARC84Bridge.algo.ts:92",
     "pc": [
       931,
@@ -4044,15 +4044,15 @@
     ]
   },
   {
-    "teal": 872,
+    "teal": 873,
     "source": "contracts/ARC84Bridge.algo.ts:92",
     "pc": [
       933
     ]
   },
   {
-    "teal": 877,
-    "source": "contracts/ARC84Bridge.algo.ts:139",
+    "teal": 878,
+    "source": "contracts/ARC84Bridge.algo.ts:140",
     "pc": [
       934,
       935,
@@ -4060,45 +4060,45 @@
     ]
   },
   {
-    "teal": 878,
-    "source": "contracts/ARC84Bridge.algo.ts:139",
+    "teal": 879,
+    "source": "contracts/ARC84Bridge.algo.ts:140",
     "pc": [
       937
     ]
   },
   {
-    "teal": 879,
-    "source": "contracts/ARC84Bridge.algo.ts:139",
+    "teal": 880,
+    "source": "contracts/ARC84Bridge.algo.ts:140",
     "pc": [
       938
     ]
   },
   {
-    "teal": 880,
-    "source": "contracts/ARC84Bridge.algo.ts:139",
+    "teal": 881,
+    "source": "contracts/ARC84Bridge.algo.ts:140",
     "pc": [
       939,
       940
     ]
   },
   {
-    "teal": 881,
-    "source": "contracts/ARC84Bridge.algo.ts:139",
+    "teal": 882,
+    "source": "contracts/ARC84Bridge.algo.ts:140",
     "pc": [
       941
     ]
   },
   {
-    "teal": 884,
-    "source": "contracts/ARC84Bridge.algo.ts:139",
+    "teal": 885,
+    "source": "contracts/ARC84Bridge.algo.ts:140",
     "errorMessage": "argument 0 (withdrawalFor) for withdrawAsa must be a address",
     "pc": [
       942
     ]
   },
   {
-    "teal": 887,
-    "source": "contracts/ARC84Bridge.algo.ts:139",
+    "teal": 888,
+    "source": "contracts/ARC84Bridge.algo.ts:140",
     "pc": [
       943,
       944,
@@ -4106,15 +4106,15 @@
     ]
   },
   {
-    "teal": 888,
-    "source": "contracts/ARC84Bridge.algo.ts:139",
+    "teal": 889,
+    "source": "contracts/ARC84Bridge.algo.ts:140",
     "pc": [
       946
     ]
   },
   {
-    "teal": 891,
-    "source": "contracts/ARC84Bridge.algo.ts:139",
+    "teal": 892,
+    "source": "contracts/ARC84Bridge.algo.ts:140",
     "pc": [
       947,
       948,
@@ -4122,22 +4122,22 @@
     ]
   },
   {
-    "teal": 892,
-    "source": "contracts/ARC84Bridge.algo.ts:139",
+    "teal": 893,
+    "source": "contracts/ARC84Bridge.algo.ts:140",
     "pc": [
       950
     ]
   },
   {
-    "teal": 893,
-    "source": "contracts/ARC84Bridge.algo.ts:139",
+    "teal": 894,
+    "source": "contracts/ARC84Bridge.algo.ts:140",
     "pc": [
       951
     ]
   },
   {
-    "teal": 897,
-    "source": "contracts/ARC84Bridge.algo.ts:139",
+    "teal": 898,
+    "source": "contracts/ARC84Bridge.algo.ts:140",
     "pc": [
       952,
       953,
@@ -4145,189 +4145,189 @@
     ]
   },
   {
-    "teal": 900,
-    "source": "contracts/ARC84Bridge.algo.ts:139",
+    "teal": 901,
+    "source": "contracts/ARC84Bridge.algo.ts:140",
     "pc": [
       955
     ]
   },
   {
-    "teal": 904,
-    "source": "contracts/ARC84Bridge.algo.ts:140",
+    "teal": 905,
+    "source": "contracts/ARC84Bridge.algo.ts:141",
     "pc": [
       956,
       957
     ]
   },
   {
-    "teal": 905,
-    "source": "contracts/ARC84Bridge.algo.ts:140",
+    "teal": 906,
+    "source": "contracts/ARC84Bridge.algo.ts:141",
     "pc": [
       958
     ]
   },
   {
-    "teal": 906,
-    "source": "contracts/ARC84Bridge.algo.ts:140",
+    "teal": 907,
+    "source": "contracts/ARC84Bridge.algo.ts:141",
     "pc": [
       959,
       960
     ]
   },
   {
-    "teal": 907,
-    "source": "contracts/ARC84Bridge.algo.ts:140",
+    "teal": 908,
+    "source": "contracts/ARC84Bridge.algo.ts:141",
     "pc": [
       961
     ]
   },
   {
-    "teal": 908,
-    "source": "contracts/ARC84Bridge.algo.ts:140",
+    "teal": 909,
+    "source": "contracts/ARC84Bridge.algo.ts:141",
     "pc": [
       962,
       963
     ]
   },
   {
-    "teal": 912,
-    "source": "contracts/ARC84Bridge.algo.ts:141",
+    "teal": 913,
+    "source": "contracts/ARC84Bridge.algo.ts:142",
     "pc": [
       964
     ]
   },
   {
-    "teal": 913,
-    "source": "contracts/ARC84Bridge.algo.ts:141",
+    "teal": 914,
+    "source": "contracts/ARC84Bridge.algo.ts:142",
     "pc": [
       965,
       966
     ]
   },
   {
-    "teal": 914,
-    "source": "contracts/ARC84Bridge.algo.ts:141",
+    "teal": 915,
+    "source": "contracts/ARC84Bridge.algo.ts:142",
     "pc": [
       967,
       968
     ]
   },
   {
-    "teal": 918,
-    "source": "contracts/ARC84Bridge.algo.ts:141",
+    "teal": 919,
+    "source": "contracts/ARC84Bridge.algo.ts:142",
     "pc": [
       969,
       970
     ]
   },
   {
-    "teal": 919,
-    "source": "contracts/ARC84Bridge.algo.ts:141",
+    "teal": 920,
+    "source": "contracts/ARC84Bridge.algo.ts:142",
     "pc": [
       971,
       972
     ]
   },
   {
-    "teal": 923,
-    "source": "contracts/ARC84Bridge.algo.ts:141",
+    "teal": 924,
+    "source": "contracts/ARC84Bridge.algo.ts:142",
     "pc": [
       973,
       974
     ]
   },
   {
-    "teal": 924,
-    "source": "contracts/ARC84Bridge.algo.ts:141",
+    "teal": 925,
+    "source": "contracts/ARC84Bridge.algo.ts:142",
     "pc": [
       975,
       976
     ]
   },
   {
-    "teal": 928,
-    "source": "contracts/ARC84Bridge.algo.ts:141",
+    "teal": 929,
+    "source": "contracts/ARC84Bridge.algo.ts:142",
     "pc": [
       977,
       978
     ]
   },
   {
-    "teal": 929,
-    "source": "contracts/ARC84Bridge.algo.ts:141",
+    "teal": 930,
+    "source": "contracts/ARC84Bridge.algo.ts:142",
     "pc": [
       979
     ]
   },
   {
-    "teal": 932,
-    "source": "contracts/ARC84Bridge.algo.ts:141",
+    "teal": 933,
+    "source": "contracts/ARC84Bridge.algo.ts:142",
     "errorMessage": "box value does not exist: this.withdrawAmounts(key).value",
     "pc": [
       980
     ]
   },
   {
-    "teal": 933,
-    "source": "contracts/ARC84Bridge.algo.ts:141",
+    "teal": 934,
+    "source": "contracts/ARC84Bridge.algo.ts:142",
     "pc": [
       981
     ]
   },
   {
-    "teal": 934,
-    "source": "contracts/ARC84Bridge.algo.ts:141",
+    "teal": 935,
+    "source": "contracts/ARC84Bridge.algo.ts:142",
     "pc": [
       982,
       983
     ]
   },
   {
-    "teal": 937,
-    "source": "contracts/ARC84Bridge.algo.ts:141",
+    "teal": 938,
+    "source": "contracts/ARC84Bridge.algo.ts:142",
     "pc": [
       984
     ]
   },
   {
-    "teal": 938,
-    "source": "contracts/ARC84Bridge.algo.ts:141",
+    "teal": 939,
+    "source": "contracts/ARC84Bridge.algo.ts:142",
     "pc": [
       985,
       986
     ]
   },
   {
-    "teal": 941,
-    "source": "contracts/ARC84Bridge.algo.ts:141",
+    "teal": 942,
+    "source": "contracts/ARC84Bridge.algo.ts:142",
     "pc": [
       987
     ]
   },
   {
-    "teal": 945,
-    "source": "contracts/ARC84Bridge.algo.ts:142",
+    "teal": 946,
+    "source": "contracts/ARC84Bridge.algo.ts:143",
     "pc": [
       988,
       989
     ]
   },
   {
-    "teal": 946,
-    "source": "contracts/ARC84Bridge.algo.ts:142",
+    "teal": 947,
+    "source": "contracts/ARC84Bridge.algo.ts:143",
     "pc": [
       990
     ]
   },
   {
-    "teal": 947,
-    "source": "contracts/ARC84Bridge.algo.ts:139",
+    "teal": 948,
+    "source": "contracts/ARC84Bridge.algo.ts:140",
     "pc": [
       991
     ]
   },
   {
-    "teal": 950,
+    "teal": 951,
     "source": "contracts/ARC84Bridge.algo.ts:15",
     "pc": [
       992,
@@ -4339,7 +4339,7 @@
     ]
   },
   {
-    "teal": 951,
+    "teal": 952,
     "source": "contracts/ARC84Bridge.algo.ts:15",
     "pc": [
       998,
@@ -4348,7 +4348,7 @@
     ]
   },
   {
-    "teal": 952,
+    "teal": 953,
     "source": "contracts/ARC84Bridge.algo.ts:15",
     "pc": [
       1001,
@@ -4358,7 +4358,7 @@
     ]
   },
   {
-    "teal": 955,
+    "teal": 956,
     "source": "contracts/ARC84Bridge.algo.ts:15",
     "errorMessage": "this contract does not implement the given ABI method for create NoOp",
     "pc": [
@@ -4366,7 +4366,7 @@
     ]
   },
   {
-    "teal": 958,
+    "teal": 959,
     "source": "contracts/ARC84Bridge.algo.ts:15",
     "pc": [
       1006,
@@ -4378,7 +4378,7 @@
     ]
   },
   {
-    "teal": 959,
+    "teal": 960,
     "source": "contracts/ARC84Bridge.algo.ts:15",
     "pc": [
       1012,
@@ -4390,7 +4390,7 @@
     ]
   },
   {
-    "teal": 960,
+    "teal": 961,
     "source": "contracts/ARC84Bridge.algo.ts:15",
     "pc": [
       1018,
@@ -4402,7 +4402,7 @@
     ]
   },
   {
-    "teal": 961,
+    "teal": 962,
     "source": "contracts/ARC84Bridge.algo.ts:15",
     "pc": [
       1024,
@@ -4414,7 +4414,7 @@
     ]
   },
   {
-    "teal": 962,
+    "teal": 963,
     "source": "contracts/ARC84Bridge.algo.ts:15",
     "pc": [
       1030,
@@ -4423,7 +4423,7 @@
     ]
   },
   {
-    "teal": 963,
+    "teal": 964,
     "source": "contracts/ARC84Bridge.algo.ts:15",
     "pc": [
       1033,
@@ -4439,7 +4439,7 @@
     ]
   },
   {
-    "teal": 966,
+    "teal": 967,
     "source": "contracts/ARC84Bridge.algo.ts:15",
     "errorMessage": "this contract does not implement the given ABI method for call NoOp",
     "pc": [

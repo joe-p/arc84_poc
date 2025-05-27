@@ -61,7 +61,7 @@ declare:
 	bytec 4 // 0x
 
 	// *if0_condition
-	// contracts/DeclarationRegistry.algo.ts:26
+	// contracts/DeclarationRegistry.algo.ts:46
 	// this.declarations(addrToken).exists
 	frame_dig -1 // addrToken: AddressToken
 	box_len
@@ -70,14 +70,14 @@ declare:
 	bz *if0_end
 
 	// *if0_consequent
-	// contracts/DeclarationRegistry.algo.ts:27
+	// contracts/DeclarationRegistry.algo.ts:47
 	// return true;
 	intc 0 // 1
 	b *declare*return
 
 *if0_end:
 	// *if1_condition
-	// contracts/DeclarationRegistry.algo.ts:31
+	// contracts/DeclarationRegistry.algo.ts:51
 	// this.approvalApps(addrToken).exists
 	bytec 0 //  "a"
 	frame_dig -1 // addrToken: AddressToken
@@ -88,7 +88,7 @@ declare:
 	bz *if1_else
 
 	// *if1_consequent
-	// contracts/DeclarationRegistry.algo.ts:32
+	// contracts/DeclarationRegistry.algo.ts:52
 	// approved = sendMethodCall<typeof ApprovalApp.prototype.approveDeclaration>({
 	//         applicationID: this.approvalApps(addrToken).value,
 	//         methodArgs: [this.txn.sender, addrToken],
@@ -99,7 +99,7 @@ declare:
 	pushbytes 0xe38a69b8 // method "approveDeclaration(address,(address,uint64,uint64))bool"
 	itxn_field ApplicationArgs
 
-	// contracts/DeclarationRegistry.algo.ts:33
+	// contracts/DeclarationRegistry.algo.ts:53
 	// applicationID: this.approvalApps(addrToken).value
 	bytec 0 //  "a"
 	frame_dig -1 // addrToken: AddressToken
@@ -111,7 +111,7 @@ declare:
 	btoi
 	itxn_field ApplicationID
 
-	// contracts/DeclarationRegistry.algo.ts:34
+	// contracts/DeclarationRegistry.algo.ts:54
 	// methodArgs: [this.txn.sender, addrToken]
 	txn Sender
 	itxn_field ApplicationArgs
@@ -135,8 +135,8 @@ declare:
 	b *if1_end
 
 *if1_else:
-	// contracts/DeclarationRegistry.algo.ts:37
-	// approved = this.txn.sender == addrToken.addr
+	// contracts/DeclarationRegistry.algo.ts:57
+	// approved = this.txn.sender === addrToken.addr
 	txn Sender
 	frame_dig -1 // addrToken: AddressToken
 	extract 0 32
@@ -145,26 +145,26 @@ declare:
 
 *if1_end:
 	// *if2_condition
-	// contracts/DeclarationRegistry.algo.ts:40
+	// contracts/DeclarationRegistry.algo.ts:60
 	// !approved
 	frame_dig 0 // approved: boolean
 	!
 	bz *if2_end
 
 	// *if2_consequent
-	// contracts/DeclarationRegistry.algo.ts:40
+	// contracts/DeclarationRegistry.algo.ts:60
 	// return false;
 	intc 1 // 0
 	b *declare*return
 
 *if2_end:
-	// contracts/DeclarationRegistry.algo.ts:42
+	// contracts/DeclarationRegistry.algo.ts:62
 	// this.declarations(addrToken).value = '' as bytes<0>
 	frame_dig -1 // addrToken: AddressToken
 	bytec 4 //  ""
 	box_put
 
-	// contracts/DeclarationRegistry.algo.ts:44
+	// contracts/DeclarationRegistry.algo.ts:64
 	// return true;
 	intc 0 // 1
 
@@ -210,7 +210,7 @@ request:
 	bytec 4 // 0x
 
 	// *if3_condition
-	// contracts/DeclarationRegistry.algo.ts:50
+	// contracts/DeclarationRegistry.algo.ts:70
 	// this.requests(addrToken).exists
 	bytec 3 //  "r"
 	frame_dig -1 // addrToken: AddressToken
@@ -221,14 +221,14 @@ request:
 	bz *if3_end
 
 	// *if3_consequent
-	// contracts/DeclarationRegistry.algo.ts:51
+	// contracts/DeclarationRegistry.algo.ts:71
 	// return true;
 	intc 0 // 1
 	b *request*return
 
 *if3_end:
 	// *if4_condition
-	// contracts/DeclarationRegistry.algo.ts:54
+	// contracts/DeclarationRegistry.algo.ts:74
 	// this.approvalApps(addrToken).exists
 	bytec 0 //  "a"
 	frame_dig -1 // addrToken: AddressToken
@@ -239,7 +239,7 @@ request:
 	bz *if4_end
 
 	// *if4_consequent
-	// contracts/DeclarationRegistry.algo.ts:55
+	// contracts/DeclarationRegistry.algo.ts:75
 	// approved = sendMethodCall<typeof ApprovalApp.prototype.approveRequest>({
 	//         applicationID: this.approvalApps(addrToken).value,
 	//         methodArgs: [this.txn.sender, addrToken],
@@ -250,7 +250,7 @@ request:
 	pushbytes 0x96470e40 // method "approveRequest(address,(address,uint64,uint64))bool"
 	itxn_field ApplicationArgs
 
-	// contracts/DeclarationRegistry.algo.ts:56
+	// contracts/DeclarationRegistry.algo.ts:76
 	// applicationID: this.approvalApps(addrToken).value
 	bytec 0 //  "a"
 	frame_dig -1 // addrToken: AddressToken
@@ -262,7 +262,7 @@ request:
 	btoi
 	itxn_field ApplicationID
 
-	// contracts/DeclarationRegistry.algo.ts:57
+	// contracts/DeclarationRegistry.algo.ts:77
 	// methodArgs: [this.txn.sender, addrToken]
 	txn Sender
 	itxn_field ApplicationArgs
@@ -285,14 +285,14 @@ request:
 	frame_bury 0 // approved: bool
 
 	// *if5_condition
-	// contracts/DeclarationRegistry.algo.ts:60
+	// contracts/DeclarationRegistry.algo.ts:80
 	// !approved
 	frame_dig 0 // approved: bool
 	!
 	bz *if5_end
 
 	// *if5_consequent
-	// contracts/DeclarationRegistry.algo.ts:60
+	// contracts/DeclarationRegistry.algo.ts:80
 	// return false;
 	intc 1 // 0
 	b *request*return
@@ -300,7 +300,7 @@ request:
 *if5_end:
 
 *if4_end:
-	// contracts/DeclarationRegistry.algo.ts:63
+	// contracts/DeclarationRegistry.algo.ts:83
 	// this.requests(addrToken).value = '' as bytes<0>
 	bytec 3 //  "r"
 	frame_dig -1 // addrToken: AddressToken
@@ -308,7 +308,7 @@ request:
 	bytec 4 //  ""
 	box_put
 
-	// contracts/DeclarationRegistry.algo.ts:65
+	// contracts/DeclarationRegistry.algo.ts:85
 	// return true;
 	intc 0 // 1
 
@@ -351,7 +351,7 @@ removeDeclaration:
 	bytec 4 // 0x
 
 	// *if6_condition
-	// contracts/DeclarationRegistry.algo.ts:69
+	// contracts/DeclarationRegistry.algo.ts:89
 	// !this.declarations(addrToken).exists
 	frame_dig -1 // addrToken: AddressToken
 	box_len
@@ -361,14 +361,14 @@ removeDeclaration:
 	bz *if6_end
 
 	// *if6_consequent
-	// contracts/DeclarationRegistry.algo.ts:70
+	// contracts/DeclarationRegistry.algo.ts:90
 	// return true;
 	intc 0 // 1
 	b *removeDeclaration*return
 
 *if6_end:
 	// *if7_condition
-	// contracts/DeclarationRegistry.algo.ts:75
+	// contracts/DeclarationRegistry.algo.ts:95
 	// this.approvalApps(addrToken).exists
 	bytec 0 //  "a"
 	frame_dig -1 // addrToken: AddressToken
@@ -379,7 +379,7 @@ removeDeclaration:
 	bz *if7_else
 
 	// *if7_consequent
-	// contracts/DeclarationRegistry.algo.ts:76
+	// contracts/DeclarationRegistry.algo.ts:96
 	// approved = sendMethodCall<typeof ApprovalApp.prototype.approveDeclarationRemoval>({
 	//         applicationID: this.approvalApps(addrToken).value,
 	//         methodArgs: [this.txn.sender, addrToken],
@@ -390,7 +390,7 @@ removeDeclaration:
 	pushbytes 0x3c71d501 // method "approveDeclarationRemoval(address,(address,uint64,uint64))bool"
 	itxn_field ApplicationArgs
 
-	// contracts/DeclarationRegistry.algo.ts:77
+	// contracts/DeclarationRegistry.algo.ts:97
 	// applicationID: this.approvalApps(addrToken).value
 	bytec 0 //  "a"
 	frame_dig -1 // addrToken: AddressToken
@@ -402,7 +402,7 @@ removeDeclaration:
 	btoi
 	itxn_field ApplicationID
 
-	// contracts/DeclarationRegistry.algo.ts:78
+	// contracts/DeclarationRegistry.algo.ts:98
 	// methodArgs: [this.txn.sender, addrToken]
 	txn Sender
 	itxn_field ApplicationArgs
@@ -426,8 +426,8 @@ removeDeclaration:
 	b *if7_end
 
 *if7_else:
-	// contracts/DeclarationRegistry.algo.ts:81
-	// approved = this.txn.sender == addrToken.addr
+	// contracts/DeclarationRegistry.algo.ts:101
+	// approved = this.txn.sender === addrToken.addr
 	txn Sender
 	frame_dig -1 // addrToken: AddressToken
 	extract 0 32
@@ -436,25 +436,25 @@ removeDeclaration:
 
 *if7_end:
 	// *if8_condition
-	// contracts/DeclarationRegistry.algo.ts:84
+	// contracts/DeclarationRegistry.algo.ts:104
 	// !approved
 	frame_dig 0 // approved: boolean
 	!
 	bz *if8_end
 
 	// *if8_consequent
-	// contracts/DeclarationRegistry.algo.ts:84
+	// contracts/DeclarationRegistry.algo.ts:104
 	// return false;
 	intc 1 // 0
 	b *removeDeclaration*return
 
 *if8_end:
-	// contracts/DeclarationRegistry.algo.ts:85
+	// contracts/DeclarationRegistry.algo.ts:105
 	// this.declarations(addrToken).delete()
 	frame_dig -1 // addrToken: AddressToken
 	box_del
 
-	// contracts/DeclarationRegistry.algo.ts:86
+	// contracts/DeclarationRegistry.algo.ts:106
 	// return true;
 	intc 0 // 1
 
@@ -497,7 +497,7 @@ removeRequest:
 	bytec 4 // 0x
 
 	// *if9_condition
-	// contracts/DeclarationRegistry.algo.ts:90
+	// contracts/DeclarationRegistry.algo.ts:110
 	// !this.requests(addrToken).exists
 	bytec 3 //  "r"
 	frame_dig -1 // addrToken: AddressToken
@@ -509,14 +509,14 @@ removeRequest:
 	bz *if9_end
 
 	// *if9_consequent
-	// contracts/DeclarationRegistry.algo.ts:91
+	// contracts/DeclarationRegistry.algo.ts:111
 	// return true;
 	intc 0 // 1
 	b *removeRequest*return
 
 *if9_end:
 	// *if10_condition
-	// contracts/DeclarationRegistry.algo.ts:95
+	// contracts/DeclarationRegistry.algo.ts:115
 	// this.approvalApps(addrToken).exists
 	bytec 0 //  "a"
 	frame_dig -1 // addrToken: AddressToken
@@ -527,7 +527,7 @@ removeRequest:
 	bz *if10_else
 
 	// *if10_consequent
-	// contracts/DeclarationRegistry.algo.ts:96
+	// contracts/DeclarationRegistry.algo.ts:116
 	// approved = sendMethodCall<typeof ApprovalApp.prototype.approveRequestRemoval>({
 	//         applicationID: this.approvalApps(addrToken).value,
 	//         methodArgs: [this.txn.sender, addrToken],
@@ -538,7 +538,7 @@ removeRequest:
 	pushbytes 0xf69792d9 // method "approveRequestRemoval(address,(address,uint64,uint64))bool"
 	itxn_field ApplicationArgs
 
-	// contracts/DeclarationRegistry.algo.ts:97
+	// contracts/DeclarationRegistry.algo.ts:117
 	// applicationID: this.approvalApps(addrToken).value
 	bytec 0 //  "a"
 	frame_dig -1 // addrToken: AddressToken
@@ -550,7 +550,7 @@ removeRequest:
 	btoi
 	itxn_field ApplicationID
 
-	// contracts/DeclarationRegistry.algo.ts:98
+	// contracts/DeclarationRegistry.algo.ts:118
 	// methodArgs: [this.txn.sender, addrToken]
 	txn Sender
 	itxn_field ApplicationArgs
@@ -574,8 +574,8 @@ removeRequest:
 	b *if10_end
 
 *if10_else:
-	// contracts/DeclarationRegistry.algo.ts:101
-	// approved = this.txn.sender == addrToken.addr
+	// contracts/DeclarationRegistry.algo.ts:121
+	// approved = this.txn.sender === addrToken.addr
 	txn Sender
 	frame_dig -1 // addrToken: AddressToken
 	extract 0 32
@@ -584,27 +584,27 @@ removeRequest:
 
 *if10_end:
 	// *if11_condition
-	// contracts/DeclarationRegistry.algo.ts:104
+	// contracts/DeclarationRegistry.algo.ts:124
 	// !approved
 	frame_dig 0 // approved: boolean
 	!
 	bz *if11_end
 
 	// *if11_consequent
-	// contracts/DeclarationRegistry.algo.ts:104
+	// contracts/DeclarationRegistry.algo.ts:124
 	// return false;
 	intc 1 // 0
 	b *removeRequest*return
 
 *if11_end:
-	// contracts/DeclarationRegistry.algo.ts:105
+	// contracts/DeclarationRegistry.algo.ts:125
 	// this.requests(addrToken).delete()
 	bytec 3 //  "r"
 	frame_dig -1 // addrToken: AddressToken
 	concat
 	box_del
 
-	// contracts/DeclarationRegistry.algo.ts:106
+	// contracts/DeclarationRegistry.algo.ts:126
 	// return true;
 	intc 0 // 1
 
@@ -643,7 +643,7 @@ removeRequest:
 isRequested:
 	proto 1 1
 
-	// contracts/DeclarationRegistry.algo.ts:110
+	// contracts/DeclarationRegistry.algo.ts:130
 	// return this.requests(addrToken).exists;
 	bytec 3 //  "r"
 	frame_dig -1 // addrToken: AddressToken
@@ -683,7 +683,7 @@ isRequested:
 isDeclared:
 	proto 1 1
 
-	// contracts/DeclarationRegistry.algo.ts:114
+	// contracts/DeclarationRegistry.algo.ts:134
 	// return this.requests(addrToken).exists;
 	bytec 3 //  "r"
 	frame_dig -1 // addrToken: AddressToken
