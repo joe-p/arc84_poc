@@ -47,13 +47,13 @@ arc11550_transfer:
 	bytec 0 // 0x
 	dup
 
-	// contracts/ARC11550Transfer.algo.ts:6
+	// contracts/ARC11550Transfer.algo.ts:15
 	// for (let i = 0; i < transfers.length; i += 1)
 	intc 0 // 0
 	frame_bury 0 // i: uint64
 
 *for_0:
-	// contracts/ARC11550Transfer.algo.ts:6
+	// contracts/ARC11550Transfer.algo.ts:15
 	// i < transfers.length
 	frame_dig 0 // i: uint64
 	frame_dig -2 // transfers: Transfer[]
@@ -63,7 +63,7 @@ arc11550_transfer:
 	<
 	bz *for_0_end
 
-	// contracts/ARC11550Transfer.algo.ts:7
+	// contracts/ARC11550Transfer.algo.ts:16
 	// transferHookApp = sendMethodCall<typeof ARC11550Data.prototype.arc11550_transferHookApp>({
 	//         methodArgs: [transfers[i].tokenId],
 	//         applicationID: dataApp,
@@ -74,7 +74,7 @@ arc11550_transfer:
 	pushbytes 0x4569e7f8 // method "arc11550_transferHookApp(uint64)uint64"
 	itxn_field ApplicationArgs
 
-	// contracts/ARC11550Transfer.algo.ts:8
+	// contracts/ARC11550Transfer.algo.ts:17
 	// methodArgs: [transfers[i].tokenId]
 	frame_dig -2 // transfers: Transfer[]
 	store 255 // full array
@@ -93,7 +93,7 @@ arc11550_transfer:
 	itob
 	itxn_field ApplicationArgs
 
-	// contracts/ARC11550Transfer.algo.ts:9
+	// contracts/ARC11550Transfer.algo.ts:18
 	// applicationID: dataApp
 	frame_dig -1 // dataApp: AppID
 	itxn_field ApplicationID
@@ -113,13 +113,13 @@ arc11550_transfer:
 	frame_bury 1 // transferHookApp: uint64
 
 	// *if0_condition
-	// contracts/ARC11550Transfer.algo.ts:13
+	// contracts/ARC11550Transfer.algo.ts:22
 	// transferHookApp
 	frame_dig 1 // transferHookApp: uint64
 	bz *if0_end
 
 	// *if0_consequent
-	// contracts/ARC11550Transfer.algo.ts:14
+	// contracts/ARC11550Transfer.algo.ts:23
 	// assert(
 	//           sendMethodCall<typeof ARC11550TransferHook.prototype.approved>({
 	//             applicationID: transferHookApp,
@@ -132,12 +132,12 @@ arc11550_transfer:
 	pushbytes 0x64b9bd45 // method "approved(address,(uint64,address,address,uint64)[],uint64)bool"
 	itxn_field ApplicationArgs
 
-	// contracts/ARC11550Transfer.algo.ts:16
+	// contracts/ARC11550Transfer.algo.ts:25
 	// applicationID: transferHookApp
 	frame_dig 1 // transferHookApp: uint64
 	itxn_field ApplicationID
 
-	// contracts/ARC11550Transfer.algo.ts:17
+	// contracts/ARC11550Transfer.algo.ts:26
 	// methodArgs: [this.txn.sender, transfers, i]
 	txn Sender
 	itxn_field ApplicationArgs
@@ -173,7 +173,7 @@ arc11550_transfer:
 *if0_end:
 
 *for_0_continue:
-	// contracts/ARC11550Transfer.algo.ts:6
+	// contracts/ARC11550Transfer.algo.ts:15
 	// i += 1
 	frame_dig 0 // i: uint64
 	intc 1 // 1
@@ -182,7 +182,7 @@ arc11550_transfer:
 	b *for_0
 
 *for_0_end:
-	// contracts/ARC11550Transfer.algo.ts:23
+	// contracts/ARC11550Transfer.algo.ts:32
 	// sendMethodCall<typeof ARC11550Data.prototype.doTransfers>({
 	//       applicationID: dataApp,
 	//       methodArgs: [this.txn.sender, transfers],
@@ -193,12 +193,12 @@ arc11550_transfer:
 	pushbytes 0x21a85e1b // method "doTransfers(address,(uint64,address,address,uint64)[])void"
 	itxn_field ApplicationArgs
 
-	// contracts/ARC11550Transfer.algo.ts:24
+	// contracts/ARC11550Transfer.algo.ts:33
 	// applicationID: dataApp
 	frame_dig -1 // dataApp: AppID
 	itxn_field ApplicationID
 
-	// contracts/ARC11550Transfer.algo.ts:25
+	// contracts/ARC11550Transfer.algo.ts:34
 	// methodArgs: [this.txn.sender, transfers]
 	txn Sender
 	itxn_field ApplicationArgs

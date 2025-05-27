@@ -60,6 +60,11 @@ export type Collection = {
   manager: Address;
 };
 
+export class TempApp extends Contract {
+  @allow.create('DeleteApplication')
+  new() {}
+}
+
 export class ARC11550Data extends Contract {
   /** The parameters for a given token */
   params = BoxMap<TokenId, Params>({ prefix: 'p' });
@@ -102,9 +107,9 @@ export class ARC11550Data extends Contract {
     return collectionId;
   }
 
-  /*****************
+  /** ***************
    * Getter Methods
-   *****************/
+   **************** */
 
   arc11550_collection_minted(id: CollectionId): uint64 {
     return this.collections(id).value.minted;
@@ -130,9 +135,9 @@ export class ARC11550Data extends Contract {
     return this.params(id).value.transferHookApp;
   }
 
-  /**********************
+  /** ********************
    * Multi Getter Methods
-   **********************/
+   ********************* */
 
   arc11550_balancesOf(idAndAddrs: IdAndAddress[]): uint64[] {
     const balances: uint64[] = [];
@@ -157,9 +162,9 @@ export class ARC11550Data extends Contract {
 
   // TODO: Multi-getter for metadata
 
-  /*****************
+  /** ***************
    * Setter methods
-   *****************/
+   **************** */
 
   arc11550_setMetadata(key: MetadataKey, data: bytes) {
     assert(this.txn.sender === this.params(key.id).value.manager);
@@ -172,13 +177,14 @@ export class ARC11550Data extends Contract {
   }
 
   arc11550_setAllowance(allowanceKey: AllowanceKey, allowance: Allowance) {
+    // FIXME: It should be the holder that can change the allowance
     assert(this.txn.sender === this.params(allowanceKey.tokenId).value.manager);
     this.allowances(sha256(rawBytes(allowanceKey))).value = allowance;
   }
 
-  /**********************
+  /** ********************
    * Multi Setter Methods
-   **********************/
+   ********************* */
 
   arc11550_setAllowances(allowances: { key: AllowanceKey; allowance: Allowance }[]) {
     for (let i = 0; i < allowances.length; i += 1) {
@@ -189,18 +195,18 @@ export class ARC11550Data extends Contract {
 
   // TODO: Multi-setter for metadata
 
-  /***********************
+  /** *********************
    * Transfer/Mint Methods
-   ***********************/
+   ********************** */
 
   doTransfers(sender: Address, transfers: Transfer[]) {
-    assert(globals.callerApplicationID == this.transferApp.value);
+    assert(globals.callerApplicationID === this.transferApp.value);
 
     for (let i = 0; i < transfers.length; i += 1) {
       const t = transfers[i];
 
       if (t.from !== sender) {
-        const key = sha256(
+        const allowanceKey = sha256(
           rawBytes({
             holder: t.from,
             sender: sender,
@@ -208,9 +214,9 @@ export class ARC11550Data extends Contract {
           } as AllowanceKey)
         );
 
-        assert(this.allowances(key).exists);
+        assert(this.allowances(allowanceKey).exists);
 
-        const allowance = this.allowances(key).value;
+        const allowance = this.allowances(allowanceKey).value;
 
         const currentTime = globals.latestTimestamp;
         assert(allowance.expirationTimestamp >= currentTime);
@@ -227,7 +233,7 @@ export class ARC11550Data extends Contract {
 
       const recvKey: IdAndAddress = { tokenId: t.tokenId, address: t.to };
       if (!this.balances(recvKey).exists) {
-        this.balances(recvKey).create;
+        this.balances(recvKey).create();
       }
       this.balances({ tokenId: t.tokenId, address: t.to }).value += t.amount;
     }
@@ -265,12 +271,8 @@ export class ARC11550Data extends Contract {
 export class ARC11550TransferHook extends Contract {
   /** Determines whether a transfer is approved or not. This implementation just returns true (which is the same as not setting a
    * transferHookApp), but there are many possibilities such as dynamic whitelists, blacklists, enforced royalties, token-gating, etc. */
+  // eslint-disable-next-line no-unused-vars
   approved(caller: Address, transfers: Transfer[]): boolean {
     return true;
   }
-}
-
-export class TempApp extends Contract {
-  @allow.create('DeleteApplication')
-  new() {}
 }

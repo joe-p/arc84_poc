@@ -189,12 +189,15 @@ export async function setup() {
   } finally {
     if (demoUsdcBalance < DEMO_USDC_BALANCE) {
       console.debug(`Ensuring demo account has ${DEMO_USDC_BALANCE} USDC...`)
-      await algorand.send.assetTransfer({
+      const txn = await algorand.createTransaction.assetTransfer({
         assetId: USDC_ASA_ID,
         sender: usdcAddr,
         receiver: demoAddr,
         amount: DEMO_USDC_BALANCE - demoUsdcBalance,
       })
+
+      console.debug(txn)
+      await algorand.newGroup().addTransaction(txn).send()
     } else if (demoUsdcBalance > DEMO_USDC_BALANCE) {
       console.debug(`Ensuring demo account has ${DEMO_USDC_BALANCE} USDC...`)
       await algorand.send.assetTransfer({

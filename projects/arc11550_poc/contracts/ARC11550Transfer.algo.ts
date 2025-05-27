@@ -1,5 +1,14 @@
 import { Contract } from '@algorandfoundation/tealscript';
-import { TokenId, Transfer, ARC11550Data, Params, CollectionId } from './ARC11550Data.algo';
+import { Transfer, ARC11550Data } from './ARC11550Data.algo';
+
+export class ARC11550TransferHook extends Contract {
+  /** Determines whether a transfer is approved or not. This implementation always returns true, but
+   * there are other possibilities such as ERC20-style approvals, whitelists, blacklists, enforced royalties, etc. */
+  // eslint-disable-next-line no-unused-vars
+  approved(caller: Address, transfers: Transfer[], idx: uint64): boolean {
+    return true;
+  }
+}
 
 export class ARC11550Transfer extends Contract {
   arc11550_transfer(dataApp: AppID, transfers: Transfer[]) {
@@ -24,13 +33,5 @@ export class ARC11550Transfer extends Contract {
       applicationID: dataApp,
       methodArgs: [this.txn.sender, transfers],
     });
-  }
-}
-
-export class ARC11550TransferHook extends Contract {
-  /** Determines whether a transfer is approved or not. This implementation always returns true, but
-   * there are other possibilities such as ERC20-style approvals, whitelists, blacklists, enforced royalties, etc. */
-  approved(caller: Address, transfers: Transfer[], idx: uint64): boolean {
-    return true;
   }
 }
