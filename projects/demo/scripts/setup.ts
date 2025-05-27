@@ -4,9 +4,9 @@
 import { AlgorandClient, microAlgos } from '@algorandfoundation/algokit-utils'
 import algosdk from 'algosdk'
 import process, { exit } from 'process'
-import { Arc11550BridgeClient, Arc11550BridgeFactory } from '../src/contracts/ARC11550Bridge'
-import { Arc11550DataClient, Arc11550DataFactory } from '../src/contracts/ARC11550Data'
-import { Arc11550TransferClient, Arc11550TransferFactory } from '../src/contracts/ARC11550Transfer'
+import { Arc84BridgeClient, Arc84BridgeFactory } from '../src/contracts/ARC84Bridge'
+import { Arc84DataClient, Arc84DataFactory } from '../src/contracts/ARC84Data'
+import { Arc84TransferClient, Arc84TransferFactory } from '../src/contracts/ARC84Transfer'
 import 'dotenv/config'
 
 export const USDC_ASA_ID = 10458941n
@@ -25,17 +25,17 @@ const DEMO_USDC_BALANCE = 5_000_000n
 async function createContracts(algorand: AlgorandClient, usdcAcct: algosdk.Address) {
   console.log(`Creating contracts...`)
 
-  const dataFactory = new Arc11550DataFactory({
+  const dataFactory = new Arc84DataFactory({
     algorand,
     defaultSender: usdcAcct,
   })
 
-  const xferFactory = new Arc11550TransferFactory({
+  const xferFactory = new Arc84TransferFactory({
     algorand,
     defaultSender: usdcAcct,
   })
 
-  const bridgeFactory = new Arc11550BridgeFactory({
+  const bridgeFactory = new Arc84BridgeFactory({
     algorand,
     defaultSender: usdcAcct,
   })
@@ -71,7 +71,7 @@ async function createContracts(algorand: AlgorandClient, usdcAcct: algosdk.Addre
   await algorand.send.payment({
     sender: usdcAcct,
     receiver: bridgeClient.appAddress,
-    amount: microAlgos(100_000),
+    amount: microAlgos(200_000),
   })
 
   console.log('Apps created. Please set following env variables and run the script again:')
@@ -85,8 +85,8 @@ async function createContracts(algorand: AlgorandClient, usdcAcct: algosdk.Addre
 async function createBridgedUSDC(
   algorand: AlgorandClient,
   testAccount: algosdk.Address,
-  bridgeClient: Arc11550BridgeClient,
-  dataClient: Arc11550DataClient,
+  bridgeClient: Arc84BridgeClient,
+  dataClient: Arc84DataClient,
 ) {
   const xfer = await algorand.createTransaction.assetTransfer({
     sender: testAccount,
@@ -104,14 +104,14 @@ async function createBridgedUSDC(
   const dataPay = await algorand.createTransaction.payment({
     sender: testAccount,
     receiver: dataClient.appAddress,
-    amount: microAlgos(MINT_MBR + NEW_HOLDER_MBR),
+    amount: microAlgos(MINT_MBR + 2n * NEW_HOLDER_MBR),
   })
   const results = await bridgeClient
     .newGroup()
     .addTransaction(bridgePay)
     .addTransaction(dataPay)
     .optInToAsa({ extraFee: microAlgos(1000), args: { asa: USDC_ASA_ID }, sender: testAccount })
-    .asaToArc11550({ sender: testAccount, extraFee: microAlgos(6000), args: { axfer: xfer, receiver: testAccount.toString() } })
+    .asaToArc84({ sender: testAccount, extraFee: microAlgos(6000), args: { axfer: xfer, receiver: testAccount.toString() } })
     .send()
 
   const bridgedToken = results.returns.at(-1) as unknown as { id: bigint; dataApp: bigint }
@@ -215,9 +215,9 @@ export async function setup() {
     await createContracts(algorand, usdcAddr)
   }
 
-  const dataClient = new Arc11550DataClient({ algorand, appId: BigInt(DATA_APP_ID!) })
-  const xferClient = new Arc11550TransferClient({ algorand, appId: BigInt(XFER_APP_ID!) })
-  const bridgeClient = new Arc11550BridgeClient({ algorand, appId: BigInt(BRIDGE_APP_ID!) })
+  const dataClient = new Arc84DataClient({ algorand, appId: BigInt(DATA_APP_ID!) })
+  const xferClient = new Arc84TransferClient({ algorand, appId: BigInt(XFER_APP_ID!) })
+  const bridgeClient = new Arc84BridgeClient({ algorand, appId: BigInt(BRIDGE_APP_ID!) })
 
   console.info('Using the follow contracts')
   console.info({
@@ -246,7 +246,7 @@ export async function setup() {
   try {
     const result = await dataClient
       .newGroup()
-      .arc11550BalanceOf({ sender: demoAddr.toString(), args: { account: demoAddr.toString(), id: tokenId } })
+      .arc84BalanceOf({ sender: demoAddr.toString(), args: { account: demoAddr.toString(), id: tokenId } })
       .simulate({ allowUnnamedResources: true, skipSignatures: true })
 
     console.debug(result.returns[0])
@@ -256,7 +256,7 @@ export async function setup() {
   }
 
   if (demoTokenBalance < 5_000_000n) {
-    console.log(`Ensuring demo account has 5 USDC ARC11550 tokens...`)
+    console.log(`Ensuring demo account has 5 USDC ARC84 tokens...`)
     const axfer = await algorand.createTransaction.assetTransfer({
       sender: usdcAddr,
       receiver: bridgeClient.appAddress,
@@ -264,7 +264,7 @@ export async function setup() {
       amount: 5_000_000n - demoTokenBalance,
     })
 
-    await bridgeClient.send.asaToArc11550({ sender: usdcAddr, args: { axfer, receiver: demoAddr.toString() } })
+    await bridgeClient.send.asaToArc84({ sender: usdcAddr, args: { axfer, receiver: demoAddr.toString() } })
   }
 }
 

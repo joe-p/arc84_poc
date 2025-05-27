@@ -1,4 +1,4 @@
-# arc11550_poc
+# arc84c
 
 Welcome to your new AlgoKit project!
 

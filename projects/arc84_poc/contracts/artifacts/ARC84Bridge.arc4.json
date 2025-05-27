@@ -1,0 +1,82 @@
+{
+  "name": "ARC84Bridge",
+  "desc": "",
+  "methods": [
+    {
+      "name": "createApplication",
+      "args": [
+        {
+          "name": "dataApp",
+          "type": "uint64"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "optInToAsa",
+      "args": [
+        {
+          "name": "asa",
+          "type": "uint64"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "asaToArc84",
+      "args": [
+        {
+          "name": "axfer",
+          "type": "axfer"
+        },
+        {
+          "name": "receiver",
+          "type": "address"
+        }
+      ],
+      "returns": {
+        "type": "(uint64,uint64)"
+      }
+    },
+    {
+      "name": "arc84ToAsa",
+      "args": [
+        {
+          "name": "xferCall",
+          "type": "appl"
+        },
+        {
+          "name": "xferIndex",
+          "type": "uint64"
+        },
+        {
+          "name": "receiver",
+          "type": "address"
+        }
+      ],
+      "returns": {
+        "type": "uint64"
+      }
+    },
+    {
+      "name": "withdrawAsa",
+      "args": [
+        {
+          "name": "asa",
+          "type": "uint64"
+        },
+        {
+          "name": "withdrawalFor",
+          "type": "address"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  ]
+}

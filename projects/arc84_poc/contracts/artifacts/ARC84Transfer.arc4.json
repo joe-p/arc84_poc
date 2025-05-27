@@ -1,0 +1,29 @@
+{
+  "name": "ARC84Transfer",
+  "desc": "",
+  "methods": [
+    {
+      "name": "arc84_transfer",
+      "args": [
+        {
+          "name": "dataApp",
+          "type": "uint64"
+        },
+        {
+          "name": "transfers",
+          "type": "(uint64,address,address,uint64)[]"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "createApplication",
+      "args": [],
+      "returns": {
+        "type": "void"
+      }
+    }
+  ]
+}

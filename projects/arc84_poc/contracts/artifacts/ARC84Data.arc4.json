@@ -1,0 +1,210 @@
+{
+  "name": "ARC84Data",
+  "desc": "",
+  "methods": [
+    {
+      "name": "createApplication",
+      "args": [
+        {
+          "name": "transferApp",
+          "type": "uint64"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "arc84_newCollection",
+      "args": [
+        {
+          "name": "manager",
+          "type": "address"
+        },
+        {
+          "name": "mintCap",
+          "type": "uint64"
+        }
+      ],
+      "returns": {
+        "type": "uint64"
+      }
+    },
+    {
+      "name": "arc84_collection_minted",
+      "desc": "***************\nGetter Methods\n***************",
+      "args": [
+        {
+          "name": "id",
+          "type": "uint64"
+        }
+      ],
+      "returns": {
+        "type": "uint64"
+      }
+    },
+    {
+      "name": "arc84_metadata",
+      "args": [
+        {
+          "name": "key",
+          "type": "(uint64,byte[])"
+        }
+      ],
+      "returns": {
+        "type": "(bool,byte[])"
+      }
+    },
+    {
+      "name": "arc84_balanceOf",
+      "args": [
+        {
+          "name": "id",
+          "type": "uint64"
+        },
+        {
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "returns": {
+        "type": "uint64"
+      }
+    },
+    {
+      "name": "arc84_params",
+      "args": [
+        {
+          "name": "id",
+          "type": "uint64"
+        }
+      ],
+      "returns": {
+        "type": "(byte[32],byte[8],uint64,uint64,address,uint64)"
+      }
+    },
+    {
+      "name": "arc84_transferApp",
+      "args": [],
+      "returns": {
+        "type": "uint64"
+      }
+    },
+    {
+      "name": "arc84_transferHookApp",
+      "args": [
+        {
+          "name": "id",
+          "type": "uint64"
+        }
+      ],
+      "returns": {
+        "type": "uint64"
+      }
+    },
+    {
+      "name": "arc84_balancesOf",
+      "desc": "********************\nMulti Getter Methods\n********************",
+      "args": [
+        {
+          "name": "idAndAddrs",
+          "type": "(uint64,address)[]"
+        }
+      ],
+      "returns": {
+        "type": "uint64[]"
+      }
+    },
+    {
+      "name": "arc84_mulitpleParams",
+      "args": [
+        {
+          "name": "ids",
+          "type": "uint64[]"
+        }
+      ],
+      "returns": {
+        "type": "(byte[32],byte[8],uint64,uint64,address,uint64)[]"
+      }
+    },
+    {
+      "name": "arc84_setMetadata",
+      "desc": "***************\nSetter methods\n***************",
+      "args": [
+        {
+          "name": "key",
+          "type": "(uint64,byte[])"
+        },
+        {
+          "name": "data",
+          "type": "byte[]"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "arc84_setAllowance",
+      "args": [
+        {
+          "name": "allowanceKey",
+          "type": "(address,address,uint64)"
+        },
+        {
+          "name": "allowance",
+          "type": "(uint64,uint64,uint64,uint64,uint64)"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "arc84_setAllowances",
+      "desc": "********************\nMulti Setter Methods\n********************",
+      "args": [
+        {
+          "name": "allowances",
+          "type": "((address,address,uint64),(uint64,uint64,uint64,uint64,uint64))[]"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "doTransfers",
+      "desc": "*********************\nTransfer/Mint Methods\n*********************",
+      "args": [
+        {
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "name": "transfers",
+          "type": "(uint64,address,address,uint64)[]"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "arc84_mint",
+      "args": [
+        {
+          "name": "collectionId",
+          "type": "uint64"
+        },
+        {
+          "name": "params",
+          "type": "(byte[32],byte[8],uint64,uint64,address,uint64)"
+        }
+      ],
+      "returns": {
+        "type": "uint64"
+      }
+    }
+  ]
+}

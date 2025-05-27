@@ -4,19 +4,19 @@
 /* eslint-disable no-restricted-syntax */
 import { AlgorandClient, populateAppCallResources } from '@algorandfoundation/algokit-utils'
 import * as algosdk from 'algosdk'
-import { Arc11550DataClient } from '../contracts/ARC11550Data'
-import { Arc11550TransferClient } from '../contracts/ARC11550Transfer'
-import { Arc11550BridgeClient, Arc11550Id } from '../contracts/ARC11550Bridge'
+import { Arc84DataClient } from '../contracts/ARC84Data'
+import { Arc84TransferClient } from '../contracts/ARC84Transfer'
+import { Arc84BridgeClient, Arc84Id } from '../contracts/ARC84Bridge'
 import { GenerateSwapTxnsParams, Swap } from '@tinymanorg/tinyman-js-sdk'
 import { SignerTransaction } from '@txnlab/use-wallet'
 
-export async function autoArc11550ToAsa(
+export async function autoArc84ToAsa(
   group: algosdk.Transaction[],
   algod: algosdk.Algodv2,
   bridgeAppId: bigint,
 ): Promise<algosdk.Transaction[]> {
   const algorand = AlgorandClient.fromClients({ algod })
-  const bridgeClient = new Arc11550BridgeClient({ appId: bridgeAppId, algorand })
+  const bridgeClient = new Arc84BridgeClient({ appId: bridgeAppId, algorand })
 
   const newTxns: algosdk.Transaction[] = []
 
@@ -36,14 +36,14 @@ export async function autoArc11550ToAsa(
 
     if (balance >= axfer.amount) continue
 
-    let mapResult: Arc11550Id | undefined
+    let mapResult: Arc84Id | undefined
     const requiredBridgeAmount = axfer.amount - balance
     try {
-      mapResult = await bridgeClient.state.box.asaToArc11550Map.value(axfer.assetIndex)
+      mapResult = await bridgeClient.state.box.asaToArc84Map.value(axfer.assetIndex)
     } finally {
       if (mapResult === undefined) {
         // eslint-disable-next-line no-console
-        console.error(`No ARC11550 token for ASA ${axfer.assetIndex}. Cannot automatically bridge`)
+        console.error(`No ARC84 token for ASA ${axfer.assetIndex}. Cannot automatically bridge`)
         return group
       }
     }
@@ -51,11 +51,11 @@ export async function autoArc11550ToAsa(
     const tokenId = mapResult.id
     const { dataApp } = mapResult
 
-    const dataClient = new Arc11550DataClient({ appId: dataApp, algorand })
+    const dataClient = new Arc84DataClient({ appId: dataApp, algorand })
 
     const tokenBalanceResult = await dataClient
       .newGroup()
-      .arc11550BalanceOf({ sender: txn.sender.toString(), args: { account: txn.sender.toString(), id: tokenId } })
+      .arc84BalanceOf({ sender: txn.sender.toString(), args: { account: txn.sender.toString(), id: tokenId } })
       .simulate({ allowUnnamedResources: true, skipSignatures: true })
 
     const tokenBalance = tokenBalanceResult.returns.at(-1)?.returnValue as bigint
@@ -73,14 +73,14 @@ export async function autoArc11550ToAsa(
 
     const xferAppResult = await dataClient
       .newGroup()
-      .arc11550TransferApp({ sender: txn.sender.toString(), args: {} })
+      .arc84TransferApp({ sender: txn.sender.toString(), args: {} })
       .simulate({ allowUnnamedResources: true, skipSignatures: true })
 
     const xferApp = xferAppResult.returns[0] as bigint
 
-    const xferClient = new Arc11550TransferClient({ appId: xferApp, algorand })
+    const xferClient = new Arc84TransferClient({ appId: xferApp, algorand })
 
-    const xferCall = await xferClient.params.arc11550Transfer({
+    const xferCall = await xferClient.params.arc84Transfer({
       sender: txn.sender.toString(),
       args: {
         dataApp,
@@ -91,7 +91,7 @@ export async function autoArc11550ToAsa(
     const bridgeTxns = await (
       await bridgeClient
         .newGroup()
-        .arc11550ToAsa({ sender: txn.sender.toString(), args: { xferCall, xferIndex: 0, receiver: txn.sender.toString() } })
+        .arc84ToAsa({ sender: txn.sender.toString(), args: { xferCall, xferIndex: 0, receiver: txn.sender.toString() } })
         .composer()
     ).buildTransactions()
 
@@ -117,7 +117,7 @@ export async function monkeyPatchTinymanV2Swap(algod: algosdk.Algodv2, bridgeApp
   Swap.v2.generateTxns = async (params: GenerateSwapTxnsParams): Promise<SignerTransaction[]> => {
     const origGroup = await origSwapTxns(params)
 
-    const autoTxns = await autoArc11550ToAsa(
+    const autoTxns = await autoArc84ToAsa(
       origGroup.map((t) => t.txn),
       algod,
       bridgeAppId,
@@ -141,7 +141,7 @@ export async function getBalancesWithBrigedToken(
     name?: string
     symbol?: string
   }
-  arc11550Token: {
+  arc84Token: {
     id: bigint
     balance: bigint
     name?: string
@@ -158,8 +158,8 @@ export async function getBalancesWithBrigedToken(
     console.log(`No balance of ASA ${assetId} for account ${account}`)
   }
 
-  const bridgeClient = new Arc11550BridgeClient({ appId: bridgeAppId, algorand: AlgorandClient.fromClients({ algod }) })
-  const bridgedTokenId = await bridgeClient.state.box.asaToArc11550Map.value(assetId)
+  const bridgeClient = new Arc84BridgeClient({ appId: bridgeAppId, algorand: AlgorandClient.fromClients({ algod }) })
+  const bridgedTokenId = await bridgeClient.state.box.asaToArc84Map.value(assetId)
 
   const asaInfo = await algod.getAssetByID(assetId).do()
   const decimals = BigInt(asaInfo.params.decimals!)
@@ -168,20 +168,20 @@ export async function getBalancesWithBrigedToken(
   if (bridgedTokenId === undefined) {
     return {
       asa: { name, id: assetId, balance: asaBalance / 10n ** decimals },
-      arc11550Token: { name, id: 0n, balance: bridgedTokenBalance / 10n ** decimals },
+      arc84Token: { name, id: 0n, balance: bridgedTokenBalance / 10n ** decimals },
     }
   }
 
-  const dataClient = new Arc11550DataClient({ appId: bridgedTokenId.dataApp, algorand: AlgorandClient.fromClients({ algod }) })
+  const dataClient = new Arc84DataClient({ appId: bridgedTokenId.dataApp, algorand: AlgorandClient.fromClients({ algod }) })
 
   const bridgedTokenBalanceResult = await dataClient
     .newGroup()
-    .arc11550BalanceOf({ sender: account.toString(), args: { account: account.toString(), id: bridgedTokenId.id } })
+    .arc84BalanceOf({ sender: account.toString(), args: { account: account.toString(), id: bridgedTokenId.id } })
     .simulate({ allowUnnamedResources: true, skipSignatures: true })
 
   bridgedTokenBalance = bridgedTokenBalanceResult.returns.at(-1)! as unknown as bigint
   return {
     asa: { name, id: assetId, balance: asaBalance / 10n ** decimals },
-    arc11550Token: { name, id: bridgedTokenId.id, balance: bridgedTokenBalance / 10n ** decimals },
+    arc84Token: { name, id: bridgedTokenId.id, balance: bridgedTokenBalance / 10n ** decimals },
   }
 }
