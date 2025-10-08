@@ -2,7 +2,7 @@
 /* eslint-disable no-await-in-loop */
 /* eslint-disable no-continue */
 /* eslint-disable no-restricted-syntax */
-import { AlgorandClient, populateAppCallResources } from '@algorandfoundation/algokit-utils'
+import { AlgorandClient, microAlgo, populateAppCallResources } from '@algorandfoundation/algokit-utils'
 import * as algosdk from 'algosdk'
 import { Arc84DataClient } from '../contracts/ARC84Data'
 import { Arc84TransferClient } from '../contracts/ARC84Transfer'
@@ -91,7 +91,11 @@ export async function autoArc84ToAsa(
     const bridgeTxns = await (
       await bridgeClient
         .newGroup()
-        .arc84ToAsa({ sender: txn.sender.toString(), args: { xferCall, xferIndex: 0, receiver: txn.sender.toString() } })
+        .arc84ToAsa({
+          sender: txn.sender.toString(),
+          args: { xferCall, xferIndex: 0, receiver: txn.sender.toString() },
+          staticFee: microAlgo(5000), // TODO: Determine correct fee
+        })
         .composer()
     ).buildTransactions()
 
@@ -135,6 +139,10 @@ export async function getBalancesWithBrigedToken(
   assetId: bigint,
   bridgeAppId: bigint,
 ): Promise<{
+  total: {
+    name?: string
+    balance: bigint
+  }
   asa: {
     id: bigint
     balance: bigint
@@ -167,6 +175,7 @@ export async function getBalancesWithBrigedToken(
 
   if (bridgedTokenId === undefined) {
     return {
+      total: { name, balance: (asaBalance + bridgedTokenBalance) / 10n ** decimals },
       asa: { name, id: assetId, balance: asaBalance / 10n ** decimals },
       arc84Token: { name, id: 0n, balance: bridgedTokenBalance / 10n ** decimals },
     }
@@ -181,6 +190,7 @@ export async function getBalancesWithBrigedToken(
 
   bridgedTokenBalance = bridgedTokenBalanceResult.returns.at(-1)! as unknown as bigint
   return {
+    total: { name, balance: (asaBalance + bridgedTokenBalance) / 10n ** decimals },
     asa: { name, id: assetId, balance: asaBalance / 10n ** decimals },
     arc84Token: { name, id: bridgedTokenId.id, balance: bridgedTokenBalance / 10n ** decimals },
   }

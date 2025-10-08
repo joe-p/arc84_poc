@@ -264,7 +264,12 @@ export async function setup() {
       amount: 5_000_000n - demoTokenBalance,
     })
 
-    await bridgeClient.send.asaToArc84({ sender: usdcAddr, args: { axfer, receiver: demoAddr.toString() } })
+    await bridgeClient.send.asaToArc84({
+      sender: usdcAddr,
+      args: { axfer, receiver: demoAddr.toString() },
+      coverAppCallInnerTransactionFees: true,
+      maxFee: microAlgos(5_000), // TODO: Verify this is the correct max fee
+    })
   }
 }
 
