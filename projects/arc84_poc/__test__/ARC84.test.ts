@@ -78,7 +78,7 @@ describe('ARC84', () => {
     const alice = fixture.context.algorand.account.random().addr.toString();
     const xferAmt = 50n;
     await xferClient.send.arc84Transfer({
-      extraFee: microAlgos(20_000),
+      extraFee: microAlgos(2_000),
       args: { dataApp: dataClient.appId, transfers: [[tokenId, testAccount, alice, xferAmt]] },
     });
 
