@@ -74,12 +74,23 @@ describe('ARC84', () => {
     tokenId = result.return!;
   });
 
-  test('xfer', async () => {
+  test('transfer app transfer', async () => {
     const alice = fixture.context.algorand.account.random().addr.toString();
     const xferAmt = 50n;
     await xferClient.send.arc84Transfer({
       extraFee: microAlgos(2_000),
       args: { dataApp: dataClient.appId, transfers: [[tokenId, testAccount, alice, xferAmt]] },
+    });
+
+    const aliceBalance = (await dataClient.send.arc84BalanceOf({ args: { id: tokenId, account: alice } })).return;
+    expect(aliceBalance).toBe(xferAmt);
+  });
+
+  test('data app transfer', async () => {
+    const alice = fixture.context.algorand.account.random().addr.toString();
+    const xferAmt = 50n;
+    await dataClient.send.doTransfers({
+      args: { sender: testAccount, transfers: [[tokenId, testAccount, alice, xferAmt]] },
     });
 
     const aliceBalance = (await dataClient.send.arc84BalanceOf({ args: { id: tokenId, account: alice } })).return;

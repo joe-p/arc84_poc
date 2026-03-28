@@ -200,10 +200,15 @@ export class ARC84Data extends Contract {
    ********************** */
 
   doTransfers(sender: Address, transfers: Transfer[]) {
-    assert(globals.callerApplicationID === this.transferApp.value);
-
     for (let i = 0; i < transfers.length; i += 1) {
       const t = transfers[i];
+
+      // If the transferHookApp is 0, we can call doTransfers directly on the data app for this token
+      if (this.params(t.tokenId).value.transferHookApp.id !== 0) {
+        assert(globals.callerApplicationID === this.transferApp.value);
+      } else {
+        assert(globals.callerApplicationID === this.transferApp.value || sender === this.txn.sender);
+      }
 
       if (t.from !== sender) {
         const allowanceKey = sha256(

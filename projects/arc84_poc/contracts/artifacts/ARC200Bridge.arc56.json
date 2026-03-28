@@ -3205,9 +3205,9 @@
     "compiler": "algod",
     "compilerVersion": {
       "major": 4,
-      "minor": 0,
-      "patch": 2,
-      "commitHash": "6b940281"
+      "minor": 4,
+      "patch": 1,
+      "commitHash": "7b607ce4"
     }
   }
 }
